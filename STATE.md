@@ -117,19 +117,35 @@ values pending their SI (LIMITATIONS.md).
   exactly what her batch unlocks. Auto-agreed = 0, so there are no AGREED-PROVISIONAL claims to carry
   into Phase 4; the build correctly waits for her batch.
 
-## STOP POINT: Checkpoint 1. Waiting on Anu's batch (approve/reject the review queue; confirm the rules).
-This is a sanctioned stop (ruling 5: stop at Checkpoint 1). No question is pending; nothing is blocked
-except the human gate.
+## CHECKPOINT 1 RESOLVED, then Phases 4-8 run; CHECKPOINT 2 REACHED (2026-11-10). BUILD STOPPED (ruling 5).
 
-## NEXT when her batch returns (resume from here):
-1. Build `apply_review` (parse ticked verdicts in extraction/review_queue/*.md -> approved claim cards),
-   mirroring consilience-demo's apply_review. (Deferred; not needed until her batch exists.)
-2. Phase 4: build the ledger over approved claims (forks, graded correspondences, vetoed pairings with
-   named defects), ledger.hash, rendered pages in reports/. Judge + comparability engine already exist
-   (labext/judge.py, labext/comparability.py).
-3. Phase 5 writeback: load upstream/lila_oer_manuscript/data (CC-BY, NOT committed; cite rows by index+sha),
-   compute verdicts under D7 (floor 13 mV). 4. Phase 6 LLM-judge baseline. 5. Phase 7 discipline + fresh
-   materials extraction-stability number. 6. Phase 8 browser + CHECKPOINT 2.
-   Then Phases 10-11 end-to-end (OERSIM unblocked), Phase 12.
+Anu's Checkpoint 1 triage (CP1-TRIAGE.md) was applied: 34 approved, 38 rejected; comparability-v0
+locked (CR1 canonical electrolyte list, CR2/CR3 pint unit canonicalisation); CR5 logged as v1 candidate.
 
-## Status tags: phase-1, phase-2, phase-9, phase-3 all tagged. Tests 54 green. make reproduce green.
+Phases completed this run:
+- Phase 4 ledger (tag phase-4): 34 approved claims judged pairwise; 0 forks, 561 vetoes (515
+  axis_mismatch, 149 condition_unstated, 3 condition_mismatch). Byte-deterministic ledger.hash;
+  reports/ledger.md + forks_spotcheck.md. Zero forks is valid Stage 1 (CC-22).
+- Phase 5 writeback (tag phase-5): verdicts vs oer_exp_data.csv (loaded at runtime, NOT committed,
+  cited by sha+row). 1 within_floor (InMnPdOx reproduced to 0.1 mV), 2 contradicted, 6 not_comparable
+  (all published pure-Pd claims are published vetoes).
+- Phase 6 baseline (tag phase-6): 60-pair preregistered sample; model made 4 comparisons the veto blocks.
+- Phase 7 discipline (tag phase-7): PREREGISTRATION, numbers lock (NUMBERS_LOCK.json + linter),
+  fresh materials extraction-stability 0.423 (n=52), red-team no-text-channel tests.
+- Phase 8 (tag phase-8): static browser (browser/index.html), README/METHODS finalized under II.3
+  (numbers lint clean), CHECKPOINT2.md. make reproduce is byte-identical (git status clean after).
+
+Also done earlier: Phase 9 safety (tag phase-9), Phases 10-11 scaffolding.
+
+## STOP POINT: CHECKPOINT 2 (publish sign-off). Nothing published. Awaiting Anu's publish decisions
+(name, license) in CHECKPOINT2.md. This is a sanctioned stop (ruling 5).
+
+## Data provenance for resumption
+- API keys: source `$HOME/oii-sprint/.env` (ruling 1). Never read into output.
+- Lila data: `../upstream/lila_oer_manuscript/data/oer_exp_data.csv` (env LILA_OER_DATA), CC-BY, not committed.
+- OERSIM dataset: `~/lila-gate/helao-async/helao/deploy/test/demos/data/oer13_cps.pzstd` (set HELAO_DATASET).
+
+## NEXT (after Checkpoint 2 sign-off): Phases 10-11 end-to-end on a labeled synthetic fork (CC-22) +
+OERSIM (dataset available), discovery report, Module D reconciliation, then Phase 12 final package.
+
+## Status tags: phase-1..phase-9 all tagged. Tests 70 green. make reproduce byte-identical.
