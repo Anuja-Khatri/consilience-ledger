@@ -64,10 +64,15 @@ No `ANTHROPIC_API_KEY` (or any model key) is exported in the current shell. Keys
 - **Safe default applied:** Phase 0 needs no model calls, so none were made. D3 is satisfiable
   (one Anthropic + one non-Anthropic family both available), which is the preferred configuration.
 - **BLOCKS:** Phase 2+ extraction.
-- **Needs Anu:** export the keys into the build session before 16 Dec (D14: env-vars only; `.env`
-  gitignored; the build must fail with a clear message listing missing vars, never read a key from a
-  committed file). Note: `consilience-demo` hard-codes a `~/thoughtlog/.env` key path — the ported
-  pipeline must drop that and read from the environment only.
+- **Needs Anu:** export the keys into the build session (D14: env-vars only; `.env` gitignored; the
+  build fails with a clear message, never reads a key from a file). The ported pipeline reads from
+  the environment only (no `~/thoughtlog/.env` path).
+- **Phase 2 status (2026-11-10):** confirmed no model key in the live environment. Per Anu ruling,
+  the full non-API Phase 2 pipeline was built and mock-tested (8 tests green): dual-model harness,
+  resumable disk cache, field-exact agreement gate, one-md-per-claim review queue, and the D6
+  GO/NO-GO rule. The real extraction and the pilot DECISION are pending a key (see PILOT_REPORT.md).
+  Phase 2 is therefore code-complete but NOT tagged (acceptance needs a real pilot decision). All of
+  Stage 1 (Phases 3-8) depends on real extracted claims and is blocked until a key is available.
 
 ## OQ-3 — Lila's real OER data is absent from this machine  **(largest gap)**
 Three linked artifacts are not present anywhere under `~` (searched to depth 6, Trash/Library

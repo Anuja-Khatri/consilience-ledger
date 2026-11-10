@@ -34,6 +34,21 @@ A numeric verdict against Lila's data requires the difference to exceed
 max(their stated floor 13 mV, the claim's own stated uncertainty). Below that the
 outcome is `within_floor`, not confirmed or contradicted. (Wired in Phase 5.)
 
-## Extraction models
-Recorded here in Phase 2 (exact model strings). Not yet run: no API key was present
-in the build environment (OPEN_QUESTIONS OQ-2); the non-API parts proceed first.
+## Extraction models (D3)
+Two independent extraction runs. Selection by the keys present in the environment:
+- If `OPENAI_API_KEY` is also set: `claude-sonnet-4-6` (Anthropic) + `gpt-4.1` (OpenAI),
+  one Anthropic and one non-Anthropic family (preferred).
+- Else: `claude-sonnet-4-6` + `claude-haiku-4-5-20251001`, two different Anthropic
+  versions (the D3 fallback).
+All outputs are cached to disk (jsonl per paper per model) and are resumable. Keys come
+from environment variables only (D14); no `.env` is read (Anu ruling). As of the Phase 2
+commit no key was present, so extraction has not run; the exact model strings above are
+what the harness will use, and the actual run is recorded here when it happens (OQ-2,
+PILOT_REPORT.md).
+
+## Agreement gate
+AGREED-PROVISIONAL = both models produce the identical card, field-exact after
+canonicalisation (text casefolded, quantities reduced to pint base units, per-run ids
+excluded). Everything else goes to the review queue as one markdown file per contested
+claim. Unparseable cards are parked (CC-11); partial agreement is parked, never averaged
+(CC-15).

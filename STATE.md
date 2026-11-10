@@ -71,11 +71,29 @@ Design note: NetworkX DiGraphMatcher accepts only node_match and edge_match, so 
 veto runs as a pre-filter over the pair, not as a third matcher callback. The vendored
 `conditions_compatible` predicate delegates to the authoritative `labext.comparability`.
 
-## Next: Phase 2 (extraction pipeline + pilot).
-Blocked part: dual-model extraction needs API keys, absent from the environment (OQ-2; Anu ruling:
-never read .env). Do every non-API part first: port the extraction, diff, and review-queue
-structure from consilience-demo `demo/pipeline/` (one md file per contested claim, not per theory),
-the disk cache from `demo/eval/common.py`, author the materials extraction prompt and the
-AGREED-PROVISIONAL full-card diff, and download openly accessible pilot papers (refs 39, 40, 42)
-per Anu ruling 4. Log the API block, run the D6 pilot rule when keys exist, else proceed to
-unblocked later-phase work.
+## Phase 2 CODE-COMPLETE, pilot BLOCKED on API keys (2026-11-10). NOT tagged.
+Confirmed no model key in the live environment (OQ-2; Anu ruling: never read .env). Built and
+mock-tested the full non-API pipeline (`labext/extraction/` + `labext/pilot.py`, 8 tests green,
+32 total):
+- Dual-model harness with resumable jsonl disk cache; real Anthropic + OpenAI backends via stdlib
+  urllib (raise MissingKeyError without a key); MockBackend for tests.
+- Field-exact agreement gate (canonicalize.py: quantities to pint base units, per-run ids excluded);
+  AGREED-PROVISIONAL = identical card from both models.
+- Review queue: one md per contested claim, with source sentence, both outputs, field diff,
+  approve/reject checkboxes. Parking for unparseable (CC-11) and partial agreement (CC-15).
+- D6 GO/NO-GO rule, applied autonomously, never softened.
+- Extraction prompt + few-shots; model strings recorded in METHODS.md. PILOT_REPORT.md written.
+What is blocked: the REAL extraction and the pilot DECISION need a key. All of Stage 1 (Phases 3-8)
+depends on real extracted claims and is blocked until a key is exported. To unblock: export
+ANTHROPIC_API_KEY (and optionally OPENAI_API_KEY per D3), then re-run Phase 2.
+
+## Next: Phase 9 (safety format, features 13-16) as the unblocked later work (Anu ruling 3).
+Phase 9 needs no extraction and no API: hazard claim kinds + graded claims-backed invariants +
+a rules-to-screen compiler targeting lab-gate's `gate/checker` interface (reference.py evaluate /
+smt.py encode_and_check / certificates.py) and `gate/verdict.decide`; a benign EHS seed (instrument
+bounds from their SI; standard incompatible-chemical classes from public safety references, each
+source-cited); TIER_POLICY.md draft (D13) from section 9c language (grade ladder: established,
+plausible, weakly supported, from lila-hiring-research.md). Acceptance: compiler round-trip
+(registry entry -> screen -> blocks a violating synthetic plan, passes a benign one), no-text-channel
+test, zero dual-use content by a grep-able policy list. Then Phases 10-11 can run only on a labeled
+synthetic fork (CC-22) until Stage 1 is unblocked.
