@@ -38,6 +38,15 @@ Known limits, recorded as they arise (spec II.3, Phase 7 formalizes this).
 - Auto-agreement across the two model families on the full card is 0 for the pilot, so
   every extracted claim goes to the review queue for Anu (Checkpoint 1). Agreement is the
   auto-accept signal, not a requirement for a claim to be approvable.
+- Baseline (Phase 6): on a preregistered sample of 60 vetoed pairs, the model call made 4
+  comparisons the deterministic veto blocks (2 false disagreements, 2 false agreements) and
+  recognised incomparability on the other 56. The model is capable but not exact; the veto
+  catches what it misses. Both labelings are reported; no cherry-picking.
+- Extraction stability (Phase 7): 0.423 (n=52 distinct claims, K=3 test-retest). The
+  (subject, value) of an extracted numeric claim is highly reproducible; the observable
+  axis LABEL is not stable run-to-run, so stability is measured on (subject, value-family),
+  not on the axis string. This is the materials number, reported fresh with its n; it is not
+  the consciousness-domain 0.25 (different domain and metric).
 - Ledger (Phase 4): over the 34 approved claims, zero numeric forks survived the
   conditions veto. All 561 pairings are vetoes: 515 axis_mismatch (claims report
   different observables, CC-13), 149 condition_unstated (electrolyte/current-density often

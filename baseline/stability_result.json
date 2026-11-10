@@ -1,0 +1,10 @@
+{
+  "K": 3,
+  "caveat": "temperature default (API rejects temperature 0 for this model family)",
+  "model": "claude-sonnet-5",
+  "n_distinct_claims": 52,
+  "n_passages": 20,
+  "n_stable": 22,
+  "recur_threshold": 2,
+  "stability": 0.423
+}
