@@ -17,9 +17,9 @@ No file outside `BUILD_ROOT/lab-extension/` was written. No read-only repo was m
 | lab-gate | `~/lila-gate/lab-gate` (nested) | no `.git` | 3e0185a | n/a (no git) | present, sha unverifiable |
 | consilience-verification | `~/consilience-verification` | yes | HEAD | 275dba8 | present (spec says HEAD) |
 | helao-async | `~/lila-gate/helao-async` | yes | ba910c4 | **ba910c4c…** | EXACT MATCH |
-| lila_oer_manuscript (fl97inc) | **NOT ON DISK** | — | HEAD@build | — | **MISSING (see OQ-3)** |
-| consilience-demo | `~/consilience-demo` | no `.git` | (local read) | — | present |
-| miu-demo | `~/miu-demo` | no `.git` | (local read) | — | present |
+| lila_oer_manuscript (fl97inc) | **NOT ON DISK** | - | HEAD@build | - | **MISSING (see OQ-3)** |
+| consilience-demo | `~/consilience-demo` | no `.git` | (local read) | - | present |
+| miu-demo | `~/miu-demo` | no `.git` | (local read) | - | present |
 
 Notes:
 - `lab-gate` is nested inside `~/lila-gate/` (which also holds `helao-async`, `helao-async-pr`,
@@ -32,7 +32,7 @@ Notes:
 
 ---
 
-## 1. theconsilience-engine  (judge core)  — LICENSE: Apache-2.0 (code) + CC-BY-4.0 (docs)
+## 1. theconsilience-engine  (judge core)  - LICENSE: Apache-2.0 (code) + CC-BY-4.0 (docs)
 
 Copying is unrestricted (Anu's own code, II.2). Note the license is **Apache-2.0, not MIT**; the
 PROVENANCE line should say so.
@@ -53,7 +53,7 @@ required; `measurable_with` and `domain` are present but NOT in the `required` a
 Defect enum: defined in **`judge/schema/rejection.json`** field `defect_type`, NOT in Python.
 Current values: `type_mismatch`, `direction_mismatch`, `vocabulary_dependence`,
 `provenance_circularity`, `insufficient_coverage`. (IV.3 adds `condition_mismatch`,
-`condition_unstated`, `axis_mismatch` — Phase 1 extends this JSON enum.)
+`condition_unstated`, `axis_mismatch` - Phase 1 extends this JSON enum.)
 
 PORTS CLEANLY. **Design flag for Phase 1:** NetworkX `DiGraphMatcher` accepts only `node_match`
 and `edge_match`. The new `conditions_compatible` predicate (IV.2) cannot be a third matcher
@@ -63,7 +63,7 @@ gate) so the judge path stays untouched and the veto carries its own named defec
 
 ---
 
-## 2. lab-gate  (`~/lila-gate/lab-gate`)  — LICENSE: MIT (Copyright 2026 Anuja Khatri)
+## 2. lab-gate  (`~/lila-gate/lab-gate`)  - LICENSE: MIT (Copyright 2026 Anuja Khatri)
 
 | Component | Path | Notes |
 |---|---|---|
@@ -79,20 +79,20 @@ gate) so the judge path stays untouched and the veto carries its own named defec
 
 PORTS CLEANLY for Stage 2/3. **Dependency flag:** `sim_ext/` requires an adjacent `helao-async`
 checkout (present, ba910c4 ✓) AND the `oer13_cps` dataset via env `HELAO_DATASET`. **That dataset
-is not on disk** (see OQ-3). No "screen compiler" exists yet — Stage 2 (features 13-16) is new code
+is not on disk** (see OQ-3). No "screen compiler" exists yet - Stage 2 (features 13-16) is new code
 that compiles registry entries down to the `gate/checker` interface above.
 
 ---
 
-## 3. consilience-verification  — LICENSE: MIT (probe_set/ dual MIT + CC-BY-4.0)
+## 3. consilience-verification  - LICENSE: MIT (probe_set/ dual MIT + CC-BY-4.0)
 
 | Component | Path | Notes |
 |---|---|---|
 | Numbers freeze gate | `pipeline/numbers_lock.py` | freezes the metrics registry: `metrics_sha()` SHA-256 over canonical metrics array; aborts if any precondition metric_id missing; writes lock to `results/registry.json` + `paper/NUMBERS_LOCK.json`. |
-| Prose number linter | `pipeline/lint_claims.py` (+ `lint_allowlist.txt`) | the "cited number must be in the registry" enforcement over docs/paper. (numbers_lock is the registry half; lint_claims is the prose half — IV.5 needs BOTH.) |
+| Prose number linter | `pipeline/lint_claims.py` (+ `lint_allowlist.txt`) | the "cited number must be in the registry" enforcement over docs/paper. (numbers_lock is the registry half; lint_claims is the prose half - IV.5 needs BOTH.) |
 | Registry | `pipeline/registry.py` | `class Registry.upsert(metric_id, value, task, n, ci_lo, ci_hi, preregistered, …)`; backing `results/registry.json` + schema. |
 | N-gram guard | `pipeline/ngram_guard.py` | contamination guard; ≥8-word exact-run leakage detector, provenance report, calibrated FPR. Relevant to Phase 11 discovery / Phase 7 discipline. |
-| Stability (test-retest) | `pipeline/a5_stability.py` | recurrence of claim-clusters across 5 replicate extractions (seeds 11/22/33/44/55); KEEP_MIN=4. Consciousness-domain n = 16 candidate windows ×5; baseline 27.1% imported (cited, not re-measured). **The materials stability number is unmeasured — Phase 7 measures it fresh.** |
+| Stability (test-retest) | `pipeline/a5_stability.py` | recurrence of claim-clusters across 5 replicate extractions (seeds 11/22/33/44/55); KEEP_MIN=4. Consciousness-domain n = 16 candidate windows ×5; baseline 27.1% imported (cited, not re-measured). **The materials stability number is unmeasured - Phase 7 measures it fresh.** |
 | Adjudication | `pipeline/a2_adjudicate.py`, `a2_finalize.py`, `b3_panel.py` (+ `stats.py` κ / percent_agreement) | model-drafted verdicts → human `review/*.csv` approve/reject → finalize. Cross-vendor panel (gpt-4.1 + gemini). |
 
 PORTS CLEANLY: numbers_lock + lint_claims + registry are the IV.5 lock pattern; a5_stability is the
@@ -100,35 +100,35 @@ Phase 7 template; stats.py is the Phase 6 baseline-agreement math.
 
 ---
 
-## 4. consilience-demo  (COGITATE app)  — LICENSE: **NONE present** (see OQ-6)
+## 4. consilience-demo  (COGITATE app)  - LICENSE: **NONE present** (see OQ-6)
 
 All portable machinery is under `demo/` (self-contained package). Repo root is an unrelated
 FastAPI product app and is NOT ported.
 
 ### III.3 answers (all four found)
 
-1. **Extraction pipeline** — `demo/pipeline/p2_extract.py` (~484 LOC) + `demo/pipeline/schemas.py`
+1. **Extraction pipeline** - `demo/pipeline/p2_extract.py` (~484 LOC) + `demo/pipeline/schemas.py`
    (~137 LOC, pydantic v2 `Claim` model) + `p1_ingest.py`, `p3_normalize.py`.
    - Model call: `extract_window()` → `client.messages.create(model=SONNET,…)`, strict JSON array,
      3 few-shots. Constants `SONNET="claude-sonnet-4-6"`, `HAIKU="claude-haiku-4-5-20251001"`.
    - Candidate pre-filter `candidates()` (regex `SIGNAL`/`REFLIKE`, `MAX_CANDIDATES=64`, `WINDOW=8`).
    - Durable output: JSONL draft `demo/data/claims/<slug>_draft.jsonl` (one card/line).
-   - **Key path is hardcoded to `~/thoughtlog/.env`** — must change to env-var-only for D14.
-2. **Cross-model agreement gate** — `haiku_agreement()` in `p2_extract.py` (~16 LOC): Haiku
+   - **Key path is hardcoded to `~/thoughtlog/.env`** - must change to env-var-only for D14.
+2. **Cross-model agreement gate** - `haiku_agreement()` in `p2_extract.py` (~16 LOC): Haiku
    independently re-derives `(entity_type, axis, polarity)` from only the cited passages; equality
    is **field-exact on those three fields**, stored as `Claim.agreement: bool`. Stronger audited
    version: `demo/eval/t3_independent_checker.py` (~337 LOC) adds an independent-lineage model
    **OpenAI `gpt-4.1` (temp 0)**; agreement stats (Cohen's κ) in `demo/eval/stats.py`.
-3. **Human review queue** — `write_review()` / `apply_review()` in `p2_extract.py` (~155 LOC).
+3. **Human review queue** - `write_review()` / `apply_review()` in `p2_extract.py` (~155 LOC).
    Format is a **Markdown table, one file per theory/batch** (`demo/review/extraction_review_<slug>.md`)
    with approve/reject/corrected checkboxes; `--apply-review` parses verdict rows → `<slug>_approved.jsonl`.
-4. **Capability map** — `demo/vocab/*.yaml` (version `demo_v0`): `entity_types.yaml` (14),
+4. **Capability map** - `demo/vocab/*.yaml` (version `demo_v0`): `entity_types.yaml` (14),
    `axes.yaml` (12 + canonical_entity_types + observable_links), `relations.yaml` (4),
    `observables.yaml` (instruments/scales), `contrast_axis_map.yaml`. Loaded by `schemas.py` to drive
    validation.
    - Reusable disk cache (separate from p2): `demo/eval/common.py` `cached_call()` keyed by
      `sha256(model+system+user+temp+max_tokens)`, cached under `demo/eval_out/cache/<model>/`. Fully
-     generic — this is the D3 "all model outputs cached to disk, reruns free/resumable" layer.
+     generic - this is the D3 "all model outputs cached to disk, reruns free/resumable" layer.
 
 Portable surface ≈ 1,100–1,600 LOC Python + 5 small YAMLs.
 
@@ -143,7 +143,7 @@ Portable surface ≈ 1,100–1,600 LOC Python + 5 small YAMLs.
 
 ---
 
-## 5. miu-demo  (physics workspace)  — LICENSE: **NONE present** (see OQ-6)
+## 5. miu-demo  (physics workspace)  - LICENSE: **NONE present** (see OQ-6)
 
 This is a **data + LLM-prompt artifact, not a code library**. No pydantic models, no JSON Schema,
 no clean importable generator. The reusable assets are the spec + data contract; the `tools/` Python
@@ -151,26 +151,26 @@ no clean importable generator. The reusable assets are the spec + data contract;
 
 ### III.3 answers (all four found)
 
-1. **Experiment card generator (stage-6B)** — there is no single function. The generator *spec* is
-   `experiments/EXPERIMENT_SPEC.md` ("Experiment-Path Spec — Phase 4"), with the HARD RULES (real
+1. **Experiment card generator (stage-6B)** - there is no single function. The generator *spec* is
+   `experiments/EXPERIMENT_SPEC.md` ("Experiment-Path Spec - Phase 4"), with the HARD RULES (real
    instruments only, honest falsification/kill-switch, verbatim quotes, conservative cost). Output =
    `experiments/experiment_*.json`. Supporting code: `tools/validate_experiments.py` (~83 LOC,
    `check(obj)`) and `tools/build_demo_data_v2.py` `load_exp()` (~40 LOC of the 265-LOC file).
-2. **Card schema** — defined in `EXPERIMENT_SPEC.md` (L11-47) and enforced as the key-sets `TOP`
+2. **Card schema** - defined in `EXPERIMENT_SPEC.md` (L11-47) and enforced as the key-sets `TOP`
    and `DES` in `validate_experiments.py`. Top-level: experiment_id, match_id, title, claim_a/b,
    claim_*_source_sentence, structural_bridge, experiment_design, falsification, who_could_run_this,
    estimated_cost (`$10K|$100K|$1M|$10M+`), estimated_timeline, miu_relevant, value_to_hagelin,
    sources_bridged[]. `experiment_design`: hypothesis, manipulated_variable, discriminating_observable,
    instrument, **instrument_exists (bool)**, instrument_source, protocol_sketch,
    predicted_outcome_if_match_{holds,fails}, control_conditions. Optional `flag_not_scientific` with
-   `falsification: "NONE — not falsifiable"`.
-3. **Structure-directed acquisition (vocabulary stripping + structural queries)** — entirely under
+   `falsification: "NONE - not falsifiable"`.
+3. **Structure-directed acquisition (vocabulary stripping + structural queries)** - entirely under
    `source-discovery/` as prompt + JSON, **~0 portable Python**. Loop: unmatched claims →
    `structural_pattern` field (surface vocabulary discarded) → `search_queries[]` in alien
    vocabularies + `target_domains[]` → arXiv/S2 search (`_search/`, `search_results.json`) →
    `selected_papers.json` tagged `GAP:match_NN` → re-match. Key file `unmatched_patterns.json`.
    Fetchers `tools/arxiv_fetch.py` (42 LOC), `tools/select_and_download.py` (67 LOC).
-4. **EXP_48 weak-discriminating-power flag** — `experiments/experiment_48.json`. There is **NO
+4. **EXP_48 weak-discriminating-power flag** - `experiments/experiment_48.json`. There is **NO
    structured flag field**; "weak discriminating power" is prose inside the `falsification` field
    (and `value_to_hagelin`). The only machine-detectable flag is `flag_not_scientific` /
    `falsification` starting "NONE". Spec CC-27 requires propagating a weak-discriminating-power flag
@@ -179,7 +179,7 @@ no clean importable generator. The reusable assets are the spec + data contract;
 
 ---
 
-## 6. helao-async  (`~/lila-gate/helao-async`, ba910c4 ✓)  — LICENSE: MIT (redistribution + attribution OK)
+## 6. helao-async  (`~/lila-gate/helao-async`, ba910c4 ✓)  - LICENSE: MIT (redistribution + attribution OK)
 
 CC-28 note: helao's MIT license permits copying/redistribution with the notice retained. We only
 *translate to* its schema (we do not vendor helao source), so attribution in PROVENANCE suffices.
@@ -203,7 +203,7 @@ CC-28 note: helao's MIT license permits copying/redistribution with the notice r
 |---|---|---|---|---|
 | **6 Extraction pipeline** | consilience-demo `demo/pipeline/*` + `demo/eval/common.py` cache + `t3_independent_checker.py` | windowing, JSON extraction, dedup, provenance-required rule, disk cache, cross-model κ math | full-CARD field-exact diff (not 3 fields); the 10-key `conditions` extractor + `quantity` block (IV.1); one-md-per-claim review format; auto-accept AGREED-PROVISIONAL; env-var-only keys (D14); materials vocab pack; tables-as-first-class (CC-10) | Port ~1.2k LOC + ~600-900 LOC new. **~1.5–2.5 weeks** (was a straight PORT; now PORT+NEW, mid-weight). |
 | **17 Card generator** | miu-demo `EXPERIMENT_SPEC.md` + `validate_experiments.py` + `load_exp` | the card schema + HARD RULES (instrument_exists, falsification-NONE) | author a fresh pydantic card model (no reusable one exists); **explicit `discriminating_power` field** (CC-27); check `instrument_exists` against OERSIM capability list before compile (CC-25 `plan_only`); domain-neutralise Hagelin/MIU fields | ~100 LOC port + ~250-400 LOC new. **~1 week.** |
-| **23 Cross-field correspondence / discovery** | miu-demo `source-discovery/*` (pattern + prompt only) | the *concept* (strip vocabulary → structural pattern → alien-vocab queries → target domains → gap-close) | **~0 reusable code** — reimplement acquisition as code/prompt; arXiv + S2 clients with caching + rate caps (D12/CC-29); rung grading with ceilings; thematic quarantine; chance context | Mostly new. **~1.5–2 weeks after Stage 3 core** (lock estimate "1-2 weeks after C" holds, lean to the top of the range given zero portable code). |
+| **23 Cross-field correspondence / discovery** | miu-demo `source-discovery/*` (pattern + prompt only) | the *concept* (strip vocabulary → structural pattern → alien-vocab queries → target domains → gap-close) | **~0 reusable code** - reimplement acquisition as code/prompt; arXiv + S2 clients with caching + rate caps (D12/CC-29); rung grading with ceilings; thematic quarantine; chance context | Mostly new. **~1.5–2 weeks after Stage 3 core** (lock estimate "1-2 weeks after C" holds, lean to the top of the range given zero portable code). |
 
 ---
 

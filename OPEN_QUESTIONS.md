@@ -7,7 +7,7 @@ Started Phase 0, 2026-11-10.
 
 ---
 
-## Anu's standing rulings (verbatim, received 2026-11-10) — these override the spec where they conflict
+## Anu's standing rulings (verbatim, received 2026-11-10) - these override the spec where they conflict
 
 > Updates to your instructions, from Anu. These override the spec where they conflict.
 >
@@ -36,7 +36,7 @@ Started Phase 0, 2026-11-10.
   earlier default that pointed at `~/oii-sprint/.env`.)
 - OQ-3 (Lila OER data): clone `github.com/fl97inc/lila_oer_manuscript` at HEAD, record sha, check
   license, never commit its data.
-- OQ-4 (demo licenses): accepted — own code, derived work MIT.
+- OQ-4 (demo licenses): accepted - own code, derived work MIT.
 - OQ-5 (lab-gate pin): clone `github.com/Anuja-Khatri/lab-gate` at 3e0185a into `upstream/`, vendor
   from that clone.
 - OQ-6 (consilience-verification): freeze at 275dba8.
@@ -48,7 +48,7 @@ or a true block.
 
 ---
 
-## OQ-1 — `corpus_in/` is empty (no paper PDFs staged)
+## OQ-1 - `corpus_in/` is empty (no paper PDFs staged)
 `BUILD_ROOT/corpus_in/` holds only `.gitkeep`. None of the D5 corpus papers, their paper
 (arXiv:2609.30133) + SI, or ESAMP are staged yet.
 - **Safe default applied:** Phase 0 proceeds (it needs no papers). Extraction (Phase 2+) will try
@@ -58,7 +58,7 @@ or a true block.
 - **Needs Anu:** stage every paper she has legitimate access to in `corpus_in/` before 16 Dec
   (the III.5 prelaunch item). This is expected pre-work, not an error.
 
-## OQ-2 — API keys are not in the build session environment
+## OQ-2 - API keys are not in the build session environment
 No `ANTHROPIC_API_KEY` (or any model key) is exported in the current shell. Keys DO exist in
 `~/oii-sprint/.env`: `ANTHROPIC_API_KEY`, `OPENAI_API_KEY`, `GEMINI_API_KEY`.
 - **Safe default applied:** Phase 0 needs no model calls, so none were made. D3 is satisfiable
@@ -74,24 +74,24 @@ No `ANTHROPIC_API_KEY` (or any model key) is exported in the current shell. Keys
   Phase 2 is therefore code-complete but NOT tagged (acceptance needs a real pilot decision). All of
   Stage 1 (Phases 3-8) depends on real extracted claims and is blocked until a key is available.
 
-## OQ-3 — Lila's real OER data is absent from this machine  **(largest gap)**
+## OQ-3 - Lila's real OER data is absent from this machine  **(largest gap)**
 Three linked artifacts are not present anywhere under `~` (searched to depth 6, Trash/Library
 excluded):
   1. the `lila_oer_manuscript` repo (github.com/fl97inc/lila_oer_manuscript),
   2. `oer_exp_data.csv` and the benchmark-curve CSVs (III.2 / Phase 5 writeback inputs),
   3. the `oer13_cps` dataset that `lab-gate/sim_ext/oersim.py` replays via env `HELAO_DATASET`
-     (Phase 10 loop — this is the "OERSIM replays Lila's real data" mechanism).
+     (Phase 10 loop - this is the "OERSIM replays Lila's real data" mechanism).
 Because the repo is absent, its LICENSE cannot be checked, so CC-28 cannot be resolved yet.
 - **Safe default applied:** Phases 1-4 (schema, extraction, ledger) need none of this and proceed.
   At Phase 5, apply CC-28 conservatively by default: treat the data as non-redistributable until a
-  permissive license is confirmed — do NOT commit their CSVs; load at runtime from an Anu-provided
+  permissive license is confirmed - do NOT commit their CSVs; load at runtime from an Anu-provided
   path via a fetch script; verdict records cite rows by index + sha.
 - **BLOCKS:** Phase 5 (writeback) and Phase 10 (loop / OERSIM).
 - **Needs Anu:** before Phase 5, provide the `lila_oer_manuscript` checkout (record its sha), the
   `oer_exp_data.csv` + benchmark CSVs, and the `oer13_cps` dataset path for `HELAO_DATASET`; and
   confirm the manuscript repo's license for the CC-28 decision.
 
-## OQ-4 — `consilience-demo` and `miu-demo` have no LICENSE file
+## OQ-4 - `consilience-demo` and `miu-demo` have no LICENSE file
 Phase 0 confirmed neither repo contains a LICENSE/COPYING file. II.2 names only
 `theconsilience-engine` and `lab-gate` as "Anu's own code; copying unrestricted." Yet III.3 and
 Phases 2/10/11 direct porting from these two demos, and D2 wants our shipped code MIT with a
@@ -101,7 +101,7 @@ PROVENANCE license line per vendored file.
   source; internal reuse authorized by BUILD-SPEC III.3", and relicense our derived code MIT per D2.
 - **Needs Anu:** add a LICENSE to both repos, or confirm these reuse terms at Checkpoint 2.
 
-## OQ-5 — `lab-gate` pin 3e0185a cannot be verified (no git)
+## OQ-5 - `lab-gate` pin 3e0185a cannot be verified (no git)
 `~/lila-gate/lab-gate` has no `.git`, so its commit cannot be confirmed against the pinned 3e0185a.
 - **Safe default applied:** it is Anu's own code (copying unrestricted), so this does not block
   anything. At vendor time record a content hash of each copied file + the source directory state in
@@ -109,13 +109,13 @@ PROVENANCE license line per vendored file.
 - **Needs Anu (minor):** confirm this checkout corresponds to 3e0185a, or point to a git checkout,
   so PROVENANCE can cite the exact commit.
 
-## OQ-6 — `consilience-verification` local HEAD is 275dba8 (spec says "HEAD")
+## OQ-6 - `consilience-verification` local HEAD is 275dba8 (spec says "HEAD")
 III.2 pins this repo to "HEAD", and the local HEAD is `275dba8`. No conflict, but "HEAD" is not a
 reproducible pin.
 - **Safe default applied:** at vendor time, freeze the exact sha (`275dba8…`) into PROVENANCE so the
   build is reproducible regardless of future upstream movement. No action needed from Anu.
 
-## OQ-7 — `refs_in/` does not exist yet
+## OQ-7 - `refs_in/` does not exist yet
 III.4 says cache downloaded references under `corpus_in/` and `refs_in/`; only `corpus_in/` exists.
 - **Safe default applied:** create `refs_in/` in Phase 2 when the first reference is downloaded.
   No action needed now.

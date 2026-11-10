@@ -1,7 +1,17 @@
-# CHECKPOINT 2 (end of Phase 8) — for Anu, batched, non-interactive
+# CHECKPOINT 2 (full, end of Phase 12) - for Anu, batched, non-interactive
 
-The second human checkpoint: publish sign-off. Nothing goes public without it. This build
-stops at local completeness; no publishing has happened.
+The second human checkpoint: publish sign-off. Signed off (name, license) at the end of
+Phase 8; this is the full update after the whole build. Publishing is HELD until your push
+approval. Nothing has been pushed anywhere.
+
+## 0. Final state (Phase 12)
+All phases done and tagged phase-1 through phase-12. Public name: consilience-ledger. The
+full build reproduces: `make reproduce` is byte-identical (schemas, rules.lock, ledger,
+verdicts). 73 tests green. README carries "Independent work, not affiliated with or
+endorsed by Lila Sciences." Stage 3 ran on a clearly-labeled SYNTHETIC fork on the real
+OERSIM; the discovery report is a rung-graded NULL result. The writeback correction
+(CONTRADICTION_DOSSIER.md / CORRECTIONS.md) is in place: 0 confirmed, 0 contradicted, 9
+not_comparable. No composition is proposed anywhere.
 
 ## 1. State of the build
 Stage 1 is complete through Phase 8 and reproduces locally. Phase 9 (safety format) is

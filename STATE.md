@@ -2,7 +2,7 @@
 
 Per CC-32: a fresh session resumes from the repo alone. Updated at the end of each phase.
 
-## STANDING RULES (Anu, 2026-11-10 — override the spec; full text in OPEN_QUESTIONS.md)
+## STANDING RULES (Anu, 2026-11-10 - override the spec; full text in OPEN_QUESTIONS.md)
 - **No date gate (D17 superseded).** Build continuously, Phases 1-12 in order, starting now.
   Never start a phase before the previous phase's acceptance criteria pass.
 - **Never ask questions.** Safe default + log in OPEN_QUESTIONS.md + continue. Stop only at
@@ -30,10 +30,10 @@ Phase 0 is read-only ENGINE_INVENTORY. It ran to completion. No file outside
 - Verified `BUILD_ROOT/.claude/settings.json` exists and is configured per the II.0 amendment.
 
 ### Deliverables written (all under `BUILD_ROOT/lab-extension/`)
-- `ENGINE_INVENTORY.md` — the full inventory (this phase's required output).
-- `OPEN_QUESTIONS.md` — OQ-1 … OQ-7, each with a safe default applied.
-- `PRELAUNCH_CHECKLIST.md` — III.5 verification.
-- `STATE.md` — this file.
+- `ENGINE_INVENTORY.md` - the full inventory (this phase's required output).
+- `OPEN_QUESTIONS.md` - OQ-1 … OQ-7, each with a safe default applied.
+- `PRELAUNCH_CHECKLIST.md` - III.5 verification.
+- `STATE.md` - this file.
 
 ### Key paths (for the next session)
 - Spec: `BUILD_ROOT/BUILD-SPEC-consilience-lab-extension.md`
@@ -138,15 +138,26 @@ Phases completed this run:
 
 Also done earlier: Phase 9 safety (tag phase-9), Phases 10-11 scaffolding.
 
-## STOP POINT: CHECKPOINT 2 (publish sign-off). Nothing published. Awaiting Anu's publish decisions
-(name, license) in CHECKPOINT2.md. This is a sanctioned stop (ruling 5).
+## BUILD COMPLETE through Phase 12. Checkpoint 2 signed off (name, license). PUBLISHING HELD for push approval.
 
-## Data provenance for resumption
-- API keys: source `$HOME/oii-sprint/.env` (ruling 1). Never read into output.
-- Lila data: `../upstream/lila_oer_manuscript/data/oer_exp_data.csv` (env LILA_OER_DATA), CC-BY, not committed.
-- OERSIM dataset: `~/lila-gate/helao-async/helao/deploy/test/demos/data/oer13_cps.pzstd` (set HELAO_DATASET).
+Phases 10-12 done after sign-off:
+- Phase 10 (tag phase-10): Stage 3 loop end-to-end on the REAL OERSIM (vendored sim_ext, real
+  oer13_cps dataset). Two clearly-labeled SYNTHETIC forks drive card -> plan -> gate -> OERSIM ->
+  verdict (SYN1 fork_confirmed, SYN2 within_floor); SYN3 plan_only (CC-25). One-page dossiers,
+  candidate table, SIM-NOT-CHEMISTRY on every artifact. No composition proposed.
+- Phase 11 (tag phase-11): structure-directed discovery on their closing mechanism claim ->
+  NULL result (5 candidates, all rung 4 thematic, 0 above rung 3), rung-graded with ceilings,
+  chance context, no superlatives. Module D reconciliation report over the ledger.
+- Phase 12 (tag phase-12): final verification. make reproduce byte-identical; 73 tests green;
+  numbers lint clean; no retracted number outside CORRECTIONS/DOSSIER; no em dashes in docs (II.3);
+  README has the affiliation disclaimer; name consilience-ledger.
 
-## NEXT (after Checkpoint 2 sign-off): Phases 10-11 end-to-end on a labeled synthetic fork (CC-22) +
-OERSIM (dataset available), discovery report, Module D reconciliation, then Phase 12 final package.
+Writeback correction standing: 0 confirmed, 0 contradicted, 9 not_comparable (CONTRADICTION_DOSSIER.md,
+CORRECTIONS.md). Checkpoint 1 resolved (Anu triage applied).
 
-## Status tags: phase-1..phase-9 all tagged. Tests 70 green. make reproduce byte-identical.
+## STOP POINT: full build done. PUBLISHING HELD pending Anu's push approval. No remote exists yet;
+the repo is local-only. Exact push commands are in the final summary; do not push without approval
+(D15: never push unless asked). Runtime inputs for a fresh session: source $HOME/oii-sprint/.env for
+keys; HELAO_DATASET + LILA_OER_DATA_DIR point at the helao checkout and upstream/lila_oer_manuscript/data.
+
+## Status tags: phase-1 .. phase-12 all tagged. Tests 73 green. make reproduce byte-identical.

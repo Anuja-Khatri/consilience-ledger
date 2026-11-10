@@ -31,7 +31,7 @@ Its state-equivalency rules are the published ancestor of this veto.
   A/cm^2 variants, umol/cm^2, mg/cm^2, mol/L. These are locked in rules.lock via the
   rules file `canonical` block.
 
-## CR5 (protocol_tier) — v1 CANDIDATE, NOT added in v0
+## CR5 (protocol_tier) - v1 CANDIDATE, NOT added in v0
 A CR5 that makes a screening tier and a long-term tier never comparable matches Lila's
 own "comparative, not absolute" framing. It is NOT added in v0: the stated rate for
 protocol_tier is 0.00, so adding CR5 now would make every pair `condition_unstated` and

@@ -1,4 +1,4 @@
-# CHECKPOINT 1 (end of Phase 3) — for Anu, batched, non-interactive
+# CHECKPOINT 1 (end of Phase 3) - for Anu, batched, non-interactive
 
 This is the first of the two human checkpoints (II.1). It is the product's advertised
 integrity mechanism, not an interruption. Review in one sitting; downstream phases wait
