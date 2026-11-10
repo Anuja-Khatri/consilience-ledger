@@ -38,3 +38,11 @@ Known limits, recorded as they arise (spec II.3, Phase 7 formalizes this).
 - Auto-agreement across the two model families on the full card is 0 for the pilot, so
   every extracted claim goes to the review queue for Anu (Checkpoint 1). Agreement is the
   auto-accept signal, not a requirement for a claim to be approvable.
+- Ledger (Phase 4): over the 34 approved claims, zero numeric forks survived the
+  conditions veto. All 561 pairings are vetoes: 515 axis_mismatch (claims report
+  different observables, CC-13), 149 condition_unstated (electrolyte/current-density often
+  not in the result sentence), 3 condition_mismatch. This is the expected outcome (CC-21):
+  the veto table is the headline result. Per CC-22, this is still a publishable Stage 1
+  (ledger, vetoes, corroborations, verdicts, baseline). There are no mechanism claims in
+  the approved set, so no mechanism-level fork either; Stage 3 (Phase 10) therefore runs
+  on a clearly-labeled synthetic worked example, not a real ledger fork.

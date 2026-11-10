@@ -15,7 +15,10 @@ schemas:
 lock:
 	$(PY) -m labext.lock
 
-# Regenerate the deterministic artifacts and verify the suite. Grows to regenerate
-# the full ledger in later phases; must stay byte-identical (spec IV.5).
-reproduce: schemas lock test
-	@echo "reproduce OK: schemas + rules.lock regenerated, tests green"
+ledger:
+	$(PY) -m labext.ledger
+
+# Regenerate the deterministic artifacts and verify the suite. The ledger hash must
+# stay byte-identical from the approved cards + rules.lock + code version (spec IV.5).
+reproduce: schemas lock ledger test
+	@echo "reproduce OK: schemas + rules.lock + ledger regenerated, tests green"
