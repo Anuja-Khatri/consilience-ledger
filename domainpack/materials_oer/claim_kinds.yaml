@@ -1,0 +1,10 @@
+version: materials_oer-v0
+# Materials-OER claim kinds (union with the engine's v1 kinds, which remain valid).
+claim_kinds:
+  performance_value: A measured performance number, e.g. overpotential at a current density.
+  stability_value: A measured durability number (hours to threshold, percent retention, molar loss).
+  synthesis_claim: A claim about how a material was made.
+  mechanism: A causal or mechanistic claim; compared on the structural judge path only (CC-14).
+# physical_scale values used by this pack (subset of the engine enum).
+physical_scales:
+  - molecular

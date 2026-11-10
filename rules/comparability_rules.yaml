@@ -1,0 +1,34 @@
+version: comparability-v0
+# Default-deny comparability rules (spec IV.2). A pair of overpotential/stability
+# claims is comparable only if EVERY rule's field is stated on both claims AND the
+# predicate passes. Any unstated required field -> condition_unstated(field); any
+# failed predicate -> condition_mismatch(rule_id).
+#
+# PROVISIONAL (v0). These are the structural rules needed to wire and test the veto.
+# The sourced, page-cited rule set is drafted in Phase 3 from rules/SOURCES.md
+# (ESAMP ESI; refs 4, 27, 15, 16). See OPEN_QUESTIONS.md.
+rules:
+  - id: CR1
+    fields: [electrolyte]
+    predicate: identity_and_concentration_equal
+    plain_english: Two claims are comparable only in the same electrolyte at the same concentration.
+    rationale: Electrolyte identity and concentration set the reaction environment; ESAMP state-equivalency groups by them.
+    source: "PROVISIONAL; to be cited from ESAMP Digital Discovery 2023 Fig 5 dataset C and ref 4 (Wei 2023) in Phase 3"
+  - id: CR2
+    fields: [current_density]
+    predicate: {name: equal_within, params: {tolerance: 0}}
+    plain_english: Overpotentials are comparable only at the same current density and the same normalisation (geometric vs ECSA).
+    rationale: Overpotential is reported at a current density; ECSA- and geometric-normalised densities are not interchangeable (CC-06).
+    source: "PROVISIONAL; ESAMP overpotential-at-current-density definition; Phase 3"
+  - id: CR3
+    fields: [temperature]
+    predicate: {name: temperature_equal, params: {tolerance: 0}}
+    plain_english: Claims are comparable only at the same temperature; room_temperature matches room_temperature only.
+    rationale: Temperature shifts kinetics; room_temperature is an enum, never a number (D10, CC-12).
+    source: "PROVISIONAL; Phase 3"
+  - id: CR4
+    fields: [ir_correction]
+    predicate: enum_equal
+    plain_english: Claims are comparable only if both are iR-corrected or both are not.
+    rationale: iR correction changes the reported overpotential materially; mixing corrected and uncorrected values is not comparable.
+    source: "PROVISIONAL; ref 27 (Hochfilzer 2023) protocol discussion; Phase 3"

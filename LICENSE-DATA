@@ -1,0 +1,18 @@
+Creative Commons Attribution 4.0 International (CC BY 4.0)
+
+Copyright (c) 2026 Anuja Khatri
+
+The data files and rendered reports produced by this repository are licensed
+under the Creative Commons Attribution 4.0 International License (D2).
+
+You are free to share and adapt this material for any purpose, including
+commercially, provided you give appropriate credit, provide a link to the
+license, and indicate if changes were made.
+
+License deed:  https://creativecommons.org/licenses/by/4.0/
+Legal code:    https://creativecommons.org/licenses/by/4.0/legalcode
+
+The code in this repository is licensed separately under the MIT License;
+see LICENSE. Lila Sciences manuscript data (upstream lila_oer_manuscript, data
+directory, CC BY 4.0) is NOT redistributed here; it is loaded at runtime from a
+user-provided checkout and cited by row index and sha (CC-28, Anu ruling OQ-3).

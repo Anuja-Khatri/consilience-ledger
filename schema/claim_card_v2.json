@@ -1,0 +1,500 @@
+{
+  "$defs": {
+    "AnnealValue": {
+      "additionalProperties": false,
+      "properties": {
+        "unit": {
+          "default": "degC",
+          "title": "Unit",
+          "type": "string"
+        },
+        "value": {
+          "title": "Value",
+          "type": "number"
+        }
+      },
+      "required": [
+        "value"
+      ],
+      "title": "AnnealValue",
+      "type": "object"
+    },
+    "CausalDirection": {
+      "enum": [
+        "causes",
+        "caused_by",
+        "bidirectional",
+        "independent"
+      ],
+      "title": "CausalDirection",
+      "type": "string"
+    },
+    "ClaimKind": {
+      "enum": [
+        "location",
+        "timing",
+        "architecture",
+        "mechanism",
+        "computability",
+        "substrate",
+        "measurement",
+        "scale",
+        "boundary",
+        "performance_value",
+        "stability_value",
+        "synthesis_claim"
+      ],
+      "title": "ClaimKind",
+      "type": "string"
+    },
+    "CommitmentDirection": {
+      "enum": [
+        "asserts",
+        "denies"
+      ],
+      "title": "CommitmentDirection",
+      "type": "string"
+    },
+    "Concentration": {
+      "additionalProperties": false,
+      "properties": {
+        "unit": {
+          "title": "Unit",
+          "type": "string"
+        },
+        "value": {
+          "title": "Value",
+          "type": "number"
+        }
+      },
+      "required": [
+        "value",
+        "unit"
+      ],
+      "title": "Concentration",
+      "type": "object"
+    },
+    "Conditions": {
+      "additionalProperties": false,
+      "description": "Exactly ten keys (IV.1). Each is a typed value or the literal 'unstated'.",
+      "properties": {
+        "anneal_temperature": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/AnnealValue"
+            },
+            {
+              "enum": [
+                "as_deposited",
+                "unstated"
+              ],
+              "type": "string"
+            }
+          ],
+          "default": "unstated",
+          "title": "Anneal Temperature"
+        },
+        "current_density": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/CurrentDensity"
+            },
+            {
+              "const": "unstated",
+              "type": "string"
+            }
+          ],
+          "default": "unstated",
+          "title": "Current Density"
+        },
+        "electrolyte": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Electrolyte"
+            },
+            {
+              "const": "unstated",
+              "type": "string"
+            }
+          ],
+          "default": "unstated",
+          "title": "Electrolyte"
+        },
+        "ir_correction": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "const": "unstated",
+              "type": "string"
+            }
+          ],
+          "default": "unstated",
+          "title": "Ir Correction"
+        },
+        "loading": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Loading"
+            },
+            {
+              "const": "unstated",
+              "type": "string"
+            }
+          ],
+          "default": "unstated",
+          "title": "Loading"
+        },
+        "ph": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "const": "unstated",
+              "type": "string"
+            }
+          ],
+          "default": "unstated",
+          "title": "Ph"
+        },
+        "prior_operation_duration": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/DurationValue"
+            },
+            {
+              "const": "unstated",
+              "type": "string"
+            }
+          ],
+          "default": "unstated",
+          "title": "Prior Operation Duration"
+        },
+        "protocol_tier": {
+          "default": "unstated",
+          "enum": [
+            "ht_screen",
+            "medium_term",
+            "long_term",
+            "other_stated",
+            "unstated"
+          ],
+          "title": "Protocol Tier",
+          "type": "string"
+        },
+        "substrate": {
+          "default": "unstated",
+          "title": "Substrate",
+          "type": "string"
+        },
+        "temperature": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/TempValue"
+            },
+            {
+              "enum": [
+                "room_temperature",
+                "unstated"
+              ],
+              "type": "string"
+            }
+          ],
+          "default": "unstated",
+          "title": "Temperature"
+        }
+      },
+      "title": "Conditions",
+      "type": "object"
+    },
+    "CurrentDensity": {
+      "additionalProperties": false,
+      "properties": {
+        "normalization": {
+          "default": "unstated",
+          "enum": [
+            "geometric",
+            "ecsa",
+            "unstated"
+          ],
+          "title": "Normalization",
+          "type": "string"
+        },
+        "unit": {
+          "default": "mA/cm^2",
+          "title": "Unit",
+          "type": "string"
+        },
+        "value": {
+          "title": "Value",
+          "type": "number"
+        }
+      },
+      "required": [
+        "value"
+      ],
+      "title": "CurrentDensity",
+      "type": "object"
+    },
+    "DurationValue": {
+      "additionalProperties": false,
+      "properties": {
+        "unit": {
+          "default": "h",
+          "title": "Unit",
+          "type": "string"
+        },
+        "value": {
+          "title": "Value",
+          "type": "number"
+        }
+      },
+      "required": [
+        "value"
+      ],
+      "title": "DurationValue",
+      "type": "object"
+    },
+    "Electrolyte": {
+      "additionalProperties": false,
+      "properties": {
+        "concentration": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Concentration"
+            },
+            {
+              "const": "unstated",
+              "type": "string"
+            }
+          ],
+          "default": "unstated",
+          "title": "Concentration"
+        },
+        "identity": {
+          "title": "Identity",
+          "type": "string"
+        }
+      },
+      "required": [
+        "identity"
+      ],
+      "title": "Electrolyte",
+      "type": "object"
+    },
+    "Loading": {
+      "additionalProperties": false,
+      "properties": {
+        "unit": {
+          "title": "Unit",
+          "type": "string"
+        },
+        "value": {
+          "title": "Value",
+          "type": "number"
+        }
+      },
+      "required": [
+        "value",
+        "unit"
+      ],
+      "title": "Loading",
+      "type": "object"
+    },
+    "Measurability": {
+      "enum": [
+        "measurable_now",
+        "measurable_under_assumption",
+        "not_measurable"
+      ],
+      "title": "Measurability",
+      "type": "string"
+    },
+    "Quantity": {
+      "additionalProperties": false,
+      "properties": {
+        "bound": {
+          "default": "exact",
+          "enum": [
+            "exact",
+            "upper",
+            "lower",
+            "approx"
+          ],
+          "title": "Bound",
+          "type": "string"
+        },
+        "uncertainty": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Uncertainty"
+        },
+        "uncertainty_kind": {
+          "default": "none_stated",
+          "enum": [
+            "stated_sd",
+            "stated_range",
+            "none_stated"
+          ],
+          "title": "Uncertainty Kind",
+          "type": "string"
+        },
+        "unit": {
+          "title": "Unit",
+          "type": "string"
+        },
+        "value": {
+          "title": "Value",
+          "type": "number"
+        }
+      },
+      "required": [
+        "value",
+        "unit"
+      ],
+      "title": "Quantity",
+      "type": "object"
+    },
+    "TempValue": {
+      "additionalProperties": false,
+      "properties": {
+        "unit": {
+          "default": "degC",
+          "title": "Unit",
+          "type": "string"
+        },
+        "value": {
+          "title": "Value",
+          "type": "number"
+        }
+      },
+      "required": [
+        "value"
+      ],
+      "title": "TempValue",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "axis": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Axis"
+    },
+    "causal_direction": {
+      "$ref": "#/$defs/CausalDirection"
+    },
+    "claim_id": {
+      "title": "Claim Id",
+      "type": "string"
+    },
+    "claim_kind": {
+      "$ref": "#/$defs/ClaimKind"
+    },
+    "commitment_direction": {
+      "$ref": "#/$defs/CommitmentDirection"
+    },
+    "conditions": {
+      "$ref": "#/$defs/Conditions"
+    },
+    "domain": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Domain"
+    },
+    "measurability": {
+      "$ref": "#/$defs/Measurability"
+    },
+    "measurable_with": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Measurable With"
+    },
+    "object": {
+      "title": "Object",
+      "type": "string"
+    },
+    "physical_scale": {
+      "title": "Physical Scale",
+      "type": "string"
+    },
+    "provenance_hash": {
+      "title": "Provenance Hash",
+      "type": "string"
+    },
+    "quantity": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/Quantity"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null
+    },
+    "relation": {
+      "title": "Relation",
+      "type": "string"
+    },
+    "source_document": {
+      "title": "Source Document",
+      "type": "string"
+    },
+    "source_sentence": {
+      "title": "Source Sentence",
+      "type": "string"
+    },
+    "subject": {
+      "title": "Subject",
+      "type": "string"
+    }
+  },
+  "required": [
+    "claim_id",
+    "claim_kind",
+    "commitment_direction",
+    "causal_direction",
+    "physical_scale",
+    "measurability",
+    "subject",
+    "relation",
+    "object",
+    "source_sentence",
+    "source_document",
+    "provenance_hash"
+  ],
+  "title": "ClaimCard",
+  "type": "object"
+}

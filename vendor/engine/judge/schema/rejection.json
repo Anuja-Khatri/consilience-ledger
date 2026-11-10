@@ -1,0 +1,28 @@
+{
+  "title": "PublishedRejection",
+  "description": "A rejected match with the structural reason it failed",
+  "type": "object",
+  "required": ["pair_id", "claim_a_id", "claim_b_id", "would_have_been_rung", "defect_type", "defect_description", "defect_edge"],
+  "properties": {
+    "pair_id": {"type": "string"},
+    "claim_a_id": {"type": "string"},
+    "claim_b_id": {"type": "string"},
+    "would_have_been_rung": {
+      "type": "integer",
+      "description": "The rung that would have been assigned if the match had passed"
+    },
+    "defect_type": {
+      "type": "string",
+      "enum": ["type_mismatch", "direction_mismatch", "vocabulary_dependence", "provenance_circularity", "insufficient_coverage"],
+      "description": "The category of structural defect"
+    },
+    "defect_description": {
+      "type": "string",
+      "description": "Human-readable description of why the match was rejected"
+    },
+    "defect_edge": {
+      "type": "object",
+      "description": "The specific edge or node where the match broke"
+    }
+  }
+}

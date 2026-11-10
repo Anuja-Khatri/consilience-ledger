@@ -1,0 +1,6 @@
+# Pinned direct dependencies (D1). Python 3.11+. Transitive deps resolve from these.
+pydantic==2.14.3
+networkx==3.7
+Pint==0.26.2
+PyYAML==6.0.3
+pytest==9.2.0

@@ -1,0 +1,52 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "bound": {
+      "default": "exact",
+      "enum": [
+        "exact",
+        "upper",
+        "lower",
+        "approx"
+      ],
+      "title": "Bound",
+      "type": "string"
+    },
+    "uncertainty": {
+      "anyOf": [
+        {
+          "type": "number"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Uncertainty"
+    },
+    "uncertainty_kind": {
+      "default": "none_stated",
+      "enum": [
+        "stated_sd",
+        "stated_range",
+        "none_stated"
+      ],
+      "title": "Uncertainty Kind",
+      "type": "string"
+    },
+    "unit": {
+      "title": "Unit",
+      "type": "string"
+    },
+    "value": {
+      "title": "Value",
+      "type": "number"
+    }
+  },
+  "required": [
+    "value",
+    "unit"
+  ],
+  "title": "Quantity",
+  "type": "object"
+}

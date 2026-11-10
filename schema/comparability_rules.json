@@ -1,0 +1,85 @@
+{
+  "$defs": {
+    "ComparabilityRule": {
+      "additionalProperties": false,
+      "properties": {
+        "fields": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Fields",
+          "type": "array"
+        },
+        "id": {
+          "title": "Id",
+          "type": "string"
+        },
+        "plain_english": {
+          "title": "Plain English",
+          "type": "string"
+        },
+        "predicate": {
+          "$ref": "#/$defs/Predicate"
+        },
+        "rationale": {
+          "default": "",
+          "title": "Rationale",
+          "type": "string"
+        },
+        "source": {
+          "default": "",
+          "title": "Source",
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "fields",
+        "predicate",
+        "plain_english"
+      ],
+      "title": "ComparabilityRule",
+      "type": "object"
+    },
+    "Predicate": {
+      "additionalProperties": false,
+      "description": "A predicate name plus optional params. Accepts a bare string or a mapping\nlike {name: equal_within, tolerance: 0} in YAML.",
+      "properties": {
+        "name": {
+          "title": "Name",
+          "type": "string"
+        },
+        "params": {
+          "additionalProperties": true,
+          "title": "Params",
+          "type": "object"
+        }
+      },
+      "required": [
+        "name"
+      ],
+      "title": "Predicate",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "rules": {
+      "items": {
+        "$ref": "#/$defs/ComparabilityRule"
+      },
+      "title": "Rules",
+      "type": "array"
+    },
+    "version": {
+      "title": "Version",
+      "type": "string"
+    }
+  },
+  "required": [
+    "version",
+    "rules"
+  ],
+  "title": "ComparabilityRules",
+  "type": "object"
+}

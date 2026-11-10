@@ -1,0 +1,34 @@
+{
+  "title": "GradedCorrespondence",
+  "description": "A graded structural correspondence between two typed claim cards",
+  "type": "object",
+  "required": ["pair_id", "claim_a_id", "claim_b_id", "rung", "ceiling", "demarcation", "matched_edges", "unmatched_edges", "equivocation_test_result", "mcs_ratio"],
+  "properties": {
+    "pair_id": {"type": "string"},
+    "claim_a_id": {"type": "string"},
+    "claim_b_id": {"type": "string"},
+    "rung": {
+      "type": "integer",
+      "enum": [1, 2, 3, 4],
+      "description": "1=structural identity, 2=structural analogy, 3=generative analogy, 4=thematic resonance (quarantined)"
+    },
+    "ceiling": {
+      "type": "string",
+      "description": "Machine-readable statement of what this correspondence does NOT license"
+    },
+    "demarcation": {
+      "type": "string",
+      "enum": ["falsifiable", "metaphysical", "unsupported", "contested"]
+    },
+    "matched_edges": {"type": "array", "items": {"type": "object"}},
+    "unmatched_edges": {"type": "array", "items": {"type": "object"}},
+    "equivocation_test_result": {
+      "type": "string",
+      "enum": ["structurally_supported", "vocabulary_dependent", "not_applicable"]
+    },
+    "mcs_ratio": {
+      "type": "number",
+      "description": "Maximum common subgraph ratio (0.0 to 1.0)"
+    }
+  }
+}

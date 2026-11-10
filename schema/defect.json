@@ -1,0 +1,34 @@
+{
+  "$defs": {
+    "DefectType": {
+      "enum": [
+        "type_mismatch",
+        "direction_mismatch",
+        "vocabulary_dependence",
+        "provenance_circularity",
+        "insufficient_coverage",
+        "condition_mismatch",
+        "condition_unstated",
+        "axis_mismatch"
+      ],
+      "title": "DefectType",
+      "type": "string"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "defect_type": {
+      "$ref": "#/$defs/DefectType"
+    },
+    "target": {
+      "title": "Target",
+      "type": "string"
+    }
+  },
+  "required": [
+    "defect_type",
+    "target"
+  ],
+  "title": "Defect",
+  "type": "object"
+}

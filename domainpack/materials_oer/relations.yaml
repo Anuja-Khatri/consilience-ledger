@@ -1,0 +1,7 @@
+version: materials_oer-v0
+relations:
+  has_overpotential: Subject exhibits an overpotential (object) at the stated conditions.
+  retains_activity: Subject retains activity (object) over a stated duration.
+  outperforms: Subject outperforms object on a stated observable.
+  attributed_to: An observed property of the subject is attributed to object (mechanism).
+  dissolves_at: Subject dissolves at a stated rate (object).

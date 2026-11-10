@@ -1,0 +1,74 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "claim_id": {
+      "title": "Claim Id",
+      "type": "string"
+    },
+    "comparison": {
+      "additionalProperties": true,
+      "title": "Comparison",
+      "type": "object"
+    },
+    "computed_at": {
+      "title": "Computed At",
+      "type": "string"
+    },
+    "data_source": {
+      "additionalProperties": true,
+      "title": "Data Source",
+      "type": "object"
+    },
+    "floor_applied": {
+      "title": "Floor Applied",
+      "type": "number"
+    },
+    "map_version": {
+      "title": "Map Version",
+      "type": "string"
+    },
+    "margin": {
+      "anyOf": [
+        {
+          "type": "number"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Margin"
+    },
+    "outcome": {
+      "enum": [
+        "confirmed",
+        "contradicted",
+        "within_floor",
+        "not_comparable"
+      ],
+      "title": "Outcome",
+      "type": "string"
+    },
+    "rules_version": {
+      "title": "Rules Version",
+      "type": "string"
+    },
+    "verdict_id": {
+      "title": "Verdict Id",
+      "type": "string"
+    }
+  },
+  "required": [
+    "verdict_id",
+    "claim_id",
+    "data_source",
+    "comparison",
+    "outcome",
+    "margin",
+    "floor_applied",
+    "rules_version",
+    "map_version",
+    "computed_at"
+  ],
+  "title": "VerdictRecord",
+  "type": "object"
+}

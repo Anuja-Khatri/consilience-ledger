@@ -1,0 +1,28 @@
+{
+  "title": "InstrumentCapabilityEntry",
+  "description": "An entry in the versioned instrument capability map",
+  "type": "object",
+  "required": ["instrument_class", "physical_scale", "observable", "resolution", "map_version"],
+  "properties": {
+    "instrument_class": {
+      "type": "string",
+      "description": "The class of instrument (e.g. fMRI, EEG, MEG, TMS, optogenetics)"
+    },
+    "physical_scale": {
+      "type": "string",
+      "enum": ["quantum", "molecular", "cellular", "neural_circuit", "whole_brain", "behavioural"]
+    },
+    "observable": {
+      "type": "string",
+      "description": "What the instrument measures"
+    },
+    "resolution": {
+      "type": "string",
+      "description": "Spatial and temporal resolution"
+    },
+    "map_version": {
+      "type": "string",
+      "description": "Version of the capability map this entry belongs to"
+    }
+  }
+}

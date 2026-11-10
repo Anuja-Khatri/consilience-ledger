@@ -1,0 +1,288 @@
+{
+  "$defs": {
+    "AnnealValue": {
+      "additionalProperties": false,
+      "properties": {
+        "unit": {
+          "default": "degC",
+          "title": "Unit",
+          "type": "string"
+        },
+        "value": {
+          "title": "Value",
+          "type": "number"
+        }
+      },
+      "required": [
+        "value"
+      ],
+      "title": "AnnealValue",
+      "type": "object"
+    },
+    "Concentration": {
+      "additionalProperties": false,
+      "properties": {
+        "unit": {
+          "title": "Unit",
+          "type": "string"
+        },
+        "value": {
+          "title": "Value",
+          "type": "number"
+        }
+      },
+      "required": [
+        "value",
+        "unit"
+      ],
+      "title": "Concentration",
+      "type": "object"
+    },
+    "CurrentDensity": {
+      "additionalProperties": false,
+      "properties": {
+        "normalization": {
+          "default": "unstated",
+          "enum": [
+            "geometric",
+            "ecsa",
+            "unstated"
+          ],
+          "title": "Normalization",
+          "type": "string"
+        },
+        "unit": {
+          "default": "mA/cm^2",
+          "title": "Unit",
+          "type": "string"
+        },
+        "value": {
+          "title": "Value",
+          "type": "number"
+        }
+      },
+      "required": [
+        "value"
+      ],
+      "title": "CurrentDensity",
+      "type": "object"
+    },
+    "DurationValue": {
+      "additionalProperties": false,
+      "properties": {
+        "unit": {
+          "default": "h",
+          "title": "Unit",
+          "type": "string"
+        },
+        "value": {
+          "title": "Value",
+          "type": "number"
+        }
+      },
+      "required": [
+        "value"
+      ],
+      "title": "DurationValue",
+      "type": "object"
+    },
+    "Electrolyte": {
+      "additionalProperties": false,
+      "properties": {
+        "concentration": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Concentration"
+            },
+            {
+              "const": "unstated",
+              "type": "string"
+            }
+          ],
+          "default": "unstated",
+          "title": "Concentration"
+        },
+        "identity": {
+          "title": "Identity",
+          "type": "string"
+        }
+      },
+      "required": [
+        "identity"
+      ],
+      "title": "Electrolyte",
+      "type": "object"
+    },
+    "Loading": {
+      "additionalProperties": false,
+      "properties": {
+        "unit": {
+          "title": "Unit",
+          "type": "string"
+        },
+        "value": {
+          "title": "Value",
+          "type": "number"
+        }
+      },
+      "required": [
+        "value",
+        "unit"
+      ],
+      "title": "Loading",
+      "type": "object"
+    },
+    "TempValue": {
+      "additionalProperties": false,
+      "properties": {
+        "unit": {
+          "default": "degC",
+          "title": "Unit",
+          "type": "string"
+        },
+        "value": {
+          "title": "Value",
+          "type": "number"
+        }
+      },
+      "required": [
+        "value"
+      ],
+      "title": "TempValue",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "description": "Exactly ten keys (IV.1). Each is a typed value or the literal 'unstated'.",
+  "properties": {
+    "anneal_temperature": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/AnnealValue"
+        },
+        {
+          "enum": [
+            "as_deposited",
+            "unstated"
+          ],
+          "type": "string"
+        }
+      ],
+      "default": "unstated",
+      "title": "Anneal Temperature"
+    },
+    "current_density": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/CurrentDensity"
+        },
+        {
+          "const": "unstated",
+          "type": "string"
+        }
+      ],
+      "default": "unstated",
+      "title": "Current Density"
+    },
+    "electrolyte": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/Electrolyte"
+        },
+        {
+          "const": "unstated",
+          "type": "string"
+        }
+      ],
+      "default": "unstated",
+      "title": "Electrolyte"
+    },
+    "ir_correction": {
+      "anyOf": [
+        {
+          "type": "boolean"
+        },
+        {
+          "const": "unstated",
+          "type": "string"
+        }
+      ],
+      "default": "unstated",
+      "title": "Ir Correction"
+    },
+    "loading": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/Loading"
+        },
+        {
+          "const": "unstated",
+          "type": "string"
+        }
+      ],
+      "default": "unstated",
+      "title": "Loading"
+    },
+    "ph": {
+      "anyOf": [
+        {
+          "type": "number"
+        },
+        {
+          "const": "unstated",
+          "type": "string"
+        }
+      ],
+      "default": "unstated",
+      "title": "Ph"
+    },
+    "prior_operation_duration": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/DurationValue"
+        },
+        {
+          "const": "unstated",
+          "type": "string"
+        }
+      ],
+      "default": "unstated",
+      "title": "Prior Operation Duration"
+    },
+    "protocol_tier": {
+      "default": "unstated",
+      "enum": [
+        "ht_screen",
+        "medium_term",
+        "long_term",
+        "other_stated",
+        "unstated"
+      ],
+      "title": "Protocol Tier",
+      "type": "string"
+    },
+    "substrate": {
+      "default": "unstated",
+      "title": "Substrate",
+      "type": "string"
+    },
+    "temperature": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/TempValue"
+        },
+        {
+          "enum": [
+            "room_temperature",
+            "unstated"
+          ],
+          "type": "string"
+        }
+      ],
+      "default": "unstated",
+      "title": "Temperature"
+    }
+  },
+  "title": "Conditions",
+  "type": "object"
+}

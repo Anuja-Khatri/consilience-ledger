@@ -1,0 +1,16 @@
+version: materials_oer-v0
+# Instrument capability map (spec IV, engine testability lookup / OERSIM capability list).
+# Seeded minimally; expanded in later phases from their SI and ESAMP.
+instruments:
+  - instrument_class: cp_chronopotentiometry
+    physical_scale: molecular
+    observable: overpotential
+    resolution: "1 mV"
+  - instrument_class: rde
+    physical_scale: molecular
+    observable: overpotential
+    resolution: "1 mV"
+  - instrument_class: sfc_icpms
+    physical_scale: molecular
+    observable: dissolution_rate
+    resolution: "ng/cm^2/s"

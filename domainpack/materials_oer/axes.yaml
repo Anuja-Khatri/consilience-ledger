@@ -1,0 +1,36 @@
+version: materials_oer-v0
+# Comparable observables. Two quantity claims may be compared only when their axis
+# ids match (spec IV.1). Different stability metrics are DIFFERENT axes (CC-13):
+# hours-to-threshold, percent retention, and molar loss never meet.
+# canonical_unit is a pint-parseable unit used for margin/floor math, or null when
+# the metric has no single convertible unit (then values are compared as stated).
+axes:
+  overpotential_at_current_density:
+    observable: overpotential
+    canonical_unit: V
+    floor: 0.013            # Lila's stated reproducibility floor, +/-13 mV (arXiv:2609.30133)
+    metric_kind: performance
+  tafel_slope:
+    observable: tafel_slope
+    canonical_unit: null
+    metric_kind: performance
+  mass_activity:
+    observable: mass_activity
+    canonical_unit: A/g
+    metric_kind: performance
+  retention_over_duration:
+    observable: retained_activity
+    canonical_unit: null
+    metric_kind: stability
+  hours_to_threshold:
+    observable: time_to_threshold
+    canonical_unit: h
+    metric_kind: stability
+  percent_retention:
+    observable: percent_retained
+    canonical_unit: null
+    metric_kind: stability
+  molar_loss_rate:
+    observable: dissolution_rate
+    canonical_unit: null
+    metric_kind: stability
