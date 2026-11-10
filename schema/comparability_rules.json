@@ -64,6 +64,11 @@
   },
   "additionalProperties": false,
   "properties": {
+    "canonical": {
+      "additionalProperties": true,
+      "title": "Canonical",
+      "type": "object"
+    },
     "rules": {
       "items": {
         "$ref": "#/$defs/ComparabilityRule"

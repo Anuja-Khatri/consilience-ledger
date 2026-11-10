@@ -73,8 +73,14 @@ def _norm_text(s) -> str:
     return str(s).strip().casefold()
 
 
-def _elec_equal(va: dict, vb: dict) -> bool:
-    if _norm_text(va.get("identity")) != _norm_text(vb.get("identity")):
+def _canon_identity(s, idmap: dict) -> str:
+    key = _norm_text(s)
+    return idmap.get(key, key)
+
+
+def _elec_equal(va: dict, vb: dict, idmap: dict = None) -> bool:
+    idmap = idmap or {}
+    if _canon_identity(va.get("identity"), idmap) != _canon_identity(vb.get("identity"), idmap):
         return False
     ca, cb = va.get("concentration"), vb.get("concentration")
     if ca == UNSTATED or cb == UNSTATED or not isinstance(ca, dict) or not isinstance(cb, dict):
@@ -122,12 +128,13 @@ def _anneal_equal(va, vb, tol: float) -> bool:
     return abs(a - b) <= tol
 
 
-def _predicate_passes(field: str, va, vb, predicate) -> bool:
+def _predicate_passes(field: str, va, vb, predicate, canonical: dict = None) -> bool:
     name = predicate.name
     params = predicate.params or {}
     tol = float(params.get("tolerance", 0))
+    canonical = canonical or {}
     if name == "identity_and_concentration_equal":
-        return _elec_equal(va, vb)
+        return _elec_equal(va, vb, canonical.get("electrolyte_identities", {}))
     if name == "equal_within":
         return _numeric_equal(field, va, vb, tol)
     if name == "enum_equal":
@@ -167,7 +174,7 @@ def evaluate_comparability(cond_a, cond_b, rules: ComparabilityRules = None) -> 
             continue  # cannot evaluate the predicate with an unstated field
         field = rule.fields[0]
         try:
-            ok = _predicate_passes(field, a[field], b[field], rule.predicate)
+            ok = _predicate_passes(field, a[field], b[field], rule.predicate, rules.canonical)
         except UnitError:
             ok = False  # unparseable quantity fails closed -> not comparable
         if not ok:

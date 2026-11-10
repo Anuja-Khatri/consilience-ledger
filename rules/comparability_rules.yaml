@@ -1,4 +1,19 @@
 version: comparability-v0
+# CP1 section 5 (Anu-confirmed): canonical maps locked into v0.
+canonical:
+  # CR1 electrolyte identity equality is by canonical identity, never a string accident.
+  electrolyte_identities:
+    h2so4: sulfuric_acid
+    "sulfuric acid": sulfuric_acid
+    sulphuric_acid: sulfuric_acid
+    hclo4: perchloric_acid
+    "perchloric acid": perchloric_acid
+  # CR2/CR3 units canonicalise through pint after this spelling normalisation (note:
+  # the authoritative alias map is labext/units.UNIT_ALIASES; mirrored here for the lock).
+  unit_canonicalization_note: >
+    Temperature "C" is normalised to degC before pint (pint reads bare C as coulomb);
+    mA/cm^2 and A/cm^2 spelling variants, umol/cm^2, mg/cm^2, and mol/L are normalised
+    before the predicate runs.
 # Default-deny comparability rules (spec IV.2). A pair of overpotential/stability
 # claims is comparable only if EVERY rule's field is stated on both claims AND the
 # predicate passes. Any unstated required field -> condition_unstated(field); any

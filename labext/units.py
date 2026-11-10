@@ -12,6 +12,28 @@ from __future__ import annotations
 
 from vendor.labgate.units import UnitError, _as_quantity
 
+# Unit-spelling canonicalisation (CP1 section 5). Real cards use "C" for Celsius (pint
+# reads C as coulomb), "mA cm-2" variants, etc. Normalise the spelling before pint.
+UNIT_ALIASES = {
+    "c": "degC", "°c": "degC", "degreec": "degC", "celsius": "degC", "degc": "degC",
+    "k": "kelvin",
+    "ma/cm2": "mA/cm^2", "macm-2": "mA/cm^2", "ma/cm^2": "mA/cm^2", "ma*cm-2": "mA/cm^2",
+    "ma/cm²": "mA/cm^2", "macm^-2": "mA/cm^2",
+    "a/cm2": "A/cm^2", "acm-2": "A/cm^2", "a/cm^2": "A/cm^2", "a/cm²": "A/cm^2",
+    "umol/cm2": "umol/cm^2", "umol/cm^2": "umol/cm^2", "µmol/cm2": "umol/cm^2",
+    "mg/cm2": "mg/cm^2", "mg/cm^2": "mg/cm^2",
+    "mol/l": "mol/L", "m": "mol/L", "mv/dec": "mV/decade", "mv/decade": "mV/decade",
+    "mv": "mV", "v": "V", "h": "h", "hour": "h", "hours": "h",
+}
+
+
+def normalize_unit(u):
+    if not isinstance(u, str):
+        return u
+    key = u.strip().lower().replace(" ", "")
+    return UNIT_ALIASES.get(key, u.strip())
+
+
 # dimension name -> canonical unit string (pint-parseable)
 MATERIALS_CANONICAL = {
     "temperature": "degree_Celsius",
@@ -34,6 +56,8 @@ def to_canonical(value, dimension: str) -> float:
     if dimension not in MATERIALS_CANONICAL:
         raise UnitError(f"unknown materials dimension {dimension!r}")
     canon = MATERIALS_CANONICAL[dimension]
+    if isinstance(value, dict) and "unit" in value:
+        value = {**value, "unit": normalize_unit(value["unit"])}
     q = _as_quantity(value)
 
     # bare number -> already in the canonical unit

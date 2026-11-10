@@ -240,6 +240,8 @@ class ComparabilityRules(BaseModel):
     model_config = ConfigDict(extra="forbid")
     version: str
     rules: list[ComparabilityRule]
+    # CP1 section 5: canonical maps locked as part of comparability-v0.
+    canonical: dict = Field(default_factory=dict)
 
 
 # --------------------------------------------------------------------------- #

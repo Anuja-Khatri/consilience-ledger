@@ -13,6 +13,8 @@ from __future__ import annotations
 
 import re
 
+from labext.units import normalize_unit
+
 _BOUND = {
     "lower_bound": "lower", "at_least": "lower", "minimum": "lower", "min": "lower",
     "greater_than": "lower", "upper_bound": "upper", "at_most": "upper", "maximum": "upper",
@@ -55,14 +57,14 @@ def _value_unit(v, default_unit):
         val, unit = _num(v.get("value"))
         if val is None:
             return "unstated"
-        out = {"value": val, "unit": str(v.get("unit") or unit or default_unit)}
+        out = {"value": val, "unit": normalize_unit(str(v.get("unit") or unit or default_unit))}
         if "normalization" in v:
             out["normalization"] = v["normalization"]
         return out
     val, unit = _num(v)
     if val is None:
         return "unstated"
-    return {"value": val, "unit": unit or default_unit}
+    return {"value": val, "unit": normalize_unit(unit or default_unit)}
 
 
 def _repair_conditions(cond: dict) -> dict:
@@ -141,7 +143,7 @@ def repair_raw_card(raw: dict, paper_id: str) -> dict:
             if not q.get("unit") and unit:
                 q["unit"] = unit
         if q.get("unit") is not None:
-            q["unit"] = str(q["unit"]).strip()
+            q["unit"] = normalize_unit(str(q["unit"]).strip())
         q["bound"] = _BOUND.get(str(q.get("bound", "exact")).lower().strip(), "exact")
         if q.get("uncertainty_kind") not in _UNC:
             q["uncertainty_kind"] = "none_stated"

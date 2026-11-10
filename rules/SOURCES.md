@@ -22,6 +22,23 @@ Its state-equivalency rules are the published ancestor of this veto.
   stated current densities in acid with iR-correction status, and stability metrics.
 - ref 40 Peng 2023 (National Science Review, OA), downloaded and ingested.
 
+## comparability-v0 locked (Checkpoint 1, Anu-confirmed)
+- CR1-CR4 confirmed as comparability-v0.
+- CR1 uses a canonical electrolyte identity list (H2SO4 = sulfuric_acid; HClO4 =
+  perchloric_acid), so identity equality is never a string accident.
+- CR2/CR3 units canonicalise through pint after spelling normalisation
+  (labext/units.UNIT_ALIASES): "C" -> degC (pint reads bare C as coulomb), mA/cm^2 and
+  A/cm^2 variants, umol/cm^2, mg/cm^2, mol/L. These are locked in rules.lock via the
+  rules file `canonical` block.
+
+## CR5 (protocol_tier) — v1 CANDIDATE, NOT added in v0
+A CR5 that makes a screening tier and a long-term tier never comparable matches Lila's
+own "comparative, not absolute" framing. It is NOT added in v0: the stated rate for
+protocol_tier is 0.00, so adding CR5 now would make every pair `condition_unstated` and
+the ledger 100% veto. Logged here as a sourced candidate for comparability-v1, to be
+added once protocol tier is reliably extracted. Source basis: Lila's screening data is
+explicitly comparative (arXiv:2609.30133 SI); ESAMP state-equivalency.
+
 ## Pending downloads for Phase 3 sourcing (III.4.4)
 - ESAMP ESI (RSC, open access) for the state-equivalency parameter list and tolerances.
 - refs 4 (Wei 2023 ACS Catal), 27 (Hochfilzer 2023 ACS Energy Lett), 15, 16: attempt OA;

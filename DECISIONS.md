@@ -22,3 +22,18 @@ and corner cases. Standing rulings from Anu are in OPEN_QUESTIONS.md.
 - CC-14: no conditions veto on non-quantitative (mechanism) pairs; those take the
   structural judge path.
 - rules v0 is PROVISIONAL (sources finalized Phase 3). Hash-locked in rules.lock.
+
+## Checkpoint 1 (human gate, resolved 2026-11-10)
+- The 72-claim review queue and the comparability rules were decided by Anu via a
+  Claude-drafted triage (`CP1-TRIAGE.md`, copied into the repo). The recommendations were
+  drafted by Claude against sentence-level evidence; the decisions and any overrides are
+  Anu's. This is the project's disclosed method (the human gate is the advertised
+  integrity mechanism), applied here. Overrides at approval: NONE (the three scope calls
+  2609_022, ref40_030, ref40_031 default to reject per the triage).
+- Applied autonomously: `labext/apply_cp1.py` ticked each verdict box and wrote corrected
+  cards per batch rules BR1-BR7; `labext/extraction/apply_review.py` read the ticked
+  verdicts into 34 approved claim cards (BR1 regenerated every id; no few-shot id survives)
+  at `extraction/approved_cards.jsonl`. 38 claims rejected.
+- comparability-v0 locked (section 5): CR1 canonical electrolyte list, CR2/CR3 pint unit
+  canonicalisation (C -> degC, mA/cm^2 variants). CR5 (protocol_tier) logged as a v1
+  candidate only (adding it in v0 would make the ledger 100% veto; stated rate 0.00).
