@@ -1,0 +1,34 @@
+{
+  "original_text": "Its endurance traces to an operando-formed needle-like nanostructure; the additive elements promote a nanostructure that stabilizes Pd against corrosion.",
+  "structural_pattern": "a structure whose stability is produced by a self-reinforcing reorganization under load, rather than by static composition",
+  "kept_terms": [
+    "endurance",
+    "traces",
+    "formed",
+    "needle",
+    "like",
+    "additive",
+    "elements",
+    "promote",
+    "stabilizes",
+    "against",
+    "corrosion"
+  ],
+  "search_queries": [
+    "a structure whose stability is produced by a self-reinforcing reorganization under load, rather than by static composition in dynamical systems",
+    "a structure whose stability is produced by a self-reinforcing reorganization under load, rather than by static composition in self-organization",
+    "a structure whose stability is produced by a self-reinforcing reorganization under load, rather than by static composition in developmental biology",
+    "a structure whose stability is produced by a self-reinforcing reorganization under load, rather than by static composition in fracture mechanics",
+    "a structure whose stability is produced by a self-reinforcing reorganization under load, rather than by static composition in glass physics",
+    "a structure whose stability is produced by a self-reinforcing reorganization under load, rather than by static composition in network theory",
+    "self-stabilizing reorganization under operating stress endurance traces formed needle like additive elements promote stabilizes against corrosion"
+  ],
+  "target_domains": [
+    "dynamical systems",
+    "self-organization",
+    "developmental biology",
+    "fracture mechanics",
+    "glass physics",
+    "network theory"
+  ]
+}

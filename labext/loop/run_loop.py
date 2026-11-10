@@ -78,7 +78,7 @@ def _gate(card: ExperimentCard) -> dict:
 def run_loop() -> dict:
     for sub in ["cards", "plans", "dossiers", "runs"]:
         os.makedirs(os.path.join(_LOOP, sub), exist_ok=True)
-    sim = InProcessOERSIM()
+    sim = InProcessOERSIM(dataset_path=_DATASET)
     comps = sim.addressable()
     sha = _dataset_sha()
 

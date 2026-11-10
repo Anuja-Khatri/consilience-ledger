@@ -1,0 +1,32 @@
+[
+  {
+    "abstract": "A joint measurement is presented of the branching fractions $B^0_s\\to\u03bc^+\u03bc^-$ and $B^0\\to\u03bc^+\u03bc^-$ in proton-proton collisions at the LHC by the CMS and LHCb experiments. The data samples were collected in 2011 at a centre-of-mass energy of 7 TeV, and in 2012 at 8 TeV. The combined analysis produces the first observation of the $B^0_s\\to\u03bc^+\u03bc^-$ decay, with a statistical significance exceeding six standard deviations, and the best measurement of its branching fraction so far. Furthermore, evidence for the $B^0\\to\u03bc^+\u03bc^-$ decay is obtained with a statistical significance of three standard deviations. The branching fraction measurements are statistically compatible with SM predictions and impose stringent constraints on several theories beyond the SM.",
+    "id": "http://arxiv.org/abs/1411.4413v2",
+    "source": "arxiv",
+    "title": "Observation of the rare $B^0_s\\to\u03bc^+\u03bc^-$ decay from the combined analysis of CMS and LHCb data"
+  },
+  {
+    "abstract": "A detailed study is presented of the expected performance of the ATLAS detector. The reconstruction of tracks, leptons, photons, missing energy and jets is investigated, together with the performance of b-tagging and the trigger. The physics potential for a variety of interesting physics processes, within the Standard Model and beyond, is examined. The study comprises a series of notes based on simulations of the detector and physics processes, with particular emphasis given to the data expected from the first years of operation of the LHC at CERN.",
+    "id": "http://arxiv.org/abs/0901.0512v4",
+    "source": "arxiv",
+    "title": "Expected Performance of the ATLAS Experiment - Detector, Trigger and Physics"
+  },
+  {
+    "abstract": "The discovery of joint sources of high-energy neutrinos and gravitational waves has been a primary target for the LIGO, Virgo, KAGRA, and IceCube observatories. The joint detection of high-energy neutrinos and gravitational waves would provide insight into cosmic processes, from the dynamics of compact object mergers and stellar collapses to the mechanisms driving relativistic outflows. The joint detection of multiple cosmic messengers can also elevate the significance of the common observation even when some or all of the constituent messengers are sub-threshold, i.e. not significant enough to declare their detection individually. Using data from the LIGO, Virgo, and IceCube observatories, including sub-threshold events, we searched for common sources of gravitational waves and high-energy neutrinos during the third observing run of Advanced LIGO and Advanced Virgo detectors. Our search did not identify significant joint sources. We derive constraints on the rate densities of joint sources. Our results constrain the isotropic neutrino emission from gravitational-wave sources for very high values of the total energy emitted in neutrinos (> $10^{52} - 10^{54}$ erg).",
+    "id": "http://arxiv.org/abs/2601.07595v3",
+    "source": "arxiv",
+    "title": "Deep Search for Joint Sources of Gravitational Waves and High-Energy Neutrinos with IceCube During the Third Observing Run of LIGO and Virgo"
+  },
+  {
+    "abstract": "The Gravitational-Wave Transient Catalog (GWTC) is a collection of candidate gravitational-wave transient signals identified and characterized by the LIGO-Virgo-KAGRA Collaboration. Producing the contents of the GWTC from detector data requires complex analysis methods. These comprise techniques to model the signal; identify the transients in the data; evaluate the quality of the data and mitigate possible instrumental issues; infer the parameters of each transient; compare the data with the waveform models for compact binary coalescences; and handle the large amount of results associated with all these different analyses. In this paper, we describe the methods employed to produce the catalog's fourth release, GWTC-4.0, focusing on the analysis of the first part of the fourth observing run of Advanced LIGO, Advanced Virgo and KAGRA.",
+    "id": "http://arxiv.org/abs/2508.18081v3",
+    "source": "arxiv",
+    "title": "GWTC-4.0: Methods for Identifying and Characterizing Gravitational-wave Transients"
+  },
+  {
+    "abstract": "The Advanced LIGO and Advanced Virgo observatories recently discovered gravitational waves from a binary neutron star inspiral. A short gamma-ray burst (GRB) that followed the merger of this binary was also recorded by the Fermi Gamma-ray Burst Monitor (Fermi-GBM), and the Anticoincidence Shield for the Spectrometer for the International Gamma-Ray Astrophysics Laboratory (INTEGRAL), indicating particle acceleration by the source. The precise location of the event was determined by optical detections of emission following the merger. We searched for high-energy neutrinos from the merger in the GeV--EeV energy range using the ANTARES, IceCube, and Pierre Auger Observatories. No neutrinos directionally coincident with the source were detected within $\\pm500$ s around the merger time. Additionally, no MeV neutrino burst signal was detected coincident with the merger. We further carried out an extended search in the direction of the source for high-energy neutrinos within the 14-day period following the merger, but found no evidence of emission. We used these results to probe dissipation mechanisms in relativistic outflows driven by the binary neutron star merger. The non-detection is consistent with model predictions of short GRBs observed at a large off-axis angle.",
+    "id": "http://arxiv.org/abs/1710.05839v2",
+    "source": "arxiv",
+    "title": "Search for High-energy Neutrinos from Binary Neutron Star Merger GW170817 with ANTARES, IceCube, and the Pierre Auger Observatory"
+  }
+]

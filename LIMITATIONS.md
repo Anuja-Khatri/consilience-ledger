@@ -52,6 +52,13 @@ Known limits, recorded as they arise (spec II.3, Phase 7 formalizes this).
   contradict. A future improvement is to read Lila's H-cell electrolyte from their Methods
   and treat it as a stated data-side condition. The earlier screening-tier verdicts were a
   bug, corrected before Checkpoint 2 (CORRECTIONS.md, CONTRADICTION_DOSSIER.md).
+- Discovery (Phase 11): structure-directed search on their closing mechanism claim
+  returned a NULL result (5 candidates, all rung 4 thematic, 0 above rung 3). This is a
+  valid outcome. The v0 vocabulary-stripping emits long natural-language queries, which
+  arXiv (keyword search) matches poorly, and Semantic Scholar rate-limited (4 queries
+  capped), so the candidate pool is small and noisy. A refinement is shorter
+  domain-specific keyword queries and deeper paging. The report is rung-graded with
+  ceilings and states the null plainly (CC-30); no superlatives.
 - Baseline (Phase 6): on a preregistered sample of 60 vetoed pairs, the model call made 4
   comparisons the deterministic veto blocks (2 false disagreements, 2 false agreements) and
   recognised incomparability on the other 56. The model is capable but not exact; the veto
