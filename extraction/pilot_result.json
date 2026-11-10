@@ -1,0 +1,55 @@
+{
+  "auto_agreed": 0,
+  "decision": {
+    "attempt": 1,
+    "decision": "NO-GO",
+    "fully_conditioned": 0,
+    "half_required": 35.0,
+    "min_required": 10,
+    "next_action": "NO-GO: shrink to Pd neighborhood (their paper + refs 39, 40, 11, 12), re-pilot once",
+    "numeric_claims_with_source": 70
+  },
+  "models": [
+    "claude-sonnet-5",
+    "gpt-4.1"
+  ],
+  "numeric_approvable": 70,
+  "per_paper": [
+    {
+      "approvable": 25,
+      "approved": 0,
+      "contested": 25,
+      "id": "2609.30133",
+      "models": {
+        "claude-sonnet-5": 6,
+        "gpt-4.1": 20
+      },
+      "parked": 29,
+      "windows": 30
+    },
+    {
+      "approvable": 45,
+      "approved": 0,
+      "contested": 47,
+      "id": "ref40_peng2023",
+      "models": {
+        "claude-sonnet-5": 26,
+        "gpt-4.1": 25
+      },
+      "parked": 20,
+      "windows": 15
+    }
+  ],
+  "stated_rate": {
+    "anneal_temperature": 0.057,
+    "current_density": 0.629,
+    "electrolyte": 0.529,
+    "ir_correction": 0.029,
+    "loading": 0.029,
+    "ph": 0.0,
+    "prior_operation_duration": 0.257,
+    "protocol_tier": 0.0,
+    "temperature": 0.057
+  },
+  "total_approvable": 70
+}

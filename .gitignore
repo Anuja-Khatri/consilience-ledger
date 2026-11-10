@@ -4,5 +4,6 @@ __pycache__/
 .pytest_cache/
 .env
 .DS_Store
+extraction/pilot_run.log
 # Lila manuscript data is loaded at runtime, never committed (Anu ruling OQ-3 / CC-28).
 writeback/data/

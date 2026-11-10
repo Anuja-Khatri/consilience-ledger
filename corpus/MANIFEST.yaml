@@ -33,6 +33,19 @@ papers:
     access: excluded_inaccessible   # Science paywall (Europe PMC isOpenAccess=N)
     role: pilot_substituted         # D6: ref 42 substituted by their own paper (accessible performance paper)
     access_attempt: "Europe PMC record found, isOpenAccess=N on 2026-11-10."
+  - id: "ref11_wan2024"
+    citation: "Wan et al., Earth-abundant electrocatalysts for acidic oxygen evolution. Nat Catal 7, 1288-1304 (2024)."
+    doi: "10.1038/s41929-024"
+    access: excluded_inaccessible   # Nature Catalysis paywall; review (secondary claims, D8)
+    role: pd_neighborhood_shrink
+    access_attempt: "Paywalled publisher; review paper."
+  - id: "ref12_cherevko2023"
+    citation: "Cherevko, Stabilization of non-noble metal electrocatalysts for acidic OER. Curr Opin Electrochem 38, 101213 (2023)."
+    doi: "10.1016/j.coelec.2023.101213"
+    access: excluded_inaccessible   # Elsevier paywall; review (secondary claims, D8)
+    role: pd_neighborhood_shrink
+    access_attempt: "Paywalled publisher; review paper."
+# D6 pilot outcome: NO-GO twice. Final corpus = their paper (2609.30133) + ref 40 (Peng),
+# the accessible slice of "their paper + refs 39, 40 only". Recorded in PILOT_REPORT.md.
 # Rule-source papers to download in Phase 3 (III.4.4): ESAMP ESI, refs 4, 27, 15, 16.
-# Broader corpus (D5: OER experimental/review refs of 2609.30133) is expanded in Phase 3;
-# most publisher PDFs are paywalled and will be marked excluded_inaccessible (expected, CC-21).
+# Broader D5 corpus is mostly paywalled (excluded_inaccessible); this is expected (CC-21).

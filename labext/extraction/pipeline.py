@@ -17,17 +17,18 @@ from pydantic import ValidationError
 from labext.extraction.backends import ExtractorBackend, MissingKeyError
 from labext.extraction.cache import JsonlCache
 from labext.extraction.canonicalize import align_key, canonical_card
+from labext.extraction.repair import repair_raw_card
 from labext.extraction.review_queue import write_contested
 from labext.schema import ClaimCard
 
 
-def _validate(raw_cards: list[dict]):
+def _validate(raw_cards: list[dict], paper_id: str):
     cards, parked = [], []
     for raw in raw_cards:
         try:
-            cards.append(ClaimCard.model_validate(raw))
+            cards.append(ClaimCard.model_validate(repair_raw_card(raw, paper_id)))
         except ValidationError as exc:
-            parked.append({"raw": raw, "error": str(exc)})
+            parked.append({"raw": raw, "error": str(exc)[:300]})
     return cards, parked
 
 
@@ -64,7 +65,7 @@ def run_paper(
                     except Exception as exc:  # window-level failure: record, continue (CC-16)
                         parked_all.append({"window_error": str(exc)[:160], "model": b.name})
             cache.save(paper_id, b.name, raw)
-        cards, parked = _validate(raw)
+        cards, parked = _validate(raw, paper_id)
         per_model_cards[b.name] = cards
         parked_all.extend(parked)
         model_counts[b.name] = len(cards)
@@ -110,14 +111,25 @@ def run_paper(
 
     review_paths = [write_contested(review_dir, paper_id, i + 1, item) for i, item in enumerate(contested)]
 
+    # Approvable candidate pool: the union of validated cards from both models, deduped
+    # by alignment key (a claim found by both counts once). Agreed + contested are all
+    # candidates Anu could approve; the pilot yield (D6) is measured over this pool.
+    union: dict = {}
+    for cards in per_model_cards.values():
+        for c in cards:
+            union.setdefault(align_key(c), c)
+    validated_union = list(union.values())
+
     return {
         "paper_id": paper_id,
         "approved": [c.model_dump(mode="json") for c in approved],
         "approved_path": approved_path,
+        "validated_union": [c.model_dump(mode="json") for c in validated_union],
         "counts": {
             "approved": len(approved),
             "contested": len(contested),
             "parked": len(parked_all),
+            "approvable": len(validated_union),
             "models": model_counts,
         },
         "review_paths": review_paths,

@@ -20,6 +20,21 @@ Known limits, recorded as they arise (spec II.3, Phase 7 formalizes this).
   refined from their SI when it is available. The incompatible-chemical classes are
   standard public general-safety classes. No dual-use content (CC-31), checked by a
   grep-able denylist test.
-- OERSIM loop (Phase 10): OERSIM replays the real `oer13_cps` dataset via env
-  `HELAO_DATASET`, which is not present on this machine. The loop's end-to-end run is
-  blocked until that dataset (or a path to it) is provided.
+- OERSIM loop (Phase 10): OERSIM replays the real `oer13_cps` dataset. It was located
+  inside the helao-async checkout (`helao/deploy/test/demos/data/oer13_cps.pzstd`), so
+  `HELAO_DATASET` can point there; the loop is no longer blocked on the dataset.
+- Corpus accessibility (real): at launch only openly accessible papers could be
+  downloaded. Accessible: their paper (arXiv:2609.30133) and ref 40 (Peng 2023, NSR, via
+  Europe PMC). Refs 39 (Cherevko, Wiley), 42 (Chong, Science), 11 (Wan, Nat Catal), 12
+  (Cherevko, Curr Opin) are paywalled and `excluded_inaccessible`. The D6 pilot returned
+  NO-GO twice, so the corpus is the minimal accessible slice (their paper + ref 40). This
+  is recorded prominently per D6.
+- iR-correction is stated in ~3% of extracted result sentences (it lives in the Methods,
+  not per-claim). Per-sentence extraction does not propagate a paper-global condition to
+  each claim. Doing so is a candidate future improvement but was not implemented, to
+  avoid inferring unstated conditions (D10) and to avoid softening the pilot (D6). This
+  drives most pairs to veto on `condition_unstated`, which is the expected behaviour
+  (CC-21).
+- Auto-agreement across the two model families on the full card is 0 for the pilot, so
+  every extracted claim goes to the review queue for Anu (Checkpoint 1). Agreement is the
+  auto-accept signal, not a requirement for a claim to be approvable.

@@ -48,6 +48,7 @@ def run_set(papers, max_windows=30) -> dict:
         raise MissingKeyError("need two model backends; export ANTHROPIC_API_KEY (and OPENAI_API_KEY)")
     cache = JsonlCache(_RUNS)
     approved: list[ClaimCard] = []
+    approvable: list[ClaimCard] = []
     per_paper = []
     for spec in papers:
         with open(os.path.join(_CORPUS_TEXT, spec["text"]), encoding="utf-8") as fh:
@@ -57,7 +58,9 @@ def run_set(papers, max_windows=30) -> dict:
         res["counts"]["windows"] = len(windows)
         per_paper.append({"id": spec["id"], **res["counts"]})
         approved.extend(ClaimCard.model_validate(c) for c in res["approved"])
-    return {"approved": approved, "per_paper": per_paper, "models": [b.name for b in backends]}
+        approvable.extend(ClaimCard.model_validate(c) for c in res["validated_union"])
+    return {"approved": approved, "approvable": approvable, "per_paper": per_paper,
+            "models": [b.name for b in backends]}
 
 
 def _stated_rate_table(numeric: list[ClaimCard]) -> dict:
@@ -67,15 +70,16 @@ def _stated_rate_table(numeric: list[ClaimCard]) -> dict:
 
 def run_pilot() -> dict:
     out = run_set(PILOT_PAPERS)
-    approved = out["approved"]
-    numeric = [c for c in approved if c.claim_kind in QUANTITY_KINDS and c.quantity]
-    decision = decide_pilot(approved, attempt=1)
+    approvable = out["approvable"]  # D6 "approvable" = all validated candidate claims
+    numeric = [c for c in approvable if c.claim_kind in QUANTITY_KINDS and c.quantity]
+    decision = decide_pilot(approvable, attempt=1)
     result = {
         "decision": decision,
         "models": out["models"],
         "per_paper": out["per_paper"],
-        "total_approved": len(approved),
-        "numeric_approved": len(numeric),
+        "total_approvable": len(approvable),
+        "auto_agreed": len(out["approved"]),
+        "numeric_approvable": len(numeric),
         "stated_rate": _stated_rate_table(numeric),
     }
     with open(os.path.join(_REPO, "extraction", "pilot_result.json"), "w") as fh:
