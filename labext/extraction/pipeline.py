@@ -14,7 +14,7 @@ from collections import defaultdict
 
 from pydantic import ValidationError
 
-from labext.extraction.backends import ExtractorBackend
+from labext.extraction.backends import ExtractorBackend, MissingKeyError
 from labext.extraction.cache import JsonlCache
 from labext.extraction.canonicalize import align_key, canonical_card
 from labext.extraction.review_queue import write_contested
@@ -57,7 +57,12 @@ def run_paper(
             else:
                 raw = []
                 for w in windows:
-                    raw.extend(b.extract(w))
+                    try:
+                        raw.extend(b.extract(w))
+                    except MissingKeyError:
+                        raise
+                    except Exception as exc:  # window-level failure: record, continue (CC-16)
+                        parked_all.append({"window_error": str(exc)[:160], "model": b.name})
             cache.save(paper_id, b.name, raw)
         cards, parked = _validate(raw)
         per_model_cards[b.name] = cards

@@ -58,17 +58,61 @@ class ExtractorBackend:
         raise NotImplementedError
 
 
+def _salvage_objects(s: str) -> list[dict]:
+    """Extract top-level {...} JSON objects by brace matching; skip any that fail to
+    parse (e.g. a truncated trailing object). Tolerates max_tokens truncation."""
+    out = []
+    depth = 0
+    start = None
+    in_str = False
+    esc = False
+    for i, ch in enumerate(s):
+        if in_str:
+            if esc:
+                esc = False
+            elif ch == "\\":
+                esc = True
+            elif ch == '"':
+                in_str = False
+            continue
+        if ch == '"':
+            in_str = True
+        elif ch == "{":
+            if depth == 0:
+                start = i
+            depth += 1
+        elif ch == "}":
+            if depth > 0:
+                depth -= 1
+                if depth == 0 and start is not None:
+                    try:
+                        out.append(json.loads(s[start : i + 1]))
+                    except Exception:
+                        pass
+                    start = None
+    return out
+
+
 def _parse_cards(text: str) -> list[dict]:
-    """Parse a model reply into a list of card dicts, tolerant of code fences."""
+    """Parse a model reply into a list of card dicts, tolerant of code fences and of
+    max_tokens truncation. Never raises: an unparseable reply yields what can be salvaged."""
     t = text.strip()
     if t.startswith("```"):
-        t = t.split("```", 2)[1]
-        if t.startswith("json"):
-            t = t[4:]
-    start, end = t.find("["), t.rfind("]")
-    if start == -1 or end == -1:
-        return []
-    return json.loads(t[start : end + 1])
+        parts = t.split("```")
+        if len(parts) >= 2:
+            t = parts[1]
+            if t.startswith("json"):
+                t = t[4:]
+    start = t.find("[")
+    end = t.rfind("]")
+    if start != -1 and end > start:
+        try:
+            data = json.loads(t[start : end + 1])
+            return data if isinstance(data, list) else [data]
+        except Exception:
+            pass
+    # fall back to brace-matched salvage of whatever complete objects exist
+    return _salvage_objects(t[start:] if start != -1 else t)
 
 
 class AnthropicBackend(ExtractorBackend):
@@ -85,7 +129,7 @@ class AnthropicBackend(ExtractorBackend):
         payload = _post_json(
             "https://api.anthropic.com/v1/messages",
             {"x-api-key": key, "anthropic-version": "2023-06-01", "content-type": "application/json"},
-            {"model": self.name, "max_tokens": 4096, "system": SYSTEM_PROMPT, "messages": messages},
+            {"model": self.name, "max_tokens": 8192, "system": SYSTEM_PROMPT, "messages": messages},
         )
         text = "".join(block.get("text", "") for block in payload.get("content", []))
         return _parse_cards(text)

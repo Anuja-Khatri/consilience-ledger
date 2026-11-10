@@ -92,6 +92,16 @@ def test_missing_key_raises_and_select_empty(monkeypatch):
         pass
 
 
+def test_parser_salvages_truncated_json():
+    from labext.extraction.backends import _parse_cards
+    # a reply truncated mid-second-object (max_tokens cutoff) must not raise
+    s = '[{"claim_id":"A","x":1}, {"claim_id":"B","source_sentence":"cut off here'
+    cards = _parse_cards(s)
+    assert [c["claim_id"] for c in cards] == ["A"]
+    assert _parse_cards("no json at all") == []
+    assert _parse_cards('```json\n[{"claim_id":"C"}]\n```')[0]["claim_id"] == "C"
+
+
 def test_unparseable_card_is_parked(tmp_path):
     a = MockBackend("model-A", {PAPER: [_card("A1", "IrO2", 0.30), {"garbage": True}]})
     b = MockBackend("model-B", {PAPER: [_card("B1", "IrO2", 0.30)]})
