@@ -13,6 +13,8 @@ from __future__ import annotations
 
 import json
 import os
+import time
+import urllib.error
 import urllib.request
 
 from labext.extraction.prompt import FEWSHOT, SYSTEM_PROMPT, PROMPT_VERSION
@@ -20,6 +22,33 @@ from labext.extraction.prompt import FEWSHOT, SYSTEM_PROMPT, PROMPT_VERSION
 
 class MissingKeyError(RuntimeError):
     """Raised when a backend's API key is not in the environment."""
+
+
+def _post_json(url: str, headers: dict, payload: dict, retries: int = 4) -> dict:
+    """POST JSON with exponential backoff on transient errors (CC-16)."""
+    body = json.dumps(payload).encode()
+    delay = 2.0
+    last = None
+    for attempt in range(retries):
+        try:
+            req = urllib.request.Request(url, data=body, headers=headers)
+            with urllib.request.urlopen(req, timeout=120) as resp:
+                return json.loads(resp.read())
+        except urllib.error.HTTPError as exc:
+            last = exc
+            if exc.code in (429, 500, 502, 503, 529) and attempt < retries - 1:
+                time.sleep(delay)
+                delay *= 2
+                continue
+            raise
+        except (urllib.error.URLError, TimeoutError) as exc:
+            last = exc
+            if attempt < retries - 1:
+                time.sleep(delay)
+                delay *= 2
+                continue
+            raise
+    raise last  # pragma: no cover
 
 
 class ExtractorBackend:
@@ -53,20 +82,11 @@ class AnthropicBackend(ExtractorBackend):
         if not key:
             raise MissingKeyError("ANTHROPIC_API_KEY not set")
         messages = [dict(m) for m in FEWSHOT] + [{"role": "user", "content": f"Passage:\n{paper_text}"}]
-        body = json.dumps(
-            {"model": self.name, "max_tokens": 4096, "system": SYSTEM_PROMPT, "messages": messages}
-        ).encode()
-        req = urllib.request.Request(
+        payload = _post_json(
             "https://api.anthropic.com/v1/messages",
-            data=body,
-            headers={
-                "x-api-key": key,
-                "anthropic-version": "2023-06-01",
-                "content-type": "application/json",
-            },
+            {"x-api-key": key, "anthropic-version": "2023-06-01", "content-type": "application/json"},
+            {"model": self.name, "max_tokens": 4096, "system": SYSTEM_PROMPT, "messages": messages},
         )
-        with urllib.request.urlopen(req) as resp:  # pragma: no cover (needs key)
-            payload = json.loads(resp.read())
         text = "".join(block.get("text", "") for block in payload.get("content", []))
         return _parse_cards(text)
 
@@ -86,14 +106,11 @@ class OpenAIBackend(ExtractorBackend):
             + [dict(m) for m in FEWSHOT]
             + [{"role": "user", "content": f"Passage:\n{paper_text}"}]
         )
-        body = json.dumps({"model": self.name, "messages": messages, "temperature": 0}).encode()
-        req = urllib.request.Request(
+        payload = _post_json(
             "https://api.openai.com/v1/chat/completions",
-            data=body,
-            headers={"authorization": f"Bearer {key}", "content-type": "application/json"},
+            {"authorization": f"Bearer {key}", "content-type": "application/json"},
+            {"model": self.name, "messages": messages, "temperature": 0},
         )
-        with urllib.request.urlopen(req) as resp:  # pragma: no cover (needs key)
-            payload = json.loads(resp.read())
         text = payload["choices"][0]["message"]["content"]
         return _parse_cards(text)
 
@@ -119,9 +136,9 @@ def select_backends() -> list[ExtractorBackend]:
     have_anthropic = bool(os.environ.get("ANTHROPIC_API_KEY"))
     have_openai = bool(os.environ.get("OPENAI_API_KEY"))
     if have_anthropic and have_openai:
-        return [AnthropicBackend("claude-sonnet-4-6"), OpenAIBackend("gpt-4.1")]
+        return [AnthropicBackend("claude-sonnet-5"), OpenAIBackend("gpt-4.1")]
     if have_anthropic:
-        return [AnthropicBackend("claude-sonnet-4-6"), AnthropicBackend("claude-haiku-4-5-20251001")]
+        return [AnthropicBackend("claude-sonnet-5"), AnthropicBackend("claude-haiku-4-5-20251001")]
     return []
 
 

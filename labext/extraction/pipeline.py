@@ -38,7 +38,11 @@ def run_paper(
     cache: JsonlCache,
     approved_dir: str,
     review_dir: str,
+    windows: list[str] | None = None,
 ) -> dict:
+    """Extract a paper with two models and diff. If ``windows`` is given, each model is
+    run per window and the cards concatenated; otherwise the whole text is sent once
+    (used by the mock tests)."""
     if len(backends) != 2:
         raise ValueError("dual-model extraction requires exactly two backends (D3)")
 
@@ -48,7 +52,12 @@ def run_paper(
     for b in backends:
         raw = cache.load(paper_id, b.name)
         if raw is None:
-            raw = b.extract(paper_text)  # may raise MissingKeyError
+            if windows is None:
+                raw = b.extract(paper_text)  # may raise MissingKeyError
+            else:
+                raw = []
+                for w in windows:
+                    raw.extend(b.extract(w))
             cache.save(paper_id, b.name, raw)
         cards, parked = _validate(raw)
         per_model_cards[b.name] = cards

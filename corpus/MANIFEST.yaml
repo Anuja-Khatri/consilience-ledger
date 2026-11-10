@@ -1,0 +1,38 @@
+version: corpus-v0
+# Every paper: id, citation, doi, access status, source, sha of the text used.
+# Accessible = open access and legally downloaded. Paywalled refs are excluded with the
+# access attempt recorded (D16); never scraped, never reconstructed from memory.
+# corpus_in/ was empty at launch; openly accessible papers were downloaded (Anu ruling 4).
+papers:
+  - id: "2609.30133"
+    citation: "Jenewein et al., AI-guided high-throughput discovery of Ir- and Ru-free palladium-oxide catalysts for durable acidic OER (2026)."
+    doi: "arXiv:2609.30133"
+    access: accessible
+    role: their_paper_mandatory   # D5: always included
+    source: "arXiv PDF https://arxiv.org/pdf/2609.30133 (downloaded 2026-11-10)"
+    source_sha256: "b65da46b612bfab908f4b8d18590755426cb7a85f7ec68cb789db44910f68487"
+    text_path: "corpus_in/text/2609.30133.txt"
+    text_sha256: "aaaafb196e6d (see ingest record)"
+  - id: "ref40_peng2023"
+    citation: "Peng et al., Hierarchical palladium catalyst for highly active and stable water oxidation in acidic media. National Science Review 10, nwac108 (2023)."
+    doi: "10.1093/nsr/nwac108"
+    access: accessible
+    role: pilot          # D6 pilot paper, open access
+    source: "Europe PMC fullTextXML PMC10035503 (downloaded 2026-11-10)"
+    text_path: "corpus_in/text/ref40_peng2023.txt"
+    text_sha256: "a6f15c78183c (see ingest record)"
+  - id: "ref39_cherevko2014"
+    citation: "Cherevko et al., Dissolution of Noble Metals during Oxygen Evolution in Acidic Media. ChemCatChem 6, 2219-2223 (2014)."
+    doi: "10.1002/cctc.201402194"
+    access: excluded_inaccessible   # Wiley paywall; not in Europe PMC OA; no OA version located
+    role: pilot
+    access_attempt: "Europe PMC search returned 0 OA results on 2026-11-10; publisher is paywalled."
+  - id: "ref42_chong2023"
+    citation: "Chong et al., La- and Mn-doped cobalt spinel OER catalyst for PEM electrolysis. Science 380, 609-616 (2023)."
+    doi: "10.1126/science.ade1499"
+    access: excluded_inaccessible   # Science paywall (Europe PMC isOpenAccess=N)
+    role: pilot_substituted         # D6: ref 42 substituted by their own paper (accessible performance paper)
+    access_attempt: "Europe PMC record found, isOpenAccess=N on 2026-11-10."
+# Rule-source papers to download in Phase 3 (III.4.4): ESAMP ESI, refs 4, 27, 15, 16.
+# Broader corpus (D5: OER experimental/review refs of 2609.30133) is expanded in Phase 3;
+# most publisher PDFs are paywalled and will be marked excluded_inaccessible (expected, CC-21).
