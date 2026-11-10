@@ -1,0 +1,44 @@
+{
+  "_SYNTHETIC": true,
+  "_disclaimer": "SIM-NOT-CHEMISTRY: OERSIM replays recorded data. A simulated outcome is not a chemical measurement and licenses no chemical claim.",
+  "_experiments_full": [
+    {
+      "experiment_name": "OER_discriminate",
+      "experiment_params": {
+        "fork_id": "SYN1|Ta100|Ni10Ta90",
+        "status": "ready"
+      },
+      "planned_actions": [
+        {
+          "action_name": "measure_cp",
+          "action_params": {
+            "catalyst_a": "SYN1A",
+            "catalyst_b": "SYN1B",
+            "fork_id": "SYN1|Ta100|Ni10Ta90",
+            "observable": "overpotential_at_current_density"
+          },
+          "action_server": {
+            "machine_name": "oersim",
+            "server_name": "CPSIM"
+          }
+        }
+      ]
+    }
+  ],
+  "planned_experiments": [
+    {
+      "experiment_name": "OER_discriminate",
+      "experiment_params": {
+        "fork_id": "SYN1|Ta100|Ni10Ta90",
+        "status": "ready"
+      }
+    }
+  ],
+  "sequence_name": "consilience_fork_SYN1|Ta100|Ni10Ta90",
+  "sequence_params": {
+    "discriminating_power": "strong",
+    "fork_id": "SYN1|Ta100|Ni10Ta90",
+    "helao_pin": "ba910c4",
+    "status": "ready"
+  }
+}

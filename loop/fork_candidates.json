@@ -1,0 +1,18 @@
+[
+  {
+    "axis": "overpotential_at_current_density",
+    "cost_tier": "$10K",
+    "discriminating_power": "strong",
+    "fork_id": "SYN1|Ta100|Ni10Ta90",
+    "instrument": "cp_chronopotentiometry",
+    "predicted_split": 0.0281
+  },
+  {
+    "axis": "overpotential_at_current_density",
+    "cost_tier": "$10K",
+    "discriminating_power": "weak",
+    "fork_id": "SYN2|Ni100|Co10Fe40La50",
+    "instrument": "cp_chronopotentiometry",
+    "predicted_split": 0.0109
+  }
+]

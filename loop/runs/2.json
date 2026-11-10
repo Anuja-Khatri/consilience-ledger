@@ -1,0 +1,60 @@
+{
+  "SYNTHETIC": true,
+  "card_status": "ready",
+  "catalyst_a": {
+    "comp_vec": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      100,
+      0,
+      0,
+      0,
+      0
+    ],
+    "label": "Ni100",
+    "oersim_eta_vrhe": 0.3696
+  },
+  "catalyst_b": {
+    "comp_vec": [
+      0,
+      0,
+      10,
+      0,
+      40,
+      50,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "label": "Co10Fe40La50",
+    "oersim_eta_vrhe": 0.3805
+  },
+  "disclaimer": "SIM-NOT-CHEMISTRY: OERSIM replays recorded data. A simulated outcome is not a chemical measurement and licenses no chemical claim.",
+  "floor_V": 0.013,
+  "fork_id": "SYN2|Ni100|Co10Fe40La50",
+  "gate": {
+    "decision": "PASS",
+    "grade": null,
+    "plan_hash": "3f06ac97629d98620d76606e0124c4f0cab02e6b0e60ae085d3f921e4eeb5788",
+    "reason": "no safety rule fired",
+    "registry_hash": "aa2197d7f5b44268d72f69d6c2f9f9b0cbe411720d6949de28c24ce2c17c0c9b",
+    "rule_id": null,
+    "source": null
+  },
+  "margin_V": 0.0109,
+  "note": "OERSIM replays Lila's recorded data; not a new chemical measurement.",
+  "oersim_dataset": "oer13_cps.pzstd",
+  "oersim_dataset_sha256": "b9e23249ec4367e1a729223a584f74cd08bb98a4f738cbe6fb091c345044cbf0",
+  "outcome": "within_floor",
+  "plan_valid": true
+}

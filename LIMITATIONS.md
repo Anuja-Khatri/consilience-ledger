@@ -20,9 +20,17 @@ Known limits, recorded as they arise (spec II.3, Phase 7 formalizes this).
   refined from their SI when it is available. The incompatible-chemical classes are
   standard public general-safety classes. No dual-use content (CC-31), checked by a
   grep-able denylist test.
-- OERSIM loop (Phase 10): OERSIM replays the real `oer13_cps` dataset. It was located
-  inside the helao-async checkout (`helao/deploy/test/demos/data/oer13_cps.pzstd`), so
-  `HELAO_DATASET` can point there; the loop is no longer blocked on the dataset.
+- OERSIM loop (Phase 10): the loop runs end to end on the REAL OERSIM
+  (`vendor/labgate/sim_ext/oersim.py`) replaying Lila's real `oer13_cps` dataset
+  (`~/lila-gate/helao-async/.../oer13_cps.pzstd`, HELAO_DATASET). Because zero real forks
+  survived (CC-22), the fork is a clearly-labeled SYNTHETIC worked example built from two
+  existing addressable points in the dataset (no composition is proposed). Every loop
+  artifact is labeled SYNTHETIC and carries the SIM-NOT-CHEMISTRY disclaimer; the outcome
+  is a simulation over recorded data, not a new chemical measurement. The gate is the
+  Phase 9 safety screen (typed, no text channel). A card whose instrument OERSIM cannot
+  run gets status plan_only and stops at plan+gate with no faked result (CC-25). Note the
+  oer13_cps composition space is 13 base metals (Ca..Zn), a different space from the
+  Pd/In manuscript systems; the loop demonstrates the machinery, not a Pd result.
 - Corpus accessibility (real): at launch only openly accessible papers could be
   downloaded. Accessible: their paper (arXiv:2609.30133) and ref 40 (Peng 2023, NSR, via
   Europe PMC). Refs 39 (Cherevko, Wiley), 42 (Chong, Science), 11 (Wan, Nat Catal), 12

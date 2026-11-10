@@ -1,0 +1,32 @@
+{
+  "claim_a": "SYN2A",
+  "claim_a_source_sentence": "SYNTHETIC worked example: SYN:Ni100 is claimed to show 0.3696 V overpotential.",
+  "claim_b": "SYN2B",
+  "claim_b_source_sentence": "SYNTHETIC worked example: SYN:Co10Fe40La50 is claimed to show 0.3805 V overpotential.",
+  "discriminating_power": "weak",
+  "estimated_cost": "$10K",
+  "estimated_timeline": "days",
+  "experiment_design": {
+    "control_conditions": "same electrolyte, current density, temperature, and iR-correction as both claims",
+    "discriminating_observable": "overpotential_at_current_density",
+    "hypothesis": "SYN:Ni100 and SYN:Co10Fe40La50 differ in overpotential_at_current_density under the shared conditions.",
+    "instrument": "cp_chronopotentiometry",
+    "instrument_exists": true,
+    "instrument_source": "lab-gate OERSIM (cp chronopotentiometry); replays recorded data",
+    "manipulated_variable": "catalyst identity",
+    "predicted_outcome_if_match_fails": "the two values differ beyond the floor; the disagreement is real",
+    "predicted_outcome_if_match_holds": "the two values agree within the floor; the disagreement dissolves",
+    "protocol_sketch": "Measure overpotential_at_current_density for both catalysts at the shared current density and electrolyte, compare the difference against the 0.013 floor."
+  },
+  "experiment_id": "EXP_SYN2|Ni100|Co10Fe40La50",
+  "falsification": "If the measured overpotential_at_current_density values agree within the floor, the disagreement is not real.",
+  "fork_id": "SYN2|Ni100|Co10Fe40La50",
+  "sources_bridged": [
+    "SYNTHETIC",
+    "SYNTHETIC"
+  ],
+  "structural_bridge": "Both claims are overpotential_at_current_density values under comparable conditions; they disagree by 0.0109.",
+  "title": "Discriminate overpotential_at_current_density: SYN:Ni100 vs SYN:Co10Fe40La50",
+  "value_to_lab": "resolves a published disagreement before spending the lab on it",
+  "who_could_run_this": "an acidic-OER electrochemistry lab (RDE or SFC)"
+}

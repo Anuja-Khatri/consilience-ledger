@@ -1,0 +1,9 @@
+{
+  "SYNTHETIC": true,
+  "card_status": "plan_only",
+  "disclaimer": "SIM-NOT-CHEMISTRY: OERSIM replays recorded data. A simulated outcome is not a chemical measurement and licenses no chemical claim.",
+  "fork_id": "SYN3|plan_only",
+  "note": "instrument synchrotron_xas is not in the OERSIM capability list; stops at plan+gate, no result faked (CC-25).",
+  "outcome": "plan_only",
+  "plan_valid": true
+}

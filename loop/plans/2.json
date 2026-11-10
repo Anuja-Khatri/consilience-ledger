@@ -1,0 +1,44 @@
+{
+  "_SYNTHETIC": true,
+  "_disclaimer": "SIM-NOT-CHEMISTRY: OERSIM replays recorded data. A simulated outcome is not a chemical measurement and licenses no chemical claim.",
+  "_experiments_full": [
+    {
+      "experiment_name": "OER_discriminate",
+      "experiment_params": {
+        "fork_id": "SYN2|Ni100|Co10Fe40La50",
+        "status": "ready"
+      },
+      "planned_actions": [
+        {
+          "action_name": "measure_cp",
+          "action_params": {
+            "catalyst_a": "SYN2A",
+            "catalyst_b": "SYN2B",
+            "fork_id": "SYN2|Ni100|Co10Fe40La50",
+            "observable": "overpotential_at_current_density"
+          },
+          "action_server": {
+            "machine_name": "oersim",
+            "server_name": "CPSIM"
+          }
+        }
+      ]
+    }
+  ],
+  "planned_experiments": [
+    {
+      "experiment_name": "OER_discriminate",
+      "experiment_params": {
+        "fork_id": "SYN2|Ni100|Co10Fe40La50",
+        "status": "ready"
+      }
+    }
+  ],
+  "sequence_name": "consilience_fork_SYN2|Ni100|Co10Fe40La50",
+  "sequence_params": {
+    "discriminating_power": "weak",
+    "fork_id": "SYN2|Ni100|Co10Fe40La50",
+    "helao_pin": "ba910c4",
+    "status": "ready"
+  }
+}
