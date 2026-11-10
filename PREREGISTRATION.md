@@ -31,6 +31,6 @@ ledger hash. This split is stated in README and METHODS.
 
 ## Numbers already computed (descriptive outcomes, not preregistered hypotheses)
 Pilot yield (70 approvable, Phase 2), approved claims (34, Checkpoint 1), ledger counts
-(0 forks, 561 vetoes, Phase 4), verdicts (1 within_floor, 2 contradicted, 6
-not_comparable, Phase 5). These are descriptive results of fixed rules, reported with
-their provenance, not headline hypothesis tests.
+(0 forks, 561 vetoes, Phase 4), verdicts (0 confirmed, 0 contradicted, 9 not_comparable,
+Phase 5, corrected per CORRECTIONS.md). These are descriptive results of fixed rules,
+reported with their provenance, not headline hypothesis tests.

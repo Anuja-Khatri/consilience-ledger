@@ -1,7 +1,10 @@
-# Consilience Lab Extension (working name)
+# consilience-ledger
 
-Work in progress. Not for publication. The public name and final wording are
-decided at Checkpoint 2 (spec II.2, D2).
+**Independent work, not affiliated with or endorsed by Lila Sciences.**
+
+Signed off at Checkpoint 2. License: code MIT (`LICENSE`); data and reports CC-BY-4.0
+(`LICENSE-DATA`). Lila's instrument data is not committed; it is loaded at runtime and
+cited by sha256 and row index (CC-28).
 
 ## What this is
 A deterministic, open hypothesis-comparison engine extended to the published
@@ -24,7 +27,7 @@ claim end-to-end determinism (CC-01).
   writeback; Phase 6 LLM-judge baseline; Phase 7 evaluation discipline; Phase 8 browser +
   this finalisation. Phase 9 safety format. Phases 10-11 scaffolding. Done.
 - The two human checkpoints are the advertised integrity mechanism. Checkpoint 1 is
-  resolved (Anu's decisions applied). Checkpoint 2 (publish sign-off) is pending; nothing
+  resolved (Anu's decisions applied). Checkpoint 2 signed off; publishing is held until the full build is done. Nothing
   is published.
 
 ## Results (numbers from NUMBERS_LOCK.json, each with its n and qualifier, II.3)
