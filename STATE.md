@@ -98,25 +98,38 @@ permanent dual-use denylist (policy.py); TIER_POLICY.md draft (D13). Acceptance 
 zero dual-use grep, deterministic registry hash). Safe default logged: seed bounds use generic public
 values pending their SI (LIMITATIONS.md).
 
-## BUILD PAUSED here: two Anu inputs now gate the remaining work (ruling 2: a true block).
-1. API keys (ANTHROPIC_API_KEY, optionally OPENAI_API_KEY). Unblocks Phase 2 real extraction and the
-   pilot decision, and therefore all of Stage 1 (Phases 3-8) and the discovery judging in Phase 11.
-2. The `oer13_cps` OERSIM dataset (env HELAO_DATASET). Unblocks the Phase 10 loop end-to-end.
+## BOTH earlier blockers RESOLVED (2026-11-10)
+- API keys: available via sourcing `$HOME/oii-sprint/.env` (ruling 1 pattern). Never read into output.
+- OERSIM dataset: `oer13_cps.pzstd` found in the helao checkout
+  (`~/lila-gate/helao-async/helao/deploy/test/demos/data/oer13_cps.pzstd`); set HELAO_DATASET there.
 
-Done so far: Phase 0 (inventory), Phase 1 (tagged phase-1), Phase 2 (code-complete, not tagged,
-blocked on keys), Phase 9 (tagged phase-9). Tests: 39 green. `make reproduce` green.
+## Phase 2 COMPLETE, tagged phase-2 (2026-11-10). Real extraction + D6 pilot.
+- Models claude-sonnet-5 + gpt-4.1. Accessible papers: their paper 2609.30133 + ref 40 Peng (OA).
+  Refs 39/42/11/12 paywalled -> excluded_inaccessible. Added a repair layer (labext/extraction/repair.py)
+  so real model output validates; 70 approvable numeric claims; 72 contested -> review queue; auto-agreed 0.
+- D6 applied, never softened: NO-GO twice (iR-correction stated in ~3% of result sentences, Methods-only),
+  -> minimal corpus (their paper + ref 40). PILOT_REPORT.md has the per-field stated-rate table.
 
-## Remaining UNBLOCKED scaffolding that can still be built without those inputs (next, if continued):
-- Phase 10 partial: port the experiment-card model from miu-demo EXPERIMENT_SPEC.md into a pydantic
-  card (add the explicit `discriminating_power` field, CC-27; check `instrument_exists` vs OERSIM
-  capability list, CC-25 -> plan_only); the card->helao Action/Experiment/Sequence translator
-  validated against a schema generated from helao models (model_json_schema, pydantic v2); the
-  Human Review Dossier renderer; the fork candidate table (csv+json). These build and test on a
-  LABELED SYNTHETIC fork (CC-22). Only the gate->OERSIM->verdict execution waits on input 2.
-- Phase 11 partial: the vocabulary-stripping + arXiv/Semantic Scholar search harness (D12, CC-29,
-  cached, rate-capped) and the Module D reconciliation report template. The judging of found papers
-  and the mechanism-claim input wait on Stage 1 (input 1).
+## Phase 3 COMPLETE -> CHECKPOINT 1 REACHED, tagged phase-3 (2026-11-10). BUILD STOPPED here (ruling 5).
+- Full corpus == minimal accessible corpus (already extracted). Comparability rules v0 drafted with
+  sources (rules/SOURCES.md, rules.lock). CHECKPOINT1.md written for Anu: review-queue index
+  (extraction/review_queue/INDEX.md, 72 items), drafted rules, corpus manifest, honest counts, and
+  exactly what her batch unlocks. Auto-agreed = 0, so there are no AGREED-PROVISIONAL claims to carry
+  into Phase 4; the build correctly waits for her batch.
 
-## BLOCKED until inputs: Phases 3-8 (ledger, writeback, baseline, discipline, render), Phase 10
-end-to-end, Phase 11 discovery judging, Phase 12 final package. Checkpoint 1 (after Phase 3) and
-Checkpoint 2 (after Phase 8) are not reachable until input 1 is provided.
+## STOP POINT: Checkpoint 1. Waiting on Anu's batch (approve/reject the review queue; confirm the rules).
+This is a sanctioned stop (ruling 5: stop at Checkpoint 1). No question is pending; nothing is blocked
+except the human gate.
+
+## NEXT when her batch returns (resume from here):
+1. Build `apply_review` (parse ticked verdicts in extraction/review_queue/*.md -> approved claim cards),
+   mirroring consilience-demo's apply_review. (Deferred; not needed until her batch exists.)
+2. Phase 4: build the ledger over approved claims (forks, graded correspondences, vetoed pairings with
+   named defects), ledger.hash, rendered pages in reports/. Judge + comparability engine already exist
+   (labext/judge.py, labext/comparability.py).
+3. Phase 5 writeback: load upstream/lila_oer_manuscript/data (CC-BY, NOT committed; cite rows by index+sha),
+   compute verdicts under D7 (floor 13 mV). 4. Phase 6 LLM-judge baseline. 5. Phase 7 discipline + fresh
+   materials extraction-stability number. 6. Phase 8 browser + CHECKPOINT 2.
+   Then Phases 10-11 end-to-end (OERSIM unblocked), Phase 12.
+
+## Status tags: phase-1, phase-2, phase-9, phase-3 all tagged. Tests 54 green. make reproduce green.
