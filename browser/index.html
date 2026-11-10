@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Consilience Lab Extension — ledger browser</title>
+<style>
+  :root { color-scheme: light dark; }
+  body { font: 15px/1.5 system-ui, sans-serif; margin: 0; padding: 1.5rem; max-width: 1100px; }
+  h1 { font-size: 1.4rem; } h2 { font-size: 1.1rem; margin-top: 1.5rem; }
+  .muted { opacity: .7; } .pill { display: inline-block; padding: .05rem .5rem; border: 1px solid; border-radius: 1rem; font-size: .8rem; }
+  table { border-collapse: collapse; width: 100%; margin: .5rem 0; }
+  th, td { border: 1px solid #8884; padding: .3rem .5rem; text-align: left; vertical-align: top; font-size: .85rem; }
+  th { position: sticky; top: 0; background: Canvas; }
+  .wrap { overflow-x: auto; } code { font-size: .8rem; }
+  .tabs button { font: inherit; padding: .3rem .8rem; margin-right: .3rem; cursor: pointer; }
+  .tabs button[aria-selected=true] { font-weight: 700; text-decoration: underline; }
+  .note { background: #8881; padding: .6rem .8rem; border-radius: .4rem; }
+</style>
+</head>
+<body>
+  <h1>Consilience Lab Extension — ledger browser</h1>
+  <p class="muted">Static page. Reads <code>../ledger/*.json</code> by relative fetch. No build system.
+     Serve the repo with any local file server, or publish on GitHub Pages.</p>
+  <p class="note">The determinism split (D4): extraction is gated, not deterministic. From approved
+     claim cards onward the ledger is byte-deterministic. Verdicts are computed against Lila's own
+     instrument data, which is loaded at runtime and not committed. Nothing here claims Lila uses,
+     wants, or endorses this work.</p>
+  <p id="summary" class="muted">Loading…</p>
+  <div class="tabs" role="tablist">
+    <button role="tab" data-tab="claims" aria-selected="true">Claims</button>
+    <button role="tab" data-tab="forks">Forks</button>
+    <button role="tab" data-tab="rejections">Vetoes</button>
+    <button role="tab" data-tab="verdicts">Verdicts</button>
+  </div>
+  <div id="view" class="wrap"></div>
+
+<script>
+const BASE = "../ledger/";
+const state = {};
+async function load(name){ try { const r = await fetch(BASE+name); return r.ok ? await r.json() : []; } catch(e){ return []; } }
+
+function table(rows, cols){
+  if(!rows.length) return '<p class="muted">none</p>';
+  let h = '<table><thead><tr>'+cols.map(c=>`<th>${c.label}</th>`).join('')+'</tr></thead><tbody>';
+  for(const row of rows){ h += '<tr>'+cols.map(c=>`<td>${(c.get(row)??'')}`+'</td>').join('')+'</tr>'; }
+  return h+'</tbody></table>';
+}
+const esc = s => String(s==null?'':s).replace(/[&<>]/g, m=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[m]));
+
+const views = {
+  claims: () => table(state.claims, [
+    {label:'id', get:r=>`<code>${esc(r.claim_id)}</code>`},
+    {label:'kind', get:r=>esc(r.claim_kind)},
+    {label:'axis', get:r=>esc(r.axis)},
+    {label:'subject', get:r=>esc(r.subject)},
+    {label:'value', get:r=> r.quantity? esc(r.quantity.value+' '+r.quantity.unit):''},
+    {label:'source sentence', get:r=>esc(r.source_sentence)},
+  ]),
+  forks: () => (state.forks.length? table(state.forks, [
+    {label:'pair', get:r=>`<code>${esc(r.pair_id)}</code>`},
+    {label:'axis', get:r=>esc(r.axis)},
+    {label:'margin', get:r=>esc(r.margin)+' '+esc(r.canonical_unit||'')},
+    {label:'A', get:r=>esc(r.claim_a_sentence)},
+    {label:'B', get:r=>esc(r.claim_b_sentence)},
+  ]) : '<p class="note">No numeric forks survived the conditions veto. That is a valid Stage 1 outcome (CC-22): the veto table below is the headline result.</p>'),
+  rejections: () => table(state.rejections, [
+    {label:'pair', get:r=>`<code>${esc(r.pair_id)}</code>`},
+    {label:'defects', get:r=>esc((r.defects||[]).map(d=>d.defect_type+':'+d.target).join('; '))},
+  ]),
+  verdicts: () => table(state.verdicts, [
+    {label:'verdict', get:r=>`<code>${esc(r.verdict_id)}</code>`},
+    {label:'subject', get:r=>esc(r.claim_subject)},
+    {label:'claim V', get:r=>esc(r.claim_value_V)},
+    {label:'measured best V', get:r=>esc(r.measured_best_V)},
+    {label:'outcome', get:r=>`<span class="pill">${esc(r.outcome)}</span>`},
+  ]),
+};
+
+function show(tab){
+  document.querySelectorAll('[role=tab]').forEach(b=>b.setAttribute('aria-selected', b.dataset.tab===tab));
+  document.getElementById('view').innerHTML = views[tab]();
+}
+document.querySelectorAll('[role=tab]').forEach(b=>b.onclick=()=>show(b.dataset.tab));
+
+(async () => {
+  [state.claims, state.forks, state.rejections, state.verdicts] =
+    await Promise.all(['claims.json','forks.json','rejections.json','verdicts.json'].map(load));
+  const defects = {};
+  for(const r of state.rejections) for(const d of (r.defects||[])) defects[d.defect_type]=(defects[d.defect_type]||0)+1;
+  document.getElementById('summary').textContent =
+    `${state.claims.length} claims · ${state.forks.length} forks · ${state.rejections.length} vetoes `+
+    `(${Object.entries(defects).map(([k,v])=>k+' '+v).join(', ')}) · ${state.verdicts.length} verdicts`;
+  show('claims');
+})();
+</script>
+</body>
+</html>

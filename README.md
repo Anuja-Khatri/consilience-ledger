@@ -18,12 +18,37 @@ deterministic: the same approved cards plus the same rules version produce an
 identical ledger hash. The README and METHODS state this split plainly and never
 claim end-to-end determinism (CC-01).
 
-## Status
-- Phase 0: engine inventory (ENGINE_INVENTORY.md). Done.
-- Phase 1: scaffold, Part IV schemas, vendored judge, pint units (fail-closed),
-  the `conditions_compatible` veto beside the matcher, extended defect enums, and
-  tests for the three condition defects, a true fork, and determinism. Done.
-- Phases 2-12: see STATE.md and the spec.
+## Status (Stage 1 complete through Checkpoint 2; Stage 3 scaffolding in place)
+- Phase 0 inventory; Phase 1 judge + conditions veto; Phase 2 real dual-model extraction
+  + D6 pilot; Phase 3 Checkpoint 1 (Anu's batch applied); Phase 4 ledger; Phase 5
+  writeback; Phase 6 LLM-judge baseline; Phase 7 evaluation discipline; Phase 8 browser +
+  this finalisation. Phase 9 safety format. Phases 10-11 scaffolding. Done.
+- The two human checkpoints are the advertised integrity mechanism. Checkpoint 1 is
+  resolved (Anu's decisions applied). Checkpoint 2 (publish sign-off) is pending; nothing
+  is published.
+
+## Results (numbers from NUMBERS_LOCK.json, each with its n and qualifier, II.3)
+- Judge: 1.0 agreement vs an independent logic program (n=213) and vs SMT (n=311); these
+  are locked Consilience numbers, cited as such.
+- Corpus (real): two accessible papers (their paper and ref 40); the rest paywalled and
+  excluded. The D6 pilot returned NO-GO twice (iR-correction is stated in few result
+  sentences), so the corpus is the minimal accessible slice.
+- Ledger over 34 approved claims: 0 numeric forks, 561 vetoes (515 axis_mismatch, 149
+  condition_unstated, 3 condition_mismatch). The veto table is the headline result: most
+  literature pairs are not comparable, so they are not called disagreements. This is
+  designed to surface exactly that, and it does.
+- Writeback vs Lila's own data (loaded at runtime, not committed): their InMnPdOx claim is
+  reproduced by their own measurement within the floor; the published pure-Pd claims have
+  no comparable Lila measurement and are published vetoes.
+- LLM-judge baseline: on a preregistered sample of 60 vetoed pairs, a model call made 4
+  comparisons the deterministic veto blocks.
+- Fresh materials extraction-stability: 0.423 (n=52, test-retest). This is the materials
+  number, reported fresh; it is not the consciousness-domain 0.25 (different domain and
+  metric).
+
+## Browse
+Open `browser/index.html` from any local file server (it reads `ledger/*.json` by relative
+fetch). Phases and the full method are in STATE.md, METHODS.md, and the spec.
 
 ## Layout
 See the spec Part IV. Code lives in `labext/`; vendored upstream code in `vendor/`
