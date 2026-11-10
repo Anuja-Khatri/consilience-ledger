@@ -14,3 +14,12 @@ Known limits, recorded as they arise (spec II.3, Phase 7 formalizes this).
   on AGREED-PROVISIONAL claims only and are labeled PROVISIONAL.
 - Mechanism (non-quantitative) comparison uses the structural judge path only; the
   conditions veto does not apply to it (CC-14).
+- Safety seed (Phase 9): the instrument protection bounds use generic public values
+  (furnace ceiling, potentiostat compliance, acid budget), not Lila's SI numbers, which
+  are not staged. They are source-labeled as public instrument specifications and are
+  refined from their SI when it is available. The incompatible-chemical classes are
+  standard public general-safety classes. No dual-use content (CC-31), checked by a
+  grep-able denylist test.
+- OERSIM loop (Phase 10): OERSIM replays the real `oer13_cps` dataset via env
+  `HELAO_DATASET`, which is not present on this machine. The loop's end-to-end run is
+  blocked until that dataset (or a path to it) is provided.

@@ -87,13 +87,36 @@ What is blocked: the REAL extraction and the pilot DECISION need a key. All of S
 depends on real extracted claims and is blocked until a key is exported. To unblock: export
 ANTHROPIC_API_KEY (and optionally OPENAI_API_KEY per D3), then re-run Phase 2.
 
-## Next: Phase 9 (safety format, features 13-16) as the unblocked later work (Anu ruling 3).
-Phase 9 needs no extraction and no API: hazard claim kinds + graded claims-backed invariants +
-a rules-to-screen compiler targeting lab-gate's `gate/checker` interface (reference.py evaluate /
-smt.py encode_and_check / certificates.py) and `gate/verdict.decide`; a benign EHS seed (instrument
-bounds from their SI; standard incompatible-chemical classes from public safety references, each
-source-cited); TIER_POLICY.md draft (D13) from section 9c language (grade ladder: established,
-plausible, weakly supported, from lila-hiring-research.md). Acceptance: compiler round-trip
-(registry entry -> screen -> blocks a violating synthetic plan, passes a benign one), no-text-channel
-test, zero dual-use content by a grep-able policy list. Then Phases 10-11 can run only on a labeled
-synthetic fork (CC-22) until Stage 1 is unblocked.
+## Phase 9 COMPLETE (2026-11-10), built out of order as unblocked work. Tagged phase-9.
+`safety_format/`: graded hazard registry (schema.py: bound / forbid_combo, grade ladder
+established|plausible|weakly_supported, source per rule); typed plan boundary with no text channel
+(boundary.py); rules-to-screen compiler with grade+source on every receipt and a registry hash
+(compiler.py, shaped like lab-gate's checker/certificates); benign EHS seed (seed/registry.yaml:
+furnace/potentiostat/acid bounds + standard incompatible-chemical classes, all source-labeled);
+permanent dual-use denylist (policy.py); TIER_POLICY.md draft (D13). Acceptance met: 7 tests green
+(round-trip block/pass, bound + forbid_combo blocks with grade+source, no-text-channel sentinel test,
+zero dual-use grep, deterministic registry hash). Safe default logged: seed bounds use generic public
+values pending their SI (LIMITATIONS.md).
+
+## BUILD PAUSED here: two Anu inputs now gate the remaining work (ruling 2: a true block).
+1. API keys (ANTHROPIC_API_KEY, optionally OPENAI_API_KEY). Unblocks Phase 2 real extraction and the
+   pilot decision, and therefore all of Stage 1 (Phases 3-8) and the discovery judging in Phase 11.
+2. The `oer13_cps` OERSIM dataset (env HELAO_DATASET). Unblocks the Phase 10 loop end-to-end.
+
+Done so far: Phase 0 (inventory), Phase 1 (tagged phase-1), Phase 2 (code-complete, not tagged,
+blocked on keys), Phase 9 (tagged phase-9). Tests: 39 green. `make reproduce` green.
+
+## Remaining UNBLOCKED scaffolding that can still be built without those inputs (next, if continued):
+- Phase 10 partial: port the experiment-card model from miu-demo EXPERIMENT_SPEC.md into a pydantic
+  card (add the explicit `discriminating_power` field, CC-27; check `instrument_exists` vs OERSIM
+  capability list, CC-25 -> plan_only); the card->helao Action/Experiment/Sequence translator
+  validated against a schema generated from helao models (model_json_schema, pydantic v2); the
+  Human Review Dossier renderer; the fork candidate table (csv+json). These build and test on a
+  LABELED SYNTHETIC fork (CC-22). Only the gate->OERSIM->verdict execution waits on input 2.
+- Phase 11 partial: the vocabulary-stripping + arXiv/Semantic Scholar search harness (D12, CC-29,
+  cached, rate-capped) and the Module D reconciliation report template. The judging of found papers
+  and the mechanism-claim input wait on Stage 1 (input 1).
+
+## BLOCKED until inputs: Phases 3-8 (ledger, writeback, baseline, discipline, render), Phase 10
+end-to-end, Phase 11 discovery judging, Phase 12 final package. Checkpoint 1 (after Phase 3) and
+Checkpoint 2 (after Phase 8) are not reachable until input 1 is provided.
