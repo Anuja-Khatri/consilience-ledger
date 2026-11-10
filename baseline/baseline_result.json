@@ -1,0 +1,374 @@
+{
+  "false_agreements_on_vetoed_pairs": 2,
+  "false_disagreements_on_vetoed_pairs": 2,
+  "matrix": {
+    "not_comparable|agree": 2,
+    "not_comparable|disagree": 2,
+    "not_comparable|na": 3,
+    "not_comparable|not_comparable": 53
+  },
+  "n": 60,
+  "rows": [
+    {
+      "category": "condition",
+      "judge": "not_comparable",
+      "model": "not_comparable",
+      "pair_id": "2609.30133__001|2609.30133__002"
+    },
+    {
+      "category": "axis_mismatch",
+      "judge": "not_comparable",
+      "model": "not_comparable",
+      "pair_id": "2609.30133__001|2609.30133__003"
+    },
+    {
+      "category": "axis_mismatch",
+      "judge": "not_comparable",
+      "model": "not_comparable",
+      "pair_id": "2609.30133__001|2609.30133__004"
+    },
+    {
+      "category": "axis_mismatch",
+      "judge": "not_comparable",
+      "model": "not_comparable",
+      "pair_id": "2609.30133__001|2609.30133__005"
+    },
+    {
+      "category": "axis_mismatch",
+      "judge": "not_comparable",
+      "model": "not_comparable",
+      "pair_id": "2609.30133__001|2609.30133__006"
+    },
+    {
+      "category": "axis_mismatch",
+      "judge": "not_comparable",
+      "model": "not_comparable",
+      "pair_id": "2609.30133__001|2609.30133__007"
+    },
+    {
+      "category": "axis_mismatch",
+      "judge": "not_comparable",
+      "model": "not_comparable",
+      "pair_id": "2609.30133__001|2609.30133__010"
+    },
+    {
+      "category": "axis_mismatch",
+      "judge": "not_comparable",
+      "model": "not_comparable",
+      "pair_id": "2609.30133__001|2609.30133__012"
+    },
+    {
+      "category": "axis_mismatch",
+      "judge": "not_comparable",
+      "model": "not_comparable",
+      "pair_id": "2609.30133__001|2609.30133__013"
+    },
+    {
+      "category": "axis_mismatch",
+      "judge": "not_comparable",
+      "model": "not_comparable",
+      "pair_id": "2609.30133__001|2609.30133__014"
+    },
+    {
+      "category": "axis_mismatch",
+      "judge": "not_comparable",
+      "model": "not_comparable",
+      "pair_id": "2609.30133__001|2609.30133__017"
+    },
+    {
+      "category": "axis_mismatch",
+      "judge": "not_comparable",
+      "model": "not_comparable",
+      "pair_id": "2609.30133__001|2609.30133__020"
+    },
+    {
+      "category": "axis_mismatch",
+      "judge": "not_comparable",
+      "model": "not_comparable",
+      "pair_id": "2609.30133__001|2609.30133__021"
+    },
+    {
+      "category": "axis_mismatch",
+      "judge": "not_comparable",
+      "model": "not_comparable",
+      "pair_id": "2609.30133__001|2609.30133__023"
+    },
+    {
+      "category": "axis_mismatch",
+      "judge": "not_comparable",
+      "model": "not_comparable",
+      "pair_id": "2609.30133__001|2609.30133__024"
+    },
+    {
+      "category": "axis_mismatch",
+      "judge": "not_comparable",
+      "model": "not_comparable",
+      "pair_id": "2609.30133__001|ref40_peng2023__002"
+    },
+    {
+      "category": "axis_mismatch",
+      "judge": "not_comparable",
+      "model": "not_comparable",
+      "pair_id": "2609.30133__001|ref40_peng2023__004"
+    },
+    {
+      "category": "axis_mismatch",
+      "judge": "not_comparable",
+      "model": "not_comparable",
+      "pair_id": "2609.30133__001|ref40_peng2023__006"
+    },
+    {
+      "category": "axis_mismatch",
+      "judge": "not_comparable",
+      "model": "not_comparable",
+      "pair_id": "2609.30133__001|ref40_peng2023__009"
+    },
+    {
+      "category": "axis_mismatch",
+      "judge": "not_comparable",
+      "model": "not_comparable",
+      "pair_id": "2609.30133__001|ref40_peng2023__010"
+    },
+    {
+      "category": "axis_mismatch",
+      "judge": "not_comparable",
+      "model": "not_comparable",
+      "pair_id": "2609.30133__001|ref40_peng2023__011"
+    },
+    {
+      "category": "condition",
+      "judge": "not_comparable",
+      "model": "not_comparable",
+      "pair_id": "2609.30133__003|2609.30133__004"
+    },
+    {
+      "category": "condition",
+      "judge": "not_comparable",
+      "model": "na",
+      "pair_id": "2609.30133__003|2609.30133__020"
+    },
+    {
+      "category": "condition",
+      "judge": "not_comparable",
+      "model": "not_comparable",
+      "pair_id": "2609.30133__003|2609.30133__021"
+    },
+    {
+      "category": "condition",
+      "judge": "not_comparable",
+      "model": "agree",
+      "pair_id": "2609.30133__003|2609.30133__023"
+    },
+    {
+      "category": "condition",
+      "judge": "not_comparable",
+      "model": "not_comparable",
+      "pair_id": "2609.30133__003|ref40_peng2023__013"
+    },
+    {
+      "category": "condition",
+      "judge": "not_comparable",
+      "model": "not_comparable",
+      "pair_id": "2609.30133__003|ref40_peng2023__022"
+    },
+    {
+      "category": "condition",
+      "judge": "not_comparable",
+      "model": "not_comparable",
+      "pair_id": "2609.30133__003|ref40_peng2023__033"
+    },
+    {
+      "category": "condition",
+      "judge": "not_comparable",
+      "model": "na",
+      "pair_id": "2609.30133__003|ref40_peng2023__034"
+    },
+    {
+      "category": "condition",
+      "judge": "not_comparable",
+      "model": "na",
+      "pair_id": "2609.30133__004|2609.30133__020"
+    },
+    {
+      "category": "condition",
+      "judge": "not_comparable",
+      "model": "not_comparable",
+      "pair_id": "2609.30133__004|2609.30133__021"
+    },
+    {
+      "category": "condition",
+      "judge": "not_comparable",
+      "model": "not_comparable",
+      "pair_id": "2609.30133__004|2609.30133__023"
+    },
+    {
+      "category": "condition",
+      "judge": "not_comparable",
+      "model": "not_comparable",
+      "pair_id": "2609.30133__004|ref40_peng2023__013"
+    },
+    {
+      "category": "condition",
+      "judge": "not_comparable",
+      "model": "not_comparable",
+      "pair_id": "2609.30133__004|ref40_peng2023__022"
+    },
+    {
+      "category": "condition",
+      "judge": "not_comparable",
+      "model": "not_comparable",
+      "pair_id": "2609.30133__004|ref40_peng2023__033"
+    },
+    {
+      "category": "condition",
+      "judge": "not_comparable",
+      "model": "not_comparable",
+      "pair_id": "2609.30133__004|ref40_peng2023__034"
+    },
+    {
+      "category": "condition",
+      "judge": "not_comparable",
+      "model": "not_comparable",
+      "pair_id": "2609.30133__005|2609.30133__012"
+    },
+    {
+      "category": "condition",
+      "judge": "not_comparable",
+      "model": "not_comparable",
+      "pair_id": "2609.30133__005|2609.30133__013"
+    },
+    {
+      "category": "condition",
+      "judge": "not_comparable",
+      "model": "not_comparable",
+      "pair_id": "2609.30133__006|2609.30133__007"
+    },
+    {
+      "category": "condition",
+      "judge": "not_comparable",
+      "model": "not_comparable",
+      "pair_id": "2609.30133__012|2609.30133__013"
+    },
+    {
+      "category": "condition",
+      "judge": "not_comparable",
+      "model": "not_comparable",
+      "pair_id": "2609.30133__020|2609.30133__021"
+    },
+    {
+      "category": "condition",
+      "judge": "not_comparable",
+      "model": "not_comparable",
+      "pair_id": "2609.30133__020|2609.30133__023"
+    },
+    {
+      "category": "condition",
+      "judge": "not_comparable",
+      "model": "not_comparable",
+      "pair_id": "2609.30133__020|ref40_peng2023__013"
+    },
+    {
+      "category": "condition",
+      "judge": "not_comparable",
+      "model": "not_comparable",
+      "pair_id": "2609.30133__020|ref40_peng2023__022"
+    },
+    {
+      "category": "condition",
+      "judge": "not_comparable",
+      "model": "disagree",
+      "pair_id": "2609.30133__020|ref40_peng2023__033"
+    },
+    {
+      "category": "condition",
+      "judge": "not_comparable",
+      "model": "not_comparable",
+      "pair_id": "2609.30133__020|ref40_peng2023__034"
+    },
+    {
+      "category": "condition",
+      "judge": "not_comparable",
+      "model": "not_comparable",
+      "pair_id": "2609.30133__021|2609.30133__023"
+    },
+    {
+      "category": "condition",
+      "judge": "not_comparable",
+      "model": "not_comparable",
+      "pair_id": "2609.30133__021|ref40_peng2023__013"
+    },
+    {
+      "category": "condition",
+      "judge": "not_comparable",
+      "model": "not_comparable",
+      "pair_id": "2609.30133__021|ref40_peng2023__022"
+    },
+    {
+      "category": "condition",
+      "judge": "not_comparable",
+      "model": "not_comparable",
+      "pair_id": "2609.30133__021|ref40_peng2023__033"
+    },
+    {
+      "category": "condition",
+      "judge": "not_comparable",
+      "model": "disagree",
+      "pair_id": "2609.30133__021|ref40_peng2023__034"
+    },
+    {
+      "category": "condition",
+      "judge": "not_comparable",
+      "model": "not_comparable",
+      "pair_id": "2609.30133__023|ref40_peng2023__013"
+    },
+    {
+      "category": "condition",
+      "judge": "not_comparable",
+      "model": "not_comparable",
+      "pair_id": "2609.30133__023|ref40_peng2023__022"
+    },
+    {
+      "category": "condition",
+      "judge": "not_comparable",
+      "model": "not_comparable",
+      "pair_id": "2609.30133__023|ref40_peng2023__033"
+    },
+    {
+      "category": "condition",
+      "judge": "not_comparable",
+      "model": "not_comparable",
+      "pair_id": "2609.30133__023|ref40_peng2023__034"
+    },
+    {
+      "category": "condition",
+      "judge": "not_comparable",
+      "model": "not_comparable",
+      "pair_id": "ref40_peng2023__002|ref40_peng2023__011"
+    },
+    {
+      "category": "condition",
+      "judge": "not_comparable",
+      "model": "agree",
+      "pair_id": "ref40_peng2023__002|ref40_peng2023__021"
+    },
+    {
+      "category": "condition",
+      "judge": "not_comparable",
+      "model": "not_comparable",
+      "pair_id": "ref40_peng2023__009|ref40_peng2023__010"
+    },
+    {
+      "category": "condition",
+      "judge": "not_comparable",
+      "model": "not_comparable",
+      "pair_id": "ref40_peng2023__011|ref40_peng2023__021"
+    },
+    {
+      "category": "condition",
+      "judge": "not_comparable",
+      "model": "not_comparable",
+      "pair_id": "ref40_peng2023__013|ref40_peng2023__022"
+    }
+  ],
+  "vetoed_pairs_in_sample": 60
+}
