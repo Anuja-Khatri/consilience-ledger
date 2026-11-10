@@ -38,6 +38,12 @@ Known limits, recorded as they arise (spec II.3, Phase 7 formalizes this).
 - Auto-agreement across the two model families on the full card is 0 for the pilot, so
   every extracted claim goes to the review queue for Anu (Checkpoint 1). Agreement is the
   auto-accept signal, not a requirement for a claim to be approvable.
+- Writeback (Phase 5): verdicts use the H-cell data (fig_3e.csv). Its electrolyte and
+  current density are not in the released file, so they are unstated and every comparison
+  vetoes on them (never inferred, D10); the result is 9 published vetoes, 0 confirm/
+  contradict. A future improvement is to read Lila's H-cell electrolyte from their Methods
+  and treat it as a stated data-side condition. The earlier screening-tier verdicts were a
+  bug, corrected before Checkpoint 2 (CORRECTIONS.md, CONTRADICTION_DOSSIER.md).
 - Baseline (Phase 6): on a preregistered sample of 60 vetoed pairs, the model call made 4
   comparisons the deterministic veto blocks (2 false disagreements, 2 false agreements) and
   recognised incomparability on the other 56. The model is capable but not exact; the veto

@@ -25,8 +25,10 @@ schemas, rules.lock, ledger, and verdicts and the test suite is green.
 - Over 34 approved claims the ledger found 0 numeric forks and 561 vetoes. Most literature
   pairs are not comparable; the engine is designed to surface that, and the veto table is
   the headline result. This is a valid Stage 1 outcome (CC-22), not a failure.
-- Their InMnPdOx claim is reproduced by their own instrument data within the floor; the
-  published pure-Pd claims are published vetoes (no comparable Lila measurement).
+- Every writeback comparison is a published veto: no claim's conditions were proven
+  comparable to Lila's H-cell measurement. Verdicts use the H-cell data; the CP1 600s
+  screening data is comparative, not absolute, and is not used to confirm or contradict.
+  See CONTRADICTION_DOSSIER.md (the earlier screening-tier verdicts were corrected).
 - The LLM-judge baseline made 4 comparisons the veto blocks on 60 sampled pairs.
 - Fresh materials extraction-stability is 0.423 (n=52), reported as the materials number,
   distinct from the consciousness-domain 0.25.

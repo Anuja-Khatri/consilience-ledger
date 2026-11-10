@@ -37,9 +37,11 @@ claim end-to-end determinism (CC-01).
   condition_unstated, 3 condition_mismatch). The veto table is the headline result: most
   literature pairs are not comparable, so they are not called disagreements. This is
   designed to surface exactly that, and it does.
-- Writeback vs Lila's own data (loaded at runtime, not committed): their InMnPdOx claim is
-  reproduced by their own measurement within the floor; the published pure-Pd claims have
-  no comparable Lila measurement and are published vetoes.
+- Writeback vs Lila's own H-cell data (loaded at runtime, not committed): every comparison
+  is a published veto. No claim's conditions were proven comparable to an H-cell
+  measurement (the CP1 600s screening data is comparative, not absolute, and is not used to
+  confirm or contradict). The published pure-Pd claims are among the vetoes. See
+  CONTRADICTION_DOSSIER.md.
 - LLM-judge baseline: on a preregistered sample of 60 vetoed pairs, a model call made 4
   comparisons the deterministic veto blocks.
 - Fresh materials extraction-stability: 0.423 (n=52, test-retest). This is the materials

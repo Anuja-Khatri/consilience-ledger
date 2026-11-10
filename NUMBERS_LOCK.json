@@ -20,9 +20,8 @@
     {"id": "defect_axis_mismatch", "value": 515, "n": null, "qualifier": "axis_mismatch defects", "source": "this build, Phase 4"},
     {"id": "defect_condition_unstated", "value": 149, "n": null, "qualifier": "condition_unstated defects", "source": "this build, Phase 4"},
     {"id": "defect_condition_mismatch", "value": 3, "n": null, "qualifier": "condition_mismatch defects", "source": "this build, Phase 4"},
-    {"id": "verdict_within_floor", "value": 1, "n": null, "qualifier": "within_floor verdicts (InMnPdOx reproduced)", "source": "this build, Phase 5"},
-    {"id": "verdict_contradicted", "value": 2, "n": null, "qualifier": "contradicted verdicts", "source": "this build, Phase 5"},
-    {"id": "verdict_not_comparable", "value": 6, "n": null, "qualifier": "not_comparable verdicts (published vetoes)", "source": "this build, Phase 5"},
+    {"id": "verdict_confirmed_contradicted", "value": 0, "n": null, "qualifier": "confirmed or contradicted verdicts (no claim's conditions matched an H-cell measurement)", "source": "this build, Phase 5, corrected per CONTRADICTION_DOSSIER.md"},
+    {"id": "verdict_not_comparable", "value": 9, "n": null, "qualifier": "not_comparable overpotential verdicts (all published vetoes, against H-cell data)", "source": "this build, Phase 5, corrected per CONTRADICTION_DOSSIER.md"},
     {"id": "baseline_sample", "value": 60, "n": null, "qualifier": "preregistered baseline sample size", "source": "this build, Phase 6"},
     {"id": "baseline_false_comparisons", "value": 4, "n": 60, "qualifier": "pairs the model compared (2 disagree, 2 agree) that the judge vetoed", "source": "this build, Phase 6"},
     {"id": "materials_extraction_stability", "value": 0.423, "n": 52, "qualifier": "fresh materials test-retest (subject + value-family key, K=3; the axis label is not stable; a different metric and domain from the consciousness 0.25)", "source": "this build, Phase 7"}

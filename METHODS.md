@@ -35,18 +35,21 @@ max(their stated floor 13 mV, the claim's own stated uncertainty). Below that th
 outcome is `within_floor`, not confirmed or contradicted.
 
 Writeback compares each approved overpotential performance claim against Lila's own
-instrument data (`oer_exp_data.csv`, `overpotential_cp1_600s_mean`). The data is CC-BY
-but is loaded at runtime from a user-provided path (env `LILA_OER_DATA`, else the
-upstream checkout) and is never committed (CC-28); verdicts cite the data by sha256 and
-by row index, plus the manuscript commit. The comparison point is the best measured
-overpotential for the claim's catalyst element system (the optimised composition), with
-the spread (mean, n rows) reported; no statistics are recomputed beyond this (CC-19). A
-claim whose catalyst system has no Lila measurement (for example the published pure-Pd
-claims), or an explicitly long-term claim against the screening-tier data, is a published
-veto (`not_comparable`), not a verdict (CC-21). Result over the 34 approved claims: 1
-within_floor (their InMnPdOx claim reproduced by their own data to 0.1 mV), 2
-contradicted (just over the floor), 6 not_comparable (including every published pure-Pd
-claim).
+H-cell data (`fig_3e.csv`, iR-corrected long-term H-cell overpotential). The CP1 600s
+screening data (`oer_exp_data.csv`) is screening tier and comparative, not absolute
+(II.3); it is used only to demonstrate vetoes, never to confirm or contradict a claim
+(the H-cell-verdicts-plus-published-vetoes-only ruling). The data is CC-BY but is loaded
+at runtime (env `LILA_OER_DATA_DIR`, else the upstream checkout) and is never committed
+(CC-28); verdicts cite the data by sha256 and row index plus the manuscript commit. A
+verdict is computed only when the claim's conditions are proven comparable to the H-cell
+measurement (the same conditions veto as the ledger). The H-cell data is iR-corrected and
+long-term; its electrolyte and current density are not in the file, so they are treated as
+unstated (never inferred, D10). Any pairing that fails comparability is a published veto.
+Result over the 34 approved claims: 0 confirmed, 0 contradicted, 9 not_comparable (all
+published vetoes). No claim's conditions were proven comparable to an H-cell measurement
+(no H-cell data for the system, an iR-correction or tier mismatch, or an unstated
+electrolyte), so no claim is confirmed or contradicted. See CONTRADICTION_DOSSIER.md for
+the audit that corrected the earlier screening-tier verdicts.
 
 ## Extraction models (D3)
 Two independent extraction runs. Selection by the keys present in the environment:

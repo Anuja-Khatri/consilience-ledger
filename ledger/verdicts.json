@@ -1,46 +1,111 @@
 [
   {
     "claim_id": "2609.30133__003",
+    "claim_ir_correction": false,
+    "claim_protocol_tier": "unstated",
     "claim_subject": "InMnPdOx",
     "claim_value_V": 0.45,
     "data_source": {
-      "file": "oer_exp_data.csv",
+      "hcell_file": "fig_3e.csv",
+      "hcell_material_match": [
+        "In",
+        "Mn",
+        "Pd"
+      ],
+      "hcell_row_refs": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "hcell_sha256": "cac022933ff17b84a0005976a4355b19c91635999c6b42413e14890e9104c23e",
       "manuscript_commit": "92a773790b684786cb8956e3c2cac668043850cb",
-      "row_refs": [
+      "screening_file": "oer_exp_data.csv (CP1 600s, screening tier, comparative not absolute)",
+      "screening_row_refs": [
         292,
         293,
         294,
         295,
-        296,
-        297,
-        298,
-        299,
-        300,
-        301
-      ],
-      "sha256": "ab33c747883b5dce98cc26bd2dee16dd9a12a9703fe3f18450d1490fe3f91d00"
+        296
+      ]
     },
+    "defects": [
+      {
+        "defect_type": "condition_unstated",
+        "target": "electrolyte"
+      },
+      {
+        "defect_type": "condition_unstated",
+        "target": "current_density"
+      },
+      {
+        "defect_type": "condition_unstated",
+        "target": "temperature"
+      },
+      {
+        "defect_type": "condition_mismatch",
+        "target": "CR4"
+      }
+    ],
     "floor_applied": 0.013,
     "map_version": "materials_oer-v0",
-    "margin": 0.0001,
-    "measured_best_V": 0.4501,
-    "measured_mean_V": 0.5977,
-    "n_rows": 46,
-    "outcome": "within_floor",
+    "margin": null,
+    "outcome": "not_comparable",
     "rules_version": "comparability-v0",
     "verdict_id": "V_2609.30133__003"
   },
   {
     "claim_id": "2609.30133__004",
+    "claim_ir_correction": false,
+    "claim_protocol_tier": "unstated",
     "claim_subject": "RuOx",
     "claim_value_V": 0.41,
     "data_source": {
-      "file": "oer_exp_data.csv",
+      "hcell_file": "fig_3e.csv",
+      "hcell_material_match": [
+        "Ru"
+      ],
+      "hcell_row_refs": [
+        201,
+        202,
+        203,
+        204,
+        205,
+        206,
+        207,
+        208,
+        209,
+        210
+      ],
+      "hcell_sha256": "cac022933ff17b84a0005976a4355b19c91635999c6b42413e14890e9104c23e",
       "manuscript_commit": "92a773790b684786cb8956e3c2cac668043850cb",
-      "note": "no Lila screening data for this catalyst system",
-      "row_refs": [],
-      "sha256": "ab33c747883b5dce98cc26bd2dee16dd9a12a9703fe3f18450d1490fe3f91d00"
+      "screening_file": "oer_exp_data.csv (CP1 600s, screening tier, comparative not absolute)",
+      "screening_row_refs": []
     },
+    "defects": [
+      {
+        "defect_type": "condition_unstated",
+        "target": "electrolyte"
+      },
+      {
+        "defect_type": "condition_unstated",
+        "target": "current_density"
+      },
+      {
+        "defect_type": "condition_unstated",
+        "target": "temperature"
+      },
+      {
+        "defect_type": "condition_mismatch",
+        "target": "CR4"
+      }
+    ],
     "floor_applied": 0.013,
     "map_version": "materials_oer-v0",
     "margin": null,
@@ -50,77 +115,87 @@
   },
   {
     "claim_id": "2609.30133__020",
+    "claim_ir_correction": "unstated",
+    "claim_protocol_tier": "unstated",
     "claim_subject": "CoFeZrOx",
     "claim_value_V": 0.55,
     "data_source": {
-      "file": "oer_exp_data.csv",
+      "hcell_file": "fig_3e.csv",
+      "hcell_sha256": "cac022933ff17b84a0005976a4355b19c91635999c6b42413e14890e9104c23e",
       "manuscript_commit": "92a773790b684786cb8956e3c2cac668043850cb",
-      "row_refs": [
+      "screening_file": "oer_exp_data.csv (CP1 600s, screening tier, comparative not absolute)",
+      "screening_row_refs": [
         612,
         613,
         614,
         615,
-        616,
-        617,
-        618,
-        619,
-        620,
-        621
-      ],
-      "sha256": "ab33c747883b5dce98cc26bd2dee16dd9a12a9703fe3f18450d1490fe3f91d00"
+        616
+      ]
     },
+    "defects": [
+      {
+        "defect_type": "no_hcell_data",
+        "target": "CoFeZr"
+      }
+    ],
     "floor_applied": 0.013,
     "map_version": "materials_oer-v0",
-    "margin": 0.0135,
-    "measured_best_V": 0.5365,
-    "measured_mean_V": 0.7326,
-    "n_rows": 31,
-    "outcome": "contradicted",
+    "margin": null,
+    "outcome": "not_comparable",
     "rules_version": "comparability-v0",
     "verdict_id": "V_2609.30133__020"
   },
   {
     "claim_id": "2609.30133__021",
+    "claim_ir_correction": "unstated",
+    "claim_protocol_tier": "unstated",
     "claim_subject": "CoInZrOx",
     "claim_value_V": 0.55,
     "data_source": {
-      "file": "oer_exp_data.csv",
+      "hcell_file": "fig_3e.csv",
+      "hcell_sha256": "cac022933ff17b84a0005976a4355b19c91635999c6b42413e14890e9104c23e",
       "manuscript_commit": "92a773790b684786cb8956e3c2cac668043850cb",
-      "row_refs": [
+      "screening_file": "oer_exp_data.csv (CP1 600s, screening tier, comparative not absolute)",
+      "screening_row_refs": [
         744,
         745,
         746,
         747,
-        748,
-        749,
-        750,
-        751,
-        752,
-        753
-      ],
-      "sha256": "ab33c747883b5dce98cc26bd2dee16dd9a12a9703fe3f18450d1490fe3f91d00"
+        748
+      ]
     },
+    "defects": [
+      {
+        "defect_type": "no_hcell_data",
+        "target": "CoInZr"
+      }
+    ],
     "floor_applied": 0.013,
     "map_version": "materials_oer-v0",
-    "margin": 0.0177,
-    "measured_best_V": 0.5323,
-    "measured_mean_V": 0.6728,
-    "n_rows": 21,
-    "outcome": "contradicted",
+    "margin": null,
+    "outcome": "not_comparable",
     "rules_version": "comparability-v0",
     "verdict_id": "V_2609.30133__021"
   },
   {
     "claim_id": "2609.30133__023",
+    "claim_ir_correction": "unstated",
+    "claim_protocol_tier": "unstated",
     "claim_subject": "Pd-rich, non-annealed oxide compositions with either In-Mn or Ni-Ta as additives",
     "claim_value_V": 0.46,
     "data_source": {
-      "file": "oer_exp_data.csv",
+      "hcell_file": "fig_3e.csv",
+      "hcell_sha256": "cac022933ff17b84a0005976a4355b19c91635999c6b42413e14890e9104c23e",
       "manuscript_commit": "92a773790b684786cb8956e3c2cac668043850cb",
-      "note": "no Lila screening data for this catalyst system",
-      "row_refs": [],
-      "sha256": "ab33c747883b5dce98cc26bd2dee16dd9a12a9703fe3f18450d1490fe3f91d00"
+      "screening_file": "oer_exp_data.csv (CP1 600s, screening tier, comparative not absolute)",
+      "screening_row_refs": []
     },
+    "defects": [
+      {
+        "defect_type": "no_hcell_data",
+        "target": "InMnNiPdTa"
+      }
+    ],
     "floor_applied": 0.013,
     "map_version": "materials_oer-v0",
     "margin": null,
@@ -130,15 +205,23 @@
   },
   {
     "claim_id": "ref40_peng2023__013",
+    "claim_ir_correction": "unstated",
+    "claim_protocol_tier": "unstated",
     "claim_subject": "PdCoO2 precursor (without etching)",
     "claim_value_V": 0.528,
     "data_source": {
-      "file": "oer_exp_data.csv",
+      "hcell_file": "fig_3e.csv",
+      "hcell_sha256": "cac022933ff17b84a0005976a4355b19c91635999c6b42413e14890e9104c23e",
       "manuscript_commit": "92a773790b684786cb8956e3c2cac668043850cb",
-      "note": "no Lila screening data for this catalyst system",
-      "row_refs": [],
-      "sha256": "ab33c747883b5dce98cc26bd2dee16dd9a12a9703fe3f18450d1490fe3f91d00"
+      "screening_file": "oer_exp_data.csv (CP1 600s, screening tier, comparative not absolute)",
+      "screening_row_refs": []
     },
+    "defects": [
+      {
+        "defect_type": "no_hcell_data",
+        "target": "CoPd"
+      }
+    ],
     "floor_applied": 0.013,
     "map_version": "materials_oer-v0",
     "margin": null,
@@ -148,15 +231,50 @@
   },
   {
     "claim_id": "ref40_peng2023__022",
+    "claim_ir_correction": "unstated",
+    "claim_protocol_tier": "unstated",
     "claim_subject": "Pd-55",
     "claim_value_V": 0.196,
     "data_source": {
-      "file": "oer_exp_data.csv",
+      "hcell_file": "fig_3e.csv",
+      "hcell_material_match": [
+        "Pd"
+      ],
+      "hcell_row_refs": [
+        132,
+        133,
+        134,
+        135,
+        136,
+        137,
+        138,
+        139,
+        140,
+        141
+      ],
+      "hcell_sha256": "cac022933ff17b84a0005976a4355b19c91635999c6b42413e14890e9104c23e",
       "manuscript_commit": "92a773790b684786cb8956e3c2cac668043850cb",
-      "note": "no Lila screening data for this catalyst system",
-      "row_refs": [],
-      "sha256": "ab33c747883b5dce98cc26bd2dee16dd9a12a9703fe3f18450d1490fe3f91d00"
+      "screening_file": "oer_exp_data.csv (CP1 600s, screening tier, comparative not absolute)",
+      "screening_row_refs": []
     },
+    "defects": [
+      {
+        "defect_type": "condition_unstated",
+        "target": "electrolyte"
+      },
+      {
+        "defect_type": "condition_unstated",
+        "target": "current_density"
+      },
+      {
+        "defect_type": "condition_unstated",
+        "target": "temperature"
+      },
+      {
+        "defect_type": "condition_unstated",
+        "target": "ir_correction"
+      }
+    ],
     "floor_applied": 0.013,
     "map_version": "materials_oer-v0",
     "margin": null,
@@ -166,15 +284,50 @@
   },
   {
     "claim_id": "ref40_peng2023__033",
+    "claim_ir_correction": "unstated",
+    "claim_protocol_tier": "unstated",
     "claim_subject": "Pd-25",
     "claim_value_V": 0.348,
     "data_source": {
-      "file": "oer_exp_data.csv",
+      "hcell_file": "fig_3e.csv",
+      "hcell_material_match": [
+        "Pd"
+      ],
+      "hcell_row_refs": [
+        132,
+        133,
+        134,
+        135,
+        136,
+        137,
+        138,
+        139,
+        140,
+        141
+      ],
+      "hcell_sha256": "cac022933ff17b84a0005976a4355b19c91635999c6b42413e14890e9104c23e",
       "manuscript_commit": "92a773790b684786cb8956e3c2cac668043850cb",
-      "note": "no Lila screening data for this catalyst system",
-      "row_refs": [],
-      "sha256": "ab33c747883b5dce98cc26bd2dee16dd9a12a9703fe3f18450d1490fe3f91d00"
+      "screening_file": "oer_exp_data.csv (CP1 600s, screening tier, comparative not absolute)",
+      "screening_row_refs": []
     },
+    "defects": [
+      {
+        "defect_type": "condition_unstated",
+        "target": "electrolyte"
+      },
+      {
+        "defect_type": "condition_unstated",
+        "target": "current_density"
+      },
+      {
+        "defect_type": "condition_unstated",
+        "target": "temperature"
+      },
+      {
+        "defect_type": "condition_unstated",
+        "target": "ir_correction"
+      }
+    ],
     "floor_applied": 0.013,
     "map_version": "materials_oer-v0",
     "margin": null,
@@ -184,15 +337,50 @@
   },
   {
     "claim_id": "ref40_peng2023__034",
+    "claim_ir_correction": "unstated",
+    "claim_protocol_tier": "unstated",
     "claim_subject": "Pd-40",
     "claim_value_V": 0.28,
     "data_source": {
-      "file": "oer_exp_data.csv",
+      "hcell_file": "fig_3e.csv",
+      "hcell_material_match": [
+        "Pd"
+      ],
+      "hcell_row_refs": [
+        132,
+        133,
+        134,
+        135,
+        136,
+        137,
+        138,
+        139,
+        140,
+        141
+      ],
+      "hcell_sha256": "cac022933ff17b84a0005976a4355b19c91635999c6b42413e14890e9104c23e",
       "manuscript_commit": "92a773790b684786cb8956e3c2cac668043850cb",
-      "note": "no Lila screening data for this catalyst system",
-      "row_refs": [],
-      "sha256": "ab33c747883b5dce98cc26bd2dee16dd9a12a9703fe3f18450d1490fe3f91d00"
+      "screening_file": "oer_exp_data.csv (CP1 600s, screening tier, comparative not absolute)",
+      "screening_row_refs": []
     },
+    "defects": [
+      {
+        "defect_type": "condition_unstated",
+        "target": "electrolyte"
+      },
+      {
+        "defect_type": "condition_unstated",
+        "target": "current_density"
+      },
+      {
+        "defect_type": "condition_unstated",
+        "target": "temperature"
+      },
+      {
+        "defect_type": "condition_unstated",
+        "target": "ir_correction"
+      }
+    ],
     "floor_applied": 0.013,
     "map_version": "materials_oer-v0",
     "margin": null,

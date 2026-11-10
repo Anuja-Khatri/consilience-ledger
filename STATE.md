@@ -127,8 +127,9 @@ Phases completed this run:
   axis_mismatch, 149 condition_unstated, 3 condition_mismatch). Byte-deterministic ledger.hash;
   reports/ledger.md + forks_spotcheck.md. Zero forks is valid Stage 1 (CC-22).
 - Phase 5 writeback (tag phase-5): verdicts vs oer_exp_data.csv (loaded at runtime, NOT committed,
-  cited by sha+row). 1 within_floor (InMnPdOx reproduced to 0.1 mV), 2 contradicted, 6 not_comparable
-  (all published pure-Pd claims are published vetoes).
+  cited by sha+row). Corrected to use the H-cell data fig_3e.csv for verdicts (screening CSV is
+  veto-only): 0 confirmed, 0 contradicted, 9 not_comparable (all published vetoes). See
+  CONTRADICTION_DOSSIER.md / CORRECTIONS.md.
 - Phase 6 baseline (tag phase-6): 60-pair preregistered sample; model made 4 comparisons the veto blocks.
 - Phase 7 discipline (tag phase-7): PREREGISTRATION, numbers lock (NUMBERS_LOCK.json + linter),
   fresh materials extraction-stability 0.423 (n=52), red-team no-text-channel tests.
