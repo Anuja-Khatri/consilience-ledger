@@ -29,10 +29,24 @@ lab-gate @ 3e0185a). An unparseable or dimensionally wrong quantity raises and t
 pair fails closed. Unstated conditions are never inferred (D10): no pH from
 electrolyte, no temperature from an absent "room temperature".
 
-## Verdict floor (D7)
+## Verdict floor (D7) and writeback (Phase 5)
 A numeric verdict against Lila's data requires the difference to exceed
 max(their stated floor 13 mV, the claim's own stated uncertainty). Below that the
-outcome is `within_floor`, not confirmed or contradicted. (Wired in Phase 5.)
+outcome is `within_floor`, not confirmed or contradicted.
+
+Writeback compares each approved overpotential performance claim against Lila's own
+instrument data (`oer_exp_data.csv`, `overpotential_cp1_600s_mean`). The data is CC-BY
+but is loaded at runtime from a user-provided path (env `LILA_OER_DATA`, else the
+upstream checkout) and is never committed (CC-28); verdicts cite the data by sha256 and
+by row index, plus the manuscript commit. The comparison point is the best measured
+overpotential for the claim's catalyst element system (the optimised composition), with
+the spread (mean, n rows) reported; no statistics are recomputed beyond this (CC-19). A
+claim whose catalyst system has no Lila measurement (for example the published pure-Pd
+claims), or an explicitly long-term claim against the screening-tier data, is a published
+veto (`not_comparable`), not a verdict (CC-21). Result over the 34 approved claims: 1
+within_floor (their InMnPdOx claim reproduced by their own data to 0.1 mV), 2
+contradicted (just over the floor), 6 not_comparable (including every published pure-Pd
+claim).
 
 ## Extraction models (D3)
 Two independent extraction runs. Selection by the keys present in the environment:

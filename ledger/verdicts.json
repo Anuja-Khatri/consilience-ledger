@@ -1,1 +1,203 @@
-[]
+[
+  {
+    "claim_id": "2609.30133__003",
+    "claim_subject": "InMnPdOx",
+    "claim_value_V": 0.45,
+    "data_source": {
+      "file": "oer_exp_data.csv",
+      "manuscript_commit": "92a773790b684786cb8956e3c2cac668043850cb",
+      "row_refs": [
+        292,
+        293,
+        294,
+        295,
+        296,
+        297,
+        298,
+        299,
+        300,
+        301
+      ],
+      "sha256": "ab33c747883b5dce98cc26bd2dee16dd9a12a9703fe3f18450d1490fe3f91d00"
+    },
+    "floor_applied": 0.013,
+    "map_version": "materials_oer-v0",
+    "margin": 0.0001,
+    "measured_best_V": 0.4501,
+    "measured_mean_V": 0.5977,
+    "n_rows": 46,
+    "outcome": "within_floor",
+    "rules_version": "comparability-v0",
+    "verdict_id": "V_2609.30133__003"
+  },
+  {
+    "claim_id": "2609.30133__004",
+    "claim_subject": "RuOx",
+    "claim_value_V": 0.41,
+    "data_source": {
+      "file": "oer_exp_data.csv",
+      "manuscript_commit": "92a773790b684786cb8956e3c2cac668043850cb",
+      "note": "no Lila screening data for this catalyst system",
+      "row_refs": [],
+      "sha256": "ab33c747883b5dce98cc26bd2dee16dd9a12a9703fe3f18450d1490fe3f91d00"
+    },
+    "floor_applied": 0.013,
+    "map_version": "materials_oer-v0",
+    "margin": null,
+    "outcome": "not_comparable",
+    "rules_version": "comparability-v0",
+    "verdict_id": "V_2609.30133__004"
+  },
+  {
+    "claim_id": "2609.30133__020",
+    "claim_subject": "CoFeZrOx",
+    "claim_value_V": 0.55,
+    "data_source": {
+      "file": "oer_exp_data.csv",
+      "manuscript_commit": "92a773790b684786cb8956e3c2cac668043850cb",
+      "row_refs": [
+        612,
+        613,
+        614,
+        615,
+        616,
+        617,
+        618,
+        619,
+        620,
+        621
+      ],
+      "sha256": "ab33c747883b5dce98cc26bd2dee16dd9a12a9703fe3f18450d1490fe3f91d00"
+    },
+    "floor_applied": 0.013,
+    "map_version": "materials_oer-v0",
+    "margin": 0.0135,
+    "measured_best_V": 0.5365,
+    "measured_mean_V": 0.7326,
+    "n_rows": 31,
+    "outcome": "contradicted",
+    "rules_version": "comparability-v0",
+    "verdict_id": "V_2609.30133__020"
+  },
+  {
+    "claim_id": "2609.30133__021",
+    "claim_subject": "CoInZrOx",
+    "claim_value_V": 0.55,
+    "data_source": {
+      "file": "oer_exp_data.csv",
+      "manuscript_commit": "92a773790b684786cb8956e3c2cac668043850cb",
+      "row_refs": [
+        744,
+        745,
+        746,
+        747,
+        748,
+        749,
+        750,
+        751,
+        752,
+        753
+      ],
+      "sha256": "ab33c747883b5dce98cc26bd2dee16dd9a12a9703fe3f18450d1490fe3f91d00"
+    },
+    "floor_applied": 0.013,
+    "map_version": "materials_oer-v0",
+    "margin": 0.0177,
+    "measured_best_V": 0.5323,
+    "measured_mean_V": 0.6728,
+    "n_rows": 21,
+    "outcome": "contradicted",
+    "rules_version": "comparability-v0",
+    "verdict_id": "V_2609.30133__021"
+  },
+  {
+    "claim_id": "2609.30133__023",
+    "claim_subject": "Pd-rich, non-annealed oxide compositions with either In-Mn or Ni-Ta as additives",
+    "claim_value_V": 0.46,
+    "data_source": {
+      "file": "oer_exp_data.csv",
+      "manuscript_commit": "92a773790b684786cb8956e3c2cac668043850cb",
+      "note": "no Lila screening data for this catalyst system",
+      "row_refs": [],
+      "sha256": "ab33c747883b5dce98cc26bd2dee16dd9a12a9703fe3f18450d1490fe3f91d00"
+    },
+    "floor_applied": 0.013,
+    "map_version": "materials_oer-v0",
+    "margin": null,
+    "outcome": "not_comparable",
+    "rules_version": "comparability-v0",
+    "verdict_id": "V_2609.30133__023"
+  },
+  {
+    "claim_id": "ref40_peng2023__013",
+    "claim_subject": "PdCoO2 precursor (without etching)",
+    "claim_value_V": 0.528,
+    "data_source": {
+      "file": "oer_exp_data.csv",
+      "manuscript_commit": "92a773790b684786cb8956e3c2cac668043850cb",
+      "note": "no Lila screening data for this catalyst system",
+      "row_refs": [],
+      "sha256": "ab33c747883b5dce98cc26bd2dee16dd9a12a9703fe3f18450d1490fe3f91d00"
+    },
+    "floor_applied": 0.013,
+    "map_version": "materials_oer-v0",
+    "margin": null,
+    "outcome": "not_comparable",
+    "rules_version": "comparability-v0",
+    "verdict_id": "V_ref40_peng2023__013"
+  },
+  {
+    "claim_id": "ref40_peng2023__022",
+    "claim_subject": "Pd-55",
+    "claim_value_V": 0.196,
+    "data_source": {
+      "file": "oer_exp_data.csv",
+      "manuscript_commit": "92a773790b684786cb8956e3c2cac668043850cb",
+      "note": "no Lila screening data for this catalyst system",
+      "row_refs": [],
+      "sha256": "ab33c747883b5dce98cc26bd2dee16dd9a12a9703fe3f18450d1490fe3f91d00"
+    },
+    "floor_applied": 0.013,
+    "map_version": "materials_oer-v0",
+    "margin": null,
+    "outcome": "not_comparable",
+    "rules_version": "comparability-v0",
+    "verdict_id": "V_ref40_peng2023__022"
+  },
+  {
+    "claim_id": "ref40_peng2023__033",
+    "claim_subject": "Pd-25",
+    "claim_value_V": 0.348,
+    "data_source": {
+      "file": "oer_exp_data.csv",
+      "manuscript_commit": "92a773790b684786cb8956e3c2cac668043850cb",
+      "note": "no Lila screening data for this catalyst system",
+      "row_refs": [],
+      "sha256": "ab33c747883b5dce98cc26bd2dee16dd9a12a9703fe3f18450d1490fe3f91d00"
+    },
+    "floor_applied": 0.013,
+    "map_version": "materials_oer-v0",
+    "margin": null,
+    "outcome": "not_comparable",
+    "rules_version": "comparability-v0",
+    "verdict_id": "V_ref40_peng2023__033"
+  },
+  {
+    "claim_id": "ref40_peng2023__034",
+    "claim_subject": "Pd-40",
+    "claim_value_V": 0.28,
+    "data_source": {
+      "file": "oer_exp_data.csv",
+      "manuscript_commit": "92a773790b684786cb8956e3c2cac668043850cb",
+      "note": "no Lila screening data for this catalyst system",
+      "row_refs": [],
+      "sha256": "ab33c747883b5dce98cc26bd2dee16dd9a12a9703fe3f18450d1490fe3f91d00"
+    },
+    "floor_applied": 0.013,
+    "map_version": "materials_oer-v0",
+    "margin": null,
+    "outcome": "not_comparable",
+    "rules_version": "comparability-v0",
+    "verdict_id": "V_ref40_peng2023__034"
+  }
+]

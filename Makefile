@@ -18,7 +18,12 @@ lock:
 ledger:
 	$(PY) -m labext.ledger
 
+# Writeback needs Lila's data at runtime (env LILA_OER_DATA or the upstream checkout);
+# it is never committed (CC-28). Without the data it writes empty verdicts and continues.
+verdicts:
+	$(PY) -m labext.writeback
+
 # Regenerate the deterministic artifacts and verify the suite. The ledger hash must
 # stay byte-identical from the approved cards + rules.lock + code version (spec IV.5).
-reproduce: schemas lock ledger test
-	@echo "reproduce OK: schemas + rules.lock + ledger regenerated, tests green"
+reproduce: schemas lock ledger verdicts test
+	@echo "reproduce OK: schemas + rules.lock + ledger + verdicts regenerated, tests green"
