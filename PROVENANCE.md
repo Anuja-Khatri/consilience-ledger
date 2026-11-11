@@ -17,7 +17,7 @@ data is never committed; it is loaded at runtime (CC-28, Anu ruling OQ-3).
 |---|---|---|---|
 | vendor/engine/judge/** | theconsilience-engine @ 71f60a2 | judge/** | matching/vf2_typed.py ONLY: added `conditions_compatible` (lab-extension addition, clearly marked). All other files unchanged (grading/four_rung_ladder.py, equivocation/lexical_ablation.py, testability/capability_map_lookup.py, hash/determinism_check.py, schema/*.json). |
 | vendor/labgate/units.py | lab-gate @ 3e0185a | gate/boundary/units.py | unchanged |
-| vendor/labgate/sim_ext/oersim.py | lab-gate @ 3e0185a | sim_ext/oersim.py | ONE line changed: `from sim_ext.accounting` -> `from .accounting` (vendored package path). Runs the real OERSIM on Lila's real oer13_cps dataset with pyzstd + the pure-Python calc_eta fallback (no helao/numpy needed). |
+| vendor/labgate/sim_ext/oersim.py | lab-gate @ 3e0185a | sim_ext/oersim.py | ONE line changed: `from sim_ext.accounting` -> `from .accounting` (vendored package path). Runs the real OERSIM on the public `oer13_cps` dataset shipped in helao-async (MIT; High-Throughput-Experimentation; a combinatorial OER CP library over 13 base metals Ca/Ce/Co/Cu/Fe/La/Mg/Mn/Ni/Sb/Sn/Ta/Zn, no palladium; not Lila's data) with pyzstd + the pure-Python calc_eta fallback (no helao/numpy needed). |
 | vendor/labgate/sim_ext/accounting.py | lab-gate @ 3e0185a | sim_ext/accounting.py | unchanged |
 
 Derived work in this repo (labext/, schema/, rules/, domainpack/, tests/) is

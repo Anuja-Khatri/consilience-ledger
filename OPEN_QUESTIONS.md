@@ -74,22 +74,27 @@ No `ANTHROPIC_API_KEY` (or any model key) is exported in the current shell. Keys
   Phase 2 is therefore code-complete but NOT tagged (acceptance needs a real pilot decision). All of
   Stage 1 (Phases 3-8) depends on real extracted claims and is blocked until a key is available.
 
-## OQ-3 - Lila's real OER data is absent from this machine  **(largest gap)**
-Three linked artifacts are not present anywhere under `~` (searched to depth 6, Trash/Library
-excluded):
+## OQ-3 - Lila's real OER manuscript data is absent from this machine  **(largest gap)**
+Two Lila artifacts are not present anywhere under `~` (searched to depth 6, Trash/Library excluded):
   1. the `lila_oer_manuscript` repo (github.com/fl97inc/lila_oer_manuscript),
-  2. `oer_exp_data.csv` and the benchmark-curve CSVs (III.2 / Phase 5 writeback inputs),
-  3. the `oer13_cps` dataset that `lab-gate/sim_ext/oersim.py` replays via env `HELAO_DATASET`
-     (Phase 10 loop - this is the "OERSIM replays Lila's real data" mechanism).
-Because the repo is absent, its LICENSE cannot be checked, so CC-28 cannot be resolved yet.
+  2. `oer_exp_data.csv` and the benchmark-curve CSVs (III.2 / Phase 5 writeback inputs).
+CORRECTION (see CORRECTIONS.md): the `oer13_cps` dataset that `lab-gate/sim_ext/oersim.py` replays is
+NOT Lila's data and is NOT absent. It is the PUBLIC dataset shipped in helao-async (MIT;
+High-Throughput-Experimentation; a combinatorial OER CP library over 13 base metals, no palladium),
+present at `~/lila-gate/helao-async/.../oer13_cps.pzstd` (env `HELAO_DATASET`). Phase 10 therefore runs
+on public data and is NOT blocked by this gap; earlier text calling it "OERSIM replays Lila's real
+data" was a misattribution.
+Because the `lila_oer_manuscript` repo is absent, its LICENSE cannot be checked, so CC-28 cannot be
+resolved yet.
 - **Safe default applied:** Phases 1-4 (schema, extraction, ledger) need none of this and proceed.
   At Phase 5, apply CC-28 conservatively by default: treat the data as non-redistributable until a
   permissive license is confirmed - do NOT commit their CSVs; load at runtime from an Anu-provided
   path via a fetch script; verdict records cite rows by index + sha.
-- **BLOCKS:** Phase 5 (writeback) and Phase 10 (loop / OERSIM).
+- **BLOCKS:** Phase 5 (writeback) only. Phase 10 (loop / OERSIM) is NOT blocked — it uses the public
+  helao-async `oer13_cps` dataset, which is present.
 - **Needs Anu:** before Phase 5, provide the `lila_oer_manuscript` checkout (record its sha), the
-  `oer_exp_data.csv` + benchmark CSVs, and the `oer13_cps` dataset path for `HELAO_DATASET`; and
-  confirm the manuscript repo's license for the CC-28 decision.
+  `oer_exp_data.csv` + benchmark CSVs; and confirm the manuscript repo's license for the CC-28
+  decision. (The `oer13_cps` dataset for `HELAO_DATASET` is public and already present; nothing needed.)
 
 ## OQ-4 - `consilience-demo` and `miu-demo` have no LICENSE file
 Phase 0 confirmed neither repo contains a LICENSE/COPYING file. II.2 names only

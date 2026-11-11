@@ -21,14 +21,20 @@ deterministic: the same approved cards plus the same rules version produce an
 identical ledger hash. The README and METHODS state this split plainly and never
 claim end-to-end determinism (CC-01).
 
-## Status (Stage 1 complete through Checkpoint 2; Stage 3 scaffolding in place)
+## Status (Stage 1 complete through Checkpoint 2; Stage 3 loop ran on public data)
 - Phase 0 inventory; Phase 1 judge + conditions veto; Phase 2 real dual-model extraction
   + D6 pilot; Phase 3 Checkpoint 1 (Anu's batch applied); Phase 4 ledger; Phase 5
   writeback; Phase 6 LLM-judge baseline; Phase 7 evaluation discipline; Phase 8 browser +
-  this finalisation. Phase 9 safety format. Phases 10-11 scaffolding. Done.
+  this finalisation. Phase 9 safety format. **Phase 10 loop ran end to end** on the PUBLIC
+  helao-async `oer13_cps` dataset (13 base metals, no palladium; not Lila's data), on a
+  clearly-labeled SYNTHETIC simulator-lookup example (two different materials; not a fork).
+  **Phase 11 discovery: NOT YET RUN** — the structure-directed search did not execute
+  meaningfully (see Results and LIMITATIONS), so it yields no result about the durability
+  question.
 - The two human checkpoints are the advertised integrity mechanism. Checkpoint 1 is
-  resolved (Anu's decisions applied). Checkpoint 2 signed off; publishing is held until the full build is done. Nothing
-  is published.
+  resolved (Anu's decisions applied). Checkpoint 2 is signed off; publishing (pushing a
+  remote / minting DOIs / posting) is a human step held until the full build is done and is
+  not performed here.
 
 ## Results (numbers from NUMBERS_LOCK.json, each with its n and qualifier, II.3)
 - Judge: 1.0 agreement vs an independent logic program (n=213) and vs SMT (n=311); these

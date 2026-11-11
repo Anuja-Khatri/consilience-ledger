@@ -8,8 +8,10 @@ approval. Nothing has been pushed anywhere.
 All phases done and tagged phase-1 through phase-12. Public name: consilience-ledger. The
 full build reproduces: `make reproduce` is byte-identical (schemas, rules.lock, ledger,
 verdicts). 73 tests green. README carries "Independent work, not affiliated with or
-endorsed by Lila Sciences." Stage 3 ran on a clearly-labeled SYNTHETIC fork on the real
-OERSIM; the discovery report is a rung-graded NULL result. The writeback correction
+endorsed by Lila Sciences." Stage 3 ran on a clearly-labeled SYNTHETIC simulator-lookup example
+(two different materials looked up; not a fork) on the REAL OERSIM over the PUBLIC helao-async
+oer13_cps dataset (13 base metals, no palladium; not Lila's data); the discovery report is
+labelled NOT YET RUN (the search did not execute meaningfully). The writeback correction
 (CONTRADICTION_DOSSIER.md / CORRECTIONS.md) is in place: 0 confirmed, 0 contradicted, 9
 not_comparable. No composition is proposed anywhere.
 

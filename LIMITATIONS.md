@@ -7,11 +7,6 @@ Known limits, recorded as they arise (spec II.3, Phase 7 formalizes this).
   access attempt recorded (D16). No paywalled content is ever scraped.
 - Comparability rules v0 are PROVISIONAL. The sourced, page-cited rule set is drafted
   in Phase 3 from ESAMP ESI and refs 4, 27, 15, 16.
-- Extraction has not run: no API key was present in the build environment (OQ-2).
-  All non-API Phase 2 work proceeds first; extraction stability (a materials number)
-  is unmeasured until keys are available and is reported fresh when measured (II.3).
-- Provisional claims: until Anu's Checkpoint 1 batch returns, downstream outputs run
-  on AGREED-PROVISIONAL claims only and are labeled PROVISIONAL.
 - Mechanism (non-quantitative) comparison uses the structural judge path only; the
   conditions veto does not apply to it (CC-14).
 - Safety seed (Phase 9): the instrument protection bounds use generic public values
@@ -21,12 +16,15 @@ Known limits, recorded as they arise (spec II.3, Phase 7 formalizes this).
   standard public general-safety classes. No dual-use content (CC-31), checked by a
   grep-able denylist test.
 - OERSIM loop (Phase 10): the loop runs end to end on the REAL OERSIM
-  (`vendor/labgate/sim_ext/oersim.py`) replaying Lila's real `oer13_cps` dataset
-  (`~/lila-gate/helao-async/.../oer13_cps.pzstd`, HELAO_DATASET). Because zero real forks
-  survived (CC-22), the fork is a clearly-labeled SYNTHETIC worked example built from two
-  existing addressable points in the dataset (no composition is proposed). Every loop
-  artifact is labeled SYNTHETIC and carries the SIM-NOT-CHEMISTRY disclaimer; the outcome
-  is a simulation over recorded data, not a new chemical measurement. The gate is the
+  (`vendor/labgate/sim_ext/oersim.py`) replaying the PUBLIC `oer13_cps` dataset shipped in
+  helao-async (`~/lila-gate/helao-async/.../oer13_cps.pzstd`, HELAO_DATASET; MIT-licensed,
+  High-Throughput-Experimentation; a combinatorial OER CP library over 13 BASE metals, no
+  palladium). It is NOT Lila's data and not Lila's palladium systems. Because zero real forks
+  survived (CC-22), the example is a clearly-labeled SYNTHETIC simulator-lookup example: it pairs
+  two DIFFERENT existing addressable points and looks up each one's overpotential (no composition is
+  proposed), which is NOT a disagreement between claims about the same entity (not a fork). Every
+  loop artifact is labeled SYNTHETIC and carries the SIM-NOT-CHEMISTRY disclaimer; the outcome is a
+  simulation over that public recorded dataset, not a new chemical measurement. The gate is the
   Phase 9 safety screen (typed, no text channel). A card whose instrument OERSIM cannot
   run gets status plan_only and stops at plan+gate with no faked result (CC-25). Note the
   oer13_cps composition space is 13 base metals (Ca..Zn), a different space from the
@@ -52,13 +50,14 @@ Known limits, recorded as they arise (spec II.3, Phase 7 formalizes this).
   contradict. A future improvement is to read Lila's H-cell electrolyte from their Methods
   and treat it as a stated data-side condition. The earlier screening-tier verdicts were a
   bug, corrected before Checkpoint 2 (CORRECTIONS.md, CONTRADICTION_DOSSIER.md).
-- Discovery (Phase 11): structure-directed search on their closing mechanism claim
-  returned a NULL result (5 candidates, all rung 4 thematic, 0 above rung 3). This is a
-  valid outcome. The v0 vocabulary-stripping emits long natural-language queries, which
-  arXiv (keyword search) matches poorly, and Semantic Scholar rate-limited (4 queries
-  capped), so the candidate pool is small and noisy. A refinement is shorter
-  domain-specific keyword queries and deeper paging. The report is rung-graded with
-  ceilings and states the null plainly (CC-30); no superlatives.
+- Discovery (Phase 11): NOT YET RUN. The structure-directed search did NOT execute meaningfully, so
+  it is not a NULL result and not a result about the durability question at all. The v0
+  vocabulary-stripping fed long full sentences into arXiv's keyword search (which cannot act on a
+  whole sentence as a structural query), the run was rate-limited to 4 queries, and it returned 5
+  unrelated particle-physics / astrophysics papers via incidental vocabulary overlap. The earlier
+  "valid NULL result (nothing above rung 3)" framing was not warranted and is withdrawn
+  (discovery/report/report.md). To get an actual result the search must be re-run with stripped
+  structural terms, domain-targeted queries, and adequate depth; that has not been done here.
 - Baseline (Phase 6): on a preregistered sample of 60 vetoed pairs, the model call made 4
   comparisons the deterministic veto blocks (2 false disagreements, 2 false agreements) and
   recognised incomparability on the other 56. The model is capable but not exact; the veto
@@ -75,4 +74,5 @@ Known limits, recorded as they arise (spec II.3, Phase 7 formalizes this).
   the veto table is the headline result. Per CC-22, this is still a publishable Stage 1
   (ledger, vetoes, corroborations, verdicts, baseline). There are no mechanism claims in
   the approved set, so no mechanism-level fork either; Stage 3 (Phase 10) therefore runs
-  on a clearly-labeled synthetic worked example, not a real ledger fork.
+  on a clearly-labeled synthetic simulator-lookup example (two different materials looked up on
+  the public helao-async dataset), not a real ledger fork.

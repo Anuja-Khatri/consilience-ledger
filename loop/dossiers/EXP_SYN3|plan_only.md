@@ -1,25 +1,25 @@
 # Human Review Dossier: Discriminate overpotential_at_current_density: SYN:xasOnly vs SYN:xasRef
 
-_SIM-NOT-CHEMISTRY: OERSIM replays recorded data. A simulated outcome is not a chemical measurement and licenses no chemical claim._
+_SIM-NOT-CHEMISTRY: OERSIM replays the public oer13_cps dataset shipped in helao-async (13 base metals, no palladium); not Lila's data. A simulated outcome is not a chemical measurement and licenses no chemical claim._
 
-- Fork: `SYN3|plan_only`  |  Axis: `overpotential_at_current_density`  |  Status: **plan_only**
+- Synthetic simulator-lookup example (two different materials; NOT a fork/disagreement): `SYN3|plan_only`  |  Axis: `overpotential_at_current_density`  |  Status: **plan_only**
 - Discriminating power: **weak**  |  Cost: $10K  |  Timeline: days
-- Predicted split: 0.02 (floor 0.013)
+- Lookup margin: 0.02 (floor 0.013)
 
 
 **WEAK DISCRIMINATING POWER (CC-27): this experiment may not decide the question.**
 
 ## The two claims
 
-- A (SYN3A): > SYNTHETIC worked example: SYN:xasOnly is claimed to show 0.4 V overpotential.
-- B (SYN3B): > SYNTHETIC worked example: SYN:xasRef is claimed to show 0.42 V overpotential.
+- A (SYN3A): > SYNTHETIC simulator-lookup example: SYN:xasOnly shows 0.4 V overpotential in the public oer13_cps dataset.
+- B (SYN3B): > SYNTHETIC simulator-lookup example: SYN:xasRef shows 0.42 V overpotential in the public oer13_cps dataset.
 
 ## Experiment design
 
 - Hypothesis: SYN:xasOnly and SYN:xasRef differ in overpotential_at_current_density under the shared conditions.
 - Manipulated variable: catalyst identity
 - Discriminating observable: overpotential_at_current_density
-- Instrument: synchrotron_xas (exists: True; lab-gate OERSIM (cp chronopotentiometry); replays recorded data)
+- Instrument: synchrotron_xas (exists: True; lab-gate OERSIM (cp chronopotentiometry); replays the public oer13_cps dataset shipped in helao-async (13 base metals, no palladium))
 - Protocol: Measure overpotential_at_current_density for both catalysts at the shared current density and electrolyte, compare the difference against the 0.013 floor.
 - If match holds: the two values agree within the floor; the disagreement dissolves
 - If match fails: the two values differ beyond the floor; the disagreement is real

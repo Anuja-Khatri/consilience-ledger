@@ -9,6 +9,7 @@ Every run artifact carries a SIM-NOT-CHEMISTRY disclaimer.
 """
 
 SIM_NOT_CHEMISTRY = (
-    "SIM-NOT-CHEMISTRY: OERSIM replays recorded data. A simulated outcome is not a "
-    "chemical measurement and licenses no chemical claim."
+    "SIM-NOT-CHEMISTRY: OERSIM replays the public oer13_cps dataset shipped in helao-async "
+    "(13 base metals, no palladium); not Lila's data. A simulated outcome is not a chemical "
+    "measurement and licenses no chemical claim."
 )

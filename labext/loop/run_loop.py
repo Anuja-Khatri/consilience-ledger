@@ -1,11 +1,16 @@
-"""Phase 10: the Stage 3 loop, end to end, on a clearly-labeled SYNTHETIC fork.
+"""Phase 10: the Stage 3 loop, end to end, on a clearly-labeled SYNTHETIC simulator-lookup example.
 
-Zero real forks survived the ledger (CC-22), so the loop runs on a synthetic worked
-example. Every artifact says SYNTHETIC and SIM-NOT-CHEMISTRY. The OERSIM step replays
-Lila's real recorded oer13_cps dataset (a simulation over recorded data, not a new
-chemical measurement). A card whose instrument OERSIM cannot run gets status plan_only:
-it stops at the plan + gate stage, with no faked result (CC-25). No composition is
-proposed anywhere; the two catalysts are existing addressable points in Lila's dataset.
+Zero real forks survived the ledger (CC-22), so the loop runs on a synthetic simulator-lookup
+example: it pairs two DIFFERENT existing materials and looks up each one's overpotential, which is
+NOT a disagreement between claims about the same entity (not a fork). Every artifact says SYNTHETIC
+and SIM-NOT-CHEMISTRY. The OERSIM step replays the public ``oer13_cps`` dataset shipped in
+helao-async (MIT-licensed; High-Throughput-Experimentation) — a combinatorial OER chronopotentiometry
+library over a plate of 13 BASE metals (Ca, Ce, Co, Cu, Fe, La, Mg, Mn, Ni, Sb, Sn, Ta, Zn; no
+palladium). It is NOT Lila's data and NOT Lila's palladium systems; this is a simulation over that
+public recorded dataset, not a new chemical measurement. A card whose instrument OERSIM cannot run
+gets status plan_only: it stops at the plan + gate stage, with no faked result (CC-25). No
+composition is proposed anywhere; the two catalysts are existing addressable points in the public
+helao-async dataset.
 """
 
 from __future__ import annotations
@@ -55,7 +60,7 @@ def _synthetic_card(cid: str, subject: str, eta: float) -> ClaimCard:
         measurability="measurable_now", measurable_with="cp_chronopotentiometry",
         subject=subject, relation="has_overpotential", object="overpotential",
         domain="materials_oer",
-        source_sentence=f"SYNTHETIC worked example: {subject} is claimed to show {eta} V overpotential.",
+        source_sentence=f"SYNTHETIC simulator-lookup example: {subject} shows {eta} V overpotential in the public oer13_cps dataset.",
         source_document="SYNTHETIC", provenance_hash=f"syn_{cid}",
         axis="overpotential_at_current_density",
         quantity=Quantity(value=eta, unit="V"),
@@ -69,7 +74,7 @@ def _gate(card: ExperimentCard) -> dict:
     raw_plan = {
         "instrument_settings": {"current_density_ma_cm2": 10, "acid_ml": 5},
         "chemical_classes": [],
-        "comment": f"SYNTHETIC fork {card.fork_id}; {SIM_NOT_CHEMISTRY}",
+        "comment": f"SYNTHETIC simulator-lookup example {card.fork_id}; {SIM_NOT_CHEMISTRY}",
     }
     screen = compile_screen(load_registry(_SEED))
     return screen.check(plan_fingerprint(raw_plan))
@@ -89,7 +94,7 @@ def run_loop() -> dict:
 
     for i, (ca, cb) in enumerate(pairs, 1):
         la, lb = _comp_label(ca, sim.elements), _comp_label(cb, sim.elements)
-        # OERSIM replays the real recorded measurement for each existing point
+        # OERSIM replays the stored CP trace for each existing point in the public helao-async dataset
         ma, mb = sim.measure_cp(ca), sim.measure_cp(cb)
         eta_a, eta_b = ma["actual_eta_vrhe"], mb["actual_eta_vrhe"]
         fork_id = f"SYN{i}|{la}|{lb}"
@@ -108,16 +113,23 @@ def run_loop() -> dict:
         plan["_disclaimer"] = SIM_NOT_CHEMISTRY
 
         margin = abs(eta_a - eta_b)
-        outcome = "fork_confirmed" if margin > FLOOR_V else "within_floor"
+        # Two DIFFERENT materials are looked up; a margin above the floor only means the two distinct
+        # materials differ (expected), NOT that two claims about the same entity disagree. No fork claim.
+        outcome = ("lookup_two_materials_differ" if margin > FLOOR_V
+                   else "lookup_two_materials_within_floor")
         trace = {
             "fork_id": fork_id, "SYNTHETIC": True, "disclaimer": SIM_NOT_CHEMISTRY,
+            "example_type": "synthetic simulator-lookup example (two different materials; not a fork)",
             "catalyst_a": {"label": la, "comp_vec": list(ca), "oersim_eta_vrhe": round(eta_a, 4)},
             "catalyst_b": {"label": lb, "comp_vec": list(cb), "oersim_eta_vrhe": round(eta_b, 4)},
             "gate": gate, "card_status": status,
             "plan_valid": validate_sequence(plan) == [],
             "margin_V": round(margin, 4), "floor_V": FLOOR_V, "outcome": outcome,
             "oersim_dataset": "oer13_cps.pzstd", "oersim_dataset_sha256": sha,
-            "note": "OERSIM replays Lila's recorded data; not a new chemical measurement.",
+            "note": ("OERSIM replays the public oer13_cps dataset shipped in helao-async "
+                     "(MIT; High-Throughput-Experimentation; 13 base metals, no palladium). Not Lila's "
+                     "data; not a new chemical measurement. The pair is two different materials, so the "
+                     "margin is a lookup difference, not a fork."),
         }
         # writeback artifacts
         json.dump(card.model_dump(mode="json"), open(os.path.join(_LOOP, "cards", f"{i}.json"), "w"), indent=2, sort_keys=True)

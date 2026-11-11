@@ -65,6 +65,10 @@ def test_zero_dual_use_in_seed():
     with open(_SEED) as fh:
         text = fh.read()
     assert scan_text(text) == [], "seed registry must contain no dual-use tokens (CC-31)"
+    # the PROPOSED (not-activated) registry must also be harmless (fix #6)
+    proposed = os.path.join(_ROOT, "safety_format", "seed", "registry_proposed.yaml")
+    if os.path.exists(proposed):
+        assert scan_text(open(proposed).read()) == [], "proposed seed registry must contain no dual-use tokens"
 
 
 def test_registry_entry_round_trip():

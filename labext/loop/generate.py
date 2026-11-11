@@ -25,7 +25,7 @@ def generate_card(fork: dict, card_a: ClaimCard, card_b: ClaimCard) -> Experimen
         discriminating_observable=axis,
         instrument=instrument,
         instrument_exists=True,
-        instrument_source="lab-gate OERSIM (cp chronopotentiometry); replays recorded data",
+        instrument_source="lab-gate OERSIM (cp chronopotentiometry); replays the public oer13_cps dataset shipped in helao-async (13 base metals, no palladium)",
         protocol_sketch=(
             f"Measure {axis} for both catalysts at the shared current density and electrolyte, "
             f"compare the difference against the {floor} floor."

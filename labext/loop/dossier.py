@@ -17,14 +17,18 @@ def render_dossier(card: ExperimentCard, fork: dict) -> str:
     d = card.experiment_design
     none_flag = "" if card.is_scientific else "\n**FALSIFICATION = NONE: this card is not falsifiable and does not compile to a plan (CC-26).**\n"
     weak_flag = "" if card.discriminating_power.value == "strong" else "\n**WEAK DISCRIMINATING POWER (CC-27): this experiment may not decide the question.**\n"
+    synthetic = bool(fork.get("synthetic"))
+    pair_label = ("Synthetic simulator-lookup example (two different materials; NOT a fork/disagreement)"
+                  if synthetic else "Fork")
+    margin_label = "Lookup margin" if synthetic else "Predicted split"
     lines = [
         f"# Human Review Dossier: {card.title}",
         "",
         f"_{SIM_NOT_CHEMISTRY}_",
         "",
-        f"- Fork: `{card.fork_id}`  |  Axis: `{fork.get('axis')}`  |  Status: **{card.status()}**",
+        f"- {pair_label}: `{card.fork_id}`  |  Axis: `{fork.get('axis')}`  |  Status: **{card.status()}**",
         f"- Discriminating power: **{card.discriminating_power.value}**  |  Cost: {card.estimated_cost.value}  |  Timeline: {card.estimated_timeline}",
-        f"- Predicted split: {fork.get('margin')} (floor {fork.get('floor_applied')})",
+        f"- {margin_label}: {fork.get('margin')} (floor {fork.get('floor_applied')})",
         none_flag,
         weak_flag,
         "## The two claims",

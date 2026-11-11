@@ -34,3 +34,22 @@ Pilot yield (70 approvable, Phase 2), approved claims (34, Checkpoint 1), ledger
 (0 forks, 561 vetoes, Phase 4), verdicts (0 confirmed, 0 contradicted, 9 not_comparable,
 Phase 5, corrected per CORRECTIONS.md). These are descriptive results of fixed rules,
 reported with their provenance, not headline hypothesis tests.
+
+## Durability consistency check — claim 2609.30133__010 (preregistered BEFORE opening the trace, fix #7)
+- Claim under test: "InMnPdOx is the most stable, sustaining an overpotential below 0.5 V over
+  1,000 h" (arXiv:2609.30133, claim 2609.30133__010).
+- Data used: the authors' OWN released H-cell trace, `upstream/lila_oer_manuscript/data/fig_3e.csv`
+  (iR-corrected overpotential per material system; cited by sha256 + rows).
+- PASS rule (fixed before any value in fig_3e.csv was read): the check PASSES iff the InMnPdOx
+  system's iR-corrected overpotential in the released trace is strictly below 0.5 V at EVERY
+  recorded point for that system. It FAILS iff any recorded InMnPdOx point is >= 0.5 V. It is
+  INCONCLUSIVE iff the trace contains no InMnPdOx system, or carries no per-point time axis to
+  bound the stated 1,000 h duration (in which case only the "below 0.5 V" magnitude is testable and
+  the 1,000 h duration is reported as not-verifiable-from-this-file).
+- Threshold handling: 0.5 V is the claim's own stated threshold; no extra floor is applied (this is
+  a threshold-crossing check, not a fork). Values are read in volts as released.
+- LABEL (fixed): this is a CONSISTENCY CHECK between the authors' claim and the authors' own data —
+  same authors, same iR-corrected measurement. It is NOT independent confirmation. The claim itself
+  notes the 1,000 h figure rests on "repeated measurements over a partial duration on planar and
+  porous supports" (Figs. S4–S6), so agreement here means the claim is consistent with the released
+  trace, nothing more.

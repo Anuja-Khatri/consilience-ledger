@@ -1,6 +1,6 @@
 # Ledger
 
-Rules comparability-v0. ledger.hash `f42d48c1afbf87aa...`.
+Rules comparability-v0.1. ledger.hash `a11ee946669360b4...`.
 
 - claims: 34
 - forks (settleable disagreements): 0

@@ -39,7 +39,8 @@
     "label": "Ni10Ta90",
     "oersim_eta_vrhe": 0.3773
   },
-  "disclaimer": "SIM-NOT-CHEMISTRY: OERSIM replays recorded data. A simulated outcome is not a chemical measurement and licenses no chemical claim.",
+  "disclaimer": "SIM-NOT-CHEMISTRY: OERSIM replays the public oer13_cps dataset shipped in helao-async (13 base metals, no palladium); not Lila's data. A simulated outcome is not a chemical measurement and licenses no chemical claim.",
+  "example_type": "synthetic simulator-lookup example (two different materials; not a fork)",
   "floor_V": 0.013,
   "fork_id": "SYN1|Ta100|Ni10Ta90",
   "gate": {
@@ -52,9 +53,9 @@
     "source": null
   },
   "margin_V": 0.0281,
-  "note": "OERSIM replays Lila's recorded data; not a new chemical measurement.",
+  "note": "OERSIM replays the public oer13_cps dataset shipped in helao-async (MIT; High-Throughput-Experimentation; 13 base metals, no palladium). Not Lila's data; not a new chemical measurement. The pair is two different materials, so the margin is a lookup difference, not a fork.",
   "oersim_dataset": "oer13_cps.pzstd",
   "oersim_dataset_sha256": "b9e23249ec4367e1a729223a584f74cd08bb98a4f738cbe6fb091c345044cbf0",
-  "outcome": "fork_confirmed",
+  "outcome": "lookup_two_materials_differ",
   "plan_valid": true
 }

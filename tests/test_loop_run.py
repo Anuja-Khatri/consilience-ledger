@@ -19,7 +19,8 @@ def test_loop_end_to_end():
     r = run_loop()
     assert r["forks_run"] == 2 and r["plan_only"] == 1
     outcomes = {s["outcome"] for s in r["summaries"]}
-    assert "fork_confirmed" in outcomes  # at least one fork resolved by OERSIM
+    # synthetic simulator-lookup example: two DIFFERENT materials looked up (not a fork claim)
+    assert "lookup_two_materials_differ" in outcomes
     assert "plan_only" in outcomes       # CC-25 honored
     # every committed run trace is labeled SYNTHETIC with the SIM-NOT-CHEMISTRY disclaimer
     traces = glob.glob(os.path.join(_REPO, "loop", "runs", "*.json"))

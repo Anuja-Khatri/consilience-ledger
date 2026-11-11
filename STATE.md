@@ -47,7 +47,8 @@ Phase 0 is read-only ENGINE_INVENTORY. It ran to completion. No file outside
 
 ### Blockers carried into later phases (from OPEN_QUESTIONS.md)
 - Phase 2 needs `corpus_in/` papers (OQ-1) and exported API keys (OQ-2).
-- Phase 5 + Phase 10 need the Lila OER data + `oer13_cps` dataset + manuscript license (OQ-3).
+- Phase 5 needs the Lila OER manuscript data + manuscript license (OQ-3). Phase 10 uses the PUBLIC
+  helao-async `oer13_cps` dataset (present), not Lila's data — it is not blocked by OQ-3.
 
 ## Phase 1 COMPLETE (2026-11-10). Acceptance: pytest green (24 passed), tagged phase-1.
 
@@ -141,13 +142,17 @@ Also done earlier: Phase 9 safety (tag phase-9), Phases 10-11 scaffolding.
 ## BUILD COMPLETE through Phase 12. Checkpoint 2 signed off (name, license). PUBLISHING HELD for push approval.
 
 Phases 10-12 done after sign-off:
-- Phase 10 (tag phase-10): Stage 3 loop end-to-end on the REAL OERSIM (vendored sim_ext, real
-  oer13_cps dataset). Two clearly-labeled SYNTHETIC forks drive card -> plan -> gate -> OERSIM ->
-  verdict (SYN1 fork_confirmed, SYN2 within_floor); SYN3 plan_only (CC-25). One-page dossiers,
-  candidate table, SIM-NOT-CHEMISTRY on every artifact. No composition proposed.
+- Phase 10 (tag phase-10): Stage 3 loop end-to-end on the REAL OERSIM (vendored sim_ext, PUBLIC
+  helao-async oer13_cps dataset; 13 base metals, no palladium; not Lila's data). Two clearly-labeled
+  SYNTHETIC simulator-lookup examples (two DIFFERENT materials each; not forks) drive card -> plan ->
+  gate -> OERSIM -> writeback (SYN1 lookup_two_materials_differ, SYN2 lookup_two_materials_within_floor);
+  SYN3 plan_only (CC-25). One-page dossiers, candidate table, SIM-NOT-CHEMISTRY on every artifact. No
+  composition proposed.
 - Phase 11 (tag phase-11): structure-directed discovery on their closing mechanism claim ->
-  NULL result (5 candidates, all rung 4 thematic, 0 above rung 3), rung-graded with ceilings,
-  chance context, no superlatives. Module D reconciliation report over the ledger.
+  NOT YET RUN. The search did not execute meaningfully (long sentences into a keyword search,
+  rate-limited to 4 queries, returned 5 unrelated particle-physics/astrophysics papers), so it is
+  not a NULL result and says nothing about the durability question (discovery/report/report.md;
+  CORRECTIONS.md). Module D reconciliation report over the ledger is unaffected.
 - Phase 12 (tag phase-12): final verification. make reproduce byte-identical; 73 tests green;
   numbers lint clean; no retracted number outside CORRECTIONS/DOSSIER; no em dashes in docs (II.3);
   README has the affiliation disclaimer; name consilience-ledger.

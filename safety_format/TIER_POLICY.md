@@ -1,6 +1,8 @@
-# TIER POLICY (draft, D13)
+# TIER POLICY (draft, D13) — AWAITING ANU'S WORDING
 
-Draft wording. Anu words the final version at Checkpoint 2.
+> **STATUS: AWAITING ANU'S WORDING.** This is draft wording only; the final policy text is Anu's to
+> write. Nothing here is activated as final policy until Anu signs the wording (see SEED_APPROVAL.md
+> for the paired safety-seed review). Draft retained below for reference.
 
 ## Scope
 This safety format ships with public-standard EHS content only. Dual-use content is

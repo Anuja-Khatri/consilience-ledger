@@ -1,6 +1,6 @@
 {
   "_SYNTHETIC": true,
-  "_disclaimer": "SIM-NOT-CHEMISTRY: OERSIM replays recorded data. A simulated outcome is not a chemical measurement and licenses no chemical claim.",
+  "_disclaimer": "SIM-NOT-CHEMISTRY: OERSIM replays the public oer13_cps dataset shipped in helao-async (13 base metals, no palladium); not Lila's data. A simulated outcome is not a chemical measurement and licenses no chemical claim.",
   "_experiments_full": [
     {
       "experiment_name": "OER_discriminate",

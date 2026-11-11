@@ -1,27 +1,31 @@
-# Cross-field correspondence report (discovery)
+# Cross-field correspondence report (discovery) — NOT YET RUN
 
-Structure-directed search across other fields for the durability mechanism. Results are hypothesis-generating, not evidential. Rung ceilings are stated for every match.
+**Status: NOT YET RUN. This is not a result about the durability question.**
 
-Chance context: Cross-field structural matches at rung 1-2 are rare; the base rate of thematic (rung 4) hits is high because alien-vocabulary queries surface shared words. A rung-3 match is suggestive and hypothesis-generating only, not evidence.
+The structure-directed cross-field search did **not execute meaningfully**, so there is nothing here
+to interpret as a NULL result or as evidence of anything. Specifically:
 
-## Result
+- The queries fed **long, full source sentences** into a **keyword** search (arXiv), rather than the
+  stripped, domain-targeted structural terms the method requires. A keyword engine cannot act on a
+  whole sentence as a structural query.
+- The run was **rate-limited to 4 queries**, far too shallow to probe the question.
+- It returned **5 unrelated particle-physics / astrophysics papers** (a B-meson decay measurement,
+  an ATLAS detector performance study, and three gravitational-wave / neutrino observational
+  searches) — surfaced by incidental vocabulary overlap, with **no structural content** related to
+  self-formed reorganization under stress producing durability.
 
-Found nothing above rung 3. This is a valid outcome: the mechanism question has no structural cross-field match at this corpus and search depth. Rung-3 and rung-4 candidates are listed below as suggestions only.
+Because the search never actually probed the durability mechanism, the earlier framing of this as a
+"valid NULL result (found nothing above rung 3)" was **not warranted** and has been withdrawn. The
+correct status is **not yet run**: the cross-field search has produced no result about the durability
+question, and none is claimed.
 
-## Candidates
+## The 5 returned items (shown only as evidence the search malfunctioned — NOT graded candidates)
 
-- **Observation of the rare $B^0_s\toμ^+μ^-$ decay from the combined analysis of CMS and LHCb data** [arxiv] rung 4
-  - ceiling: Thematic resonance only (quarantined). Vocabulary match without structural survival. Does NOT license any structural claim.
-  - note: This is a particle physics measurement paper with no structural content related to self-formed reorganization under stress producing durability/stability.
-- **Expected Performance of the ATLAS Experiment - Detector, Trigger and Physics** [arxiv] rung 4
-  - ceiling: Thematic resonance only (quarantined). Vocabulary match without structural survival. Does NOT license any structural claim.
-  - note: This is a detector/physics performance study with no mention of self-formed reorganization under stress leading to structural durability, sharing no mechanism w
-- **Deep Search for Joint Sources of Gravitational Waves and High-Energy Neutrinos with IceCube During the Third Observing Run of LIGO and Virgo** [arxiv] rung 4
-  - ceiling: Thematic resonance only (quarantined). Vocabulary match without structural survival. Does NOT license any structural claim.
-  - note: This is an astrophysical multimessenger observational search with no structural claim about self-formed reorganization under stress producing durability/stabili
-- **GWTC-4.0: Methods for Identifying and Characterizing Gravitational-wave Transients** [arxiv] rung 4
-  - ceiling: Thematic resonance only (quarantined). Vocabulary match without structural survival. Does NOT license any structural claim.
-  - note: The paper describes detection/characterization methodology for gravitational-wave transients with no connection to self-formed structural reorganization under s
-- **Search for High-energy Neutrinos from Binary Neutron Star Merger GW170817 with ANTARES, IceCube, and the Pierre Auger Observatory** [arxiv] rung 4
-  - ceiling: Thematic resonance only (quarantined). Vocabulary match without structural survival. Does NOT license any structural claim.
-  - note: This is an observational multi-messenger astrophysics search paper with no structural claim about self-formed reorganization under stress producing durability, 
+- Observation of the rare $B^0_s\to\mu^+\mu^-$ decay (CMS + LHCb) — particle physics; unrelated.
+- Expected Performance of the ATLAS Experiment (Detector, Trigger and Physics) — detector study; unrelated.
+- Deep Search for Joint Sources of Gravitational Waves and High-Energy Neutrinos (IceCube/LIGO/Virgo) — astrophysics; unrelated.
+- GWTC-4.0: Methods for Identifying and Characterizing Gravitational-wave Transients — astrophysics; unrelated.
+- Search for High-energy Neutrinos from GW170817 (ANTARES/IceCube/Auger) — astrophysics; unrelated.
+
+To obtain an actual result, the search must be re-run with stripped structural terms (not full
+sentences), domain-targeted queries, and adequate depth. That run has not been performed here.
