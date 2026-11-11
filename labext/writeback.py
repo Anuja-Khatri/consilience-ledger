@@ -160,6 +160,11 @@ def compute_verdicts(cards: list[ClaimCard], data_dir: str = None) -> dict:
 
 def write_verdicts(cards: list[ClaimCard], data_dir: str = None) -> dict:
     result = compute_verdicts(cards, data_dir)
+    if result.get("error"):
+        # Runtime data absent (CC-28: never committed). Leave the committed verdicts
+        # untouched so a fresh clone stays byte-stable; mirror the tests, which skip.
+        return {"skipped": result["error"],
+                "note": "runtime data absent; committed verdicts left unchanged"}
     verdicts = result.get("verdicts", [])
     with open(os.path.join(_REPO, "ledger", "verdicts.json"), "w") as fh:
         json.dump(verdicts, fh, indent=2, sort_keys=True)

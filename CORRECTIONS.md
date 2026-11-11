@@ -144,3 +144,10 @@ digits are not printed anywhere in this repo.
 - C-007 (2026-11-11): the round-robin headline was corrected to "0 to 4 forks at s = 15 mV" with its
   full qualifier, and the result to lead with is the robust inter-lab central range of 90.7 mV
   (n = 9). No computed number moved; only the presentation changed.
+- C-008 (2026-11-11): on a clone without the never-committed H-cell data (CC-28), `make reproduce`
+  ran writeback, which overwrote the committed `ledger/verdicts.json` with an empty list and shrank
+  `reports/verdicts.md`, breaking the published fresh-clone byte-stability for exactly the reader the
+  front page invites to clone and check; no drift occurred with the data present, which is why earlier
+  checks passed. Found by the post-push fresh-clone verification. Writeback now skips without writing
+  when the data is absent, mirroring the two tests that already skip for the same reason; verified
+  byte-stable on a dataless fresh clone.
