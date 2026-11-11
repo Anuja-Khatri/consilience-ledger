@@ -1,0 +1,134 @@
+{
+  "ref40_peng": {
+    "claim_id": "REF40:Peng2023:Pd:overpotential",
+    "claim_kind": "performance_value",
+    "subject": "hierarchical Pd catalyst",
+    "source_sentence": "The Pd catalyst displays an ultralow overpotential (196 mV) ... at 10 mA cm-2 in 1 M HClO4.",
+    "source_document": "PMC10035503 (Peng, Natl Sci Rev, 10.1093/nsr/nwac108)",
+    "provenance_hash": "sha256:4d59655ef667f0e7",
+    "source_tier": "primary",
+    "dataset_id": null,
+    "protocol_signature": null,
+    "source_id": "REF40:Peng2023",
+    "instrument_potential_limit_rhe": null,
+    "commitment_direction": "asserts",
+    "causal_direction": "causes",
+    "physical_scale": "electrode",
+    "measurability": "measurable_now",
+    "measurable_with": "rotating electrode LSV/CP",
+    "relation": "exhibits_overpotential",
+    "object": "OER activity",
+    "domain": "chemistry",
+    "terms": [
+      "overpotential",
+      "OER",
+      "Pd"
+    ],
+    "role": "rate_response",
+    "axis": "overpotential_at_current_density",
+    "material": {
+      "Pd": 1.0
+    },
+    "quantity": {
+      "value": 0.196,
+      "unit": "V",
+      "uncertainty": null,
+      "uncertainty_kind": "none_stated",
+      "bound": "exact"
+    },
+    "conditions": {
+      "domain": "chemistry",
+      "electrolyte": {
+        "identity": "HClO4(aq)",
+        "concentration": "unstated"
+      },
+      "ph": "unstated",
+      "current_density": "unstated",
+      "temperature": "unstated",
+      "loading": "unstated",
+      "substrate": "unstated",
+      "protocol_tier": "unstated",
+      "prior_operation_duration": "unstated",
+      "anneal_temperature": "unstated",
+      "ir_correction": "unstated"
+    }
+  },
+  "ref39_cherevko": {
+    "claim_id": "REF39:Cherevko2014:Pd:dissolution",
+    "claim_kind": "performance_value",
+    "subject": "polycrystalline Pd",
+    "source_sentence": "on metals for which oxygen evolves directly from adsorbed water, such as Pt and presumably Pd, the Tafel slopes are high and the dissolution rates are low.",
+    "source_document": "ChemCatChem 2014,6,2219 (Cherevko, 10.1002/cctc.201402194) [abstract; SI not retrieved]",
+    "provenance_hash": "sha256:9c0baf0591a06bea",
+    "source_tier": "primary",
+    "dataset_id": null,
+    "protocol_signature": null,
+    "source_id": "REF39:Cherevko2014",
+    "instrument_potential_limit_rhe": null,
+    "commitment_direction": "asserts",
+    "causal_direction": "causes",
+    "physical_scale": "electrode",
+    "measurability": "measurable_now",
+    "measurable_with": "SFC-ICP-MS dissolution",
+    "relation": "exhibits_dissolution",
+    "object": "OER stability",
+    "domain": "chemistry",
+    "terms": [
+      "dissolution",
+      "OER",
+      "Pd"
+    ],
+    "role": "rate_response",
+    "axis": "dissolution_rate",
+    "material": {
+      "Pd": 1.0
+    },
+    "quantity": {
+      "value": 0.0,
+      "unit": "ng/cm^2/s",
+      "uncertainty": null,
+      "uncertainty_kind": "none_stated",
+      "bound": "approx"
+    },
+    "conditions": {
+      "domain": "chemistry",
+      "electrolyte": {
+        "identity": "unstated",
+        "concentration": "unstated"
+      },
+      "ph": "unstated",
+      "current_density": "unstated",
+      "temperature": "unstated",
+      "loading": "unstated",
+      "substrate": "unstated",
+      "protocol_tier": "unstated",
+      "prior_operation_duration": "unstated",
+      "anneal_temperature": "unstated",
+      "ir_correction": "unstated"
+    }
+  },
+  "judge_verdict": {
+    "pair_id": "REF39:Cherevko2014:Pd:dissolution|REF40:Peng2023:Pd:overpotential",
+    "claim_a_id": "REF39:Cherevko2014:Pd:dissolution",
+    "claim_b_id": "REF40:Peng2023:Pd:overpotential",
+    "claim_a_source": "ChemCatChem 2014,6,2219 (Cherevko, 10.1002/cctc.201402194) [abstract; SI not retrieved]",
+    "claim_b_source": "PMC10035503 (Peng, Natl Sci Rev, 10.1093/nsr/nwac108)",
+    "domain": "chemistry",
+    "axis": "dissolution_rate",
+    "defects": [
+      {
+        "defect_type": "axis_mismatch",
+        "target": "dissolution_rate vs overpotential_at_current_density"
+      }
+    ],
+    "margin": null,
+    "floor_applied": null,
+    "floor_unit": null,
+    "floor_measured": null,
+    "rules_version": "comparability-v2.0",
+    "code_version": "operator-v4-1.0.0",
+    "verdict": "not_comparable",
+    "kind": "rejection",
+    "content_hash": "sha256:f555f46eeea3c3513e92e651a027a1689f9b33ce16729c51000cd4e8576d7270"
+  }
+}

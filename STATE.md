@@ -139,7 +139,7 @@ Phases completed this run:
 
 Also done earlier: Phase 9 safety (tag phase-9); Phase 10 loop RAN end to end on the public
 helao-async oer13_cps dataset (synthetic simulator-lookup example, not a fork); Phase 11 discovery
-NOT YET RUN (the search did not execute meaningfully; see discovery/report/report.md, CORRECTIONS.md).
+executed as a true null (nothing above rung 3; see discovery/report/report.md, feasibility/closure/).
 
 ## BUILD COMPLETE through Phase 12. Checkpoint 2 signed off (name, license). PUBLISHING HELD for push approval.
 
@@ -151,10 +151,11 @@ Phases 10-12 done after sign-off:
   SYN3 plan_only (CC-25). One-page dossiers, candidate table, SIM-NOT-CHEMISTRY on every artifact. No
   composition proposed.
 - Phase 11 (tag phase-11): structure-directed discovery on their closing mechanism claim ->
-  NOT YET RUN. The search did not execute meaningfully (long sentences into a keyword search,
-  rate-limited to 4 queries, returned 5 unrelated particle-physics/astrophysics papers), so it is
-  not a NULL result and says nothing about the durability question (discovery/report/report.md;
-  CORRECTIONS.md). Module D reconciliation report over the ledger is unaffected.
+  executed, true null. The earlier attempt did not run (long sentences into a keyword search,
+  rate-limited, unrelated papers); the fixed run used short structural queries (20 of 40 calls,
+  56 of 60 candidates on-topic by title) and found nothing above rung 3, 0 of 60
+  isomorphic-mechanism matches (discovery/report/report.md; feasibility/closure/CLOSURE_REPORT.md).
+  Module D reconciliation report over the ledger is unaffected.
 - Phase 12 (tag phase-12): final verification. make reproduce byte-identical; 73 tests green;
   numbers lint clean; no retracted number outside CORRECTIONS/DOSSIER; no em dashes in docs (II.3);
   README has the affiliation disclaimer; name consilience-ledger.

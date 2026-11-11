@@ -50,14 +50,13 @@ Known limits, recorded as they arise (spec II.3, Phase 7 formalizes this).
   contradict. A future improvement is to read Lila's H-cell electrolyte from their Methods
   and treat it as a stated data-side condition. The earlier screening-tier verdicts were a
   bug, corrected before Checkpoint 2 (CORRECTIONS.md, CONTRADICTION_DOSSIER.md).
-- Discovery (Phase 11): NOT YET RUN. The structure-directed search did NOT execute meaningfully, so
-  it is not a NULL result and not a result about the durability question at all. The v0
-  vocabulary-stripping fed long full sentences into arXiv's keyword search (which cannot act on a
-  whole sentence as a structural query), the run was rate-limited to 4 queries, and it returned 5
-  unrelated particle-physics / astrophysics papers via incidental vocabulary overlap. The earlier
-  "valid NULL result (nothing above rung 3)" framing was not warranted and is withdrawn
-  (discovery/report/report.md). To get an actual result the search must be re-run with stripped
-  structural terms, domain-targeted queries, and adequate depth; that has not been done here.
+- Discovery (Phase 11): executed, true null. The earlier v0 attempt did not run (it fed long full
+  sentences into arXiv's keyword search, was rate-limited, and returned unrelated particle-physics
+  and astrophysics papers). The fixed run used short structural queries to arXiv and Semantic
+  Scholar (20 of 40 calls; 56 of 60 candidates on-topic by title, so the execution gate passed),
+  and found nothing above rung 3 and 0 of 60 isomorphic-mechanism matches. The 93 percent on-topic
+  rate is expected by construction and carries no correspondence signal, so the result is a true
+  null (discovery/report/report.md, feasibility/closure/CLOSURE_REPORT.md).
 - Baseline (Phase 6): on a preregistered sample of 60 vetoed pairs, the model call made 4
   comparisons the deterministic veto blocks (2 false disagreements, 2 false agreements) and
   recognised incomparability on the other 56. The model is capable but not exact; the veto

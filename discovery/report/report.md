@@ -1,31 +1,30 @@
-# Cross-field correspondence report (discovery) - NOT YET RUN
+# Cross-field correspondence report (discovery) - executed run, true null
 
-**Status: NOT YET RUN. This is not a result about the durability question.**
+Status: executed. This run replaces the earlier "not yet run" placeholder. The cross-field
+structural search was fixed and actually run, and it returned a true null: nothing rose above
+rung 3. The full receipts are in `feasibility/closure/` (CLOSURE_REPORT.md Test 2, PREREG_CROSSFIELD.md,
+run_crossfield_search.py, test2_candidates.json).
 
-The structure-directed cross-field search did **not execute meaningfully**, so there is nothing here
-to interpret as a NULL result or as evidence of anything. Specifically:
+## What was fixed
+The earlier attempt sent full source sentences to a keyword API, hit rate limits, and returned
+unrelated particle-physics papers, so it never ran. The fix, preregistered before running, replaces
+those with short structural queries (2 to 5 words, vocabulary-stripped) to arXiv (cond-mat and
+physics.chem-ph) and Semantic Scholar, capped and cached. The run counts as executed only if at
+least half of the retrieved candidates are on-topic by title.
 
-- The queries fed **long, full source sentences** into a **keyword** search (arXiv), rather than the
-  stripped, domain-targeted structural terms the method requires. A keyword engine cannot act on a
-  whole sentence as a structural query.
-- The run was **rate-limited to 4 queries**, far too shallow to probe the question.
-- It returned **5 unrelated particle-physics / astrophysics papers** (a B-meson decay measurement,
-  an ATLAS detector performance study, and three gravitational-wave / neutrino observational
-  searches) - surfaced by incidental vocabulary overlap, with **no structural content** related to
-  self-formed reorganization under stress producing durability.
+## What the run did
+- 20 of 40 query-calls were used.
+- 56 of 60 candidates were on-topic by title (93 percent), so the execution gate passed.
+- Semantic Scholar was rate-limited to empty responses; arXiv carried the run.
 
-Because the search never actually probed the durability mechanism, the earlier framing of this as a
-"valid NULL result (found nothing above rung 3)" was **not warranted** and has been withdrawn. The
-correct status is **not yet run**: the cross-field search has produced no result about the durability
-question, and none is claimed.
+## The result: a true null
+The matcher graded each candidate against the target mechanism graph (an operando process forming an
+anisotropic nanostructure that yields operational durability). The closest hits are same-field
+topical adjacency (structure-to-stability in electrocatalysts), none presenting that mechanism as a
+cross-field correspondence with disjoint vocabulary. Nothing rises above rung 3, and 0 of 60 are
+isomorphic-mechanism matches.
 
-## The 5 returned items (shown only as evidence the search malfunctioned - NOT graded candidates)
-
-- Observation of the rare $B^0_s\to\mu^+\mu^-$ decay (CMS + LHCb) - particle physics; unrelated.
-- Expected Performance of the ATLAS Experiment (Detector, Trigger and Physics) - detector study; unrelated.
-- Deep Search for Joint Sources of Gravitational Waves and High-Energy Neutrinos (IceCube/LIGO/Virgo) - astrophysics; unrelated.
-- GWTC-4.0: Methods for Identifying and Characterizing Gravitational-wave Transients - astrophysics; unrelated.
-- Search for High-energy Neutrinos from GW170817 (ANTARES/IceCube/Auger) - astrophysics; unrelated.
-
-To obtain an actual result, the search must be re-run with stripped structural terms (not full
-sentences), domain-targeted queries, and adequate depth. That run has not been performed here.
+Chance context: a 93 percent on-topic rate is expected by construction, because the queries were
+themselves electrochemistry-structural. Topical overlap of this kind carries no correspondence
+signal. The result is therefore a true null: the search ran, returned on-topic materials papers, and
+found no genuine cross-field mechanism match.

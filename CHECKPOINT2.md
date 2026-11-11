@@ -2,7 +2,7 @@
 
 > HISTORICAL RECORD. Superseded where it conflicts with README.md and CORRECTIONS.md (e.g. the
 > dataset is public helao-async data not Lila's; the loop example is a synthetic simulator-lookup,
-> not a fork; Phase 11 discovery is NOT YET RUN; the durability check is within_floor; the repo is
+> not a fork; Phase 11 discovery executed as a true null (nothing above rung 3); the durability check is within_floor; the repo is
 > public). Where this file and README/CORRECTIONS disagree, README and CORRECTIONS.md govern.
 
 The second human checkpoint: publish sign-off. Signed off (name, license) at the end of
@@ -15,8 +15,8 @@ full build reproduces: `make reproduce` is byte-identical (schemas, rules.lock, 
 verdicts). 73 tests green. README carries "Independent work, not affiliated with or
 endorsed by Lila Sciences." Stage 3 ran on a clearly-labeled SYNTHETIC simulator-lookup example
 (two different materials looked up; not a fork) on the REAL OERSIM over the PUBLIC helao-async
-oer13_cps dataset (13 base metals, no palladium; not Lila's data); the discovery report is
-labelled NOT YET RUN (the search did not execute meaningfully). The writeback correction
+oer13_cps dataset (13 base metals, no palladium; not Lila's data); the discovery report is now
+the executed run (a true null, nothing above rung 3). The writeback correction
 (CONTRADICTION_DOSSIER.md / CORRECTIONS.md) is in place: 0 confirmed, 0 contradicted, 9
 not_comparable. No composition is proposed anywhere.
 
@@ -58,7 +58,7 @@ runs on a clearly-labeled synthetic fork because zero real forks survived (CC-22
 label must remain on any published Stage 3 artifact.
 
 ## 5. Not done (by design or by access)
-- Discovery judging (Phase 11) and the full Stage 3 end-to-end are scaffolded; the
-  discovery report runs when you want it. The corpus is the minimal accessible slice; most
+- The full Stage 3 end-to-end is scaffolded. The discovery report (Phase 11) has now been run as
+  a true null (discovery/report/report.md). The corpus is the minimal accessible slice; most
   D5 references are paywalled (recorded in the manifest).
 - STOP: no public publishing until you sign off here.

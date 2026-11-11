@@ -28,9 +28,9 @@ claim end-to-end determinism (CC-01).
   this finalisation. Phase 9 safety format. **Phase 10 loop ran end to end** on the PUBLIC
   helao-async `oer13_cps` dataset (13 base metals, no palladium; not Lila's data), on a
   clearly-labeled SYNTHETIC simulator-lookup example (two different materials; not a fork).
-  **Phase 11 discovery: NOT YET RUN** - the structure-directed search did not execute
-  meaningfully (see Results and LIMITATIONS), so it yields no result about the durability
-  question.
+  **Phase 11 discovery: executed, true null** - the structure-directed search was fixed and
+  run (short structural queries), and nothing rose above rung 3 (see
+  discovery/report/report.md and feasibility/closure/CLOSURE_REPORT.md).
 - The two human checkpoints are the advertised integrity mechanism. Checkpoint 1 is
   resolved (Anu's decisions applied). Checkpoint 2 is signed off. This repository is public
   (github.com/Anuja-Khatri/consilience-ledger).
