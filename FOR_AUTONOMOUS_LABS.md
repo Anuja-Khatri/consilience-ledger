@@ -1,65 +1,73 @@
 # For teams running autonomous labs
 
-If your team operates a self-driving or high-throughput experimentation platform, this page is the fastest way to understand what this repository is for. Everything claimed here is reproducible from this repo: every number carries its sample size, is registered in a numbers lock, and is enforced by tests that fail the build if it drifts. The pipeline was built in an AI-assisted sprint with a human owner reviewing and approving each decision; the commit history, the corrections file and the review trail are public on purpose. We assume teams running these platforms have solved many of these problems internally. What this repo offers is an independent, deterministic, receipts-first implementation that can be checked in an afternoon.
+This page is for people who run automated or high-throughput labs. It explains, in plain words, what this repository does and why it might matter to you.
 
-The worked examples use published materials: a public high-throughput OER electrochemistry release (Caltech HTE, CC BY 4.0), a published inter-laboratory benchmarking study, and a published autonomous-lab benchmark paper. The same machinery is domain-portable; the chemistry is the testbed, not the limit.
+One rule governs everything here: every number comes with its sample size, and tests fail the build if a number drifts from its registered value. The work was built in an AI-assisted sprint. A human owner reviewed and approved each decision, and the mistakes made along the way are listed in a public corrections file. We assume your team has already solved some of the problems below. What we offer is an independent implementation you can check yourself in an afternoon.
 
-## Six problems every claims pipeline hits, and what is built here for each
+The examples use public data: a high-throughput OER electrochemistry release (Caltech HTE, CC BY 4.0), a published nine-lab comparison study, and a published autonomous-lab benchmark. The chemistry is the test case. The machinery does not depend on it.
 
-### 1. Two runs disagree. Is that chemistry, or noise?
+## 1. Two runs disagree. Is that real, or is it noise?
 
-The pain. The same composition, measured twice, differs by tens of millivolts. Without knowing how far honest measurements naturally sit apart, every threshold for "real disagreement" is a guess, and guessed thresholds manufacture contradictions or bury them.
+Run the same material twice and the numbers differ. By how much before it means something? Most pipelines guess. Guess too tight and you chase ghosts. Guess too loose and you miss real contradictions.
 
-What is built. We measured the floor instead of assuming one. Across nine labs measuring the same material, the inter-lab central range is 90.7 mV (n=9). Fork counts are then reported only against a stated sensitivity: 0 to 4 forks at s = 15 mV (full sweep: 4, 15, 20, 23 forks at thresholds 15, 10, 7.5, 5 mV; n=36 pairs; 9 of 11 labs mappable). The comparison engine is calibrated to the measured floor.
+We measured it instead. Nine labs measured the same material. The central range across them is 90.7 mV (n=9). The comparison engine treats that measured spread as the floor. Fork counts are only ever reported with the threshold used: 0 to 4 forks at s = 15 mV (full sweep: 4, 15, 20, 23 forks at thresholds of 15, 10, 7.5 and 5 mV; n=36 pairs; 9 of 11 labs mappable).
 
-What this improves. Replicate triage stops being a judgment call. A disagreement is flagged only when it clears what honest variation actually looks like, so people investigate real signal instead of noise.
+What this gives you: when the system flags a disagreement, it has already cleared what normal lab-to-lab variation looks like. People investigate signal, not noise.
 
-### 2. Results get compared that were never comparable
+## 2. Results get compared that should never be compared
 
-The pain. Overpotentials from different substrates, hold times, deposition methods or correction protocols end up in the same plot or the same decision. The comparison looks numeric, so it looks valid.
+A number measured on glass gets plotted next to a number measured on silicon. A 15-second hold gets compared with a 10-minute hold. The plot looks fine, because numbers always look fine.
 
-What is built. Every claim is typed into a card that carries its conditions, and a deterministic judge (plain code, no model call, no text channel, same verdict every time, hash-reproducible) refuses any pair whose conditions do not match, with the reason typed into the refusal. Case study in this repo: a 7,115-pair comparison across two datasets (1,881 samples; 1,041 matched pairs across 58 compositions; 297 samples at the closest condition) was correctly refused because three recorded conditions fail independently: hold time, substrate, deposition method. On a known-answer pair of palladium papers that agree where they touch, the judge refused to manufacture a fork; the owner's review of those two cards, including the corrections it produced, is public in the closure records.
+Here, every claim becomes a card that carries its conditions: material, value, substrate, hold time, electrolyte, and so on. A judge compares two cards. The judge is plain code. No AI inside it, no text input. Same cards in, same verdict out, every time, with a hash you can re-run. If the conditions do not match, it refuses to compare, and it names the condition that failed.
 
-What this improves. Cross-campaign and cross-instrument comparisons become safe by construction. The system says "not comparable, and here is why" instead of quietly averaging apples and oranges.
+A real case from this repo: we compared two datasets. 7,115 pairs, 1,881 samples, 1,041 matched pairs across 58 compositions, 297 samples at the closest condition. The judge refused, because three recorded conditions fail independently: hold time, substrate, deposition method. And on a known pair of palladium papers that agree, it refused to invent a disagreement. The human review of those two cards, including the mistakes it caught, is public in the closure records.
 
-### 3. The database everyone trusts carries silent defects
+What this gives you: cross-campaign comparisons become safe by default. The system says "not comparable, and here is why" instead of quietly averaging apples and oranges.
 
-The pain. Large result stores accumulate transcription slips, nonphysical values and records that exceeded their own instrument limits. Downstream models train on them and downstream decisions inherit them.
+## 3. Your database has defects nobody has noticed
 
-What is built. On a 140,708-card ingest of the public release (n=140,708), every comparison is sorted into six classes, always reported together: not comparable 74,569; within floor 80,144; replicate inconsistency 0; fork 0; suspect transcription 16,613 (test half, under correction C-003); catalog untestable 6,231. The compliance pass found 5,131 of 70,152 records exceeding their own recorded instrument limit by more than 0.5 V, and 920 more with nonphysical values (overpotential at or below zero). The limit field was present in 70,152 of 70,152 records. On null data the pipeline invents nothing: false positive rate 0.000 (n=1,228, q=0.05).
+Big result stores collect errors: transcription slips, impossible values, measurements that went past what the instrument was set to allow. Models train on them. Decisions inherit them.
 
-What this improves. Run at ingest time, this catches defects before they propagate into models, dashboards or the next campaign's priors, and it gives data stewards a typed defect list instead of a vague cleanliness worry.
+We ingested 140,708 claim cards from the public release (n=140,708) and sorted every comparison into six buckets, always reported together: not comparable 74,569; within floor 80,144; replicate inconsistency 0; fork 0; suspect transcription 16,613 (test half, under correction C-003); catalog untestable 6,231. A compliance pass found 5,131 of 70,152 records that went past their own recorded instrument limit by more than 0.5 V, plus 920 records with impossible values (overpotential at or below zero). The limit field itself was present in all 70,152. And on clean null data the pipeline invents nothing: false positive rate 0.000 (n=1,228, q=0.05).
 
-### 4. An agent is about to run a plan. Is it safe, and is it in spec?
+What this gives you: run at ingest time, this catches bad records before they spread into models and decisions. Your data team gets a typed defect list, not a vague worry.
 
-The pain. Agentic loops generate experiment plans faster than humans can review them. Manual safety review becomes the bottleneck or gets skipped; a single out-of-spec plan can damage an instrument or worse.
+## 4. An agent wrote a plan. Is it safe to run?
 
-What is built. A pre-run gate checks each typed plan against typed safety rules in about 20 ms. Record: zero false blocks on 13,627 benign plans with zero abstentions, and zero attacks through the typed gate on 990 adversarial plans. An LLM attacker scored 0 of 12 preregistered attempts, then 0 of 48 and 0 of 48 (exact CI 0.00 to 0.074 per mode); a stronger attacking model reached 0.08 (n=36). Plan checker exactness 1.0 (n=12,000); replay determinism 1.0 (n=458). Disclosed limit: phrasing outside the typed vocabulary evades the typed layer in 20.6% of cases (n=34); the layer's scope is stated, not hidden. The rule format ships with a grade ladder, per-rule sources, a compiler to machine checks with no text channel, and an owner-signed benign seed (safety-seed-v1) under a policy that keeps dual-use content permanently out of scope, enforced by a denylist scan.
+Agent loops write experiment plans faster than people can review them. Manual review becomes the bottleneck, or it gets skipped.
 
-What this improves. Safety review scales with the loop instead of throttling it. Humans set the rules once, with sources and grades; the gate enforces them on every plan, deterministically, with an audit trail. Filling the format with a real lab's EHS content is domain scientists' work; the container, compiler and gate are done.
+We built a gate that checks each typed plan against typed safety rules in about 20 ms. Its record: 13,627 safe plans, zero wrongly blocked, zero passed to a human as unsure. 990 attack plans, zero through the typed gate. An LLM attacker scored 0 of 12 in a preregistered run, then 0 of 48 and 0 of 48 (exact confidence interval 0.00 to 0.074 per mode). A stronger attacking model reached 0.08 (n=36). The plan checker matched its spec on 12,000 of 12,000 plans. Replays were identical 458 of 458 times. One limit, stated rather than hidden: wording outside the typed vocabulary slips past the typed layer in 20.6% of cases (n=34).
 
-### 5. Which disagreement deserves the next experiment?
+The safety rules live in a format where each rule carries a grade and a source, compiled into machine checks with no text input. It ships with a six-rule demonstration seed, reviewed and signed by the owner, under a policy that keeps dangerous content permanently out, enforced by an automatic scan. Filling the format with your real safety content is your experts' work. The container, the compiler and the gate are done.
 
-The pain. The most valuable output of a claims layer is a ranked list of contradictions worth resolving: forks that an autonomous lab could turn directly into experiments. Published text cannot feed this. In our census, roughly 3 in 100 result sentences state the correction method, and a material needs on the order of 600 condition-complete claims where public sources yield about 20.
+What this gives you: safety review that scales with the loop. Humans set the rules once. The gate enforces them on every plan, with an audit trail.
 
-What is built, and what is proven. The hunting machinery exists and its accuracy is measured: on planted forks, recovery 1.00 and 1.00 (n=33); on null data, false positives 0.000 (n=1,228, q=0.05). On public data the hunt ran honestly and returned empty, and we publish that as a measurement of public data, not as a success. A separate cross-field structural matcher test returned a true null, 0 of 60 candidate pairs, reported with its denominator.
+## 5. Which disagreement is worth your next experiment?
 
-What this improves, given internal data. Lab records carry exactly what public text drops: conditions, as data. Pointed at an ELN, a LIMS or an autonomous platform's run store, the same engine surfaces replicate inconsistencies and ranks contradictions by how cheaply the platform could resolve them. The planted-fork numbers are the evidence this works the moment condition-complete data exists. A full detect-to-writeback loop is demonstrated end to end on synthetic data (labelled synthetic, n=1 cycle); it is designed to run on live streams and has not yet been run on one.
+The most valuable thing a claims layer can produce is a short list: the contradictions in your results, ranked, each one resolvable by an experiment your platform can run.
 
-### 6. The pipeline was built with AI. Why should anyone trust it?
+Published papers cannot feed this. In our census, about 3 result sentences in 100 state the correction method, and a single material needs roughly 600 condition-complete claims where public sources give about 20.
 
-The pain. AI-assisted pipelines produce confident numbers with no chain of custody. For a lab whose output is scientific claims, an unauditable pipeline is a liability regardless of its accuracy.
+So here is what we can prove, honestly. The hunting machinery exists and its accuracy is measured. When we planted disagreements, it found all of them: recovery 1.00 and 1.00 (n=33). On null data it invented none: false positives 0.000 (n=1,228, q=0.05). On public data the hunt ran and came back empty, and we publish that as a fact about public data. A separate cross-field matcher test also came back empty: 0 of 60 candidate pairs.
 
-What is built. The repo polices itself in public: preregistrations written before data is read; stop rules that have fired and held; a numbers lock registering every public number with its n, linted in CI; byte-stable reproduction from source; and a corrections file listing every error found so far, including the assistant's own arithmetic error, each fixed in a visible commit. A human review gate sits over extraction, and it works: on the closure cards it caught a wrongly omitted stated condition and an invented number, both corrected on the record with pre-review and post-review verdicts preserved. Engine validation: verdict agreement 1.0 (n=213), 1.0 (n=311), 0.9842 (n=316). Extraction is the measured weak link and is treated as such: a prompt-injection probe steers extraction in 0.30 of cases overall and 0.91 in the worst class, which is exactly why the judge has no text channel and why a human gate sits over extraction. A trace audit, checking each agent decision against the evidence recorded at that step, is designed but not built; it needs private traces by definition.
+Your internal records are different. They carry exactly what papers drop: the conditions, as data. Pointed at a LIMS, an ELN or a platform's run store, the same engine surfaces inconsistent replicates and ranks contradictions. The planted-disagreement numbers are the evidence it works the moment the data exists. A full detect-and-write-back loop runs end to end on synthetic data (labelled synthetic, n=1 cycle); it is designed for live streams and has not yet run on one.
 
-What this improves. Trust stops being a vibe. Every number has a receipt, every mistake has a commit, and the parts that are unproven say so in plain words.
+## 6. The pipeline was built with AI. Why trust it?
+
+Fair question. Our answer: do not trust it. Check it.
+
+Every public number is registered with its sample size, and a test fails the build if it drifts. The repository rebuilds byte-identically from source. Pre-registrations were written before data was read. A corrections file lists every error found so far, including the assistant's own arithmetic error, each fixed in a visible commit. A human gate sits over extraction, and it earns its keep: on the two closure cards it caught a missing stated condition and an invented number, both corrected on the record, with the before and after preserved.
+
+Where the AI sits, and where it does not: a language model reads sentences into cards. That step is the measured weak link. A prompt-injection probe steers extraction in 0.30 of cases overall and 0.91 in the worst class. That is exactly why the judge that issues verdicts has no text input at all, and why a human reviews cards. Judge agreement with hand verdicts: 1.0 (n=213), 1.0 (n=311), 0.9842 (n=316). One piece is a design only: a trace audit that would check each agent decision against the evidence available at that step. It needs private traces by definition, so it is not built.
+
+What this gives you: trust that does not depend on taking our word. Every number has a receipt. Every mistake has a commit. Every unproven part says so.
 
 ## What we do not claim
 
-No contradictions were discovered in public data; the buckets say so. The write-back loop has run only on synthetic data. The typed safety layer has a stated blind spot. The trace audit is a design. Anything in this repo that is not proven is labelled, and anything labelled proven can be rerun.
+We found no contradictions in public data; the buckets above say so. The write-back loop has run only on synthetic data. The typed safety layer has a stated blind spot. The trace audit is a design. Everything unproven here is labelled, and everything labelled proven can be rerun by you.
 
-## Check this in an afternoon
+## Check it in an afternoon
 
-Clone the repo. Run the test suite and `make reproduce`; the build is byte-stable. Read NUMBERS_LOCK, the corrections file, and the closure records with both verdict hashes. Then judge the claim this page actually makes: that the same machinery, held to the same standard, pointed at data that records its conditions, becomes the claims layer an autonomous lab needs.
+Clone the repo. Run the tests and `make reproduce`. Read the numbers lock, the corrections file, and the closure records with both verdict hashes. Then judge the one claim this page makes: the same machinery, pointed at data that records its conditions, becomes the claims layer an autonomous lab needs.
 
-Questions, objections and broken things: open an issue. Maintained by Anuja Khatri.
+Found a problem? Open an issue. Maintained by Anuja Khatri.
