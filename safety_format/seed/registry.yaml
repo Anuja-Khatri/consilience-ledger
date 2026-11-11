@@ -1,42 +1,72 @@
-version: safety-seed-v0
-# Benign public-standard EHS seed only (CC-31). Instrument protection bounds,
-# consumables budgets, and standard laboratory incompatible-chemical classes from
-# widely published general safety references. No synthesis content, no dual-use content.
-# Each rule carries a grade (established, plausible, weakly_supported) and a source.
+version: safety-seed-v1
+# ACTIVE safety seed, adopted 11 Nov 2026 (SEED_APPROVAL.md: all six rules approved as written).
+# Activated from registry_proposed.yaml; same rule ids, kinds, predicates, and bound VALUES as v0;
+# (see SEED_APPROVAL.md). Same rule ids, kinds, predicates, and bound VALUES as v0 — only
+# the SOURCES change: each rule now carries an exact public citation, or is explicitly
+# labelled `generic` where no Lila-stated or public page-level limit is in hand. Harmless,
+# public-standard EHS content only (CC-31); contains no dual-use tokens (verified by the
+# denylist scan). Instrument protection limits are taken from Lila's published paper/SI ONLY
+# where that paper states them; it states operating VALUES (e.g. ~700 C anneals, 10 mA/cm^2
+# screening), not protection ceilings, so every instrument BOUND here is labelled generic.
 rules:
   - id: SB1
     kind: bound
-    grade: established
-    source: "General furnace instrument protection limit (public instrument specifications)."
+    grade: plausible
+    source: >
+      GENERIC instrument-protection ceiling (no Lila-stated anneal limit). Lila's paper
+      (arXiv:2609.30133, Methods/SI) reports anneal temperatures as DATA (up to ~700 C), not a
+      protection limit; 1100 C is a conservative generic ceiling below the rated maximum of a
+      standard laboratory muffle/box furnace (commonly 1100-1200 C). To be refined to the exact
+      furnace model's published specification if Anu provides it.
     plain_english: Anneal temperature must not exceed the furnace protection limit.
     bound: {var: anneal_temp_c, op: "<=", value: 1100}
   - id: SB2
     kind: bound
-    grade: established
-    source: "Potentiostat compliance / instrument protection (public instrument specifications)."
+    grade: plausible
+    source: >
+      GENERIC potentiostat compliance ceiling (no Lila-stated compliance limit). Lila's paper
+      (arXiv:2609.30133) states a 10 mA/cm^2 screening current density as an operating VALUE, not a
+      maximum; 1000 mA/cm^2 is a conservative generic ceiling. To be refined to the exact
+      potentiostat model's published compliance specification if Anu provides it.
     plain_english: Applied current density must not exceed the instrument compliance limit.
     bound: {var: current_density_ma_cm2, op: "<=", value: 1000}
   - id: SB3
     kind: bound
-    grade: plausible
-    source: "Consumables budget per run (internal benign operating policy)."
+    grade: weakly_supported
+    source: >
+      Internal benign CONSUMABLES-budget policy, not a safety hazard limit. No external citation;
+      a per-run acid-volume cap for cost/waste control. Labelled as operating policy, awaiting
+      Anu's confirmation of the intended value.
     plain_english: Acid volume per run must stay within the consumables budget.
     bound: {var: acid_ml, op: "<=", value: 500}
   - id: SC1
     kind: forbid_combo
     grade: established
-    source: "Standard laboratory incompatible-chemical classes (public general safety references)."
+    source: >
+      Prudent Practices in the Laboratory: Handling and Management of Chemical Hazards, Updated
+      Version (National Research Council; National Academies Press, Washington DC, 2011),
+      Ch. 6 "Working with Chemicals" / incompatible-chemicals guidance
+      (https://nap.nationalacademies.org/catalog/12654); oxidizers must be segregated from
+      organic/combustible materials. See also OSHA 29 CFR 1910.1450 App. A.
     plain_english: Do not combine a strong oxidizer with an organic solvent.
     forbid_combo: {classes: [strong_oxidizer, organic_solvent]}
   - id: SC2
     kind: forbid_combo
     grade: established
-    source: "Standard laboratory incompatible-chemical classes (public general safety references)."
+    source: >
+      Prudent Practices in the Laboratory (NRC, National Academies Press, 2011), Ch. 6
+      "Working with Chemicals" (https://nap.nationalacademies.org/catalog/12654): concentrated
+      strong acids and strong bases react exothermically and must not be mixed uncontrolled.
+      See also OSHA 29 CFR 1910.1450.
     plain_english: Do not combine a strong acid with a strong base in the same vessel.
     forbid_combo: {classes: [strong_acid, strong_base]}
   - id: SC3
     kind: forbid_combo
     grade: plausible
-    source: "Standard laboratory incompatible-chemical classes (public general safety references)."
+    source: >
+      Prudent Practices in the Laboratory (NRC, National Academies Press, 2011), Ch. 6
+      "Working with Chemicals", water-reactive chemicals guidance
+      (https://nap.nationalacademies.org/catalog/12654): water-reactive reagents must not be
+      introduced into aqueous media. See also OSHA 29 CFR 1910.1450 App. A.
     plain_english: Do not add a water-reactive reagent to an aqueous mixture.
     forbid_combo: {classes: [water_reactive, aqueous]}
