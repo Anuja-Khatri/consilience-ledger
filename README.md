@@ -4,6 +4,58 @@ Operating or building an autonomous lab? Start with [FOR_AUTONOMOUS_LABS.md](FOR
 
 **Independent work, not affiliated with or endorsed by Lila Sciences.**
 
+## In plain words
+
+I built a system that compares scientific claims carefully. A language model reads a sentence
+from a paper or a database and turns it into a card: what material, what was measured, what
+number, under what conditions. The judge, a second part, is plain code with no AI inside: it
+compares two cards, gives the same answer every time, and refuses the comparison when the
+conditions do not match, naming the reason. A third part checks a lab plan against safety
+rules before the plan runs.
+
+This repository is one arm of The Consilience, an instrument I build for comparing
+scientific claims across fields that do not share a vocabulary. The core engine and its
+validation are described in the paper: Consilience: Deterministic Cross-Theory Claim
+Comparison (Zenodo, DOI 10.5281/zenodo.23672883). This repository extends that engine to
+the literature and data of autonomous laboratories.
+
+The main finding so far is honest and useful: most published results cannot fairly be compared
+at all, because papers do not state the conditions. Where I planted real disagreements as a
+test, the system found all of them, and on clean data it invented none. The exact numbers,
+each with its sample size, are on the front page and in `NUMBERS_LOCK.json`.
+
+One rule governs this repository: every public number carries its sample size, tests fail the
+build if a number drifts, and my mistakes are listed in `CORRECTIONS.md`. Code is MIT
+licensed; text and data are CC BY 4.0.
+
+To check it yourself:
+
+    git clone https://github.com/Anuja-Khatri/consilience-ledger.git
+    cd consilience-ledger && python3 -m venv .venv && .venv/bin/pip install -r requirements.txt
+    make reproduce
+
+It rebuilds byte for byte and the tests pass, including two that openly skip because the data
+they need is deliberately never committed.
+
+A live, read-only browser over the round 1 ledger is served from this repository by GitHub
+Pages: https://anuja-khatri.github.io/consilience-ledger/browser/
+
+### Map of this repository
+
+Start with `FOR_AUTONOMOUS_LABS.md` and this README. The results live in `ledger/`, `rounds/`,
+`feasibility/` and `reports/`. The receipts live in `NUMBERS_LOCK.json`, `CORRECTIONS.md`,
+`PREREGISTRATION.md`, the CHECKPOINT files, `DECISIONS.md` and `STATE.md`. The code is
+`labext/` with `tests/` and the Makefile; `vendor/` holds upstream code with its provenance;
+`schema/` and `rules/` hold the data contracts and the comparison rules. Everything else is
+the working record of how this was built, kept public on purpose: in a repository about
+verifiable claims, the process files are part of the evidence.
+
+## The technical record
+
+Everything below is the precise record, kept in the project's internal vocabulary for people
+verifying the work. Codes such as D4, CC-28 or II.3 are internal decision references; the
+checkpoint files and `DECISIONS.md` define them.
+
 Signed off at Checkpoint 2. License: code MIT (`LICENSE`); data and reports CC-BY-4.0
 (`LICENSE-DATA`). Lila's instrument data is not committed; it is loaded at runtime and
 cited by sha256 and row index (CC-28).

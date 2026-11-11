@@ -5,7 +5,7 @@ Extraction (Phase 2+) uses language models and is not deterministic. It is gated
 dual-model agreement plus a human review queue. From approved claim cards onward the
 pipeline is byte-deterministic: `ledger.hash` is a sha256 over canonical-JSON of the
 approved cards plus `rules.lock` plus the code version. `make reproduce` regenerates
-and must match byte for byte (spec IV.5). We never claim end-to-end determinism.
+and must match byte for byte (spec IV.5). End-to-end determinism is never claimed.
 
 ## Judge (Phase 1)
 The structural judge is vendored unchanged from theconsilience-engine @ 71f60a2:
