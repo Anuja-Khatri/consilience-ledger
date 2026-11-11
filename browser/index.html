@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>consilience-ledger — ledger browser</title>
+<title>consilience-ledger: ledger browser</title>
 <style>
   :root { color-scheme: light dark; }
   body { font: 15px/1.5 system-ui, sans-serif; margin: 0; padding: 1.5rem; max-width: 1100px; }
@@ -19,13 +19,27 @@
 </style>
 </head>
 <body>
-  <h1>consilience-ledger — ledger browser</h1>
+  <h1>consilience-ledger: ledger browser</h1>
   <p class="muted">Static page. Reads <code>../ledger/*.json</code> by relative fetch. No build system.
      Serve the repo with any local file server, or publish on GitHub Pages.</p>
   <p class="note">The determinism split (D4): extraction is gated, not deterministic. From approved
      claim cards onward the ledger is byte-deterministic. Verdicts are computed against Lila's own
      instrument data, which is loaded at runtime and not committed. Nothing here claims Lila uses,
      wants, or endorses this work.</p>
+  <p class="note">What you are looking at: round 1 of the public record. The claims below were
+     extracted from the two accessible published papers of the closed-loop OER literature (an
+     autonomous-lab paper and one open-access reference from it); claim ids begin with the source
+     paper's arXiv id. A veto means the two claims' measurement conditions were not proven
+     comparable, and every veto names its reason. Zero forks is the honest result on this corpus,
+     not an absence of work: where conditions are unstated, this instrument refuses rather than
+     fabricates.</p>
+  <p class="muted">Beyond this page: a database quality pass over 140,708 claim cards (n=140,708);
+     planted-disagreement recovery 1.00 and 1.00 (n=33); false positives on null data 0.000
+     (n=1,228, q=0.05); a measured inter-lab floor of 90.7 mV (n=9); and a pre-run safety gate at
+     about 20 ms with zero false blocks on 13,627 benign plans. Every number and its qualifier is
+     registered in the repository's numbers lock:
+     <a href="https://github.com/Anuja-Khatri/consilience-ledger">github.com/Anuja-Khatri/consilience-ledger</a>,
+     starting with FOR_AUTONOMOUS_LABS.md.</p>
   <p id="summary" class="muted">Loading…</p>
   <div class="tabs" role="tablist">
     <button role="tab" data-tab="claims" aria-selected="true">Claims</button>

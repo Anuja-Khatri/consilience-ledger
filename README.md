@@ -38,7 +38,7 @@ It rebuilds byte for byte and the tests pass, including two that openly skip bec
 they need is deliberately never committed.
 
 A live, read-only browser over the round 1 ledger is served from this repository by GitHub
-Pages: https://anuja-khatri.github.io/consilience-ledger/browser/
+Pages: https://anujakhatri.com/consilience-ledger/browser/
 
 ### Map of this repository
 
