@@ -1,4 +1,4 @@
-# FIXES_REPORT.md — correction pass (2026-11-11, local only, not pushed)
+# FIXES_REPORT.md - correction pass (2026-11-11, local only, not pushed)
 
 Fixes only; no new features; no model API calls. `make reproduce` stays byte-stable (re-locked where
 a regenerated file changed a hash, noted below). Test suite green: **73 passed** (unchanged count;
@@ -12,11 +12,11 @@ a regenerated file changed a hash, noted below). Test suite green: **73 passed**
 | ledger/ledger.hash | `f42d48c1…e7f758fe3` | `a11ee946…abe69bdd` |
 | loop/{runs,cards,plans,dossiers}/* | (old wording) | regenerated (wording fix 1/2; not part of `make reproduce`'s locked hashes) |
 
-**No verdict changed:** ledger 0 forks, 561 vetoes; writeback 9 not_comparable — byte-identical
+**No verdict changed:** ledger 0 forks, 561 vetoes; writeback 9 not_comparable - byte-identical
 decisions. The rules.lock / ledger.hash moved only because the rule `source` metadata (hashed) gained
 its ported citations and the doc-only version bump; the ledger records the new `rules_version` label.
 
-## Fix 1 — dataset misattribution (`oer13_cps` is public helao-async data, not Lila's)
+## Fix 1 - dataset misattribution (`oer13_cps` is public helao-async data, not Lila's)
 Established from helao-async's own files (`helao/deploy/test/drivers/pstat/cpsim_driver.py`:
 "the OER `oer13_cps` dataset … a pickled OER measurement library … replays stored CP traces";
 `LICENSE.md`: MIT, High-Throughput-Experimentation) and the dataset itself (13 base metals, no Pd).
@@ -24,25 +24,25 @@ Established from helao-async's own files (`helao/deploy/test/drivers/pstat/cpsim
   `PROVENANCE.md`, `LIMITATIONS.md`, `OPEN_QUESTIONS.md` (OQ-3), `STATE.md`, `CHECKPOINT2.md`;
   regenerated `loop/{runs,cards,plans,dossiers}/*`.
 
-## Fix 2 — synthetic example is a simulator-lookup, not a fork
+## Fix 2 - synthetic example is a simulator-lookup, not a fork
 Two DIFFERENT materials are looked up, so it is not a claim disagreement. Relabelled everywhere;
 `fork_confirmed` -> `lookup_two_materials_differ` / `lookup_two_materials_within_floor`.
 - Files: `labext/loop/run_loop.py`, `labext/loop/dossier.py`, `tests/test_loop_run.py`,
   `STATE.md`, `CHECKPOINT2.md`, `LIMITATIONS.md`; regenerated loop artifacts.
 
-## Fix 3 — stale text
+## Fix 3 - stale text
 - `README.md`: removed "Stage 3 scaffolding in place", "Phases 10-11 scaffolding", "Nothing is
   published"; true status stated (Phase 10 ran on public data; Phase 11 NOT YET RUN).
 - `LIMITATIONS.md`: removed "Extraction has not run" and "Provisional claims (until Checkpoint 1
-  returns)" — both stale (34 real claims extracted; Checkpoint 1 resolved).
+  returns)" - both stale (34 real claims extracted; Checkpoint 1 resolved).
 
-## Fix 4 — discovery report honesty (NOT YET RUN)
+## Fix 4 - discovery report honesty (NOT YET RUN)
 The search fed long sentences to a keyword engine, was rate-limited to 4 queries, and returned 5
 unrelated particle-physics/astrophysics papers; it did not execute meaningfully. Search NOT rerun.
 - Files: `discovery/report/report.md` (rewritten), `README.md`, `LIMITATIONS.md`, `STATE.md`,
   `CHECKPOINT2.md`.
 
-## Fix 5 — rule citations ported from ../ledger-v2
+## Fix 5 - rule citations ported from ../ledger-v2
 Ported the Gate-1-approved page-level citations (r0/GATE1.md, source B2 = PMC13707403, Molecules
 2026) by FIELD (CR3/CR4 numbered oppositely in ledger-v2). Numbering, fields, predicates, tolerances
 UNCHANGED -> no verdict change. Version bumped documentation-only v0 -> v0.1.
@@ -50,7 +50,7 @@ UNCHANGED -> no verdict change. Version bumped documentation-only v0 -> v0.1.
   `rules/CHANGELOG.md` (new), `rules/rules.lock` (re-locked), `ledger/*` + `ledger/ledger.hash`
   (regenerated). See the hash table above.
 
-## Fix 6 — proposed safety seed (not activated)
+## Fix 6 - proposed safety seed (not activated)
 `safety_format/seed/registry_proposed.yaml` (new): exact public citation per rule (Prudent Practices
 in the Laboratory, NRC 2011; OSHA 29 CFR 1910.1450) or explicit `generic` label for instrument
 bounds (Lila states operating values, not protection ceilings). Harmless; dual-use denylist scan
@@ -59,12 +59,12 @@ ANU'S WORDING. Active `registry.yaml` unchanged.
 - Files: `safety_format/seed/registry_proposed.yaml`, `SEED_APPROVAL.md`,
   `safety_format/TIER_POLICY.md`, `tests/test_safety_format.py` (extended dual-use scan).
 
-## Fix 7 — the skipped durability check (claim 2609.30133__010)
+## Fix 7 - the skipped durability check (claim 2609.30133__010)
 Pass rule preregistered in `PREREGISTRATION.md` BEFORE opening the trace, then run against the authors'
 own released H-cell trace `upstream/lila_oer_manuscript/data/fig_3e.csv` (sha `cac02293…`). Numbers:
 InMnPdOx, 84 points, coverage 11.5–999.6 h, max 0.5055 V at 575.5 h; 1 point > 0.500 V; **0 points >
 0.513 V**; claim written to 0.1 V precision.
-- **Verdict (corrected 2026-11-11): `within_floor` — consistent within the authors' stated ±13 mV
+- **Verdict (corrected 2026-11-11): `within_floor` - consistent within the authors' stated ±13 mV
   reproducibility.** The first pass rule was written strict (every point < 0.5 V) and OMITTED the
   standing floor (D7: threshold = max(13 mV, stated uncertainty)), which was locked 2026-11-10 in
   `labext/writeback.py` (commits 09e066e5, f1602722) and predates this check. Under the floor the
@@ -75,6 +75,6 @@ InMnPdOx, 84 points, coverage 11.5–999.6 h, max 0.5055 V at 575.5 h; 1 point >
 - Files: `PREREGISTRATION.md` (rule + amendment), `reports/durability_check_2609.30133.md`,
   `tests/test_durability_floor.py` (new, asserts the check applies the floor).
 
-## Fix 8 — this report + CORRECTIONS.md + local commit
+## Fix 8 - this report + CORRECTIONS.md + local commit
 `CORRECTIONS.md` updated (2026-11-11 entry). `FIXES_REPORT.md` (this file). Committed locally; **not
 pushed**.

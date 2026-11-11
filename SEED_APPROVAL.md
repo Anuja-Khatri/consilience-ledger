@@ -1,6 +1,6 @@
-# SEED_APPROVAL.md — safety seed, one row per rule for Anu to approve or reject
+# SEED_APPROVAL.md - safety seed, one row per rule for Anu to approve or reject
 
-The PROPOSED seed is `safety_format/seed/registry_proposed.yaml`. It is **NOT activated** — the live
+The PROPOSED seed is `safety_format/seed/registry_proposed.yaml`. It is **NOT activated** - the live
 screen still loads `safety_format/seed/registry.yaml`. This file is for review only. Same rule ids,
 kinds, predicates and bound VALUES as the active v0; only the SOURCES were made exact (or explicitly
 labelled generic). Harmless public-standard EHS content only; the dual-use denylist scan passes on it.

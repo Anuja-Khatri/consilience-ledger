@@ -35,7 +35,7 @@ Pilot yield (70 approvable, Phase 2), approved claims (34, Checkpoint 1), ledger
 Phase 5, corrected per CORRECTIONS.md). These are descriptive results of fixed rules,
 reported with their provenance, not headline hypothesis tests.
 
-## Durability consistency check — claim 2609.30133__010 (preregistered BEFORE opening the trace, fix #7)
+## Durability consistency check - claim 2609.30133__010 (preregistered BEFORE opening the trace, fix #7)
 - Claim under test: "InMnPdOx is the most stable, sustaining an overpotential below 0.5 V over
   1,000 h" (arXiv:2609.30133, claim 2609.30133__010).
 - Data used: the authors' OWN released H-cell trace, `upstream/lila_oer_manuscript/data/fig_3e.csv`
@@ -48,22 +48,22 @@ reported with their provenance, not headline hypothesis tests.
   the 1,000 h duration is reported as not-verifiable-from-this-file).
 - Threshold handling: 0.5 V is the claim's own stated threshold; no extra floor is applied (this is
   a threshold-crossing check, not a fork). Values are read in volts as released.
-- LABEL (fixed): this is a CONSISTENCY CHECK between the authors' claim and the authors' own data —
+- LABEL (fixed): this is a CONSISTENCY CHECK between the authors' claim and the authors' own data - 
   same authors, same iR-corrected measurement. It is NOT independent confirmation. The claim itself
   notes the 1,000 h figure rests on "repeated measurements over a partial duration on planar and
   porous supports" (Figs. S4–S6), so agreement here means the claim is consistent with the released
   trace, nothing more.
 
-### AMENDMENT 2026-11-11 (after the trace was opened) — the durability check omitted the standing floor
+### AMENDMENT 2026-11-11 (after the trace was opened) - the durability check omitted the standing floor
 The pass rule above (fix #7) was written STRICT ("every recorded point below 0.5 V"; FAIL if any point
 >= 0.5 V). That strict reading is kept on record, but it OMITTED the standing verdict-floor rule and is
 superseded by this amendment.
 - Standing floor rule (D7): a verdict threshold is the LARGER of 13 mV and the claim's stated
   uncertainty; a difference within that floor is `within_floor`, not a contradiction. It already
   exists in this repo and PREDATES this check:
-  - `labext/writeback.py`: `FLOOR_V = 0.013` (line 37), `floor = max(FLOOR_V, claim_unc or 0.0)`
+ - `labext/writeback.py`: `FLOOR_V = 0.013` (line 37), `floor = max(FLOOR_V, claim_unc or 0.0)`
     (line 121), `outcome = "within_floor" if margin <= floor else "contradicted"` (line 154).
-  - Introduced in commit **09e066e5** (2026-11-10 16:01 +0530, "feat(phase-5): writeback verdicts vs
+ - Introduced in commit **09e066e5** (2026-11-10 16:01 +0530, "feat(phase-5): writeback verdicts vs
     Lila data under D7"); `FLOOR_V = 0.013` locked in commit **f1602722** (2026-11-10 19:57 +0530).
     The D7 floor is also stated above in this file ("Verdict floor D7"). This durability check was
     only added on 2026-11-11 (fix #7), so the floor rule is older than the check.

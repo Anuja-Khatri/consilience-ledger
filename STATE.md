@@ -48,7 +48,7 @@ Phase 0 is read-only ENGINE_INVENTORY. It ran to completion. No file outside
 ### Blockers carried into later phases (from OPEN_QUESTIONS.md)
 - Phase 2 needs `corpus_in/` papers (OQ-1) and exported API keys (OQ-2).
 - Phase 5 needs the Lila OER manuscript data + manuscript license (OQ-3). Phase 10 uses the PUBLIC
-  helao-async `oer13_cps` dataset (present), not Lila's data — it is not blocked by OQ-3.
+  helao-async `oer13_cps` dataset (present), not Lila's data - it is not blocked by OQ-3.
 
 ## Phase 1 COMPLETE (2026-11-10). Acceptance: pytest green (24 passed), tagged phase-1.
 
@@ -137,7 +137,9 @@ Phases completed this run:
 - Phase 8 (tag phase-8): static browser (browser/index.html), README/METHODS finalized under II.3
   (numbers lint clean), CHECKPOINT2.md. make reproduce is byte-identical (git status clean after).
 
-Also done earlier: Phase 9 safety (tag phase-9), Phases 10-11 scaffolding.
+Also done earlier: Phase 9 safety (tag phase-9); Phase 10 loop RAN end to end on the public
+helao-async oer13_cps dataset (synthetic simulator-lookup example, not a fork); Phase 11 discovery
+NOT YET RUN (the search did not execute meaningfully; see discovery/report/report.md, CORRECTIONS.md).
 
 ## BUILD COMPLETE through Phase 12. Checkpoint 2 signed off (name, license). PUBLISHING HELD for push approval.
 

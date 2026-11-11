@@ -90,7 +90,7 @@ resolved yet.
   At Phase 5, apply CC-28 conservatively by default: treat the data as non-redistributable until a
   permissive license is confirmed - do NOT commit their CSVs; load at runtime from an Anu-provided
   path via a fetch script; verdict records cite rows by index + sha.
-- **BLOCKS:** Phase 5 (writeback) only. Phase 10 (loop / OERSIM) is NOT blocked — it uses the public
+- **BLOCKS:** Phase 5 (writeback) only. Phase 10 (loop / OERSIM) is NOT blocked - it uses the public
   helao-async `oer13_cps` dataset, which is present.
 - **Needs Anu:** before Phase 5, provide the `lila_oer_manuscript` checkout (record its sha), the
   `oer_exp_data.csv` + benchmark CSVs; and confirm the manuscript repo's license for the CC-28

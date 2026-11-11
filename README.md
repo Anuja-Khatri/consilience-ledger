@@ -28,13 +28,12 @@ claim end-to-end determinism (CC-01).
   this finalisation. Phase 9 safety format. **Phase 10 loop ran end to end** on the PUBLIC
   helao-async `oer13_cps` dataset (13 base metals, no palladium; not Lila's data), on a
   clearly-labeled SYNTHETIC simulator-lookup example (two different materials; not a fork).
-  **Phase 11 discovery: NOT YET RUN** — the structure-directed search did not execute
+  **Phase 11 discovery: NOT YET RUN** - the structure-directed search did not execute
   meaningfully (see Results and LIMITATIONS), so it yields no result about the durability
   question.
 - The two human checkpoints are the advertised integrity mechanism. Checkpoint 1 is
-  resolved (Anu's decisions applied). Checkpoint 2 is signed off; publishing (pushing a
-  remote / minting DOIs / posting) is a human step held until the full build is done and is
-  not performed here.
+  resolved (Anu's decisions applied). Checkpoint 2 is signed off. This repository is public
+  (github.com/Anuja-Khatri/consilience-ledger).
 
 ## Results (numbers from NUMBERS_LOCK.json, each with its n and qualifier, II.3)
 - Judge: 1.0 agreement vs an independent logic program (n=213) and vs SMT (n=311); these
@@ -51,6 +50,11 @@ claim end-to-end determinism (CC-01).
   measurement (the CP1 600s screening data is comparative, not absolute, and is not used to
   confirm or contradict). The published pure-Pd claims are among the vetoes. See
   CONTRADICTION_DOSSIER.md.
+- Durability self-consistency check (InMnPdOx, the authors' own Fig. 3e trace): max 0.5055 V
+  at 575.5 h, 0 of 84 points above the 0.513 V threshold (the claim's 0.5 V ceiling plus the
+  standing 13 mV floor), so within_floor, consistent within +/- 13 mV. A self-consistency check
+  (the authors' claim vs the authors' own data), not independent confirmation. See
+  reports/durability_check_2609.30133.md.
 - LLM-judge baseline: on a preregistered sample of 60 vetoed pairs, a model call made 4
   comparisons the deterministic veto blocks.
 - Fresh materials extraction-stability: 0.423 (n=52, test-retest). This is the materials

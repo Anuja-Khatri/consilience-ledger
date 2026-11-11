@@ -43,7 +43,7 @@ Full per-fix detail in FIXES_REPORT.md. Summary of material corrections:
 4. **Discovery report.** The Phase 11 search fed long sentences into a keyword engine, was
    rate-limited to 4 queries, and returned 5 unrelated particle-physics/astrophysics papers; it did
    not execute meaningfully. Rewrote discovery/report/report.md, README, LIMITATIONS, STATE,
-   CHECKPOINT2 to status "NOT YET RUN" — not a NULL result, not a result about durability. Search
+   CHECKPOINT2 to status "NOT YET RUN" - not a NULL result, not a result about durability. Search
    NOT rerun.
 5. **Rule citations.** Ported the Gate-1-approved page-level citations from ../ledger-v2
    (r0/GATE1.md, source B2 = PMC13707403, Molecules 2026) into rules/SOURCES.md and the yaml
@@ -63,23 +63,23 @@ Full per-fix detail in FIXES_REPORT.md. Summary of material corrections:
    PREREGISTRATION.md BEFORE opening the trace, then ran it against the authors' own released H-cell
    trace (upstream/lila_oer_manuscript/data/fig_3e.csv, sha cac02293…). InMnPdOx: 84 points, max
    0.5055 V at 575.5 h, coverage 11.5-999.6 h. **Verdict (corrected 2026-11-11, see below): within_floor**
-   — the first rule was written strict and omitted the standing 13 mV floor; under the floor, 0 points
+ - the first rule was written strict and omitted the standing 13 mV floor; under the floor, 0 points
    exceed 0.513 V so the claim is consistent within ±13 mV. CONSISTENCY CHECK vs the authors' own data,
    NOT independent confirmation (reports/durability_check_2609.30133.md).
 
-## 2026-11-11: durability check (fix #7) omitted the standing floor — verdict corrected to within_floor
+## 2026-11-11: durability check (fix #7) omitted the standing floor - verdict corrected to within_floor
 - What was wrong: the pass rule for the claim-2609.30133__010 durability consistency check was written
   STRICT (every trace point below 0.5 V; "FAIL" if any point >= 0.5 V). It omitted the standing
   verdict-floor rule (D7: threshold = max(13 mV, the claim's stated uncertainty)), which was locked on
-  2026-11-10 — before this check existed — in `labext/writeback.py` (`FLOOR_V = 0.013`,
+  2026-11-10 - before this check existed - in `labext/writeback.py` (`FLOOR_V = 0.013`,
   `floor = max(FLOOR_V, claim_unc)`, `within_floor if margin <= floor`; commits 09e066e5 2026-11-10
   16:01 and f1602722 2026-11-10 19:57) and is already used by the writeback verdict code. A strict
   threshold contradicts that floor and repeats the error recorded in CONTRADICTION_DOSSIER.md
   (treating a sub-floor difference as a contradiction).
-- Correction: amended the preregistration (dated 2026-11-11, after the trace was opened; not tuning —
+- Correction: amended the preregistration (dated 2026-11-11, after the trace was opened; not tuning - 
   it applies a rule locked earlier) and recomputed under the floor. InMnPdOx max = 0.5055 V at 575.5 h;
   1 point exceeds 0.500 V; **0 points exceed 0.513 V** (0.5 V + 13 mV floor); coverage 11.5-999.6 h;
-  claim written to 0.1 V precision. **Verdict: within_floor — consistent within the authors' stated
+  claim written to 0.1 V precision. **Verdict: within_floor - consistent within the authors' stated
   ±13 mV reproducibility.** The strict reading is kept on record but superseded. The word "FAIL" for
   this check was replaced in reports/durability_check_2609.30133.md and FIXES_REPORT.md; the label
   (consistency check vs the authors' own data, not independent confirmation) is unchanged.
@@ -90,3 +90,26 @@ Full per-fix detail in FIXES_REPORT.md. Summary of material corrections:
   screening" (the authors' own words, left as-is).
 - Test: `tests/test_durability_floor.py` asserts the check applies the 13 mV floor (within_floor at
   0.5055 V) and that no InMnPdOx point exceeds 0.513 V.
+
+## 2026-11-11: follow-up corrections (self-consistency label, public repo, stale status, em dashes)
+- Durability report (reports/durability_check_2609.30133.md): added a "Basis of comparability" section
+  stating the verdict rests on IDENTITY (the claim is the authors' own description of the same Fig. 3e
+  measurement, so claim and data are one experiment); labelled it a "self-consistency check". Noted
+  that under the ordinary cross-source rules this pair would be refused as condition_unstated
+  (electrolyte and current density unstated on the data side), which is why the 9 writeback comparisons
+  were refused while this check is not. The paper's long-term-test Methods text is not committed, so
+  those conditions remain unstated here.
+- README.md: removed "publishing is not performed here"; stated the repo is public
+  (github.com/Anuja-Khatri/consilience-ledger). Added a one-line durability self-consistency check to
+  Results (max 0.5055 V at 575.5 h, 0 of 84 points above 0.513 V, within_floor, consistent within
+  +/- 13 mV). Registered those numbers in NUMBERS_LOCK.json with n and qualifier so the numbers linter
+  passes (README lints clean).
+- STATE.md: replaced the stale "Phases 10-11 scaffolding" line with the true status (Phase 10 ran on
+  public data; Phase 11 NOT YET RUN). CHECKPOINT2.md: added a top banner marking it a historical record,
+  superseded by README and CORRECTIONS.md where they conflict.
+- Em dashes: replaced every em dash (U+2014) with plain punctuation in README, FIXES_REPORT,
+  CORRECTIONS, the durability report, discovery/report/report.md, and (for the test scope) OPEN_QUESTIONS,
+  PREREGISTRATION, SEED_APPROVAL, STATE. Added tests/test_no_em_dash.py, which fails if an em dash appears
+  in any top-level .md file or under reports/ or discovery/report/.
+- No verdict or hash changed: ledger.hash and rules.lock are unchanged (docs + tests only). 75 tests
+  green; make reproduce byte-stable.

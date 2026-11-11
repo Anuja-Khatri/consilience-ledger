@@ -2,28 +2,201 @@
   "schema": "numbers-lock-v0",
   "note": "Every headline number in outgoing text (README, METHODS, reports) must appear here, each with its n and qualifier (II.3). Pattern ported from consilience-verification.",
   "numbers": [
-    {"id": "judge_vs_logic_program", "value": 1.0, "n": 213, "qualifier": "exact agreement vs independent logic program", "source": "locked Consilience registry"},
-    {"id": "judge_vs_smt", "value": 1.0, "n": 311, "qualifier": "exact agreement vs SMT", "source": "locked Consilience registry"},
-    {"id": "proof_coverage", "value": 0.9842, "n": null, "qualifier": "proof coverage", "source": "locked Consilience registry"},
-    {"id": "extraction_stability_consciousness", "value": 0.25, "n": 88, "qualifier": "test-retest on the identical passage, consciousness domain (NOT the materials number)", "source": "locked Consilience registry"},
-    {"id": "typed_gate_attack_success", "value": 0.0, "n": null, "qualifier": "attack success", "source": "locked Consilience registry"},
-    {"id": "typed_gate_false_block", "value": 0.0, "n": null, "qualifier": "false block", "source": "locked Consilience registry"},
-    {"id": "cogitate_p", "value": 0.075, "n": null, "qualifier": "COGITATE 2 of 3 after disclosed re-review, suggestive only", "source": "locked Consilience registry"},
-    {"id": "lila_repro_floor_mv", "value": 13, "n": null, "qualifier": "Lila's stated reproducibility floor, +/-13 mV", "source": "arXiv:2609.30133"},
-    {"id": "esamp_error_before_mv", "value": 143, "n": null, "qualifier": "OER overpotential prediction error before condition parameters", "source": "ESAMP Digital Discovery 2023, 2, 1078"},
-    {"id": "esamp_error_after_mv", "value": 25, "n": null, "qualifier": "OER overpotential prediction error after condition parameters", "source": "ESAMP Digital Discovery 2023, 2, 1078"},
-    {"id": "pilot_approvable", "value": 70, "n": null, "qualifier": "approvable numeric claims from the accessible pilot papers", "source": "this build, Phase 2"},
-    {"id": "approved_claims", "value": 34, "n": null, "qualifier": "approved claim cards after Checkpoint 1", "source": "this build, Phase 3"},
-    {"id": "rejected_claims", "value": 38, "n": null, "qualifier": "rejected at Checkpoint 1", "source": "this build, Phase 3"},
-    {"id": "ledger_forks", "value": 0, "n": null, "qualifier": "numeric forks surviving the conditions veto", "source": "this build, Phase 4"},
-    {"id": "ledger_vetoes", "value": 561, "n": null, "qualifier": "vetoed pairings (all pairs)", "source": "this build, Phase 4"},
-    {"id": "defect_axis_mismatch", "value": 515, "n": null, "qualifier": "axis_mismatch defects", "source": "this build, Phase 4"},
-    {"id": "defect_condition_unstated", "value": 149, "n": null, "qualifier": "condition_unstated defects", "source": "this build, Phase 4"},
-    {"id": "defect_condition_mismatch", "value": 3, "n": null, "qualifier": "condition_mismatch defects", "source": "this build, Phase 4"},
-    {"id": "verdict_confirmed_contradicted", "value": 0, "n": null, "qualifier": "confirmed or contradicted verdicts (no claim's conditions matched an H-cell measurement)", "source": "this build, Phase 5, corrected per CONTRADICTION_DOSSIER.md"},
-    {"id": "verdict_not_comparable", "value": 9, "n": null, "qualifier": "not_comparable overpotential verdicts (all published vetoes, against H-cell data)", "source": "this build, Phase 5, corrected per CONTRADICTION_DOSSIER.md"},
-    {"id": "baseline_sample", "value": 60, "n": null, "qualifier": "preregistered baseline sample size", "source": "this build, Phase 6"},
-    {"id": "baseline_false_comparisons", "value": 4, "n": 60, "qualifier": "pairs the model compared (2 disagree, 2 agree) that the judge vetoed", "source": "this build, Phase 6"},
-    {"id": "materials_extraction_stability", "value": 0.423, "n": 52, "qualifier": "fresh materials test-retest (subject + value-family key, K=3; the axis label is not stable; a different metric and domain from the consciousness 0.25)", "source": "this build, Phase 7"}
+    {
+      "id": "judge_vs_logic_program",
+      "value": 1.0,
+      "n": 213,
+      "qualifier": "exact agreement vs independent logic program",
+      "source": "locked Consilience registry"
+    },
+    {
+      "id": "judge_vs_smt",
+      "value": 1.0,
+      "n": 311,
+      "qualifier": "exact agreement vs SMT",
+      "source": "locked Consilience registry"
+    },
+    {
+      "id": "proof_coverage",
+      "value": 0.9842,
+      "n": null,
+      "qualifier": "proof coverage",
+      "source": "locked Consilience registry"
+    },
+    {
+      "id": "extraction_stability_consciousness",
+      "value": 0.25,
+      "n": 88,
+      "qualifier": "test-retest on the identical passage, consciousness domain (NOT the materials number)",
+      "source": "locked Consilience registry"
+    },
+    {
+      "id": "typed_gate_attack_success",
+      "value": 0.0,
+      "n": null,
+      "qualifier": "attack success",
+      "source": "locked Consilience registry"
+    },
+    {
+      "id": "typed_gate_false_block",
+      "value": 0.0,
+      "n": null,
+      "qualifier": "false block",
+      "source": "locked Consilience registry"
+    },
+    {
+      "id": "cogitate_p",
+      "value": 0.075,
+      "n": null,
+      "qualifier": "COGITATE 2 of 3 after disclosed re-review, suggestive only",
+      "source": "locked Consilience registry"
+    },
+    {
+      "id": "lila_repro_floor_mv",
+      "value": 13,
+      "n": null,
+      "qualifier": "Lila's stated reproducibility floor, +/-13 mV",
+      "source": "arXiv:2609.30133"
+    },
+    {
+      "id": "esamp_error_before_mv",
+      "value": 143,
+      "n": null,
+      "qualifier": "OER overpotential prediction error before condition parameters",
+      "source": "ESAMP Digital Discovery 2023, 2, 1078"
+    },
+    {
+      "id": "esamp_error_after_mv",
+      "value": 25,
+      "n": null,
+      "qualifier": "OER overpotential prediction error after condition parameters",
+      "source": "ESAMP Digital Discovery 2023, 2, 1078"
+    },
+    {
+      "id": "pilot_approvable",
+      "value": 70,
+      "n": null,
+      "qualifier": "approvable numeric claims from the accessible pilot papers",
+      "source": "this build, Phase 2"
+    },
+    {
+      "id": "approved_claims",
+      "value": 34,
+      "n": null,
+      "qualifier": "approved claim cards after Checkpoint 1",
+      "source": "this build, Phase 3"
+    },
+    {
+      "id": "rejected_claims",
+      "value": 38,
+      "n": null,
+      "qualifier": "rejected at Checkpoint 1",
+      "source": "this build, Phase 3"
+    },
+    {
+      "id": "ledger_forks",
+      "value": 0,
+      "n": null,
+      "qualifier": "numeric forks surviving the conditions veto",
+      "source": "this build, Phase 4"
+    },
+    {
+      "id": "ledger_vetoes",
+      "value": 561,
+      "n": null,
+      "qualifier": "vetoed pairings (all pairs)",
+      "source": "this build, Phase 4"
+    },
+    {
+      "id": "defect_axis_mismatch",
+      "value": 515,
+      "n": null,
+      "qualifier": "axis_mismatch defects",
+      "source": "this build, Phase 4"
+    },
+    {
+      "id": "defect_condition_unstated",
+      "value": 149,
+      "n": null,
+      "qualifier": "condition_unstated defects",
+      "source": "this build, Phase 4"
+    },
+    {
+      "id": "defect_condition_mismatch",
+      "value": 3,
+      "n": null,
+      "qualifier": "condition_mismatch defects",
+      "source": "this build, Phase 4"
+    },
+    {
+      "id": "verdict_confirmed_contradicted",
+      "value": 0,
+      "n": null,
+      "qualifier": "confirmed or contradicted verdicts (no claim's conditions matched an H-cell measurement)",
+      "source": "this build, Phase 5, corrected per CONTRADICTION_DOSSIER.md"
+    },
+    {
+      "id": "verdict_not_comparable",
+      "value": 9,
+      "n": null,
+      "qualifier": "not_comparable overpotential verdicts (all published vetoes, against H-cell data)",
+      "source": "this build, Phase 5, corrected per CONTRADICTION_DOSSIER.md"
+    },
+    {
+      "id": "baseline_sample",
+      "value": 60,
+      "n": null,
+      "qualifier": "preregistered baseline sample size",
+      "source": "this build, Phase 6"
+    },
+    {
+      "id": "baseline_false_comparisons",
+      "value": 4,
+      "n": 60,
+      "qualifier": "pairs the model compared (2 disagree, 2 agree) that the judge vetoed",
+      "source": "this build, Phase 6"
+    },
+    {
+      "id": "materials_extraction_stability",
+      "value": 0.423,
+      "n": 52,
+      "qualifier": "fresh materials test-retest (subject + value-family key, K=3; the axis label is not stable; a different metric and domain from the consciousness 0.25)",
+      "source": "this build, Phase 7"
+    },
+    {
+      "id": "durability_max_v",
+      "value": 0.5055,
+      "n": 84,
+      "qualifier": "InMnPdOx max iR-corrected overpotential (V) in the authors Fig.3e trace; self-consistency check, not independent confirmation",
+      "source": "fig_3e.csv, 2026-11-11"
+    },
+    {
+      "id": "durability_max_time_h",
+      "value": 575.5,
+      "n": 84,
+      "qualifier": "hours at the InMnPdOx maximum overpotential in the Fig.3e trace",
+      "source": "fig_3e.csv, 2026-11-11"
+    },
+    {
+      "id": "durability_threshold_v",
+      "value": 0.513,
+      "n": null,
+      "qualifier": "within_floor threshold = claim 0.5 V ceiling + standing 13 mV floor (D7)",
+      "source": "this build, 2026-11-11"
+    },
+    {
+      "id": "durability_claim_ceiling_v",
+      "value": 0.5,
+      "n": null,
+      "qualifier": "the durability claim 2609.30133__010 stated 0.5 V ceiling (written to 0.1 V precision)",
+      "source": "arXiv:2609.30133"
+    },
+    {
+      "id": "paper_arxiv_id_2609",
+      "value": 2609.30133,
+      "n": null,
+      "qualifier": "arXiv identifier of the Lila OER paper and the durability claim prefix (an identifier, not a measured value)",
+      "source": "arXiv:2609.30133"
+    }
   ]
 }

@@ -1,5 +1,10 @@
 # CHECKPOINT 2 (full, end of Phase 12) - for Anu, batched, non-interactive
 
+> HISTORICAL RECORD. Superseded where it conflicts with README.md and CORRECTIONS.md (e.g. the
+> dataset is public helao-async data not Lila's; the loop example is a synthetic simulator-lookup,
+> not a fork; Phase 11 discovery is NOT YET RUN; the durability check is within_floor; the repo is
+> public). Where this file and README/CORRECTIONS disagree, README and CORRECTIONS.md govern.
+
 The second human checkpoint: publish sign-off. Signed off (name, license) at the end of
 Phase 8; this is the full update after the whole build. Publishing is HELD until your push
 approval. Nothing has been pushed anywhere.
