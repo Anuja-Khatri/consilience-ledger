@@ -1,0 +1,452 @@
+{
+  "quota": {
+    "Pd-HClO4": 20,
+    "Co-H2SO4": 20
+  },
+  "selected": {
+    "Pd-HClO4": 20,
+    "Co-H2SO4": 20
+  },
+  "papers": [
+    {
+      "pmcid": "PMC10035503",
+      "cluster": "Pd-HClO4",
+      "priority": "1M",
+      "doi": "10.1093/nsr/nwac108",
+      "journal": null,
+      "year": "2023",
+      "license": "cc by",
+      "title": "Hierarchical palladium catalyst for highly active and stable water oxidation in acidic media.",
+      "sha256": "e3041b2f88e47ca4929198b94c8fac00e67d8dc3f501715972b29bd3953cc6db"
+    },
+    {
+      "pmcid": "PMC8157449",
+      "cluster": "Pd-HClO4",
+      "priority": "1M",
+      "doi": "10.1039/c9sc04603h",
+      "journal": null,
+      "year": "2020",
+      "license": "cc by-nc",
+      "title": "Accelerated alkaline hydrogen evolution on M(OH) <sub><i>x</i></sub> /M-MoPO <sub><i>x</i></sub> (M = Ni, Co, Fe, Mn) electrocatalysts by co",
+      "sha256": "1107c39aca96e76460bd1f5fff12727174abb67e839157e9bac2d786515f87bf"
+    },
+    {
+      "pmcid": "PMC10289644",
+      "cluster": "Pd-HClO4",
+      "priority": "0.1M",
+      "doi": "10.1126/sciadv.adh1718",
+      "journal": null,
+      "year": "2023",
+      "license": "cc by",
+      "title": "IrO<i><sub>x</sub></i>\u00b7<i>n</i>H<sub>2</sub>O with lattice water-assisted oxygen exchange for high-performance proton exchange membrane wate",
+      "sha256": "63f5fb5eb0632d6ad363eb18950ac0c8cc1092fe5e4a14544f6944ff4891170c"
+    },
+    {
+      "pmcid": "PMC11077676",
+      "cluster": "Pd-HClO4",
+      "priority": "0.1M",
+      "doi": "10.1002/advs.202309163",
+      "journal": null,
+      "year": "2024",
+      "license": "cc by",
+      "title": "Unveiling the Growth Mechanism of Ordered-Phase within Multimetallic Nanoplates.",
+      "sha256": "4330e858adfd9158905ff389f17e67997918a5dea60c3f032bd4ca65b5b4132d"
+    },
+    {
+      "pmcid": "PMC11369373",
+      "cluster": "Pd-HClO4",
+      "priority": "0.1M",
+      "doi": "10.1016/j.isci.2024.110551",
+      "journal": null,
+      "year": "2024",
+      "license": "cc by-nc",
+      "title": "Design of a long-lived Mo2C-MoO2@GC-N electrocatalyst by the ambient DC arc plasma for the hydrogen evolution reaction.",
+      "sha256": "3a5d12d17ff19428a57642b48c37e005bf33cd44feff93335252bdddc228a9ae"
+    },
+    {
+      "pmcid": "PMC11775546",
+      "cluster": "Pd-HClO4",
+      "priority": "0.1M",
+      "doi": "10.1002/advs.202412862",
+      "journal": null,
+      "year": "2025",
+      "license": "cc by",
+      "title": "High Catalytic Selectivity of Electron/Proton Dual-Conductive Sulfonated Polyaniline Micropore Encased IrO<sub>2</sub> Electrocatalyst by Sc",
+      "sha256": "439439b56741e80cd7c34a93c00fc0242fe587d644b1f1309a722164c6eaba38"
+    },
+    {
+      "pmcid": "PMC11935124",
+      "cluster": "Pd-HClO4",
+      "priority": "0.1M",
+      "doi": "10.1002/smsc.202300109",
+      "journal": null,
+      "year": "2024",
+      "license": "cc by",
+      "title": "Current Trends of Iridium-Based Catalysts for Oxygen Evolution Reaction in Acidic Water Electrolysis.",
+      "sha256": "8bf8821a6a889a60bc89bca5e39cacd08677162e20071d0ac40d7d0e5e5fec68"
+    },
+    {
+      "pmcid": "PMC11935862",
+      "cluster": "Pd-HClO4",
+      "priority": "0.1M",
+      "doi": "10.1002/smsc.202300010",
+      "journal": null,
+      "year": "2023",
+      "license": "cc by",
+      "title": "Recent Progress on Non-Carbon-Supported Single-Atom Catalysts for Electrochemical Conversion of Green Energy.",
+      "sha256": "c2fb745b8d618b14f77808442e4b3ad56c0452d2e1e0442280818d2ffad73d65"
+    },
+    {
+      "pmcid": "PMC11935979",
+      "cluster": "Pd-HClO4",
+      "priority": "0.1M",
+      "doi": "10.1002/smsc.202200109",
+      "journal": null,
+      "year": "2023",
+      "license": "cc by",
+      "title": "High-Entropy Nanomaterials for Advanced Electrocatalysis.",
+      "sha256": "1786a4eef18b9d4be60834b9ca3894907bc3876cf5e239b871dbbd83687f174f"
+    },
+    {
+      "pmcid": "PMC11936017",
+      "cluster": "Pd-HClO4",
+      "priority": "0.1M",
+      "doi": "10.1002/smsc.202100015",
+      "journal": null,
+      "year": "2021",
+      "license": "cc by",
+      "title": "Metal-Organic Frameworks for Electrocatalysis: Beyond Their Derivatives.",
+      "sha256": "087e1c1ee2490dc3a9027b55ab005602b5e1bd62f20e6b1e40ff778a0dae3f0b"
+    },
+    {
+      "pmcid": "PMC12322918",
+      "cluster": "Pd-HClO4",
+      "priority": "0.1M",
+      "doi": "10.1021/acscatal.5c02831",
+      "journal": null,
+      "year": "2025",
+      "license": "cc by",
+      "title": "Engineering Ru@Ir Core-Shell Nanoparticles on Titanium Oxynitride-Graphene Support for a Highly Active and Durable pH-Universal Hydrogen Evo",
+      "sha256": "5e3049f7edf996261831973685230980e69e3d4e21c52e57ad46ece8f89a3bcc"
+    },
+    {
+      "pmcid": "PMC12426754",
+      "cluster": "Pd-HClO4",
+      "priority": "0.1M",
+      "doi": "10.1039/d5ra03709c",
+      "journal": null,
+      "year": "2025",
+      "license": "cc by-nc",
+      "title": "Atomic-scale engineering of Fe-Cu nanoparticles on amine-functionalized silica: CNT-driven synergy for ultra-efficient hydrogen evolution.",
+      "sha256": "a4be28c99ef759ae9455fec2aeef6c610f03885a08e640778fc1a6632a2d2740"
+    },
+    {
+      "pmcid": "PMC12537992",
+      "cluster": "Pd-HClO4",
+      "priority": "0.1M",
+      "doi": "10.1038/s41467-025-64286-1",
+      "journal": null,
+      "year": "2025",
+      "license": "cc by-nc-nd",
+      "title": "Temperature-dependent mechanism evolution on RhRu&lt;sub&gt;3&lt;/sub&gt;O&lt;sub&gt;x&lt;/sub&gt; for acidic water oxidation.",
+      "sha256": "95808e72368f75e0268162793ef558de80c69ed900fd33025f85b6aeba32cec5"
+    },
+    {
+      "pmcid": "PMC12606313",
+      "cluster": "Pd-HClO4",
+      "priority": "0.1M",
+      "doi": "10.1038/s41467-025-64857-2",
+      "journal": null,
+      "year": "2025",
+      "license": "cc by-nc-nd",
+      "title": "Surface sulfonic-group bonded oxygen evolution catalyst for proton exchange membrane water electrolysis.",
+      "sha256": "63dc23306b6515ab978d4ead9366f2eca68d8a3193fcaa1db8f01412eb3a3a99"
+    },
+    {
+      "pmcid": "PMC13383700",
+      "cluster": "Pd-HClO4",
+      "priority": "0.1M",
+      "doi": "10.1002/advs.76651",
+      "journal": null,
+      "year": "2026",
+      "license": "cc by",
+      "title": "Machine Learning-Guided Surface Strain Engineering in Connected Platinum-Nickel Nanoparticle Catalysts for Advanced Oxygen Reduction Perform",
+      "sha256": "036fb775d445641d797e4200c843383ba9281ba7e598ca94eff8f9cbd73122fb"
+    },
+    {
+      "pmcid": "PMC5684209",
+      "cluster": "Pd-HClO4",
+      "priority": "0.1M",
+      "doi": "10.1038/s41598-017-15688-9",
+      "journal": null,
+      "year": "2017",
+      "license": "cc by",
+      "title": "Oxygen Evolution Reaction at Microporous Pt Layers: Differentiated Electrochemical Activity between Acidic and Basic Media.",
+      "sha256": "d5ae3419aed9bb3d9a57043aad57528d6fba25e5a429531010816c146718eb18"
+    },
+    {
+      "pmcid": "PMC6449398",
+      "cluster": "Pd-HClO4",
+      "priority": "0.1M",
+      "doi": "10.1038/s41467-019-09162-5",
+      "journal": null,
+      "year": "2019",
+      "license": "cc by",
+      "title": "Nitrogen-plasma treated hafnium oxyhydroxide as an efficient acid-stable electrocatalyst for hydrogen evolution and oxidation reactions.",
+      "sha256": "2981b63efde0c7d022e7f673aad3b0ee61fde56a4ef7da9dd734922217e137ce"
+    },
+    {
+      "pmcid": "PMC6724051",
+      "cluster": "Pd-HClO4",
+      "priority": "0.1M",
+      "doi": "10.3390/nano9081145",
+      "journal": null,
+      "year": "2019",
+      "license": "cc by",
+      "title": "Facile Synthesis of IrCu Microspheres Based on Polyol Method and Study on Their Electro-Catalytic Performances to Oxygen Evolution Reaction.",
+      "sha256": "57b5e08de7a338646262380ba78a0fcf3a1ce53b0a8848f9bae42454b859474e"
+    },
+    {
+      "pmcid": "PMC7379386",
+      "cluster": "Pd-HClO4",
+      "priority": "0.1M",
+      "doi": "10.1021/acscentsci.0c00604",
+      "journal": null,
+      "year": "2020",
+      "license": null,
+      "title": "Atomically Dispersed Iridium on Indium Tin Oxide Efficiently Catalyzes Water Oxidation.",
+      "sha256": "4ebb953f9973c25c652ff99bde368cf8dca647b79f3908830893ded0006cee4a"
+    },
+    {
+      "pmcid": "PMC8007591",
+      "cluster": "Pd-HClO4",
+      "priority": "0.1M",
+      "doi": "10.1038/s41467-021-22291-0",
+      "journal": null,
+      "year": "2021",
+      "license": "cc by",
+      "title": "Electrochemical reduction of acetonitrile to ethylamine.",
+      "sha256": "e2ba1cfafd94eb7935ad28325d9eab2ab85b5e3f1cc1eb5b09eef053b26c2e94"
+    },
+    {
+      "pmcid": "PMC10005387",
+      "cluster": "Co-H2SO4",
+      "priority": "H2SO4",
+      "doi": "10.3390/nano13050797",
+      "journal": null,
+      "year": "2023",
+      "license": "cc by",
+      "title": "Iron-Doped Monoclinic Strontium Iridate as a Highly Efficient Oxygen Evolution Electrocatalyst in Acidic Media.",
+      "sha256": "ed41d697347506134a40d1fbb12f737d7883e61ad612f937f8f97e29f81b2997"
+    },
+    {
+      "pmcid": "PMC10015077",
+      "cluster": "Co-H2SO4",
+      "priority": "H2SO4",
+      "doi": "10.1038/s41467-023-37008-8",
+      "journal": null,
+      "year": "2023",
+      "license": "cc by",
+      "title": "Unraveling oxygen vacancy site mechanism of Rh-doped RuO&lt;sub&gt;2&lt;/sub&gt; catalyst for long-lasting acidic water oxidation.",
+      "sha256": "c6ed0f0e08cbfd6e98c4c04ddfa95160a87a8e81121bdb97f66ee581d0d9fe38"
+    },
+    {
+      "pmcid": "PMC10015899",
+      "cluster": "Co-H2SO4",
+      "priority": "H2SO4",
+      "doi": "10.1002/advs.202205920",
+      "journal": null,
+      "year": "2023",
+      "license": "cc by",
+      "title": "High-Valence-Manganese Driven Strong Anchoring of Iridium Species for Robust Acidic Water Oxidation.",
+      "sha256": "72b3892354661d713ede51d7169ba6b349df7e15df6d50ef31dda90fddbf95d0"
+    },
+    {
+      "pmcid": "PMC10016623",
+      "cluster": "Co-H2SO4",
+      "priority": "H2SO4",
+      "doi": "10.1039/d2sc04617b",
+      "journal": null,
+      "year": "2023",
+      "license": "cc by-nc",
+      "title": "Inverse 'intra-lattice' charge transfer in nickel-molybdenum dual electrocatalysts regulated by under-coordinating the molybdenum center.",
+      "sha256": "0d3fb31dc23f7901112fab17513e729b8878dd7f700d4cccaaa38928e39c04d8"
+    },
+    {
+      "pmcid": "PMC10063682",
+      "cluster": "Co-H2SO4",
+      "priority": "H2SO4",
+      "doi": "10.1038/s41467-023-37530-9",
+      "journal": null,
+      "year": "2023",
+      "license": "cc by",
+      "title": "A pyrolysis-free Ni/Fe bimetallic electrocatalyst for overall water splitting.",
+      "sha256": "c3708b452febb3b2314950d2d2bdb73f702c8b9f70e352002841ec41a1ec1e66"
+    },
+    {
+      "pmcid": "PMC10121564",
+      "cluster": "Co-H2SO4",
+      "priority": "H2SO4",
+      "doi": "10.1038/s41467-023-37641-3",
+      "journal": null,
+      "year": "2023",
+      "license": "cc by",
+      "title": "Dopant triggered atomic configuration activates water splitting to hydrogen.",
+      "sha256": "b779360ced9ae20415d2e081fbe7c85804afc179cbe1a44ba88469e5634cb0fd"
+    },
+    {
+      "pmcid": "PMC10145461",
+      "cluster": "Co-H2SO4",
+      "priority": "H2SO4",
+      "doi": "10.3390/ma16083171",
+      "journal": null,
+      "year": "2023",
+      "license": "cc by",
+      "title": "Vertical Graphene-Supported NiMo Nanoparticles as Efficient Electrocatalysts for Hydrogen Evolution Reaction under Alkaline Conditions.",
+      "sha256": "fbe6960b16ef3cac04ee6dfc145db3a3cb6e3ef39cb5a6dcfb95a7a8b225ad07"
+    },
+    {
+      "pmcid": "PMC10154325",
+      "cluster": "Co-H2SO4",
+      "priority": "H2SO4",
+      "doi": "10.1038/s41467-023-38213-1",
+      "journal": null,
+      "year": "2023",
+      "license": "cc by",
+      "title": "Construction of Zn-doped RuO<sub>2</sub> nanowires for efficient and stable water oxidation in acidic media.",
+      "sha256": "cb97fbcdcfd5f17801062eeffbc2f0b1cf1b8c7d8a07176aa6fa09a50bf912c4"
+    },
+    {
+      "pmcid": "PMC10161032",
+      "cluster": "Co-H2SO4",
+      "priority": "H2SO4",
+      "doi": "10.1002/advs.202207429",
+      "journal": null,
+      "year": "2023",
+      "license": "cc by",
+      "title": "Nano Si-Doped Ruthenium Oxide Particles from Caged Precursors for High-Performance Acidic Oxygen Evolution.",
+      "sha256": "5fff1633a7687cdd0fe0ceb3a139e3b1ef131b2a457d6fa8f43145def8e86c96"
+    },
+    {
+      "pmcid": "PMC10167732",
+      "cluster": "Co-H2SO4",
+      "priority": "H2SO4",
+      "doi": "10.1039/d3ra00672g",
+      "journal": null,
+      "year": "2023",
+      "license": "cc by-nc",
+      "title": "Facile fabrication of hierarchical ultrathin Rh-based nanosheets for efficient hydrogen evolution.",
+      "sha256": "3d219d4436b2bd773b5159181911f8d1510ecbf34347e54bb387d0a8c58a2f51"
+    },
+    {
+      "pmcid": "PMC10209667",
+      "cluster": "Co-H2SO4",
+      "priority": "H2SO4",
+      "doi": "10.1039/d3ra01945d",
+      "journal": null,
+      "year": "2023",
+      "license": "cc by",
+      "title": "Selenium-transition metal supported on a mixture of reduced graphene oxide and silica template for water splitting.",
+      "sha256": "50dfa713f8950504753d3a07f7b6d278d192bbc09679a4b8dde19292036b497b"
+    },
+    {
+      "pmcid": "PMC10254529",
+      "cluster": "Co-H2SO4",
+      "priority": "H2SO4",
+      "doi": "10.3390/ma16113997",
+      "journal": null,
+      "year": "2023",
+      "license": "cc by",
+      "title": "In Situ Synthesis of NiFeLDH/A-CBp from Pyrolytic Carbon as High-Performance Oxygen Evolution Reaction Catalyst for Water Splitting and Zinc",
+      "sha256": "6dfe2be3b1d7d62e95c4389f8317a90bb807cadbf89bbcd6eeb5fce7e65302cd"
+    },
+    {
+      "pmcid": "PMC10347692",
+      "cluster": "Co-H2SO4",
+      "priority": "H2SO4",
+      "doi": "10.1021/acsmaterialsau.2c00080",
+      "journal": null,
+      "year": "2023",
+      "license": "cc by-nc-nd",
+      "title": "A Little Nickel Goes a Long Way: Ni Incorporation into Rh<sub>2</sub>P for Stable Bifunctional Electrocatalytic Water Splitting in Acidic Me",
+      "sha256": "81942688e1e300b4b3939680fac8419769909a6bfa56f37f9c3505403c89b4f1"
+    },
+    {
+      "pmcid": "PMC10349089",
+      "cluster": "Co-H2SO4",
+      "priority": "H2SO4",
+      "doi": "10.1038/s41467-023-39963-8",
+      "journal": null,
+      "year": "2023",
+      "license": "cc by",
+      "title": "Tailoring a local acid-like microenvironment for efficient neutral hydrogen evolution.",
+      "sha256": "64e23e814dd70fddecbccc111404b3fd7185865776af8e996cffa85dc22a85d3"
+    },
+    {
+      "pmcid": "PMC10349090",
+      "cluster": "Co-H2SO4",
+      "priority": "H2SO4",
+      "doi": "10.1038/s41467-023-39848-w",
+      "journal": null,
+      "year": "2023",
+      "license": "cc by",
+      "title": "Acidic enol electrooxidation-coupled hydrogen production with ampere-level current density.",
+      "sha256": "859d4cfea97575e5e981526a9e931d5fb458a0e3f4c9fece238399f19cb7704e"
+    },
+    {
+      "pmcid": "PMC10357413",
+      "cluster": "Co-H2SO4",
+      "priority": "H2SO4",
+      "doi": "10.1039/d3ra03209d",
+      "journal": null,
+      "year": "2023",
+      "license": "cc by-nc",
+      "title": "Porous nanorods by stacked NiO nanoparticulate exhibiting corn-like structure for sustainable environmental and energy applications.",
+      "sha256": "dbed89d15612e9e1840613f9c2aa5fb0e30ef20efce08e494b35ae819271a986"
+    },
+    {
+      "pmcid": "PMC10441667",
+      "cluster": "Co-H2SO4",
+      "priority": "H2SO4",
+      "doi": "10.3389/fchem.2023.1244148",
+      "journal": null,
+      "year": "2023",
+      "license": "cc by",
+      "title": "Effect of carbon support on the activity of monodisperse Co<sub>45</sub>Pt<sub>55</sub> nanoparticles for oxygen evolution in alkaline media",
+      "sha256": "eeb48b50f412cd30f97fa49c71f90bce3ce9d954ccb5a6e6f69e1462ac9f596e"
+    },
+    {
+      "pmcid": "PMC10447464",
+      "cluster": "Co-H2SO4",
+      "priority": "H2SO4",
+      "doi": "10.1038/s41467-023-40912-8",
+      "journal": null,
+      "year": "2023",
+      "license": "cc by",
+      "title": "Nano-metal diborides-supported anode catalyst with strongly coupled TaO<sub>x</sub>/IrO<sub>2</sub> catalytic layer for low-iridium-loading ",
+      "sha256": "3fb46752b27ed008a278301e39ad27765f627a6c80864fc0e987dd7269d960cf"
+    },
+    {
+      "pmcid": "PMC10472335",
+      "cluster": "Co-H2SO4",
+      "priority": "H2SO4",
+      "doi": "10.1021/acsami.3c05016",
+      "journal": null,
+      "year": "2023",
+      "license": "cc by",
+      "title": "Understanding the Catalytic Active Sites of Crystalline CoSb<sub><i>x</i></sub>O<sub><i>y</i></sub> for Electrochemical Chlorine Evolution.",
+      "sha256": "15b9c8e9ba30b669b90afc445932013cb1def21d54471added58f6d172cc61d1"
+    },
+    {
+      "pmcid": "PMC10475099",
+      "cluster": "Co-H2SO4",
+      "priority": "H2SO4",
+      "doi": "10.1038/s41467-023-41070-7",
+      "journal": null,
+      "year": "2023",
+      "license": "cc by",
+      "title": "Self-adaptive amorphous CoO<sub>x</sub>Cl<sub>y</sub> electrocatalyst for sustainable chlorine evolution in acidic brine.",
+      "sha256": "6644e148c9159356ee5be9a21dc7bcaeb55908b6660d54834fc78e4dbfe57d98"
+    }
+  ]
+}

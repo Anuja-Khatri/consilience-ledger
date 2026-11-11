@@ -1,0 +1,46 @@
+{
+  "claim_id": "PMC12606313:agreed3",
+  "claim_kind": "performance_value",
+  "subject": "Ir/IrOx~SO3H",
+  "source_sentence": "Without iR correction, the overpotentials required to achieve 10 mA cm −2 were 259 mV for I r/IrO x ~ SO 3 H and 281 mV for Ir/IrO x .",
+  "source_document": "EuropePMC:PMC12606313",
+  "provenance_hash": "sha256:adf784ca0024fed76097ac9c39e8cd31",
+  "source_tier": "primary",
+  "axis": "overpotential_at_current_density",
+  "material": {
+    "formula": "Ir/IrOx~SO3H"
+  },
+  "quantity": {
+    "value": 0.259,
+    "unit": "V",
+    "uncertainty": null,
+    "uncertainty_kind": "none_stated",
+    "bound": "exact"
+  },
+  "conditions": {
+    "electrolyte": {
+      "identity": "H2SO4",
+      "concentration": {
+        "value": 0.5,
+        "unit": "mol/L"
+      }
+    },
+    "ph": "unstated",
+    "current_density": {
+      "value": 10.0,
+      "unit": "mA/cm^2",
+      "normalization": "geometric"
+    },
+    "temperature": "unstated",
+    "loading": "unstated",
+    "substrate": "unstated",
+    "protocol_tier": "other_stated",
+    "prior_operation_duration": "unstated",
+    "anneal_temperature": "unstated",
+    "ir_correction": {
+      "fraction": 0.0,
+      "stated": "none",
+      "source_quote": "Without iR correction, the overpotentials required to achieve 10 mA cm −2 were 259 mV for I r/IrO x ~ SO 3 H and 281 mV for Ir/IrO x ."
+    }
+  }
+}

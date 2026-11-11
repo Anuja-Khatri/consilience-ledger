@@ -1,0 +1,42 @@
+{
+  "claim_id": "PMC10063682:agreed0",
+  "claim_kind": "performance_value",
+  "subject": "CPF-Fe/Ni",
+  "source_sentence": "At a current density of 10 mA cm −2 , the overpotential for hydrogen evolution and oxygen evolution is 23/201 mV and 42/194 mV in 0.5 M H 2 SO 4 and 1 M KOH, respectively.",
+  "source_document": "EuropePMC:PMC10063682",
+  "provenance_hash": "sha256:4af195dea728747ed7044fccdf6a0de5",
+  "source_tier": "primary",
+  "axis": "overpotential_at_current_density",
+  "material": {
+    "formula": "CPF-Fe/Ni"
+  },
+  "quantity": {
+    "value": 0.201,
+    "unit": "V",
+    "uncertainty": null,
+    "uncertainty_kind": "none_stated",
+    "bound": "exact"
+  },
+  "conditions": {
+    "electrolyte": {
+      "identity": "H2SO4",
+      "concentration": {
+        "value": 0.5,
+        "unit": "mol/L"
+      }
+    },
+    "ph": "unstated",
+    "current_density": {
+      "value": 10.0,
+      "unit": "mA/cm^2",
+      "normalization": "geometric"
+    },
+    "temperature": "unstated",
+    "loading": "unstated",
+    "substrate": "unstated",
+    "protocol_tier": "unstated",
+    "prior_operation_duration": "unstated",
+    "anneal_temperature": "unstated",
+    "ir_correction": "unstated"
+  }
+}

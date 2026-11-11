@@ -1,0 +1,33 @@
+{
+  "base_note": "OA acidic-OER facet counts (upper bounds; lexical). Candidate-cluster sizing.",
+  "Pd": {
+    "0.5 M H2SO4": {
+      "electrolyte_matched": 374,
+      "and_10mA": 264
+    },
+    "0.1 M HClO4": {
+      "electrolyte_matched": 206,
+      "and_10mA": 121
+    }
+  },
+  "Ru": {
+    "0.5 M H2SO4": {
+      "electrolyte_matched": 597,
+      "and_10mA": 466
+    },
+    "0.1 M HClO4": {
+      "electrolyte_matched": 311,
+      "and_10mA": 207
+    }
+  },
+  "Ir": {
+    "0.5 M H2SO4": {
+      "electrolyte_matched": 819,
+      "and_10mA": 597
+    },
+    "0.1 M HClO4": {
+      "electrolyte_matched": 390,
+      "and_10mA": 253
+    }
+  }
+}

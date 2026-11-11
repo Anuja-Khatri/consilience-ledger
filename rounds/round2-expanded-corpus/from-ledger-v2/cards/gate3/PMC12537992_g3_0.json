@@ -1,0 +1,46 @@
+{
+  "claim_id": "PMC12537992:g3_0",
+  "claim_kind": "performance_value",
+  "subject": "RhRu3Ox",
+  "source_sentence": "At a current density of 10 mA cm−2, the RhRu3Ox catalyst displays a low overpotential of 240 mV.",
+  "source_document": "EuropePMC:PMC12537992",
+  "provenance_hash": "sha256:155de3429cba89e217d9a22e271bdcc2",
+  "source_tier": "primary",
+  "axis": "overpotential_at_current_density",
+  "material": {
+    "formula": "RhRu3Ox"
+  },
+  "quantity": {
+    "value": 0.24,
+    "unit": "V",
+    "uncertainty": null,
+    "uncertainty_kind": "none_stated",
+    "bound": "exact"
+  },
+  "conditions": {
+    "electrolyte": {
+      "identity": "HClO4",
+      "concentration": {
+        "value": 0.5,
+        "unit": "mol/L"
+      }
+    },
+    "ph": "unstated",
+    "current_density": {
+      "value": 10.0,
+      "unit": "mA/cm^2",
+      "normalization": "geometric"
+    },
+    "temperature": "unstated",
+    "loading": "unstated",
+    "substrate": "unstated",
+    "protocol_tier": "unstated",
+    "prior_operation_duration": "unstated",
+    "anneal_temperature": "unstated",
+    "ir_correction": {
+      "fraction": 1.0,
+      "stated": "full",
+      "source_quote": "All potentials were iR-corrected unless otherwise stated."
+    }
+  }
+}

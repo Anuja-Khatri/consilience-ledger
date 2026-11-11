@@ -1,0 +1,46 @@
+{
+  "claim_id": "PMC12537992:g3_1",
+  "claim_kind": "performance_value",
+  "subject": "RuO2",
+  "source_sentence": "In comparison, commercial RuO2 shows an overpotential of 270 mV at 10 mA cm−2.",
+  "source_document": "EuropePMC:PMC12537992",
+  "provenance_hash": "sha256:0ff2265995663148d689a7e6fe30e82b",
+  "source_tier": "primary",
+  "axis": "overpotential_at_current_density",
+  "material": {
+    "formula": "RuO2"
+  },
+  "quantity": {
+    "value": 0.27,
+    "unit": "V",
+    "uncertainty": null,
+    "uncertainty_kind": "none_stated",
+    "bound": "exact"
+  },
+  "conditions": {
+    "electrolyte": {
+      "identity": "HClO4",
+      "concentration": {
+        "value": 0.5,
+        "unit": "mol/L"
+      }
+    },
+    "ph": "unstated",
+    "current_density": {
+      "value": 10.0,
+      "unit": "mA/cm^2",
+      "normalization": "geometric"
+    },
+    "temperature": "unstated",
+    "loading": "unstated",
+    "substrate": "unstated",
+    "protocol_tier": "unstated",
+    "prior_operation_duration": "unstated",
+    "anneal_temperature": "unstated",
+    "ir_correction": {
+      "fraction": 1.0,
+      "stated": "full",
+      "source_quote": "All potentials were iR-corrected unless otherwise stated."
+    }
+  }
+}

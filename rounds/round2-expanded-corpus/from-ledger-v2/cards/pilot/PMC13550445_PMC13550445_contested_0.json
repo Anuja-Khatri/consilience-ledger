@@ -1,0 +1,42 @@
+{
+  "claim_id": "PMC13550445:PMC13550445_contested_0",
+  "claim_kind": "performance_value",
+  "subject": "DSC (Ru,Co dual-site substituted spinel Mn3O4)",
+  "source_sentence": "The catalyst requires an overpotential of 175 mV to reach 10 mA cm geo −2 and maintains operation for more than 650 hours at 100 mA cm geo −2 with a voltage degradation rate of 0.23 mV h −1 in 0.5 M H 2 SO 4 .",
+  "source_document": "EuropePMC:PMC13550445",
+  "provenance_hash": "sha256:29976934dbfffb29d1647132118bd25b",
+  "source_tier": "primary",
+  "axis": "overpotential_at_current_density",
+  "material": {
+    "formula": "DSC (Ru,Co dual-site substituted spinel Mn3O4)"
+  },
+  "quantity": {
+    "value": 0.175,
+    "unit": "V",
+    "uncertainty": null,
+    "uncertainty_kind": "none_stated",
+    "bound": "exact"
+  },
+  "conditions": {
+    "electrolyte": {
+      "identity": "H2SO4",
+      "concentration": {
+        "value": 0.5,
+        "unit": "mol/L"
+      }
+    },
+    "ph": "unstated",
+    "current_density": {
+      "value": 10.0,
+      "unit": "mA/cm^2",
+      "normalization": "geometric"
+    },
+    "temperature": "unstated",
+    "loading": "unstated",
+    "substrate": "unstated",
+    "protocol_tier": "unstated",
+    "prior_operation_duration": "unstated",
+    "anneal_temperature": "unstated",
+    "ir_correction": "unstated"
+  }
+}

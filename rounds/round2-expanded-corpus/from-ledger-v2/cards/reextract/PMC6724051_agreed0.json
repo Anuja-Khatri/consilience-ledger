@@ -1,0 +1,42 @@
+{
+  "claim_id": "PMC6724051:agreed0",
+  "claim_kind": "performance_value",
+  "subject": "IrCu0.77 microspheres",
+  "source_sentence": "Benefitting from the synergistic electronic effect between the Iridium and Cupric atoms from the alloy, the IrCu 0.77 microspheres exhibited excellent electrocatalytic activity towards OER in 0.1 M HClO 4 electrolyte, and to achieve 10 mA cm −2 , IrCu 0.77 microspheres only required the overpotential of 282 mV, which was much lower than that of commercial Ir/C catalysts.",
+  "source_document": "EuropePMC:PMC6724051",
+  "provenance_hash": "sha256:38b7ad18480c6fa36f497bd805765085",
+  "source_tier": "primary",
+  "axis": "overpotential_at_current_density",
+  "material": {
+    "formula": "IrCu0.77 microspheres"
+  },
+  "quantity": {
+    "value": 0.282,
+    "unit": "V",
+    "uncertainty": null,
+    "uncertainty_kind": "none_stated",
+    "bound": "exact"
+  },
+  "conditions": {
+    "electrolyte": {
+      "identity": "HClO4",
+      "concentration": {
+        "value": 0.1,
+        "unit": "mol/L"
+      }
+    },
+    "ph": "unstated",
+    "current_density": {
+      "value": 10.0,
+      "unit": "mA/cm^2",
+      "normalization": "geometric"
+    },
+    "temperature": "unstated",
+    "loading": "unstated",
+    "substrate": "unstated",
+    "protocol_tier": "unstated",
+    "prior_operation_duration": "unstated",
+    "anneal_temperature": "unstated",
+    "ir_correction": "unstated"
+  }
+}

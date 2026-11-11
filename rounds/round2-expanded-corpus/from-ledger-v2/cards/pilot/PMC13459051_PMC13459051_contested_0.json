@@ -1,0 +1,36 @@
+{
+  "claim_id": "PMC13459051:PMC13459051_contested_0",
+  "claim_kind": "performance_value",
+  "subject": "RuMnCoNiTa–O high-entropy oxide",
+  "source_sentence": "The optimized catalyst delivers a low overpotential of 196 mV at 10 mA cm −2 together with outstanding durability exceeding 500 h under acidic conditions, substantially outperforming commercial RuO 2 .",
+  "source_document": "EuropePMC:PMC13459051",
+  "provenance_hash": "sha256:44d31910a3ba175b36d5f5f40953b4c6",
+  "source_tier": "primary",
+  "axis": "overpotential_at_current_density",
+  "material": {
+    "formula": "RuMnCoNiTa–O high-entropy oxide"
+  },
+  "quantity": {
+    "value": 0.196,
+    "unit": "V",
+    "uncertainty": null,
+    "uncertainty_kind": "none_stated",
+    "bound": "exact"
+  },
+  "conditions": {
+    "electrolyte": "unstated",
+    "ph": "unstated",
+    "current_density": {
+      "value": 10.0,
+      "unit": "mA/cm^2",
+      "normalization": "geometric"
+    },
+    "temperature": "unstated",
+    "loading": "unstated",
+    "substrate": "unstated",
+    "protocol_tier": "unstated",
+    "prior_operation_duration": "unstated",
+    "anneal_temperature": "unstated",
+    "ir_correction": "unstated"
+  }
+}

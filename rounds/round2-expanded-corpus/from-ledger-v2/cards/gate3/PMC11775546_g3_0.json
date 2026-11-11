@@ -1,0 +1,36 @@
+{
+  "claim_id": "PMC11775546:g3_0",
+  "claim_kind": "performance_value",
+  "subject": "SPTTPAB/IrO2",
+  "source_sentence": "As a result, the overpotential for the oxygen evolution reaction (OER) is only 283 mV@10 mA cm −2 , with a Tafel slope of 16.33 mV dec −1 , which reduces 13.8% and 37.8% compared to commercial IrO 2 , respectively.",
+  "source_document": "EuropePMC:PMC11775546",
+  "provenance_hash": "sha256:a2e489629b19804616e7ebc4c149f288",
+  "source_tier": "primary",
+  "axis": "overpotential_at_current_density",
+  "material": {
+    "formula": "SPTTPAB/IrO2"
+  },
+  "quantity": {
+    "value": 0.283,
+    "unit": "V",
+    "uncertainty": null,
+    "uncertainty_kind": "none_stated",
+    "bound": "exact"
+  },
+  "conditions": {
+    "electrolyte": "unstated",
+    "ph": "unstated",
+    "current_density": {
+      "value": 10.0,
+      "unit": "mA/cm^2",
+      "normalization": "geometric"
+    },
+    "temperature": "unstated",
+    "loading": "unstated",
+    "substrate": "unstated",
+    "protocol_tier": "unstated",
+    "prior_operation_duration": "unstated",
+    "anneal_temperature": "unstated",
+    "ir_correction": "unstated"
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "claim_id": "PMC10650327:agreed1",
+  "claim_kind": "performance_value",
+  "subject": "c-IrO2",
+  "source_sentence": "As depicted in Figure 3 a, CeO 2 -Ir/CNTs demonstrated remarkable catalytic activity with an overpotential of 262.9 mV at 10.0 mA cm −2 under the acidic OER conditions (0.5 M H 2 SO 4 ), surpassing that of Ir/CNTs (285.9 mV), c-IrO 2 (304.1 mV), and CeO 2 /CNTs (with negligible OER current).",
+  "source_document": "EuropePMC:PMC10650327",
+  "provenance_hash": "sha256:d7402f4654b9c8dd5007b60c8a9b1d02",
+  "source_tier": "primary",
+  "axis": "overpotential_at_current_density",
+  "material": {
+    "formula": "c-IrO2"
+  },
+  "quantity": {
+    "value": 0.30410000000000004,
+    "unit": "V",
+    "uncertainty": null,
+    "uncertainty_kind": "none_stated",
+    "bound": "exact"
+  },
+  "conditions": {
+    "electrolyte": {
+      "identity": "H2SO4",
+      "concentration": {
+        "value": 0.5,
+        "unit": "mol/L"
+      }
+    },
+    "ph": "unstated",
+    "current_density": {
+      "value": 10.0,
+      "unit": "mA/cm^2",
+      "normalization": "geometric"
+    },
+    "temperature": "unstated",
+    "loading": "unstated",
+    "substrate": "unstated",
+    "protocol_tier": "other_stated",
+    "prior_operation_duration": "unstated",
+    "anneal_temperature": "unstated",
+    "ir_correction": "unstated"
+  }
+}

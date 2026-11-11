@@ -1,0 +1,36 @@
+{
+  "claim_id": "PMC10477217:agreed0",
+  "claim_kind": "performance_value",
+  "subject": "Ru0.5Ir0.5O2",
+  "source_sentence": "Ru 0.5 Ir 0.5 O 2 exhibits a low overpotential of only 151 mV at 10 mA cm −2 and attributes its enhanced catalytic activity to the more Ru active sites with high oxidation states generated at low applied voltage, and the surface oxidative charge concentrations are increased.",
+  "source_document": "EuropePMC:PMC10477217",
+  "provenance_hash": "sha256:789975094f073af55121ef82a2f0460f",
+  "source_tier": "primary",
+  "axis": "overpotential_at_current_density",
+  "material": {
+    "formula": "Ru0.5Ir0.5O2"
+  },
+  "quantity": {
+    "value": 0.151,
+    "unit": "V",
+    "uncertainty": null,
+    "uncertainty_kind": "none_stated",
+    "bound": "exact"
+  },
+  "conditions": {
+    "electrolyte": "unstated",
+    "ph": "unstated",
+    "current_density": {
+      "value": 10.0,
+      "unit": "mA/cm^2",
+      "normalization": "geometric"
+    },
+    "temperature": "unstated",
+    "loading": "unstated",
+    "substrate": "unstated",
+    "protocol_tier": "unstated",
+    "prior_operation_duration": "unstated",
+    "anneal_temperature": "unstated",
+    "ir_correction": "unstated"
+  }
+}

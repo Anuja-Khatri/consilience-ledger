@@ -1,0 +1,68 @@
+version: comparability-v2.0
+# Page-sourced, default-deny comparability rules approved at Gate 1 (r0/GATE1.md).
+# Each rule vetoes a pair unless its field(s) are stated on both sides and the
+# predicate passes. Sources are the open-access papers retrieved in R0
+# (r0/PROVENANCE.md). See rules/CHANGELOG.md for the v1->v2 renumbering.
+rules:
+  - id: CR1
+    fields: [electrolyte]
+    predicate: identity_and_concentration_equal
+    plain_english: >
+      Overpotentials in different electrolyte identities or concentrations are not
+      comparable; concentration must be stated on both sides.
+    source: >
+      B2 (PMC13707403, Molecules 2026), abstract: comparability asserted only "on a
+      matched basis (1 M KOH, room temperature)".
+
+  - id: CR2
+    fields: [current_density]
+    predicate: {name: current_density_equal, params: {tolerance: 0}}
+    plain_english: >
+      An overpotential at one current density (and normalisation) is not comparable
+      to one at another; geometric vs ECSA never compare.
+    source: >
+      B2, section 3.2 "The 10 mA cm-2 Benchmark": divergence "by more than 150 mV at
+      100 mA cm-2" relative to 10 mA cm-2.
+
+  - id: CR3
+    fields: [ir_correction]
+    predicate: {name: ir_fraction_equal, params: {tolerance: 0}}
+    plain_english: >
+      Two claims whose stated iR-compensation fractions differ are not comparable; a
+      bare "corrected" without a fraction, or an unstated fraction, cannot be an equality.
+    source: >
+      B2, section 3: a RuO2 electrode's overpotential at 25 mA cm-2 "slid continuously
+      from 437 mV uncompensated down to 382 mV at full compensation, depending on which
+      fraction the author chose".
+
+  - id: CR4
+    fields: [temperature]
+    predicate: {name: temperature_equal, params: {tolerance: 0}}
+    plain_english: >
+      Claims at different or unstated temperature are not comparable.
+    source: >
+      B2, abstract: the matched basis is explicitly "(1 M KOH, room temperature)".
+
+  - id: CR5
+    fields: [protocol_tier]
+    predicate: enum_equal
+    plain_english: >
+      A short HT activity screen is not comparable to a long-term stability measurement;
+      protocol_tier must match and must be stated (binned from the hold duration:
+      <1 h ht_screen, [1,2) h medium_term, >=2 h long_term). Unstated tier vetoes.
+    source: >
+      ref 27 (PMC10012258, ACS Energy Lett 2023) activity-vs-stability distinction; B3
+      (PMC10576816, Comms Chem 2023): the McCrory protocol "is the most widely used, yet
+      still only by an insignificant fraction of all OER publications".
+
+canonical:
+  # electrolyte identity spelling -> canonical identity (extend as adapters require)
+  electrolyte_identities:
+    "h2so4": "h2so4"
+    "h2so4(aq)": "h2so4"
+    "sulfuric acid": "h2so4"
+    "hclo4": "hclo4"
+    "hclo4(aq)": "hclo4"
+    "perchloric acid": "hclo4"
+    "koh": "koh"
+    "kh2po4/k2hpo4(aq)": "phosphate_buffer"

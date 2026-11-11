@@ -1,0 +1,36 @@
+{
+  "claim_id": "PMC10015899:g3_0",
+  "claim_kind": "performance_value",
+  "subject": "Ir-MnO2(160)-CC",
+  "source_sentence": "Ir‐MnO 2 (160)‐CC shows an ultralow overpotential of 181 mV at j = 10 mA cm −2 and maintains long‐term stability of 180 h in acidic media with negligible decay, superior to most reported electrocatalysts.",
+  "source_document": "EuropePMC:PMC10015899",
+  "provenance_hash": "sha256:b99654564ce449446043bd619491808f",
+  "source_tier": "primary",
+  "axis": "overpotential_at_current_density",
+  "material": {
+    "formula": "Ir-MnO2(160)-CC"
+  },
+  "quantity": {
+    "value": 0.181,
+    "unit": "V",
+    "uncertainty": null,
+    "uncertainty_kind": "none_stated",
+    "bound": "exact"
+  },
+  "conditions": {
+    "electrolyte": "unstated",
+    "ph": "unstated",
+    "current_density": {
+      "value": 10.0,
+      "unit": "mA/cm^2",
+      "normalization": "geometric"
+    },
+    "temperature": "unstated",
+    "loading": "unstated",
+    "substrate": "unstated",
+    "protocol_tier": "unstated",
+    "prior_operation_duration": "unstated",
+    "anneal_temperature": "unstated",
+    "ir_correction": "unstated"
+  }
+}

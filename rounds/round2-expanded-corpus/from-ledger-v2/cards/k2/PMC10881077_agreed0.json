@@ -1,0 +1,42 @@
+{
+  "claim_id": "PMC10881077:agreed0",
+  "claim_kind": "performance_value",
+  "subject": "M-RuIrFeCoNiO2",
+  "source_sentence": "Here, we report a fast, nonequilibrium strategy to synthesize quinary high-entropy ruthenium iridium-based oxide (M-RuIrFeCoNiO 2 ) with abundant grain boundaries (GB), which exhibits a low overpotential of 189 millivolts at 10 milliamperes per square centimeter for OER in 0.5 M H 2 SO 4 .",
+  "source_document": "EuropePMC:PMC10881077",
+  "provenance_hash": "sha256:8a3cfb657a5f194a2876736d853e0ee4",
+  "source_tier": "primary",
+  "axis": "overpotential_at_current_density",
+  "material": {
+    "formula": "M-RuIrFeCoNiO2"
+  },
+  "quantity": {
+    "value": 0.189,
+    "unit": "V",
+    "uncertainty": null,
+    "uncertainty_kind": "none_stated",
+    "bound": "exact"
+  },
+  "conditions": {
+    "electrolyte": {
+      "identity": "H2SO4",
+      "concentration": {
+        "value": 0.5,
+        "unit": "mol/L"
+      }
+    },
+    "ph": "unstated",
+    "current_density": {
+      "value": 10.0,
+      "unit": "mA/cm^2",
+      "normalization": "geometric"
+    },
+    "temperature": "unstated",
+    "loading": "unstated",
+    "substrate": "unstated",
+    "protocol_tier": "unstated",
+    "prior_operation_duration": "unstated",
+    "anneal_temperature": "unstated",
+    "ir_correction": "unstated"
+  }
+}

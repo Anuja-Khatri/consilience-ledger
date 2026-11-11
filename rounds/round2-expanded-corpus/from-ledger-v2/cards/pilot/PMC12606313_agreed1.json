@@ -1,0 +1,46 @@
+{
+  "claim_id": "PMC12606313:agreed1",
+  "claim_kind": "performance_value",
+  "subject": "Ir/IrOx~SO3H",
+  "source_sentence": "The iR-corrected linear sweep voltammetry (LSV) curves (Fig. S6a ) demonstrated the better OER activity of Ir/IrO x ~ SO 3 H, which required an overpotential of 233 mV to achieve a current density of 10 mA cm −2 , lower than that of commercial Ir/IrO x (255 mV).",
+  "source_document": "EuropePMC:PMC12606313",
+  "provenance_hash": "sha256:2a06e8340e9b201a153d69192ceb62cd",
+  "source_tier": "primary",
+  "axis": "overpotential_at_current_density",
+  "material": {
+    "formula": "Ir/IrOx~SO3H"
+  },
+  "quantity": {
+    "value": 0.233,
+    "unit": "V",
+    "uncertainty": null,
+    "uncertainty_kind": "none_stated",
+    "bound": "exact"
+  },
+  "conditions": {
+    "electrolyte": {
+      "identity": "H2SO4",
+      "concentration": {
+        "value": 0.5,
+        "unit": "mol/L"
+      }
+    },
+    "ph": "unstated",
+    "current_density": {
+      "value": 10.0,
+      "unit": "mA/cm^2",
+      "normalization": "geometric"
+    },
+    "temperature": "unstated",
+    "loading": "unstated",
+    "substrate": "unstated",
+    "protocol_tier": "unstated",
+    "prior_operation_duration": "unstated",
+    "anneal_temperature": "unstated",
+    "ir_correction": {
+      "fraction": 1.0,
+      "stated": "full",
+      "source_quote": "The iR-corrected linear sweep voltammetry (LSV) curves (Fig. S6a ) demonstrated the better OER activity of Ir/IrO x ~ SO 3 H, which required an overpotential of 233 mV to achieve a current density of 10 mA cm −2 , lower than that of commercial Ir/IrO x (255 mV)."
+    }
+  }
+}

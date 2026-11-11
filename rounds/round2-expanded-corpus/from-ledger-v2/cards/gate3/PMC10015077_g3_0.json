@@ -1,0 +1,36 @@
+{
+  "claim_id": "PMC10015077:g3_0",
+  "claim_kind": "performance_value",
+  "subject": "Rh-RuO2/G",
+  "source_sentence": "Our stabilized Rh-RuO 2 /G catalyst shows a low overpotential of η 10 = 161 mV and long-term stability for 700 h at 50 mA cm −2 , surpassing most reported noble metal-based catalysts.",
+  "source_document": "EuropePMC:PMC10015077",
+  "provenance_hash": "sha256:741414eab1b3c4d9caed424b99bf755b",
+  "source_tier": "primary",
+  "axis": "overpotential_at_current_density",
+  "material": {
+    "formula": "Rh-RuO2/G"
+  },
+  "quantity": {
+    "value": 0.161,
+    "unit": "V",
+    "uncertainty": null,
+    "uncertainty_kind": "none_stated",
+    "bound": "exact"
+  },
+  "conditions": {
+    "electrolyte": "unstated",
+    "ph": "unstated",
+    "current_density": {
+      "value": 10.0,
+      "unit": "mA/cm^2",
+      "normalization": "geometric"
+    },
+    "temperature": "unstated",
+    "loading": "unstated",
+    "substrate": "unstated",
+    "protocol_tier": "unstated",
+    "prior_operation_duration": "unstated",
+    "anneal_temperature": "unstated",
+    "ir_correction": "unstated"
+  }
+}

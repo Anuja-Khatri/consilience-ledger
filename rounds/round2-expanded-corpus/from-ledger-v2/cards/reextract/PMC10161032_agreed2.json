@@ -1,0 +1,42 @@
+{
+  "claim_id": "PMC10161032:agreed2",
+  "claim_kind": "performance_value",
+  "subject": "Si-RuOx@C",
+  "source_sentence": "In the linear sweep voltammetry (LSV) curve, the minimum oxygen evolution overpotential of Si‐RuO x @C was 220 mV (10 mA cm −2 ), which was obviously more advantageous than 260 mV of RuO x @C and 300 mV of commercial RuO 2 .",
+  "source_document": "EuropePMC:PMC10161032",
+  "provenance_hash": "sha256:707277f44aca19ac1d8e4334ff7959ba",
+  "source_tier": "primary",
+  "axis": "overpotential_at_current_density",
+  "material": {
+    "formula": "Si-RuOx@C"
+  },
+  "quantity": {
+    "value": 0.22,
+    "unit": "V",
+    "uncertainty": null,
+    "uncertainty_kind": "none_stated",
+    "bound": "exact"
+  },
+  "conditions": {
+    "electrolyte": {
+      "identity": "H2SO4",
+      "concentration": {
+        "value": 0.5,
+        "unit": "mol/L"
+      }
+    },
+    "ph": "unstated",
+    "current_density": {
+      "value": 10.0,
+      "unit": "mA/cm^2",
+      "normalization": "geometric"
+    },
+    "temperature": "room_temperature",
+    "loading": "unstated",
+    "substrate": "unstated",
+    "protocol_tier": "other_stated",
+    "prior_operation_duration": "unstated",
+    "anneal_temperature": "unstated",
+    "ir_correction": "unstated"
+  }
+}

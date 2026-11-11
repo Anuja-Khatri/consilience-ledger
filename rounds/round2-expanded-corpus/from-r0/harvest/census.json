@@ -1,0 +1,40 @@
+{
+  "generated": "2026-11-10",
+  "europe_pmc": {
+    "_base_all_metals": {
+      "query": "(\"oxygen evolution\" OR OER) AND (acidic OR \"sulfuric acid\" OR \"perchloric acid\" OR \"0.5 M H2SO4\" OR \"0.1 M HClO4\") AND (overpotential OR \"current density\" OR stability) AND (palladium OR ruthenium OR iridium OR Pd OR Ru OR Ir)",
+      "total": 4182,
+      "open_access": 3478
+    },
+    "Pd": {
+      "total": 1551,
+      "open_access": 1436
+    },
+    "Ru": {
+      "total": 2370,
+      "open_access": 1946
+    },
+    "Ir": {
+      "total": 3269,
+      "open_access": 2792
+    }
+  },
+  "arxiv": {
+    "_full_query": {
+      "query": "all:\"oxygen evolution\" AND all:acidic AND (all:palladium OR all:ruthenium OR all:iridium) AND (all:overpotential OR all:electrocatalyst)",
+      "total": 1
+    },
+    "Pd": {
+      "total": 1
+    },
+    "Ru": {
+      "total": 1
+    },
+    "Ir": {
+      "total": 1
+    }
+  },
+  "chemrxiv": {
+    "status": "BLOCKED: Cloudflare JS challenge (403) to all non-browser clients; see FOR_ANU.md"
+  }
+}

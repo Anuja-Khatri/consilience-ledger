@@ -1,0 +1,46 @@
+{
+  "claim_id": "PMC10289644:g3_0",
+  "claim_kind": "performance_value",
+  "subject": "IrOx·nH2O",
+  "source_sentence": "IrOx·nH2O displays a very low overpotential of 232 mV at 10 mA cm−2.",
+  "source_document": "EuropePMC:PMC10289644",
+  "provenance_hash": "sha256:6629ce9686235ee92b2464c0d85d4e61",
+  "source_tier": "primary",
+  "axis": "overpotential_at_current_density",
+  "material": {
+    "formula": "IrOx·nH2O"
+  },
+  "quantity": {
+    "value": 0.232,
+    "unit": "V",
+    "uncertainty": null,
+    "uncertainty_kind": "none_stated",
+    "bound": "exact"
+  },
+  "conditions": {
+    "electrolyte": {
+      "identity": "HClO4",
+      "concentration": {
+        "value": 0.1,
+        "unit": "mol/L"
+      }
+    },
+    "ph": "unstated",
+    "current_density": {
+      "value": 10.0,
+      "unit": "mA/cm^2",
+      "normalization": "geometric"
+    },
+    "temperature": "room_temperature",
+    "loading": "unstated",
+    "substrate": "unstated",
+    "protocol_tier": "unstated",
+    "prior_operation_duration": "unstated",
+    "anneal_temperature": "unstated",
+    "ir_correction": {
+      "fraction": 1.0,
+      "stated": "full",
+      "source_quote": "All polarization curves were measured with 100% iR correction."
+    }
+  }
+}

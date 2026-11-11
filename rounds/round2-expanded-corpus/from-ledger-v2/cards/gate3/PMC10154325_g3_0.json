@@ -1,0 +1,46 @@
+{
+  "claim_id": "PMC10154325:g3_0",
+  "claim_kind": "performance_value",
+  "subject": "py-RuO2:Zn",
+  "source_sentence": "Overpotentials as low as 173, 304, and 373 mV are achieved at 10, 500, and 1000 mA cm−2, respectively, with robust stability reaching to 1000 h at 10 mA cm−2.",
+  "source_document": "EuropePMC:PMC10154325",
+  "provenance_hash": "sha256:e27b254a2483413b97301059c8ec9454",
+  "source_tier": "primary",
+  "axis": "overpotential_at_current_density",
+  "material": {
+    "formula": "py-RuO2:Zn"
+  },
+  "quantity": {
+    "value": 0.304,
+    "unit": "V",
+    "uncertainty": null,
+    "uncertainty_kind": "none_stated",
+    "bound": "exact"
+  },
+  "conditions": {
+    "electrolyte": {
+      "identity": "H2SO4",
+      "concentration": {
+        "value": 0.5,
+        "unit": "mol/L"
+      }
+    },
+    "ph": "unstated",
+    "current_density": {
+      "value": 500.0,
+      "unit": "mA/cm^2",
+      "normalization": "geometric"
+    },
+    "temperature": "unstated",
+    "loading": "unstated",
+    "substrate": "unstated",
+    "protocol_tier": "unstated",
+    "prior_operation_duration": "unstated",
+    "anneal_temperature": "unstated",
+    "ir_correction": {
+      "fraction": 1.0,
+      "stated": "full",
+      "source_quote": "All potentials reported in this work were fully iR-compensated using a positive-feedback method."
+    }
+  }
+}

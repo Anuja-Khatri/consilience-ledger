@@ -1,0 +1,42 @@
+{
+  "claim_id": "PMC10035503:g3_0",
+  "claim_kind": "performance_value",
+  "subject": "Hierarchical Pd catalyst",
+  "source_sentence": "The Pd catalyst displays an ultralow overpotential (196 mV), excellent durability and mitigated degradation (66 μV h −1 ) at 10 mA cm −2 in 1 M HClO 4 .",
+  "source_document": "EuropePMC:PMC10035503",
+  "provenance_hash": "sha256:4299c380b6e72413715cdbff4bd24d25",
+  "source_tier": "primary",
+  "axis": "overpotential_at_current_density",
+  "material": {
+    "formula": "Hierarchical Pd catalyst"
+  },
+  "quantity": {
+    "value": 0.196,
+    "unit": "V",
+    "uncertainty": null,
+    "uncertainty_kind": "none_stated",
+    "bound": "exact"
+  },
+  "conditions": {
+    "electrolyte": {
+      "identity": "HClO4",
+      "concentration": {
+        "value": 1.0,
+        "unit": "mol/L"
+      }
+    },
+    "ph": "unstated",
+    "current_density": {
+      "value": 10.0,
+      "unit": "mA/cm^2",
+      "normalization": "geometric"
+    },
+    "temperature": "unstated",
+    "loading": "unstated",
+    "substrate": "unstated",
+    "protocol_tier": "unstated",
+    "prior_operation_duration": "unstated",
+    "anneal_temperature": "unstated",
+    "ir_correction": "unstated"
+  }
+}

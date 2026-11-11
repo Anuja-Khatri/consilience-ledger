@@ -1,0 +1,209 @@
+{
+  "quota": 20,
+  "selected": 20,
+  "attempts": 90,
+  "baseline_priority_count": 20,
+  "query": "(\"oxygen evolution\" OR OER) AND (RuO2 OR IrO2 OR \"ruthenium oxide\" OR \"iridium oxide\") AND (acidic OR \"H2SO4\" OR \"HClO4\" OR \"sulfuric acid\" OR \"perchloric acid\") AND (overpotential) AND (\"iR\" OR \"ohmic\" OR \"compensation\") AND (OPEN_ACCESS:y) AND (HAS_FT:y) AND (IN_EPMC:y) NOT (PUB_TYPE:\"review\")",
+  "papers": [
+    {
+      "pmcid": "PMC10005387",
+      "baseline_priority": true,
+      "doi": "10.3390/nano13050797",
+      "journal": null,
+      "year": "2023",
+      "license": "cc by",
+      "title": "Iron-Doped Monoclinic Strontium Iridate as a Highly Efficient Oxygen Evolution Electrocatalyst in Acidic Media.",
+      "sha256": "ed41d697347506134a40d1fbb12f737d7883e61ad612f937f8f97e29f81b2997"
+    },
+    {
+      "pmcid": "PMC10015077",
+      "baseline_priority": true,
+      "doi": "10.1038/s41467-023-37008-8",
+      "journal": null,
+      "year": "2023",
+      "license": "cc by",
+      "title": "Unraveling oxygen vacancy site mechanism of Rh-doped RuO&lt;sub&gt;2&lt;/sub&gt; catalyst for long-lasting acidic water oxidation.",
+      "sha256": "c6ed0f0e08cbfd6e98c4c04ddfa95160a87a8e81121bdb97f66ee581d0d9fe38"
+    },
+    {
+      "pmcid": "PMC10015899",
+      "baseline_priority": true,
+      "doi": "10.1002/advs.202205920",
+      "journal": null,
+      "year": "2023",
+      "license": "cc by",
+      "title": "High-Valence-Manganese Driven Strong Anchoring of Iridium Species for Robust Acidic Water Oxidation.",
+      "sha256": "72b3892354661d713ede51d7169ba6b349df7e15df6d50ef31dda90fddbf95d0"
+    },
+    {
+      "pmcid": "PMC10154325",
+      "baseline_priority": true,
+      "doi": "10.1038/s41467-023-38213-1",
+      "journal": null,
+      "year": "2023",
+      "license": "cc by",
+      "title": "Construction of Zn-doped RuO<sub>2</sub> nanowires for efficient and stable water oxidation in acidic media.",
+      "sha256": "cb97fbcdcfd5f17801062eeffbc2f0b1cf1b8c7d8a07176aa6fa09a50bf912c4"
+    },
+    {
+      "pmcid": "PMC10347692",
+      "baseline_priority": true,
+      "doi": "10.1021/acsmaterialsau.2c00080",
+      "journal": null,
+      "year": "2023",
+      "license": "cc by-nc-nd",
+      "title": "A Little Nickel Goes a Long Way: Ni Incorporation into Rh<sub>2</sub>P for Stable Bifunctional Electrocatalytic Water Splitting in Acidic Me",
+      "sha256": "81942688e1e300b4b3939680fac8419769909a6bfa56f37f9c3505403c89b4f1"
+    },
+    {
+      "pmcid": "PMC10447464",
+      "baseline_priority": true,
+      "doi": "10.1038/s41467-023-40912-8",
+      "journal": null,
+      "year": "2023",
+      "license": "cc by",
+      "title": "Nano-metal diborides-supported anode catalyst with strongly coupled TaO<sub>x</sub>/IrO<sub>2</sub> catalytic layer for low-iridium-loading ",
+      "sha256": "3fb46752b27ed008a278301e39ad27765f627a6c80864fc0e987dd7269d960cf"
+    },
+    {
+      "pmcid": "PMC10475099",
+      "baseline_priority": true,
+      "doi": "10.1038/s41467-023-41070-7",
+      "journal": null,
+      "year": "2023",
+      "license": "cc by",
+      "title": "Self-adaptive amorphous CoO<sub>x</sub>Cl<sub>y</sub> electrocatalyst for sustainable chlorine evolution in acidic brine.",
+      "sha256": "6644e148c9159356ee5be9a21dc7bcaeb55908b6660d54834fc78e4dbfe57d98"
+    },
+    {
+      "pmcid": "PMC10477217",
+      "baseline_priority": true,
+      "doi": "10.1038/s41467-023-41036-9",
+      "journal": null,
+      "year": "2023",
+      "license": "cc by",
+      "title": "Stable and oxidative charged Ru enhance the acidic oxygen evolution reaction activity in two-dimensional ruthenium-iridium oxide.",
+      "sha256": "8e6848c9ee78be33ba4c61d82b9e86cf5100c26dab853e45e7706bb6510849dc"
+    },
+    {
+      "pmcid": "PMC10584348",
+      "baseline_priority": true,
+      "doi": "10.1126/sciadv.adi8025",
+      "journal": null,
+      "year": "2023",
+      "license": "cc by-nc",
+      "title": "Ir-Sn pair-site triggers key oxygen radical intermediate for efficient acidic water oxidation.",
+      "sha256": "fb2ec447e5deab8501f3160c66f614f988585098aeaef3e8dd3a9f46a69e4ce4"
+    },
+    {
+      "pmcid": "PMC10650327",
+      "baseline_priority": true,
+      "doi": "10.3390/ma16217000",
+      "journal": null,
+      "year": "2023",
+      "license": "cc by",
+      "title": "Achieving High Activity and Long-Term Stability towards Oxygen Evolution in Acid by Phase Coupling between CeO<sub>2</sub>-Ir.",
+      "sha256": "b622714fda5bc7c9b5aa605611c6b153a47ccfe0ead1bb2ca54e64ac4a1c1cc9"
+    },
+    {
+      "pmcid": "PMC10667250",
+      "baseline_priority": true,
+      "doi": "10.1038/s41467-023-43466-x",
+      "journal": null,
+      "year": "2023",
+      "license": "cc by",
+      "title": "Stabilizing non-iridium active sites by non-stoichiometric oxide for acidic water oxidation at high current density.",
+      "sha256": "64bd03b3678e1c7187d48faa8949649527b846e31bda64bc8bbe8188d0268945"
+    },
+    {
+      "pmcid": "PMC10703920",
+      "baseline_priority": true,
+      "doi": "10.1038/s41467-023-43977-7",
+      "journal": null,
+      "year": "2023",
+      "license": "cc by",
+      "title": "Stabilizing ruthenium dioxide with cation-anchored sulfate for durable oxygen evolution in proton-exchange membrane water electrolyzers.",
+      "sha256": "201f47e892128bba80cc25d06c97c495164f101d6d02430fcac1f34c30e6dea9"
+    },
+    {
+      "pmcid": "PMC10762142",
+      "baseline_priority": true,
+      "doi": "10.1038/s41467-023-44483-6",
+      "journal": null,
+      "year": "2024",
+      "license": "cc by",
+      "title": "Tensile straining of iridium sites in manganese oxides for proton-exchange membrane water electrolysers.",
+      "sha256": "cdf160c62c2585a9a9bf37c973995a1e0dac59083a3b20cdc568dd477bc5d3ed"
+    },
+    {
+      "pmcid": "PMC10881077",
+      "baseline_priority": true,
+      "doi": "10.1126/sciadv.adf9144",
+      "journal": null,
+      "year": "2023",
+      "license": "cc by-nc",
+      "title": "Misoriented high-entropy iridium ruthenium oxide for acidic water splitting.",
+      "sha256": "309b0ec5be3265401cfaaf1b472637986c3859a825abab3253d6e5e2ab7381be"
+    },
+    {
+      "pmcid": "PMC10892467",
+      "baseline_priority": true,
+      "doi": "10.3390/molecules29040785",
+      "journal": null,
+      "year": "2024",
+      "license": "cc by",
+      "title": "Stabilizing Highly Active Ru Sites by Electron Reservoir in Acidic Oxygen Evolution.",
+      "sha256": "6dae146c786a9e43f5fa7bc8e7837bfd87ff5a282d94d3dac1628e5738ccde29"
+    },
+    {
+      "pmcid": "PMC10917665",
+      "baseline_priority": true,
+      "doi": "10.1038/s41563-023-01767-y",
+      "journal": null,
+      "year": "2024",
+      "license": "cc by",
+      "title": "Electrochemical and chemical cycle for high-efficiency decoupled water splitting in a near-neutral electrolyte.",
+      "sha256": "0d5419249c4ed3799491049c3852971fb7b40b8d1bb93f093df67ae9b368a8cb"
+    },
+    {
+      "pmcid": "PMC10954744",
+      "baseline_priority": true,
+      "doi": "10.1038/s41467-024-46815-6",
+      "journal": null,
+      "year": "2024",
+      "license": "cc by",
+      "title": "Locking the lattice oxygen in RuO<sub>2</sub> to stabilize highly active Ru sites in acidic water oxidation.",
+      "sha256": "2ed72bb774234277cc896686a993e2be736771711408523ad5de09f10d920f0e"
+    },
+    {
+      "pmcid": "PMC10980754",
+      "baseline_priority": true,
+      "doi": "10.1038/s41467-024-46750-6",
+      "journal": null,
+      "year": "2024",
+      "license": "cc by",
+      "title": "Constructing regulable supports via non-stoichiometric engineering to stabilize ruthenium nanoparticles for enhanced pH-universal water spli",
+      "sha256": "82b6785a6c80d46ac8e603c7efb37774148c75a895040c21100f62b78216e5b1"
+    },
+    {
+      "pmcid": "PMC10987502",
+      "baseline_priority": true,
+      "doi": "10.1038/s41467-024-47045-6",
+      "journal": null,
+      "year": "2024",
+      "license": "cc by",
+      "title": "Janus electronic state of supported iridium nanoclusters for sustainable alkaline water electrolysis.",
+      "sha256": "9706973b4fc12690f4b8d9f344bcf7428ad45ab6697c7d88b7130004b7e33bb9"
+    },
+    {
+      "pmcid": "PMC10996014",
+      "baseline_priority": true,
+      "doi": "10.1021/jacs.3c12011",
+      "journal": null,
+      "year": "2024",
+      "license": "cc by",
+      "title": "Role of Electrolyte pH on Water Oxidation for Iridium Oxides.",
+      "sha256": "6d8165dc03c188d183401a70386535ded74473a599f38632b170fe9e9130a392"
+    }
+  ]
+}

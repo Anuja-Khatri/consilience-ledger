@@ -1,0 +1,42 @@
+{
+  "claim_id": "PMC11077676:agreed0",
+  "claim_kind": "performance_value",
+  "subject": "Pd/C",
+  "source_sentence": "It can be observed that, the required overpotential of PdCuIrCo/C and PdCuIr/C is 221 and 247 mV to achieve a current density of 10 mA cm −2 , significantly lower than that of Ir/C (301 mV), PdCu/C (354 mV), and Pd/C (465 mV) respectively.",
+  "source_document": "EuropePMC:PMC11077676",
+  "provenance_hash": "sha256:d41d4db6f7e8192adc224476764c9a1d",
+  "source_tier": "primary",
+  "axis": "overpotential_at_current_density",
+  "material": {
+    "formula": "Pd/C"
+  },
+  "quantity": {
+    "value": 0.465,
+    "unit": "V",
+    "uncertainty": null,
+    "uncertainty_kind": "none_stated",
+    "bound": "exact"
+  },
+  "conditions": {
+    "electrolyte": {
+      "identity": "HClO4",
+      "concentration": {
+        "value": 0.1,
+        "unit": "mol/L"
+      }
+    },
+    "ph": "unstated",
+    "current_density": {
+      "value": 10.0,
+      "unit": "mA/cm^2",
+      "normalization": "geometric"
+    },
+    "temperature": "unstated",
+    "loading": "unstated",
+    "substrate": "unstated",
+    "protocol_tier": "other_stated",
+    "prior_operation_duration": "unstated",
+    "anneal_temperature": "unstated",
+    "ir_correction": "unstated"
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "claim_id": "PMC10016623:g3_0",
+  "claim_kind": "performance_value",
+  "subject": "RuO2",
+  "source_sentence": "For comparison, commercial RuO2 and IrO2 show overpotentials of 283 and 330 mV at 10 mA cm−2, respectively, in 0.5 M H2SO4.",
+  "source_document": "EuropePMC:PMC10016623",
+  "provenance_hash": "sha256:0419feb6c73246b8cd6c30815a15a429",
+  "source_tier": "primary",
+  "axis": "overpotential_at_current_density",
+  "material": {
+    "formula": "RuO2"
+  },
+  "quantity": {
+    "value": 0.283,
+    "unit": "V",
+    "uncertainty": null,
+    "uncertainty_kind": "none_stated",
+    "bound": "exact"
+  },
+  "conditions": {
+    "electrolyte": {
+      "identity": "H2SO4",
+      "concentration": {
+        "value": 0.5,
+        "unit": "mol/L"
+      }
+    },
+    "ph": "unstated",
+    "current_density": {
+      "value": 10.0,
+      "unit": "mA/cm^2",
+      "normalization": "geometric"
+    },
+    "temperature": "unstated",
+    "loading": "unstated",
+    "substrate": "unstated",
+    "protocol_tier": "unstated",
+    "prior_operation_duration": "unstated",
+    "anneal_temperature": "unstated",
+    "ir_correction": "unstated"
+  }
+}

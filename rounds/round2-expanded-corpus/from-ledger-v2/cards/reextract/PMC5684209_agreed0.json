@@ -1,0 +1,46 @@
+{
+  "claim_id": "PMC5684209:agreed0",
+  "claim_kind": "performance_value",
+  "subject": "porous Pt layer (0.08 C cm-2 deposition)",
+  "source_sentence": "The E j10 value of the porous Pt layers electrodeposited with 0.08 C cm −2 is 1.76 V, corresponding to a 140 mV lower overpotential for OER than that of a bare Pt electrode.",
+  "source_document": "EuropePMC:PMC5684209",
+  "provenance_hash": "sha256:f7f22f5cac462ea3451df4f63080261e",
+  "source_tier": "primary",
+  "axis": "overpotential_at_current_density",
+  "material": {
+    "formula": "porous Pt layer (0.08 C cm-2 deposition)"
+  },
+  "quantity": {
+    "value": 0.14,
+    "unit": "V",
+    "uncertainty": null,
+    "uncertainty_kind": "none_stated",
+    "bound": "exact"
+  },
+  "conditions": {
+    "electrolyte": {
+      "identity": "HClO4",
+      "concentration": {
+        "value": 0.1,
+        "unit": "mol/L"
+      }
+    },
+    "ph": "unstated",
+    "current_density": {
+      "value": 10.0,
+      "unit": "mA/cm^2",
+      "normalization": "geometric"
+    },
+    "temperature": "unstated",
+    "loading": "unstated",
+    "substrate": "unstated",
+    "protocol_tier": "other_stated",
+    "prior_operation_duration": "unstated",
+    "anneal_temperature": "unstated",
+    "ir_correction": {
+      "fraction": 1.0,
+      "stated": "full",
+      "source_quote": "Figure 2 ( a ) OER polarization curves ( iR corrected) of a bare Pt electrode and the porous Pt electrodes in 0.1 M HClO 4 recorded with 6 mV s −1 and 1600 rpm."
+    }
+  }
+}

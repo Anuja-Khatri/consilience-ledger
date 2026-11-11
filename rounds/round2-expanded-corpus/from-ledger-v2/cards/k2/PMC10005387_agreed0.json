@@ -1,0 +1,46 @@
+{
+  "claim_id": "PMC10005387:agreed0",
+  "claim_kind": "performance_value",
+  "subject": "SrIrO3",
+  "source_sentence": "At a current density of 10 mA cm −2 , the overpotential of SrFe 0.1 Ir 0.9 O 3 is 238 mV, which is much lower than that of SrIrO 3 (256 mV) ( Figure 2 b).",
+  "source_document": "EuropePMC:PMC10005387",
+  "provenance_hash": "sha256:fa5f1caa6e24877d30505b46ef29de89",
+  "source_tier": "primary",
+  "axis": "overpotential_at_current_density",
+  "material": {
+    "formula": "SrIrO3"
+  },
+  "quantity": {
+    "value": 0.256,
+    "unit": "V",
+    "uncertainty": null,
+    "uncertainty_kind": "none_stated",
+    "bound": "exact"
+  },
+  "conditions": {
+    "electrolyte": {
+      "identity": "HClO4",
+      "concentration": {
+        "value": 0.1,
+        "unit": "mol/L"
+      }
+    },
+    "ph": "unstated",
+    "current_density": {
+      "value": 10.0,
+      "unit": "mA/cm^2",
+      "normalization": "geometric"
+    },
+    "temperature": "room_temperature",
+    "loading": "unstated",
+    "substrate": "unstated",
+    "protocol_tier": "other_stated",
+    "prior_operation_duration": "unstated",
+    "anneal_temperature": "unstated",
+    "ir_correction": {
+      "fraction": 0.85,
+      "stated": "partial",
+      "source_quote": "Figure 2 a shows the 85%IR-corrected polarization curves of SrFe x Ir 1-x O 3 and SrIrO 3 normalized by geometric area at a scan rate of 5 mV s −1 ."
+    }
+  }
+}
