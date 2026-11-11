@@ -47,3 +47,7 @@ overlap carries no correspondence signal, and 0 of 60 are isomorphic-mechanism m
 search finally runs and returns on-topic materials papers, but none carries the same operando
 nanostructure-to-durability mechanism as a genuine cross-field match, so the result is a true
 null.
+
+## Owner review (11 Nov 2026)
+
+Owner review, 11 Nov 2026: both cards corrected on review. On the Peng card the two stated conditions (10 mA cm-2; 1 M) were filled. On the Cherevko card the invented numeric quantity (0.0 ng/cm^2/s) was removed; the abstract states only that dissolution rates are low, so the claim is recorded as a qualitative claim with the authors' hedge 'presumably Pd' noted here. Consequence, stated plainly: the original run's defect label (axis_mismatch) was computed on the pre-review cards; on the corrected cards the judge refuses the pair as type_mismatch, because a quantitative claim and a qualitative claim are different claim types. The top-level verdict is unchanged (not comparable), the cards' axes remain different (dissolution_rate versus overpotential_at_current_density, recorded on the cards), and the preregistered outcome remains O3: the papers do not disagree. Cards APPROVED by the owner.

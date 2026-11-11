@@ -40,10 +40,17 @@
       "domain": "chemistry",
       "electrolyte": {
         "identity": "HClO4(aq)",
-        "concentration": "unstated"
+        "concentration": {
+          "value": 1.0,
+          "unit": "mol/L"
+        }
       },
       "ph": "unstated",
-      "current_density": "unstated",
+      "current_density": {
+        "value": 10.0,
+        "unit": "mA/cm^2",
+        "normalization": "geometric"
+      },
       "temperature": "unstated",
       "loading": "unstated",
       "substrate": "unstated",
@@ -55,7 +62,7 @@
   },
   "ref39_cherevko": {
     "claim_id": "REF39:Cherevko2014:Pd:dissolution",
-    "claim_kind": "performance_value",
+    "claim_kind": "measurement",
     "subject": "polycrystalline Pd",
     "source_sentence": "on metals for which oxygen evolves directly from adsorbed water, such as Pt and presumably Pd, the Tafel slopes are high and the dissolution rates are low.",
     "source_document": "ChemCatChem 2014,6,2219 (Cherevko, 10.1002/cctc.201402194) [abstract; SI not retrieved]",
@@ -83,13 +90,6 @@
     "material": {
       "Pd": 1.0
     },
-    "quantity": {
-      "value": 0.0,
-      "unit": "ng/cm^2/s",
-      "uncertainty": null,
-      "uncertainty_kind": "none_stated",
-      "bound": "approx"
-    },
     "conditions": {
       "domain": "chemistry",
       "electrolyte": {
@@ -108,6 +108,30 @@
     }
   },
   "judge_verdict": {
+    "pair_id": "REF39:Cherevko2014:Pd:dissolution|REF40:Peng2023:Pd:overpotential",
+    "claim_a_id": "REF39:Cherevko2014:Pd:dissolution",
+    "claim_b_id": "REF40:Peng2023:Pd:overpotential",
+    "claim_a_source": "ChemCatChem 2014,6,2219 (Cherevko, 10.1002/cctc.201402194) [abstract; SI not retrieved]",
+    "claim_b_source": "PMC10035503 (Peng, Natl Sci Rev, 10.1093/nsr/nwac108)",
+    "domain": "chemistry",
+    "axis": "dissolution_rate",
+    "defects": [
+      {
+        "defect_type": "type_mismatch",
+        "target": "measurement vs performance_value"
+      }
+    ],
+    "margin": null,
+    "floor_applied": null,
+    "floor_unit": null,
+    "floor_measured": null,
+    "rules_version": "comparability-v2.0",
+    "code_version": "operator-v4-1.0.0",
+    "verdict": "not_comparable",
+    "kind": "rejection",
+    "content_hash": "sha256:bf9f6b779b1af9b66e45d4d09a5c10abf020df981126e8655203524c07eae449"
+  },
+  "pre_review": {
     "pair_id": "REF39:Cherevko2014:Pd:dissolution|REF40:Peng2023:Pd:overpotential",
     "claim_a_id": "REF39:Cherevko2014:Pd:dissolution",
     "claim_b_id": "REF40:Peng2023:Pd:overpotential",

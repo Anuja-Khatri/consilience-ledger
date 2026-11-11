@@ -37,17 +37,16 @@ manual typed extraction; the judge is the deterministic engine, no model). No pi
   carried the executed run.
 - Candidates: `test2_candidates.json`. Runner: `run_crossfield_search.py`.
 
+## Owner review (11 Nov 2026)
 
-## Consolidation notes (added for the public record)
-- The preregistrations and the results were committed together in the source repo in a single
-  commit; precedence does not rest on commit ordering but on the in-file dating and on the
-  preregistration text, which was written before reading (Test 1) and before running (Test 2).
-- Test 1's claim cards came from a single manual typed extraction by the reader, because model API
-  calls were barred by the locked rails. This is disclosed as a deviation from the dual-model
-  extraction used elsewhere.
-- Ref 39 (Cherevko) was available only at abstract level; the full text and SI routes were refused
-  (HTTP 403), so its access is recorded as partial.
-- The two Test 1 claim cards await the owner's review; the O3 verdict is provisional until that
-  review batch is resolved.
-- The Test 2 cache (arXiv and Semantic Scholar responses) is not committed; it stays local and is
-  re-derivable by the committed script run_crossfield_search.py.
+Owner review, 11 Nov 2026: both cards corrected on review. On the Peng card the two stated conditions (10 mA cm-2; 1 M) were filled. On the Cherevko card the invented numeric quantity (0.0 ng/cm^2/s) was removed; the abstract states only that dissolution rates are low, so the claim is recorded as a qualitative claim with the authors' hedge 'presumably Pd' noted here. Consequence, stated plainly: the original run's defect label (axis_mismatch) was computed on the pre-review cards; on the corrected cards the judge refuses the pair as type_mismatch, because a quantitative claim and a qualitative claim are different claim types. The top-level verdict is unchanged (not comparable), the cards' axes remain different (dissolution_rate versus overpotential_at_current_density, recorded on the cards), and the preregistered outcome remains O3: the papers do not disagree. Cards APPROVED by the owner.
+
+## Owner-review items (consolidation record)
+- Ref 39 (Cherevko) access: abstract-level only; the full text and SI routes were refused (HTTP 403), so its access is recorded as partial.
+- O3 and the two cards: on owner review (11 Nov 2026) the two Test 1 claim cards were corrected and approved (see Owner review above); the preregistered outcome O3 stands.
+- reextract 17-vs-10 dedup: the reextract card directory holds 17 agreed-provisional cards of which the census of record counts 10 as net new after provenance dedup.
+
+## Consolidation provenance notes (added for the public record)
+- The preregistrations and the results were committed together in the source repo in a single commit; precedence rests on the in-file dating and the preregistration text, written before reading (Test 1) and before running (Test 2).
+- Test 1's claim cards came from a single manual typed extraction by the reader, because model API calls were barred by the locked rails; disclosed as a deviation from the dual-model extraction used elsewhere.
+- The Test 2 cache (arXiv and Semantic Scholar responses) is not committed; it stays local and is re-derivable by the committed script run_crossfield_search.py.
