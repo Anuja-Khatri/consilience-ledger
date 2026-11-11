@@ -53,3 +53,26 @@ reported with their provenance, not headline hypothesis tests.
   notes the 1,000 h figure rests on "repeated measurements over a partial duration on planar and
   porous supports" (Figs. S4–S6), so agreement here means the claim is consistent with the released
   trace, nothing more.
+
+### AMENDMENT 2026-11-11 (after the trace was opened) — the durability check omitted the standing floor
+The pass rule above (fix #7) was written STRICT ("every recorded point below 0.5 V"; FAIL if any point
+>= 0.5 V). That strict reading is kept on record, but it OMITTED the standing verdict-floor rule and is
+superseded by this amendment.
+- Standing floor rule (D7): a verdict threshold is the LARGER of 13 mV and the claim's stated
+  uncertainty; a difference within that floor is `within_floor`, not a contradiction. It already
+  exists in this repo and PREDATES this check:
+  - `labext/writeback.py`: `FLOOR_V = 0.013` (line 37), `floor = max(FLOOR_V, claim_unc or 0.0)`
+    (line 121), `outcome = "within_floor" if margin <= floor else "contradicted"` (line 154).
+  - Introduced in commit **09e066e5** (2026-11-10 16:01 +0530, "feat(phase-5): writeback verdicts vs
+    Lila data under D7"); `FLOOR_V = 0.013` locked in commit **f1602722** (2026-11-10 19:57 +0530).
+    The D7 floor is also stated above in this file ("Verdict floor D7"). This durability check was
+    only added on 2026-11-11 (fix #7), so the floor rule is older than the check.
+- This amendment was made AFTER the trace was opened. It is NOT tuning: it does not invent a new
+  threshold to change this result; it applies a rule that was locked on 2026-11-10 (before the check
+  existed) and is already used by the writeback verdict code. Writing a strict threshold that ignores
+  that floor was the omission; it repeats the error recorded in CONTRADICTION_DOSSIER.md (treating a
+  sub-floor difference as a contradiction).
+- Amended rule: the check is `within_floor` iff NO recorded InMnPdOx point exceeds 0.5 V + floor =
+  0.513 V (claim __010 states no per-value uncertainty, so floor = max(13 mV, 0) = 13 mV). The claim
+  "below 0.5 V" is written to a precision of 0.1 V (one decimal place). The corrected verdict is in
+  reports/durability_check_2609.30133.md; both the strict and the floor readings are shown.

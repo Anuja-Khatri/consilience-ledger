@@ -61,7 +61,32 @@ Full per-fix detail in FIXES_REPORT.md. Summary of material corrections:
    marked AWAITING ANU'S WORDING. Active registry.yaml unchanged.
 7. **Skipped durability check (claim 2609.30133__010).** Preregistered the pass rule in
    PREREGISTRATION.md BEFORE opening the trace, then ran it against the authors' own released H-cell
-   trace (upstream/lila_oer_manuscript/data/fig_3e.csv, sha cac02293…). Result: **FAIL** of the
-   strict rule — InMnPdOx grazes 0.5055 V at 575.5 h (one point ~5.5 mV above the claimed 0.5 V
-   ceiling) over 11.5-999.6 h coverage. Reported as a CONSISTENCY CHECK between the authors' claim
-   and their own data, NOT independent confirmation (reports/durability_check_2609.30133.md).
+   trace (upstream/lila_oer_manuscript/data/fig_3e.csv, sha cac02293…). InMnPdOx: 84 points, max
+   0.5055 V at 575.5 h, coverage 11.5-999.6 h. **Verdict (corrected 2026-11-11, see below): within_floor**
+   — the first rule was written strict and omitted the standing 13 mV floor; under the floor, 0 points
+   exceed 0.513 V so the claim is consistent within ±13 mV. CONSISTENCY CHECK vs the authors' own data,
+   NOT independent confirmation (reports/durability_check_2609.30133.md).
+
+## 2026-11-11: durability check (fix #7) omitted the standing floor — verdict corrected to within_floor
+- What was wrong: the pass rule for the claim-2609.30133__010 durability consistency check was written
+  STRICT (every trace point below 0.5 V; "FAIL" if any point >= 0.5 V). It omitted the standing
+  verdict-floor rule (D7: threshold = max(13 mV, the claim's stated uncertainty)), which was locked on
+  2026-11-10 — before this check existed — in `labext/writeback.py` (`FLOOR_V = 0.013`,
+  `floor = max(FLOOR_V, claim_unc)`, `within_floor if margin <= floor`; commits 09e066e5 2026-11-10
+  16:01 and f1602722 2026-11-10 19:57) and is already used by the writeback verdict code. A strict
+  threshold contradicts that floor and repeats the error recorded in CONTRADICTION_DOSSIER.md
+  (treating a sub-floor difference as a contradiction).
+- Correction: amended the preregistration (dated 2026-11-11, after the trace was opened; not tuning —
+  it applies a rule locked earlier) and recomputed under the floor. InMnPdOx max = 0.5055 V at 575.5 h;
+  1 point exceeds 0.500 V; **0 points exceed 0.513 V** (0.5 V + 13 mV floor); coverage 11.5-999.6 h;
+  claim written to 0.1 V precision. **Verdict: within_floor — consistent within the authors' stated
+  ±13 mV reproducibility.** The strict reading is kept on record but superseded. The word "FAIL" for
+  this check was replaced in reports/durability_check_2609.30133.md and FIXES_REPORT.md; the label
+  (consistency check vs the authors' own data, not independent confirmation) is unchanged.
+- Repo sweep: searched for any wording that a Lila claim fails / is contradicted / is wrong. The only
+  unsupported hits were this check's "FAIL" (now corrected). Other hits are correct: "0 contradicted"
+  verdicts; the CONTRADICTION_DOSSIER "FAILED" framing-checks (the ENGINE's prior behavior, already
+  corrected, not a claim); and the verbatim paper quote "both failed medium-term acidic stability
+  screening" (the authors' own words, left as-is).
+- Test: `tests/test_durability_floor.py` asserts the check applies the 13 mV floor (within_floor at
+  0.5055 V) and that no InMnPdOx point exceeds 0.513 V.

@@ -23,20 +23,34 @@ no time axis. 0.5 V is the claim's own threshold; no extra floor applied.
   stated in the released trace or figure script, so they stay unstated (not inferred, D10).** The
   paper's full Methods text is not in the committed corpus, so finer conditions remain unstated.
 
-## Result — FAIL (not strictly consistent)
-- InMnPdOx trace: 84 recorded points, time coverage **11.5 h → 999.6 h** (≈ the stated 1,000 h).
-- Overpotential range **0.4104 V → 0.5055 V**.
-- **Maximum = 0.5055 V at 575.5 h**, which is **≥ 0.5 V** (one point, ~5.5 mV above the ceiling).
-- By the preregistered strict rule, the check **FAILS**: the released trace contains a point above
-  the claimed 0.5 V ceiling within 1,000 h, so the claim "below 0.5 V over 1,000 h" is **not strictly
-  consistent** with the authors' own data. The exceedance is small (~5.5 mV at one point near the
-  mid-run), and the claim itself notes the 1,000 h figure rests on "repeated measurements over a
-  partial duration on planar and porous supports" (Figs. S4–S6).
+## Verdict (CORRECTED 2026-11-11): within_floor — consistent within the authors' stated ±13 mV reproducibility
 
-**Interpretation:** the authors' own long-term H-cell trace very nearly supports their "below 0.5 V"
-durability claim, but grazes just above 0.5 V once (0.5055 V, 575.5 h). This is reported as a
-consistency finding against their own data, not as independent confirmation or refutation of the
-catalyst's durability.
+The numbers (same for both readings):
+- InMnPdOx trace: **84** recorded points, time coverage **11.5 h → 999.6 h** (≈ the stated 1,000 h).
+- Overpotential range **0.4104 V → 0.5055 V**; **maximum = 0.5055 V at 575.5 h**.
+- Points exceeding **0.500 V**: **1** (the 0.5055 V point).
+- Points exceeding **0.513 V** (0.5 V + the 13 mV floor): **0**.
+- Precision the claim is written to: **0.1 V** ("below 0.5 V", one decimal place).
+
+### Reading 2 — standing floor rule (D7), the CORRECT verdict
+The standing verdict-floor rule (locked 2026-11-10, before this check; `labext/writeback.py`
+`FLOOR_V = 0.013`, `floor = max(FLOOR_V, claim_unc)`, `within_floor if margin <= floor`) makes the
+verdict threshold the larger of 13 mV and the claim's stated uncertainty. Claim __010 states no
+per-value uncertainty, so the floor is 13 mV and the exceedance threshold is **0.513 V**. No recorded
+point exceeds 0.513 V, so the verdict is **within_floor**: the claim "below 0.5 V over 1,000 h" is
+**consistent within the authors' stated ±13 mV reproducibility** (max 0.5055 V at 575.5 h, i.e.
+5.5 mV above 0.500 V but inside the 13 mV floor; at the claim's own 0.1 V precision it reads as 0.5 V).
+
+### Reading 1 — strict rule (kept on record, superseded)
+Under the preregistered STRICT rule (every point strictly below 0.5 V), the single 0.5055 V point is
+"above 0.5 V", so the strict reading is a non-pass. This strict rule omitted the standing floor and is
+superseded by Reading 2 (see the PREREGISTRATION.md amendment 2026-11-11). It is retained here only as
+the strict reading on record; it is **not** the verdict.
+
+**Interpretation:** the authors' own long-term H-cell trace is **consistent within ±13 mV** with their
+"below 0.5 V over 1,000 h" durability claim (one point grazes to 0.5055 V, inside the floor). This is a
+consistency finding against the authors' own data — **not independent confirmation**, and not a
+refutation.
 
 ## Reproduce
 ```

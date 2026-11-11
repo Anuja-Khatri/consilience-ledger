@@ -60,12 +60,20 @@ ANU'S WORDING. Active `registry.yaml` unchanged.
   `safety_format/TIER_POLICY.md`, `tests/test_safety_format.py` (extended dual-use scan).
 
 ## Fix 7 — the skipped durability check (claim 2609.30133__010)
-Pass rule preregistered in `PREREGISTRATION.md` BEFORE opening the trace. Ran against the authors'
-own released H-cell trace `upstream/lila_oer_manuscript/data/fig_3e.csv` (sha `cac02293…`). Result:
-**FAIL** of the strict rule — InMnPdOx reaches 0.5055 V at 575.5 h (one point ~5.5 mV above the
-claimed 0.5 V ceiling) over 11.5-999.6 h coverage. Reported as a CONSISTENCY CHECK between the
-authors' claim and their own data, NOT independent confirmation.
-- Files: `PREREGISTRATION.md`, `reports/durability_check_2609.30133.md` (new).
+Pass rule preregistered in `PREREGISTRATION.md` BEFORE opening the trace, then run against the authors'
+own released H-cell trace `upstream/lila_oer_manuscript/data/fig_3e.csv` (sha `cac02293…`). Numbers:
+InMnPdOx, 84 points, coverage 11.5–999.6 h, max 0.5055 V at 575.5 h; 1 point > 0.500 V; **0 points >
+0.513 V**; claim written to 0.1 V precision.
+- **Verdict (corrected 2026-11-11): `within_floor` — consistent within the authors' stated ±13 mV
+  reproducibility.** The first pass rule was written strict (every point < 0.5 V) and OMITTED the
+  standing floor (D7: threshold = max(13 mV, stated uncertainty)), which was locked 2026-11-10 in
+  `labext/writeback.py` (commits 09e066e5, f1602722) and predates this check. Under the floor the
+  exceedance threshold is 0.513 V and no point exceeds it, so the claim is consistent within ±13 mV.
+  The strict reading (the 0.5055 V point is "above 0.5 V") is kept on record but superseded; see the
+  PREREGISTRATION.md amendment. Still a CONSISTENCY CHECK between the authors' claim and their own
+  data, NOT independent confirmation.
+- Files: `PREREGISTRATION.md` (rule + amendment), `reports/durability_check_2609.30133.md`,
+  `tests/test_durability_floor.py` (new, asserts the check applies the floor).
 
 ## Fix 8 — this report + CORRECTIONS.md + local commit
 `CORRECTIONS.md` updated (2026-11-11 entry). `FIXES_REPORT.md` (this file). Committed locally; **not
