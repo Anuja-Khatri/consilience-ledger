@@ -1,0 +1,751 @@
+{
+  "calibration": {
+    "null": {
+      "false_fork_rate": 0.00285,
+      "n_trials": 2000,
+      "pass": true,
+      "q": 0.05,
+      "sigma_v": 0.00901
+    },
+    "passed": true,
+    "planted": {
+      "n_trials": 2000,
+      "pass": true,
+      "planted_offset_mV": 60.0,
+      "recovery_rate": 0.9857
+    }
+  },
+  "cards": [
+    {
+      "axis": "overpotential_at_current_density",
+      "card_id": "RR:tesch2023:hot_pink",
+      "conditions": {
+        "catalyst": "commercial nickel-cobalt-oxide (Ni-Co-O) powder, single batch, 100 ug cm-2 on glassy carbon with Nafion binder",
+        "current_density": "10 mA cm-2 (geometric)",
+        "electrolyte": "1 M KOH (alkaline)",
+        "ir_correction": "Ohmic drop compensated via EIS at OCP (R_u)",
+        "protocol": "single standardized written protocol; same potentiostat/cell model; same chemicals (Fig. 1, Fig. S1)",
+        "quoted_from": "Tesch et al. 2023, Energy Advances 2, 1823 (CC BY 3.0)",
+        "rotation": "1600 rpm",
+        "temperature": "not stated in the paper"
+      },
+      "honesty": [
+        "reproduces a spread the paper itself reported; not a new finding",
+        "values are read from a figure",
+        "chemistry is alkaline nickel-cobalt oxide, not Lila's",
+        "no lab is said to have erred"
+      ],
+      "lab_label": "hot_pink",
+      "lab_label_note": "the paper identifies laboratories only by colour; this colour IS the label",
+      "quantity": {
+        "overpotential_V": 0.452,
+        "potential_vs_rhe_V": 1.682,
+        "read_precision_mV": 5.0
+      },
+      "source_document": "Tesch et al. 2023, Energy Advances 2, 1823-1830 (DOI 10.1039/d3ya00340j)",
+      "source_tier": "read_from_figure"
+    },
+    {
+      "axis": "overpotential_at_current_density",
+      "card_id": "RR:tesch2023:dark_green",
+      "conditions": {
+        "catalyst": "commercial nickel-cobalt-oxide (Ni-Co-O) powder, single batch, 100 ug cm-2 on glassy carbon with Nafion binder",
+        "current_density": "10 mA cm-2 (geometric)",
+        "electrolyte": "1 M KOH (alkaline)",
+        "ir_correction": "Ohmic drop compensated via EIS at OCP (R_u)",
+        "protocol": "single standardized written protocol; same potentiostat/cell model; same chemicals (Fig. 1, Fig. S1)",
+        "quoted_from": "Tesch et al. 2023, Energy Advances 2, 1823 (CC BY 3.0)",
+        "rotation": "1600 rpm",
+        "temperature": "not stated in the paper"
+      },
+      "honesty": [
+        "reproduces a spread the paper itself reported; not a new finding",
+        "values are read from a figure",
+        "chemistry is alkaline nickel-cobalt oxide, not Lila's",
+        "no lab is said to have erred"
+      ],
+      "lab_label": "dark_green",
+      "lab_label_note": "the paper identifies laboratories only by colour; this colour IS the label",
+      "quantity": {
+        "overpotential_V": 0.4257,
+        "potential_vs_rhe_V": 1.6557,
+        "read_precision_mV": 5.0
+      },
+      "source_document": "Tesch et al. 2023, Energy Advances 2, 1823-1830 (DOI 10.1039/d3ya00340j)",
+      "source_tier": "read_from_figure"
+    },
+    {
+      "axis": "overpotential_at_current_density",
+      "card_id": "RR:tesch2023:blue",
+      "conditions": {
+        "catalyst": "commercial nickel-cobalt-oxide (Ni-Co-O) powder, single batch, 100 ug cm-2 on glassy carbon with Nafion binder",
+        "current_density": "10 mA cm-2 (geometric)",
+        "electrolyte": "1 M KOH (alkaline)",
+        "ir_correction": "Ohmic drop compensated via EIS at OCP (R_u)",
+        "protocol": "single standardized written protocol; same potentiostat/cell model; same chemicals (Fig. 1, Fig. S1)",
+        "quoted_from": "Tesch et al. 2023, Energy Advances 2, 1823 (CC BY 3.0)",
+        "rotation": "1600 rpm",
+        "temperature": "not stated in the paper"
+      },
+      "honesty": [
+        "reproduces a spread the paper itself reported; not a new finding",
+        "values are read from a figure",
+        "chemistry is alkaline nickel-cobalt oxide, not Lila's",
+        "no lab is said to have erred"
+      ],
+      "lab_label": "blue",
+      "lab_label_note": "the paper identifies laboratories only by colour; this colour IS the label",
+      "quantity": {
+        "overpotential_V": 0.4103,
+        "potential_vs_rhe_V": 1.6403,
+        "read_precision_mV": 5.0
+      },
+      "source_document": "Tesch et al. 2023, Energy Advances 2, 1823-1830 (DOI 10.1039/d3ya00340j)",
+      "source_tier": "read_from_figure"
+    },
+    {
+      "axis": "overpotential_at_current_density",
+      "card_id": "RR:tesch2023:lime",
+      "conditions": {
+        "catalyst": "commercial nickel-cobalt-oxide (Ni-Co-O) powder, single batch, 100 ug cm-2 on glassy carbon with Nafion binder",
+        "current_density": "10 mA cm-2 (geometric)",
+        "electrolyte": "1 M KOH (alkaline)",
+        "ir_correction": "Ohmic drop compensated via EIS at OCP (R_u)",
+        "protocol": "single standardized written protocol; same potentiostat/cell model; same chemicals (Fig. 1, Fig. S1)",
+        "quoted_from": "Tesch et al. 2023, Energy Advances 2, 1823 (CC BY 3.0)",
+        "rotation": "1600 rpm",
+        "temperature": "not stated in the paper"
+      },
+      "honesty": [
+        "reproduces a spread the paper itself reported; not a new finding",
+        "values are read from a figure",
+        "chemistry is alkaline nickel-cobalt oxide, not Lila's",
+        "no lab is said to have erred"
+      ],
+      "lab_label": "lime",
+      "lab_label_note": "the paper identifies laboratories only by colour; this colour IS the label",
+      "quantity": {
+        "overpotential_V": 0.4053,
+        "potential_vs_rhe_V": 1.6353,
+        "read_precision_mV": 5.0
+      },
+      "source_document": "Tesch et al. 2023, Energy Advances 2, 1823-1830 (DOI 10.1039/d3ya00340j)",
+      "source_tier": "read_from_figure"
+    },
+    {
+      "axis": "overpotential_at_current_density",
+      "card_id": "RR:tesch2023:red",
+      "conditions": {
+        "catalyst": "commercial nickel-cobalt-oxide (Ni-Co-O) powder, single batch, 100 ug cm-2 on glassy carbon with Nafion binder",
+        "current_density": "10 mA cm-2 (geometric)",
+        "electrolyte": "1 M KOH (alkaline)",
+        "ir_correction": "Ohmic drop compensated via EIS at OCP (R_u)",
+        "protocol": "single standardized written protocol; same potentiostat/cell model; same chemicals (Fig. 1, Fig. S1)",
+        "quoted_from": "Tesch et al. 2023, Energy Advances 2, 1823 (CC BY 3.0)",
+        "rotation": "1600 rpm",
+        "temperature": "not stated in the paper"
+      },
+      "honesty": [
+        "reproduces a spread the paper itself reported; not a new finding",
+        "values are read from a figure",
+        "chemistry is alkaline nickel-cobalt oxide, not Lila's",
+        "no lab is said to have erred"
+      ],
+      "lab_label": "red",
+      "lab_label_note": "the paper identifies laboratories only by colour; this colour IS the label",
+      "quantity": {
+        "overpotential_V": 0.3984,
+        "potential_vs_rhe_V": 1.6284,
+        "read_precision_mV": 5.0
+      },
+      "source_document": "Tesch et al. 2023, Energy Advances 2, 1823-1830 (DOI 10.1039/d3ya00340j)",
+      "source_tier": "read_from_figure"
+    },
+    {
+      "axis": "overpotential_at_current_density",
+      "card_id": "RR:tesch2023:magenta",
+      "conditions": {
+        "catalyst": "commercial nickel-cobalt-oxide (Ni-Co-O) powder, single batch, 100 ug cm-2 on glassy carbon with Nafion binder",
+        "current_density": "10 mA cm-2 (geometric)",
+        "electrolyte": "1 M KOH (alkaline)",
+        "ir_correction": "Ohmic drop compensated via EIS at OCP (R_u)",
+        "protocol": "single standardized written protocol; same potentiostat/cell model; same chemicals (Fig. 1, Fig. S1)",
+        "quoted_from": "Tesch et al. 2023, Energy Advances 2, 1823 (CC BY 3.0)",
+        "rotation": "1600 rpm",
+        "temperature": "not stated in the paper"
+      },
+      "honesty": [
+        "reproduces a spread the paper itself reported; not a new finding",
+        "values are read from a figure",
+        "chemistry is alkaline nickel-cobalt oxide, not Lila's",
+        "no lab is said to have erred"
+      ],
+      "lab_label": "magenta",
+      "lab_label_note": "the paper identifies laboratories only by colour; this colour IS the label",
+      "quantity": {
+        "overpotential_V": 0.3961,
+        "potential_vs_rhe_V": 1.6261,
+        "read_precision_mV": 5.0
+      },
+      "source_document": "Tesch et al. 2023, Energy Advances 2, 1823-1830 (DOI 10.1039/d3ya00340j)",
+      "source_tier": "read_from_figure"
+    },
+    {
+      "axis": "overpotential_at_current_density",
+      "card_id": "RR:tesch2023:navy",
+      "conditions": {
+        "catalyst": "commercial nickel-cobalt-oxide (Ni-Co-O) powder, single batch, 100 ug cm-2 on glassy carbon with Nafion binder",
+        "current_density": "10 mA cm-2 (geometric)",
+        "electrolyte": "1 M KOH (alkaline)",
+        "ir_correction": "Ohmic drop compensated via EIS at OCP (R_u)",
+        "protocol": "single standardized written protocol; same potentiostat/cell model; same chemicals (Fig. 1, Fig. S1)",
+        "quoted_from": "Tesch et al. 2023, Energy Advances 2, 1823 (CC BY 3.0)",
+        "rotation": "1600 rpm",
+        "temperature": "not stated in the paper"
+      },
+      "honesty": [
+        "reproduces a spread the paper itself reported; not a new finding",
+        "values are read from a figure",
+        "chemistry is alkaline nickel-cobalt oxide, not Lila's",
+        "no lab is said to have erred"
+      ],
+      "lab_label": "navy",
+      "lab_label_note": "the paper identifies laboratories only by colour; this colour IS the label",
+      "quantity": {
+        "overpotential_V": 0.379,
+        "potential_vs_rhe_V": 1.609,
+        "read_precision_mV": 5.0
+      },
+      "source_document": "Tesch et al. 2023, Energy Advances 2, 1823-1830 (DOI 10.1039/d3ya00340j)",
+      "source_tier": "read_from_figure"
+    },
+    {
+      "axis": "overpotential_at_current_density",
+      "card_id": "RR:tesch2023:cyan",
+      "conditions": {
+        "catalyst": "commercial nickel-cobalt-oxide (Ni-Co-O) powder, single batch, 100 ug cm-2 on glassy carbon with Nafion binder",
+        "current_density": "10 mA cm-2 (geometric)",
+        "electrolyte": "1 M KOH (alkaline)",
+        "ir_correction": "Ohmic drop compensated via EIS at OCP (R_u)",
+        "protocol": "single standardized written protocol; same potentiostat/cell model; same chemicals (Fig. 1, Fig. S1)",
+        "quoted_from": "Tesch et al. 2023, Energy Advances 2, 1823 (CC BY 3.0)",
+        "rotation": "1600 rpm",
+        "temperature": "not stated in the paper"
+      },
+      "honesty": [
+        "reproduces a spread the paper itself reported; not a new finding",
+        "values are read from a figure",
+        "chemistry is alkaline nickel-cobalt oxide, not Lila's",
+        "no lab is said to have erred"
+      ],
+      "lab_label": "cyan",
+      "lab_label_note": "the paper identifies laboratories only by colour; this colour IS the label",
+      "quantity": {
+        "overpotential_V": 0.3663,
+        "potential_vs_rhe_V": 1.5963,
+        "read_precision_mV": 5.0
+      },
+      "source_document": "Tesch et al. 2023, Energy Advances 2, 1823-1830 (DOI 10.1039/d3ya00340j)",
+      "source_tier": "read_from_figure"
+    },
+    {
+      "axis": "overpotential_at_current_density",
+      "card_id": "RR:tesch2023:orange",
+      "conditions": {
+        "catalyst": "commercial nickel-cobalt-oxide (Ni-Co-O) powder, single batch, 100 ug cm-2 on glassy carbon with Nafion binder",
+        "current_density": "10 mA cm-2 (geometric)",
+        "electrolyte": "1 M KOH (alkaline)",
+        "ir_correction": "Ohmic drop compensated via EIS at OCP (R_u)",
+        "protocol": "single standardized written protocol; same potentiostat/cell model; same chemicals (Fig. 1, Fig. S1)",
+        "quoted_from": "Tesch et al. 2023, Energy Advances 2, 1823 (CC BY 3.0)",
+        "rotation": "1600 rpm",
+        "temperature": "not stated in the paper"
+      },
+      "honesty": [
+        "reproduces a spread the paper itself reported; not a new finding",
+        "values are read from a figure",
+        "chemistry is alkaline nickel-cobalt oxide, not Lila's",
+        "no lab is said to have erred"
+      ],
+      "lab_label": "orange",
+      "lab_label_note": "the paper identifies laboratories only by colour; this colour IS the label",
+      "quantity": {
+        "overpotential_V": 0.3613,
+        "potential_vs_rhe_V": 1.5913,
+        "read_precision_mV": 5.0
+      },
+      "source_document": "Tesch et al. 2023, Energy Advances 2, 1823-1830 (DOI 10.1039/d3ya00340j)",
+      "source_tier": "read_from_figure"
+    }
+  ],
+  "figure_read": {
+    "central_value_range_mV": 90.7,
+    "n_labs_in_figure": 11,
+    "n_labs_machine_read": 9,
+    "resolution_note": "marker diamond ~12 mV tall; error bars at/below marker size are not reliably read",
+    "unseparable_labs": {
+      "black": "present but not colour-separable from chart furniture; excluded from test",
+      "grey": "present but not colour-separable from chart furniture; excluded from test"
+    }
+  },
+  "honesty": [
+    "reproduces a spread the paper itself reported; not a new finding",
+    "values are read from a figure",
+    "chemistry is alkaline nickel-cobalt oxide, not Lila's",
+    "no lab is said to have erred"
+  ],
+  "loop": {
+    "fork_id": "RR:tesch2023:hot_pink_vs_orange",
+    "loop_id": "LOOP:RR:tesch2023:hot_pink_vs_orange",
+    "stages": {
+      "S4_decidability": {
+        "comp_vec": [
+          0,
+          0,
+          50,
+          0,
+          0,
+          0,
+          0,
+          0,
+          50,
+          0,
+          0,
+          0,
+          0
+        ],
+        "fork_id": "RR:tesch2023:hot_pink_vs_orange",
+        "instrument": "OERSIM_chronopotentiometry",
+        "map_version": "materials-capability-v1",
+        "observable": "overpotential_at_current_density",
+        "oersim_runnable": false,
+        "reason": "instrument exists but OERSIM cannot run it: OERSIM replays OER13 (0.1 M NaOH + 0.25 M Na2SO4, alkaline) traces; the measurement is in '1 M KOH (alkaline)', a different electrolyte, so it is outside its surface",
+        "verdict": "plan_only"
+      },
+      "S5_card": {
+        "card_id": "CARD:RR:tesch2023:hot_pink_vs_orange",
+        "code_version": "operator-v4-1.0.0",
+        "content_hash": "sha256:17cdbd537c0f994904b7dc11c46fd7885d4b207b6bcf8a2c949497d257085a38",
+        "decidability": "plan_only",
+        "discriminating_measurement": "Measure overpotential_at_current_density for the existing entity {'Ni': 0.5, 'Co': 0.5} (OERSIM_chronopotentiometry); compare to predictions under A and B against the measured floor 0.0127 V.",
+        "discriminating_power": 1.0,
+        "domain": "chemistry",
+        "est_cost": "requires real lab; not estimable here",
+        "est_timeline": "real-lab dependent",
+        "falsification_criterion": "If the measured overpotential_at_current_density is within the floor (0.0127 V) of A=0.452 V and more than the floor from B=0.3613 V, hypothesis B is falsified (supports A); and symmetrically for A. If within floor of both or neither, the result is inconclusive_within_floor.",
+        "fork_id": "RR:tesch2023:hot_pink_vs_orange",
+        "hypothesis_a": "A: overpotential_at_current_density = 0.452 V (source: lab hot_pink (read from Fig. 5))",
+        "hypothesis_b": "B: overpotential_at_current_density = 0.3613 V (source: lab orange (read from Fig. 5))",
+        "instrument": "OERSIM_chronopotentiometry",
+        "oersim_runnable": false,
+        "predicted_outcome_a": {
+          "unit": "V",
+          "value": 0.452
+        },
+        "predicted_outcome_b": {
+          "unit": "V",
+          "value": 0.3613
+        },
+        "protocol_steps": [
+          "Load the entity {'Ni': 0.5, 'Co': 0.5} on the available instrument (OERSIM_chronopotentiometry).",
+          "Run the discriminating measurement: overpotential_at_current_density (no new material is synthesised; the existing entity is measured).",
+          "Read the steady-state value and compare to predicted_outcome_a / predicted_outcome_b under the block's measured floor."
+        ],
+        "synthetic": false
+      },
+      "S6_plan": null
+    },
+    "synthetic": false,
+    "terminal": "plan_only"
+  },
+  "prereg": {
+    "hash": "sha256:5597db80b1a97a5e261625917565ddf9940a0a41e4940328e4507fb2892349ff",
+    "lock_ok": true,
+    "name": "rr_tesch"
+  },
+  "review_sheet": "# One-page review sheet \u2014 round-robin known-answer fork (SIM/plan_only)\n\nFork: RR:tesch2023:hot_pink_vs_orange\n  A = lab hot_pink: overpotential 0.452 V (= 1.6820 V vs RHE)\n  B = lab orange: overpotential 0.3613 V (= 1.5913 V vs RHE)\n  measured separation: 90.7 mV ; z = 7.115 ; p = 0.0 ; verdict = fork\n\nDecidability (S4): plan_only \u2014 instrument exists but OERSIM cannot run it: OERSIM replays OER13 (0.1 M NaOH + 0.25 M Na2SO4, alkaline) traces; the measurement is in '1 M KOH (alkaline)', a different electrolyte, so it is outside its surface\nLoop terminal: plan_only\nExperiment card (S5) falsification criterion: If the measured overpotential_at_current_density is within the floor (0.0127 V) of A=0.452 V and more than the floor from B=0.3613 V, hypothesis B is falsified (supports A); and symmetrically for A. If within floor of both or neither, the result is inconclusive_within_floor.\nOERSIM runnable: False (OERSIM electrolyte is OER13 0.1 M NaOH+0.25 M Na2SO4, not 1 M KOH)\n\nLABEL: real disagreement input read from a published figure; settlement is plan_only (the public simulator's electrolyte is OER13, not the paper's 1 M KOH). No run was faked.\n\nWhere a human must sign: (1) confirm the figure reads; (2) approve promotion to a REAL alkaline RDE measurement to settle the fork; the simulator cannot.\n\nHonesty: reproduces a spread the paper itself reported; not a new finding | values are read from a figure | chemistry is alkaline nickel-cobalt oxide, not Lila's | no lab is said to have erred",
+  "source": {
+    "doi": "10.1039/d3ya00340j",
+    "figure": "Fig. 5",
+    "licence": "CC BY 3.0 Unported",
+    "panel": "10 mA cm^-2 (geometric)",
+    "pdf_sha256": "64b8dc389a0eb5e6417e631d2cec78ae17f591da28239e315b8763b8a93a5e9d"
+  },
+  "spread_handling": {
+    "figure_error_bars": "below raster reading resolution; not reliably machine-read (see OPEN_QUESTIONS)",
+    "headline_basis": "the paper's verbatim '<15 mV' single-experimenter (intra-lab) spread bound; the STRICTEST sweep point",
+    "headline_spread_mV": 15.0,
+    "preregistered": false,
+    "preregistration_note": "the spread values (incl. 7.5 mV) were chosen AFTER the figure was read, because the per-lab error bars were below the raster resolution; they are NOT in the hash-locked prereg",
+    "sweep_mV": [
+      15,
+      10,
+      7,
+      5
+    ]
+  },
+  "verdicts_primary": {
+    "median_spread_v": 0.0075,
+    "n_fork": 20,
+    "n_labs": 9,
+    "n_pairs_total": 36,
+    "n_testable": 36,
+    "n_untestable": 0,
+    "n_within_noise": 16,
+    "q": 0.05,
+    "untestable_pairs": [],
+    "use_fallback": true,
+    "verdicts": [
+      {
+        "diff_mV": 26.3,
+        "fallback_used": false,
+        "lab_a": "hot_pink",
+        "lab_b": "dark_green",
+        "p": 0.0391,
+        "verdict": "within_noise",
+        "z": 2.063
+      },
+      {
+        "diff_mV": 41.7,
+        "fallback_used": false,
+        "lab_a": "hot_pink",
+        "lab_b": "blue",
+        "p": 0.00107,
+        "verdict": "fork",
+        "z": 3.271
+      },
+      {
+        "diff_mV": 46.7,
+        "fallback_used": false,
+        "lab_a": "hot_pink",
+        "lab_b": "lime",
+        "p": 0.00025,
+        "verdict": "fork",
+        "z": 3.663
+      },
+      {
+        "diff_mV": 53.6,
+        "fallback_used": false,
+        "lab_a": "hot_pink",
+        "lab_b": "red",
+        "p": 3e-05,
+        "verdict": "fork",
+        "z": 4.205
+      },
+      {
+        "diff_mV": 55.9,
+        "fallback_used": false,
+        "lab_a": "hot_pink",
+        "lab_b": "magenta",
+        "p": 1e-05,
+        "verdict": "fork",
+        "z": 4.385
+      },
+      {
+        "diff_mV": 73.0,
+        "fallback_used": false,
+        "lab_a": "hot_pink",
+        "lab_b": "navy",
+        "p": 0.0,
+        "verdict": "fork",
+        "z": 5.727
+      },
+      {
+        "diff_mV": 85.7,
+        "fallback_used": false,
+        "lab_a": "hot_pink",
+        "lab_b": "cyan",
+        "p": 0.0,
+        "verdict": "fork",
+        "z": 6.723
+      },
+      {
+        "diff_mV": 90.7,
+        "fallback_used": false,
+        "lab_a": "hot_pink",
+        "lab_b": "orange",
+        "p": 0.0,
+        "verdict": "fork",
+        "z": 7.115
+      },
+      {
+        "diff_mV": 15.4,
+        "fallback_used": false,
+        "lab_a": "dark_green",
+        "lab_b": "blue",
+        "p": 0.22702,
+        "verdict": "within_noise",
+        "z": 1.208
+      },
+      {
+        "diff_mV": 20.4,
+        "fallback_used": false,
+        "lab_a": "dark_green",
+        "lab_b": "lime",
+        "p": 0.10953,
+        "verdict": "within_noise",
+        "z": 1.6
+      },
+      {
+        "diff_mV": 27.3,
+        "fallback_used": false,
+        "lab_a": "dark_green",
+        "lab_b": "red",
+        "p": 0.03223,
+        "verdict": "within_noise",
+        "z": 2.142
+      },
+      {
+        "diff_mV": 29.6,
+        "fallback_used": false,
+        "lab_a": "dark_green",
+        "lab_b": "magenta",
+        "p": 0.02023,
+        "verdict": "fork",
+        "z": 2.322
+      },
+      {
+        "diff_mV": 46.7,
+        "fallback_used": false,
+        "lab_a": "dark_green",
+        "lab_b": "navy",
+        "p": 0.00025,
+        "verdict": "fork",
+        "z": 3.663
+      },
+      {
+        "diff_mV": 59.4,
+        "fallback_used": false,
+        "lab_a": "dark_green",
+        "lab_b": "cyan",
+        "p": 0.0,
+        "verdict": "fork",
+        "z": 4.66
+      },
+      {
+        "diff_mV": 64.4,
+        "fallback_used": false,
+        "lab_a": "dark_green",
+        "lab_b": "orange",
+        "p": 0.0,
+        "verdict": "fork",
+        "z": 5.052
+      },
+      {
+        "diff_mV": 5.0,
+        "fallback_used": false,
+        "lab_a": "blue",
+        "lab_b": "lime",
+        "p": 0.69489,
+        "verdict": "within_noise",
+        "z": 0.392
+      },
+      {
+        "diff_mV": 11.9,
+        "fallback_used": false,
+        "lab_a": "blue",
+        "lab_b": "red",
+        "p": 0.35056,
+        "verdict": "within_noise",
+        "z": 0.934
+      },
+      {
+        "diff_mV": 14.2,
+        "fallback_used": false,
+        "lab_a": "blue",
+        "lab_b": "magenta",
+        "p": 0.26531,
+        "verdict": "within_noise",
+        "z": 1.114
+      },
+      {
+        "diff_mV": 31.3,
+        "fallback_used": false,
+        "lab_a": "blue",
+        "lab_b": "navy",
+        "p": 0.01407,
+        "verdict": "fork",
+        "z": 2.455
+      },
+      {
+        "diff_mV": 44.0,
+        "fallback_used": false,
+        "lab_a": "blue",
+        "lab_b": "cyan",
+        "p": 0.00056,
+        "verdict": "fork",
+        "z": 3.452
+      },
+      {
+        "diff_mV": 49.0,
+        "fallback_used": false,
+        "lab_a": "blue",
+        "lab_b": "orange",
+        "p": 0.00012,
+        "verdict": "fork",
+        "z": 3.844
+      },
+      {
+        "diff_mV": 6.9,
+        "fallback_used": false,
+        "lab_a": "lime",
+        "lab_b": "red",
+        "p": 0.58831,
+        "verdict": "within_noise",
+        "z": 0.541
+      },
+      {
+        "diff_mV": 9.2,
+        "fallback_used": false,
+        "lab_a": "lime",
+        "lab_b": "magenta",
+        "p": 0.47047,
+        "verdict": "within_noise",
+        "z": 0.722
+      },
+      {
+        "diff_mV": 26.3,
+        "fallback_used": false,
+        "lab_a": "lime",
+        "lab_b": "navy",
+        "p": 0.0391,
+        "verdict": "within_noise",
+        "z": 2.063
+      },
+      {
+        "diff_mV": 39.0,
+        "fallback_used": false,
+        "lab_a": "lime",
+        "lab_b": "cyan",
+        "p": 0.00222,
+        "verdict": "fork",
+        "z": 3.059
+      },
+      {
+        "diff_mV": 44.0,
+        "fallback_used": false,
+        "lab_a": "lime",
+        "lab_b": "orange",
+        "p": 0.00056,
+        "verdict": "fork",
+        "z": 3.452
+      },
+      {
+        "diff_mV": 2.3,
+        "fallback_used": false,
+        "lab_a": "red",
+        "lab_b": "magenta",
+        "p": 0.85682,
+        "verdict": "within_noise",
+        "z": 0.18
+      },
+      {
+        "diff_mV": 19.4,
+        "fallback_used": false,
+        "lab_a": "red",
+        "lab_b": "navy",
+        "p": 0.12804,
+        "verdict": "within_noise",
+        "z": 1.522
+      },
+      {
+        "diff_mV": 32.1,
+        "fallback_used": false,
+        "lab_a": "red",
+        "lab_b": "cyan",
+        "p": 0.0118,
+        "verdict": "fork",
+        "z": 2.518
+      },
+      {
+        "diff_mV": 37.1,
+        "fallback_used": false,
+        "lab_a": "red",
+        "lab_b": "orange",
+        "p": 0.00361,
+        "verdict": "fork",
+        "z": 2.91
+      },
+      {
+        "diff_mV": 17.1,
+        "fallback_used": false,
+        "lab_a": "magenta",
+        "lab_b": "navy",
+        "p": 0.17978,
+        "verdict": "within_noise",
+        "z": 1.341
+      },
+      {
+        "diff_mV": 29.8,
+        "fallback_used": false,
+        "lab_a": "magenta",
+        "lab_b": "cyan",
+        "p": 0.0194,
+        "verdict": "fork",
+        "z": 2.338
+      },
+      {
+        "diff_mV": 34.8,
+        "fallback_used": false,
+        "lab_a": "magenta",
+        "lab_b": "orange",
+        "p": 0.00633,
+        "verdict": "fork",
+        "z": 2.73
+      },
+      {
+        "diff_mV": 12.7,
+        "fallback_used": false,
+        "lab_a": "navy",
+        "lab_b": "cyan",
+        "p": 0.31912,
+        "verdict": "within_noise",
+        "z": 0.996
+      },
+      {
+        "diff_mV": 17.7,
+        "fallback_used": false,
+        "lab_a": "navy",
+        "lab_b": "orange",
+        "p": 0.16498,
+        "verdict": "within_noise",
+        "z": 1.389
+      },
+      {
+        "diff_mV": 5.0,
+        "fallback_used": false,
+        "lab_a": "cyan",
+        "lab_b": "orange",
+        "p": 0.69489,
+        "verdict": "within_noise",
+        "z": 0.392
+      }
+    ]
+  },
+  "verdicts_sensitivity": {
+    "10mV": {
+      "n_fork": 15,
+      "n_testable": 36,
+      "n_within_noise": 21,
+      "spread_mV": 10
+    },
+    "15mV": {
+      "n_fork": 4,
+      "n_testable": 36,
+      "n_within_noise": 32,
+      "spread_mV": 15
+    },
+    "5mV": {
+      "n_fork": 23,
+      "n_testable": 36,
+      "n_within_noise": 13,
+      "spread_mV": 5
+    },
+    "7mV": {
+      "n_fork": 20,
+      "n_testable": 36,
+      "n_within_noise": 16,
+      "spread_mV": 7
+    }
+  }
+}
