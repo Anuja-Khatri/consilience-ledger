@@ -1,5 +1,7 @@
 # consilience-ledger
 
+Operating or building an autonomous lab? Start with [FOR_AUTONOMOUS_LABS.md](FOR_AUTONOMOUS_LABS.md).
+
 **Independent work, not affiliated with or endorsed by Lila Sciences.**
 
 Signed off at Checkpoint 2. License: code MIT (`LICENSE`); data and reports CC-BY-4.0
