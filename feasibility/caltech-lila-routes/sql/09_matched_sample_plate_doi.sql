@@ -1,0 +1,1 @@
+copy (select cs.sample_id::text, c.label as plate, c.doi from public_release.collection__sample cs join public_release.collection c on c.id=cs.collection_id where cs.sample_id=any(string_to_array(:'ids',',')::uuid[])) to stdout csv header

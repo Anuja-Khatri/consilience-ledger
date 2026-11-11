@@ -1,0 +1,5 @@
+technique,current_abs_amps,n_rows,n_samples
+CP3,0.00003,1849,1828
+CP4,0.0001,297,297
+CP4,0.0003,273,261
+CP4,-0.0001,53,53

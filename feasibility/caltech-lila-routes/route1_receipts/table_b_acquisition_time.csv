@@ -1,0 +1,5 @@
+technique,acquisition_time_s,n_rows,n_samples
+CP3,15.0,1787,1766
+CP4,15.0,561,549
+CP3,10.0,62,62
+CP4,10.0,62,62
