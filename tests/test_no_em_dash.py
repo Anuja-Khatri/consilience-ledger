@@ -1,5 +1,6 @@
 """Follow-up correction: no em dash (U+2014) may appear in any top-level .md file, nor under
-reports/ or discovery/report/. Plain punctuation only in outgoing docs."""
+reports/ or discovery/report/, nor in the consolidation round and feasibility trees. Plain
+punctuation only in outgoing docs."""
 
 import glob
 import os
@@ -12,6 +13,8 @@ def _scoped_md_files():
     files = glob.glob(os.path.join(_REPO, "*.md"))
     files += glob.glob(os.path.join(_REPO, "reports", "*.md"))
     files += glob.glob(os.path.join(_REPO, "discovery", "report", "*.md"))
+    files += glob.glob(os.path.join(_REPO, "rounds", "**", "*.md"), recursive=True)
+    files += glob.glob(os.path.join(_REPO, "feasibility", "**", "*.md"), recursive=True)
     return sorted(set(files))
 
 

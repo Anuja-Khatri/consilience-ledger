@@ -42,8 +42,8 @@ electrolyte, so no run is faked.
   0 laboratories and the spread condition is not met. The central values stand (9 machine-read).
   The sweep spread values were chosen after the figure was read and are not pre-registered.
 - C-006: the forks at the headline setting are fragile to the per-lab spread assumption. Each
-  fork breaks once one of its own laboratories exceeds roughly 16 to 26 mV, and a single
-  genuinely noisy laboratory at 30 mV erases all of them.
+  fork breaks once one of its own laboratories exceeds its tolerance of 16.0 to 24.5 mV, and a
+  single genuinely noisy laboratory at 30 mV erases all of them.
 - C-007: an earlier headline over-stated a fragile count of forks as if it were firm. The
   corrected, mandatory headline is 0 to 4 forks at s = 15 mV with the qualifier above, and the
   result to lead with is the robust inter-lab central range of 90.7 mV (n = 9). No computed

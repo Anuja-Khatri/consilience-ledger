@@ -61,6 +61,23 @@ claim end-to-end determinism (CC-01).
   number, reported fresh; it is not the consciousness-domain 0.25 (different domain and
   metric).
 
+## Program history
+The public record spans several rounds. Each line links its tree.
+
+- Round 1 (this root): 34 approved claims, 561 refused pairs each with a recorded reason, 0
+  forks, and the durability self-consistency check within floor. See `ledger/` and
+  CONTRADICTION_DOSSIER.md.
+- Round 2 (`rounds/round2-expanded-corpus/`): 73 approved cards, 210 vetoed pairs, the measured
+  under-reporting table, and 0 forks. A reproducibility floor is also measured on MPS.
+- A superseded intermediate database round existed and was replaced; the superseded fork counts
+  are described in words only, see CORRECTIONS.md.
+- Round 4 (`rounds/round4-database/`): the database quality-control pass and the full committed
+  verdict distribution.
+- Round 5 (`rounds/round5-roundrobin/`): the round-robin known-answer run, led by the robust
+  inter-lab central range.
+- The closure (`feasibility/closure/`): the known-answer pair (O3) and the executed cross-field
+  search (a true null).
+
 ## Browse
 Open `browser/index.html` from any local file server (it reads `ledger/*.json` by relative
 fetch). Phases and the full method are in STATE.md, METHODS.md, and the spec.

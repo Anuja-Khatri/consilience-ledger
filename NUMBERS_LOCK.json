@@ -197,6 +197,97 @@
       "n": null,
       "qualifier": "arXiv identifier of the Lila OER paper and the durability claim prefix (an identifier, not a measured value)",
       "source": "arXiv:2609.30133"
+    },
+    {
+      "id": "rr_central_range_mv",
+      "value": 90.7,
+      "n": 9,
+      "qualifier": "ROBUST inter-lab central-value range at 10 mA/cm2, read from Fig. 5 of Tesch 2023; the durable round-robin result",
+      "source": "Tesch et al. 2023 round-robin (CC BY 3.0); operator-v4 @ 5a1028e"
+    },
+    {
+      "id": "rr_headline_spread_mv",
+      "value": 15.0,
+      "n": 36,
+      "qualifier": "round-robin headline spread point s = 15 mV; 0 to 4 forks (count NOT robust)",
+      "source": "Tesch et al. 2023 round-robin (CC BY 3.0); operator-v4 @ 5a1028e"
+    },
+    {
+      "id": "rr_sweep_spread_mv",
+      "value": 7.5,
+      "n": 36,
+      "qualifier": "round-robin spread sweep point (mV); chosen after reading the figure, not pre-registered",
+      "source": "Tesch et al. 2023 round-robin (CC BY 3.0); operator-v4 @ 5a1028e"
+    },
+    {
+      "id": "rr_fork_tolerance_min_mv",
+      "value": 16.0,
+      "n": 36,
+      "qualifier": "smallest single-lab spread a headline fork tolerates (mV)",
+      "source": "Tesch et al. 2023 round-robin (CC BY 3.0); operator-v4 @ 5a1028e"
+    },
+    {
+      "id": "rr_fork_tolerance_max_mv",
+      "value": 24.5,
+      "n": 36,
+      "qualifier": "largest single-lab spread the headline forks tolerate (mV)",
+      "source": "Tesch et al. 2023 round-robin (CC BY 3.0); operator-v4 @ 5a1028e"
+    },
+    {
+      "id": "rr_fork_break_spread_mv",
+      "value": 30.0,
+      "n": 36,
+      "qualifier": "one laboratory at 30 mV erases all headline forks",
+      "source": "Tesch et al. 2023 round-robin (CC BY 3.0); operator-v4 @ 5a1028e"
+    },
+    {
+      "id": "fdr_q",
+      "value": 0.05,
+      "n": null,
+      "qualifier": "Benjamini-Hochberg false-discovery control threshold q",
+      "source": "operator-v4 @ 5a1028e"
+    },
+    {
+      "id": "loop_sim_eta_v",
+      "value": 0.361,
+      "n": 1,
+      "qualifier": "OERSIM overpotential 0.3610 V; SIM loop demonstration on a SYNTHETIC fork, not a discovery",
+      "source": "operator-v4 @ 5a1028e"
+    },
+    {
+      "id": "mps_floor_strict_mv",
+      "value": 22.0,
+      "n": 6249,
+      "qualifier": "about 22 mV strict same-sample repeat floor (median stddev 22.4 mV, n=6,249 groups; MPS)",
+      "source": "MPS survey (CaltechDATA hjfx4-a8r81, CC BY 4.0); r0 (unversioned)"
+    },
+    {
+      "id": "mps_floor_strict_stddev_mv",
+      "value": 22.4,
+      "n": 6249,
+      "qualifier": "median same-sample stddev, MPS Floor-A",
+      "source": "MPS survey (CaltechDATA hjfx4-a8r81, CC BY 4.0); r0 (unversioned)"
+    },
+    {
+      "id": "mps_floor_block_mv",
+      "value": 51.0,
+      "n": 9709,
+      "qualifier": "about 51 mV same-composition block floor (median stddev 51.1 mV, n=9,709 blocks; MPS)",
+      "source": "MPS survey (CaltechDATA hjfx4-a8r81, CC BY 4.0); r0 (unversioned)"
+    },
+    {
+      "id": "mps_floor_block_stddev_mv",
+      "value": 51.1,
+      "n": 9709,
+      "qualifier": "median same-composition block stddev (MPS)",
+      "source": "MPS survey (CaltechDATA hjfx4-a8r81, CC BY 4.0); r0 (unversioned)"
+    },
+    {
+      "id": "mps_floor_p90_mv",
+      "value": 130.0,
+      "n": null,
+      "qualifier": "p90 above 130 mV in both floor measurements (MPS)",
+      "source": "MPS survey (CaltechDATA hjfx4-a8r81, CC BY 4.0); r0 (unversioned)"
     }
   ]
 }

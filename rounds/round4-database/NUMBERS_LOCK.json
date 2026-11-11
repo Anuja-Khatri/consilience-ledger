@@ -118,7 +118,7 @@
       "reason": "P9R median-floor false discoveries; superseded by C-003/FDR. Digits redacted per consolidation rule 2 (superseded draft fork counts are described in words only)."
     }
   ],
-  "honest_nulls": [
+  "stated_nulls": [
     "No real cross-source fork found in public data. Reason: public data rarely holds, together, the SAME entity measured by MULTIPLE sources under STATED conditions with STATED per-row uncertainty.",
     "Biology fork-testing is UNTESTABLE: no public enzyme-kinetics database (CatLog-27k / EnzyArena / CatPred-DB) carries a per-row uncertainty, and none has same-source replicate structure for a clean noise null.",
     "The cross-field result is a matcher-correctness test on AUTHORED graphs, not a discovery."

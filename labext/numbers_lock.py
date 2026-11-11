@@ -41,12 +41,15 @@ _NUM = re.compile(r"(?<![\w.])\d+\.\d+(?![\w])|(?<![\w])n=\d+|(?<![\w.])\d+\s*mV
 
 
 def _as_floats(text: str) -> list[float]:
+    # Extract measured-looking numbers as whole tokens: decimals, n=NN, and an integer
+    # directly before mV. The negative lookbehind on the mV match stops a decimal like
+    # "90.7 mV" from also yielding a spurious "7" (the ".7" is part of the decimal above).
     out = []
-    for m in re.findall(r"\d+\.\d+", text):
+    for m in re.findall(r"(?<![\d.])\d+\.\d+", text):
         out.append(float(m))
     for m in re.findall(r"n=(\d+)", text):
         out.append(float(m))
-    for m in re.findall(r"(\d+)\s*mV", text):
+    for m in re.findall(r"(?<![\d.])(\d+)\s*mV", text):
         out.append(float(m))
     return out
 

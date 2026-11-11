@@ -75,3 +75,18 @@ Known limits, recorded as they arise (spec II.3, Phase 7 formalizes this).
   the approved set, so no mechanism-level fork either; Stage 3 (Phase 10) therefore runs
   on a clearly-labeled synthetic simulator-lookup example (two different materials looked up on
   the public helao-async dataset), not a real ledger fork.
+
+## Added at consolidation (later rounds)
+- Biology fork-testing is untestable from public data. No public enzyme-kinetics database carries a
+  per-row uncertainty, and none has same-source replicate structure for a clean noise null. The
+  enumerated cross-source enzyme pairs are therefore reported as untestable, never as "0 forks".
+- Ref 39 (Cherevko) in the closure known-answer pair was available only at abstract level; its full
+  text and SI routes were refused, so its access is recorded as partial and the O3 verdict is
+  provisional until the owner's review (feasibility/closure/).
+- Round 2 carries no commit history: its source trees (ledger-v2 and r0) are unversioned working
+  trees, so the ported files are dated by file date, not by commit, as recorded in each round
+  folder's PROVENANCE.md.
+- The measured ceiling of the method from outside a laboratory: the loop reaches a gated plan rather
+  than a settled result, because public texts rarely state the conditions the comparison rules
+  require. The round 2 veto table (210 vetoes, every one on an unstated or mismatched condition) is
+  the measurement of that ceiling.

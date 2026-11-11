@@ -113,3 +113,34 @@ Full per-fix detail in FIXES_REPORT.md. Summary of material corrections:
   in any top-level .md file or under reports/ or discovery/report/.
 - No verdict or hash changed: ledger.hash and rules.lock are unchanged (docs + tests only). 75 tests
   green; make reproduce byte-stable.
+
+## 2026-11-11: database and round-robin corrections (C-001 to C-007), merged for the public record
+These corrections come from the later database and round-robin rounds; full detail is in
+`rounds/round4-database/CORRECTIONS.md` and `rounds/round5-roundrobin/REPORT.md`. Reworded here per
+consolidation rule 2: the superseded median-floor fork counts are described in words only and their
+digits are not printed anywhere in this repo.
+
+- A superseded intermediate database round used a median-floor fork rule that did not control false
+  discoveries and did not separate same-source replicate inconsistency from cross-source forks. Its
+  draft fork counts are superseded and are not quoted; the corrected finding is that MPS is a single
+  dataset and pipeline (cross-source fork count is zero) and the enzyme sets are untestable, never
+  "zero forks".
+- C-001 (2026-11-11): the physical ceiling on suspect measurements was too tight and wrongly flagged
+  real but poor catalysts; the bound was raised (values confirmed to be in volts, so a bound error,
+  not a units error).
+- C-002 (2026-11-11): the raised ceiling was still too permissive; every apparent replicate
+  inconsistency under it was a normal value paired with a lone compliance-rail value, so the ceiling
+  was lowered and no genuine replicate inconsistency survived the false-discovery control.
+- C-003 (2026-11-11): the eye-chosen ceiling was replaced by each row's own recorded instrument
+  compliance limit; on the MPS test half this gives not comparable 74,569, within floor 80,144,
+  replicate inconsistency 0, fork 0, suspect transcription 16,613.
+- C-004 (2026-11-11): the vendored OERSIM was mislabelled acidic; it is alkaline (OER13, pH 13), so
+  an acid disagreement cannot be settled on it and the round-robin fork in 1 M KOH stays plan_only.
+- C-005 (2026-11-11): an earlier pass marked the per-lab spread condition as met; the machine read
+  shows the per-lab error bars are at or below the raster resolution, so the condition is not met and
+  the round-robin spread sweep values are not pre-registered.
+- C-006 (2026-11-11): the round-robin forks at the headline setting are fragile to the per-lab spread
+  assumption; a single noisy laboratory at 30 mV erases all of them.
+- C-007 (2026-11-11): the round-robin headline was corrected to "0 to 4 forks at s = 15 mV" with its
+  full qualifier, and the result to lead with is the robust inter-lab central range of 90.7 mV
+  (n = 9). No computed number moved; only the presentation changed.
