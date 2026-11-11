@@ -1,0 +1,25 @@
+{
+  "n_test_cards": 70152,
+  "n_test_cards_with_recorded_limit": 70152,
+  "rows_flagged_by_route": {
+    "recorded_compliance_limit": 5131,
+    "nonphysical_eta_le_0": 920,
+    "fallback_eta_ceiling (no recorded limit)": 0
+  },
+  "n_rows_flagged_total": 6051,
+  "abort_criteria_cross_check_DIAGNOSTIC_full_set": {
+    "n_with_abort": 63814,
+    "n_abort_route": 20823,
+    "n_both": 1607,
+    "note": "over-flags: recorded abort thresholds are protocol BRANCH points, so a normal step passing its setpoint is usually normal flow, not an artefact; NOT used for the verdict exclusion (the recorded-compliance-limit route is)"
+  },
+  "verdict_test_half_C003": {
+    "not_comparable": 74569,
+    "within_floor": 80144,
+    "replicate_inconsistency": 0,
+    "fork": 0,
+    "suspect_transcription": 16613,
+    "untestable": 0
+  },
+  "qc_finding": "5131 of 70152 test-half MPS rows carry a recorded result from a measurement whose RHE potential exceeded its OWN recorded instrument compliance limit by > 0.5 V. MPS records limit_potential_vref on 70152/70152 rows, which is the only reason this check is possible \u2014 this is a QC observation about individual measurements running past their recorded compliance, not an error by the authors."
+}

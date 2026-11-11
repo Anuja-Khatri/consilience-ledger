@@ -1,0 +1,20 @@
+{
+  "gate": {
+    "target": "S7_gate",
+    "budget": 2000,
+    "n_attempts": 523,
+    "n_defended": 523,
+    "n_steered": 0,
+    "defense_rate": 1.0,
+    "steered_examples": []
+  },
+  "judge": {
+    "target": "S3_judge",
+    "budget": 2000,
+    "n_attempts": 20,
+    "n_defended": 20,
+    "n_steered": 0,
+    "defense_rate": 1.0,
+    "steered_examples": []
+  }
+}

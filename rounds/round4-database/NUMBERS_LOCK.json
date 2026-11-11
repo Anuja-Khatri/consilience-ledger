@@ -1,0 +1,126 @@
+{
+  "_comment": "Authoritative locked numbers for the published build. Every claim carries n + a qualifier. The numbers linter (scripts/numbers_linter.py) checks README.md / METHODS.md against this: locked tokens must appear with their n marker, and banned (superseded) tokens must not appear.",
+  "version": "p10-checkpoint3",
+  "locked": [
+    {
+      "id": "redteam_gate",
+      "token": "523",
+      "n": "n=523",
+      "qualifier": "attempts; 0 steered; defense rate 1.000",
+      "value": "S7 gate defended 523/523"
+    },
+    {
+      "id": "redteam_judge",
+      "token": "20/20",
+      "n": "n=20",
+      "qualifier": "4 verdict fixtures x 5 adversarial texts; 0 steered",
+      "value": "S3 judge defended 20/20"
+    },
+    {
+      "id": "loop_sim_eta",
+      "token": "0.3610 V",
+      "n": "n=1",
+      "qualifier": "SIM - loop demonstration on a SYNTHETIC fork, not a discovery",
+      "value": "OERSIM overpotential"
+    },
+    {
+      "id": "loop_chain_hash",
+      "token": "sha256:c5399769",
+      "n": "n=1",
+      "qualifier": "byte-reproducible full_chain_hash",
+      "value": "loop trace audit"
+    },
+    {
+      "id": "mps_cards",
+      "token": "140,708",
+      "n": "n=140,708",
+      "qualifier": "REAL acidic-OER CP cards (CaltechDATA hjfx4-a8r81, CC-BY-4.0)",
+      "value": "MPS cards ingested"
+    },
+    {
+      "id": "mps_compliance_flagged",
+      "token": "5,131",
+      "n": "n=70,152",
+      "qualifier": "rows whose RHE potential ran past their OWN recorded compliance limit by >0.5 V (QC; MPS credited for recording the limits)",
+      "value": "MPS compliance route flagged"
+    },
+    {
+      "id": "mps_replicate_inconsistency",
+      "token": "replicate_inconsistency = 0",
+      "n": "n=0",
+      "qualifier": "genuine, FDR-controlled, test half; all apparent ones were compliance artefacts",
+      "value": "MPS genuine replicate inconsistencies"
+    },
+    {
+      "id": "mps_fork",
+      "token": "cross-source fork = 0",
+      "n": "n=0",
+      "qualifier": "MPS is one dataset+pipeline, so no cross-source pair exists",
+      "value": "MPS cross-source forks"
+    },
+    {
+      "id": "nullcal_chem",
+      "token": "false-positive rate 0.000",
+      "n": "n=1,228",
+      "qualifier": "<= q=0.05; FDR controlled under the null",
+      "value": "chemistry null calibration"
+    },
+    {
+      "id": "planted_recovery",
+      "token": "1.00 / 1.00",
+      "n": "n=33",
+      "qualifier": "precision / recall of planted fork and suspect on the TEST half",
+      "value": "planted recovery"
+    },
+    {
+      "id": "catlog_untestable",
+      "token": "6,231",
+      "n": "n=6,231",
+      "qualifier": "UNTESTABLE (no replicate null and no reported uncertainty); never '0 forks'",
+      "value": "CatLog-27k cross-source pairs untestable"
+    },
+    {
+      "id": "crossfield_rung",
+      "token": "rung 1",
+      "n": "n=4",
+      "qualifier": "matcher-correctness test on AUTHORED graphs, not a discovery; ceiling does not license ontological identity",
+      "value": "cross-field matcher test"
+    },
+    {
+      "id": "rr_forks",
+      "token": "0 to 4 forks",
+      "n": "n=36",
+      "qualifier": "at s = 15 mV. The paper reports one experimenter above 15 mV without naming which or by how much; the 4 forks tolerate a single-lab spread of only 16.0 to 24.5 mV, and one lab (hot_pink) appears in 3 of them (NONE survive if any single lab's spread is 30 mV). Full sweep 4/15/20/23 forks at s=15/10/7.5/5 mV of 36 testable lab pairs (9 of 11 labs machine-read from Fig. 5); the spread values were chosen AFTER the figure was read (error bars below the raster resolution), so they are NOT pre-registered. READ FROM A FIGURE; reproduces a spread Tesch 2023 already reported, NOT a new finding; alkaline Ni-Co oxide, not Lila's; loop plan_only (OERSIM electrolyte is OER13 = 0.1 M NaOH+0.25 M Na2SO4, pH 13, not 1 M KOH; no run faked). The fork COUNT is not robust; what IS robust is rr_central_range.",
+      "value": "round-robin known-answer forks detected (count NOT robust)"
+    },
+    {
+      "id": "rr_central_range",
+      "token": "90.7 mV",
+      "n": "n=9",
+      "qualifier": "ROBUST \u2014 the inter-lab central-value range at 10 mA cm-2, read from Fig. 5 of Tesch 2023 (CC BY 3.0); the paper itself reports this inter-lab spread. (The per-pair fork count is NOT robust: 0 to 4 at s=15 mV; see rr_forks.)",
+      "value": "round-robin inter-lab central range read from figure (ROBUST)"
+    },
+    {
+      "id": "tests",
+      "token": "117 passed",
+      "n": "n=117",
+      "qualifier": "make reproduce byte-stable",
+      "value": "test suite"
+    }
+  ],
+  "banned_superseded": [
+    {
+      "token": "[superseded MPS median-floor fork count, redacted per consolidation rule 2]",
+      "reason": "P9R median-floor false discoveries; superseded by C-003/FDR. Digits redacted per consolidation rule 2 (superseded draft fork counts are described in words only)."
+    },
+    {
+      "token": "[superseded CatLog median-floor fork count, redacted per consolidation rule 2]",
+      "reason": "P9R median-floor false discoveries; superseded by C-003/FDR. Digits redacted per consolidation rule 2 (superseded draft fork counts are described in words only)."
+    }
+  ],
+  "honest_nulls": [
+    "No real cross-source fork found in public data. Reason: public data rarely holds, together, the SAME entity measured by MULTIPLE sources under STATED conditions with STATED per-row uncertainty.",
+    "Biology fork-testing is UNTESTABLE: no public enzyme-kinetics database (CatLog-27k / EnzyArena / CatPred-DB) carries a per-row uncertainty, and none has same-source replicate structure for a clean noise null.",
+    "The cross-field result is a matcher-correctness test on AUTHORED graphs, not a discovery."
+  ]
+}
