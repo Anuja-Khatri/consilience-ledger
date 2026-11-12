@@ -60,7 +60,10 @@ Every public number is registered with its sample size, and a test fails the bui
 
 Where the AI sits, and where it does not: a language model reads sentences into cards. That step is the measured weak link. A prompt-injection probe steers extraction in 0.30 of cases overall and 0.91 in the worst class. That is exactly why the judge that issues verdicts has no text input at all, and why a human reviews cards. Judge agreement with hand verdicts: 1.0 (n=213), 1.0 (n=311), 0.9842 (n=316). One piece is a design only: a trace audit that would check each agent decision against the evidence available at that step. It needs private traces by definition, so it is not built.
 
-What this gives you: trust that does not depend on taking my word. Every number has a receipt. Every mistake has a commit. Every unproven part says so.
+What this gives you: trust that does not depend on taking my word. Every number has a receipt. Every mistake has a commit. Every unproven part says so. And
+the human attention a lab does spend goes further here, not shorter: reviewers get typed
+records with verdicts and named defects instead of raw text, and review can narrow toward
+a safety-only check as measured reliability rises.
 
 ## What I do not claim
 

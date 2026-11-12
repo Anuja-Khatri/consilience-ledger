@@ -6,23 +6,64 @@ Operating or building an autonomous lab? Start with [FOR_AUTONOMOUS_LABS.md](FOR
 
 ## In plain words
 
-I built a system that compares scientific claims carefully. A language model reads a sentence
-from a paper or a database and turns it into a card: what material, what was measured, what
-number, under what conditions. The judge, a second part, is plain code with no AI inside: it
-compares two cards, gives the same answer every time, and refuses the comparison when the
-conditions do not match, naming the reason. A third part checks a lab plan against safety
-rules before the plan runs.
+Autonomous and high-throughput labs produce results faster than anyone can check them.
+This repository holds a working system that does the checking: it reads claims, compares
+them exactly, refuses unfair comparisons with the reason named, finds the disagreements
+worth testing next, screens experiment plans for safety, and keeps receipts for all of it.
 
-This repository is one arm of The Consilience, an instrument I build for comparing
-scientific claims across fields that do not share a vocabulary. The core engine and its
-validation are described in the paper: Consilience: Deterministic Cross-Theory Claim
-Comparison (Zenodo, DOI 10.5281/zenodo.23672883). This repository extends that engine to
-the literature and data of autonomous laboratories.
+## What it does, in use
 
-The main finding so far is honest and useful: most published results cannot fairly be compared
-at all, because papers do not state the conditions. Where I planted real disagreements as a
-test, the system found all of them, and on clean data it invented none. The exact numbers,
-each with its sample size, are on the front page and in `NUMBERS_LOCK.json`.
+1. Every result becomes checkable. Each claim, from a paper, a database row or a run log,
+   is converted into a structured record: material, quantity, value, and the conditions it
+   was measured under. From that point on, machines can check it.
+2. Comparisons you can rerun. Comparing two results is plain code: same inputs, same
+   answer, every time, and anyone can reproduce the verdict from a hash. No AI opinion
+   sits inside the comparison.
+3. No more apples to oranges. If two results were measured under different conditions, a
+   different substrate, hold time or correction, the system refuses to compare them and
+   names the condition that failed. Bad comparisons stop at the gate instead of reaching a
+   plot or a decision.
+4. The next experiment, found for you. Where results genuinely contradict, the system
+   surfaces them, ranked: every real contradiction is an experiment worth running. Tested
+   by planting disagreements: it found every one, and on clean data it invented none.
+5. It knows noise from signal. It measured how far honest labs actually differ on the same
+   material, and it flags a disagreement only beyond that measured spread. People chase
+   chemistry, not noise.
+6. It finds the bad rows in trusted data. Pointed at a public release of 140,708 claim
+   records (n=140,708), it caught measurements exceeding their own recorded instrument
+   limits and values that are physically impossible. Run at ingest, such records never
+   reach a model or a decision.
+7. It checks every plan before it runs. An experiment plan is screened against the lab's
+   safety rules in about 20 ms, fast enough to sit inside an agent loop. Its record so
+   far: zero safe plans wrongly blocked, and zero attack plans through.
+8. Safety rules that enforce themselves. Each rule carries its source and a confidence
+   grade and compiles straight into the machine checks the plan screen runs. Experts write
+   a rule once; every plan obeys it.
+9. Every new result is checked against everything before it. As results arrive, each is
+   compared with the standing record and the verdict is attached. Demonstrated end to end
+   on synthetic data; built for live streams.
+10. The system is held to its own standard. Every public number carries its sample size
+    and is guarded by tests; analyses are preregistered before the data is read; the build
+    reproduces byte for byte; and mistakes go into a public corrections file.
+11. Human attention goes only where measurement says it must. Everything downstream of an
+    approved record is fully automatic: no verdict and no plan decision waits on a person.
+    The one reviewed step is a language model reading text into a record, because model
+    prose is an unreliable narrator; each record is approved once, then machines take
+    over. And the review work a lab already staffs gets faster, not slower: reviewers
+    receive typed records with verdicts and named defects instead of raw text, so
+    calibration, review and disagreement resolution run on structure, and human review can
+    narrow toward a safety-only check as measured reliability rises.
+
+On public data the refusing half is proven end to end; published papers rarely state the
+conditions the hunting half needs, so the hunt waits for data that records them, which lab
+systems have. The exact numbers, each with its sample size, are on the front page and in
+`NUMBERS_LOCK.json`.
+
+This system is the operator-side arm of The Consilience, an instrument I build for
+comparing scientific claims that do not share a vocabulary. Its one novel commitment: a
+refusal to compare is a first-class, published result, never a silent failure. The core
+engine lives at
+[github.com/Anuja-Khatri/theconsilience-engine](https://github.com/Anuja-Khatri/theconsilience-engine).
 
 One rule governs this repository: every public number carries its sample size, tests fail the
 build if a number drifts, and my mistakes are listed in `CORRECTIONS.md`. Code is MIT
