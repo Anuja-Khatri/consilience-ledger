@@ -65,6 +65,63 @@ the human attention a lab does spend goes further here, not shorter: reviewers g
 records with verdicts and named defects instead of raw text, and review can narrow toward
 a safety-only check as measured reliability rises.
 
+## The full system, stage by stage
+
+The capabilities above are not a toolbox; they are stages of one planned loop, the
+operator's checking layer end to end. Here is every stage, what runs today, and exactly
+what unlocks the rest.
+
+1. Read the literature and the lab's records into typed claim cards, each tied to its
+   exact source sentence. Runs on real data today: 34 approved claims from the first
+   corpus, 73 from the expanded one, 140,708 cards from a public database (n=140,708).
+   Extraction is the measured weak link (stability 0.423, n=52, test-retest on identical
+   passages), which is why a human approves cards; everything after runs without one.
+2. Compare every pair: match, real disagreement (a fork), or refusal with the failed
+   condition named. The refusing half runs at full scale on real data today: 561 refusals
+   with recorded reasons on the first corpus, the full six-class accounting on the
+   database, and the 1,041-pair cross-dataset refusal with committed receipts. The
+   fork-finding half is proven on planted disagreements (recovery 1.00 and 1.00, n=33;
+   false positives 0.000, n=1,228, q=0.05) and finds zero on public text. Root cause,
+   measured: about 3 result sentences in 100 state the correction method, and a material
+   needs roughly 600 condition-complete claims where public sources yield about 20.
+   Possible with: any claim source that records conditions as data, a LIMS, an ELN, an
+   autonomous platform's run store.
+3. Decide whether a fork is settleable by the lab as it stands: which instrument, what
+   cost, under what assumption. Built and tested against the public simulator and generic
+   instrument limits; it has never been fed a real fork. Possible with: stage 2 running on
+   condition-complete data, plus the lab's own instrument map.
+4. Compile a settleable fork into an experiment card and then into the lab's own plan
+   format. Built and demonstrated end to end: the compiler emits helao-format plans, with
+   gate receipts and simulator traces, from a synthetic case. Possible with: a real fork
+   from stage 3.
+5. Gate every plan before it runs. Runs today, published, fully evaluated: about 20 ms,
+   zero false blocks on 13,627 benign plans with zero abstains, zero attacks through the
+   typed gate on 990 adversarial plans, an LLM attacker at 0 of 12 preregistered then 0 of
+   48 and 0 of 48 (exact CI 0.00 to 0.074 per mode), and it beat a trained classifier and
+   two LLM gates in the same harness. Disclosed blind spot: 20.6% (n=34) for wording
+   outside its typed vocabulary.
+6. Run the experiment and write the verdict back onto the original claims. The verdict
+   machinery runs on real data today: the durability check found all 84 points of the
+   paper's own figure within the stated bound plus the comparability floor (maximum
+   0.5055 V), a self-consistency verdict the repo labels as such; the public H-cell file
+   returns 9 of 9 not comparable because it carries no conditions. The full
+   detect-to-write-back cycle has run end to end on synthetic data (labelled, n=1 cycle).
+   Possible with: result streams that carry their conditions.
+7. Audit the operator's own reasoning traces: was each decision supported by the evidence
+   available at that step? Designed, not built, and it cannot be built from outside; it
+   needs private traces by definition. Possible with: trace access inside a lab. This is
+   the one stage that exists only as a design.
+8. Map shared structure across fields, so a mechanism proven in one domain can be found
+   operating in another. The machinery ran honestly and returned a true null on its first
+   real hunt (0 of 60 candidate pairs above the match bar), published with its
+   denominator. Possible with: deeper corpora under the same preregistration rails; the
+   engine itself was first validated on the field with the widest vocabulary gap there is.
+
+Five of eight stages run on real data today. Two more are built and waiting on exactly
+one thing, data that records its conditions, which is what a lab has and public text does
+not. One is a design that only makes sense inside. Nothing here is abandoned; every
+waiting stage names its unlock.
+
 ## What I do not claim
 
 I found no contradictions in public data; the buckets above say so. The write-back loop has run only on synthetic data. The typed safety layer has a stated blind spot. The trace audit is a design. Everything unproven here is labelled, and everything labelled proven can be rerun by you.

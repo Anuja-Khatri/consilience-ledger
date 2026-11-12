@@ -59,6 +59,12 @@ conditions the hunting half needs, so the hunt waits for data that records them,
 systems have. The exact numbers, each with its sample size, are on the front page and in
 `NUMBERS_LOCK.json`.
 
+These capabilities are stages of one planned operator loop, and the front page,
+FOR_AUTONOMOUS_LABS.md, lays the full system out stage by stage: five of eight stages run
+on real data today, two are built and waiting on condition-recording data, and one is a
+design that needs the inside of a lab. Every waiting stage names its root cause and its
+unlock.
+
 This system is the operator-side arm of The Consilience, an instrument I build for
 comparing scientific claims that do not share a vocabulary. Its one novel commitment: a
 refusal to compare is a first-class, published result, never a silent failure. The core
