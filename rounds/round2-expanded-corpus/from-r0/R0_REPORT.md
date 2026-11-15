@@ -23,7 +23,7 @@ report is the packet for them. Supporting files are all under `BUILD_ROOT/r0/`.
 
 ## 1. Licenses, verified with receipts (PROVENANCE.md)
 - A1 MPS CaltechDATA hjfx4-a8r81: CC-BY-4.0. 4,521,364,439-byte archive, size-matched,
-  SHA-256 b988d2c4...e668da. Guevarra co-author confirmed (Lila lineage claim holds).
+  SHA-256 b988d2c4...e668da. Guevarra is among the listed dataset authors of record.
 - A2 lila_oer_manuscript: code MIT, data CC-BY-4.0 (local clone; data not committed).
 - B2 PMC13707403 cc-by; B3 PMC10576816 cc-by; ESAMP PMC10079965 cc-by;
   ref 27 PMC10012258 cc-by-nc-nd (readable, no redistribution).

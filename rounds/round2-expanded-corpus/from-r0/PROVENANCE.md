@@ -13,7 +13,7 @@ source's official route. SHA-256 is over the exact bytes retrieved and stored un
 - License (quoted from record `metadata.rights`): **"Creative Commons Attribution 4.0
   International"** (CC-BY-4.0).
 - Creators (record): Statt, Michael; Rohr, Brian; **Guevarra, Dan**; Suram, Santosh;
-  Morrell, Thomas; Gregoire, John. (Guevarra co-author confirms the Lila lineage claim.)
+  Morrell, Thomas; Gregoire, John.
 - File: `public_release_20230228.tar.gz`, declared size 4,521,364,439 bytes; downloaded
   size matched exactly. Contains one member: `public_release_20230228.sql` (plain
   PostgreSQL dump, server version 14.6, schema `public_release`, ~3.43 GB uncompressed).

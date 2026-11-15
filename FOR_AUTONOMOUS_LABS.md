@@ -36,7 +36,7 @@ What this gives you: run at ingest time, the same check catches bad records befo
 
 Agent loops write experiment plans faster than people can review them. Manual review becomes the bottleneck, or it gets skipped.
 
-I built a gate that checks each typed plan against typed safety rules in about 20 ms. Its record: 13,627 safe plans, zero wrongly blocked, zero passed to a human as unsure. 990 attack plans, zero through the typed gate. An LLM attacker scored 0 of 12 in a preregistered run, then 0 of 48 and 0 of 48 (exact confidence interval 0.00 to 0.074 per mode). A stronger attacking model reached 0.08 (n=36). The plan checker matched its spec on 12,000 of 12,000 plans. Replays were identical 458 of 458 times. One limit, stated rather than hidden: wording outside the typed vocabulary slips past the typed layer in 20.6% of cases (n=34).
+I built a gate that checks each typed plan against typed safety rules in about 20 ms. Its record: 13,627 benign plans, zero wrongly blocked and zero sent to a human as unsure, including a 990-plan surprise subset that also produced zero false blocks. Against attacks the typed gate let none through on the programmatic suites, and an LLM attacker scored 0 of 12 in a preregistered run, then 0 of 48 and 0 of 48 (exact confidence interval 0.00 to 0.074 per mode). By contrast, a frontier LLM used as the gate — not as the attacker — let 0.28 of attacks through (n=36), and still 0.08 even when handed the gate's own parity information; that LLM-versus-typed comparison is the one the gate was built to win. The two independent checkers agreed on 12,000 of 12,000 plans, and every counterexample replayed, 458 of 458. One limit, stated rather than hidden: 20.6% of adversarial plans reached a hazard the ruleset never named (n=34) — the gate is only as good as the rules written into it.
 
 The safety rules live in a format where each rule carries a grade and a source, compiled into machine checks with no text input. It ships with a six-rule demonstration seed, reviewed and signed by the owner, under a policy that keeps dangerous content permanently out, enforced by an automatic scan. Filling the format with your real safety content is your experts' work. The container, the compiler and the gate are done.
 
@@ -58,7 +58,7 @@ Fair question. My answer: do not trust it. Check it.
 
 Every public number is registered with its sample size, and a test fails the build if it drifts. The repository rebuilds byte-identically from source. Pre-registrations were written before data was read. A corrections file lists every error found so far, including the assistant's own arithmetic error, each fixed in a visible commit. A human gate sits over extraction, and it earns its keep: on the two closure cards it caught a missing stated condition and an invented number, both corrected on the record, with the before and after preserved.
 
-Where the AI sits, and where it does not: a language model reads sentences into cards. That step is the measured weak link. A prompt-injection probe steers extraction in 0.30 of cases overall and 0.91 in the worst class. That is exactly why the judge that issues verdicts has no text input at all, and why a human reviews cards. Judge agreement with hand verdicts: 1.0 (n=213), 1.0 (n=311), 0.9842 (n=316). One piece is a design only: a trace audit that would check each agent decision against the evidence available at that step. It needs private traces by definition, so it is not built.
+Where the AI sits, and where it does not: a language model reads sentences into cards. That step is the measured weak link. A prompt-injection probe steers extraction in 0.30 of cases overall and 0.91 in the worst class. That is exactly why the judge that issues verdicts has no text input at all, and why a human reviews cards. The judge was checked against itself three ways: its verdicts matched an independent logic-program rewrite on 213 of 213 and an SMT encoding on 311 of 311, with machine-checked proof coverage of 0.9842 (n=316). These are internal-consistency checks that the code computes what it claims, not agreement with an outside human panel. One piece is a design only: a trace audit that would check each agent decision against the evidence available at that step. It needs private traces by definition, so it is not built.
 
 What this gives you: trust that does not depend on taking my word. Every number has a receipt. Every mistake has a commit. Every unproven part says so. And
 the human attention a lab does spend goes further here, not shorter: reviewers get typed
@@ -95,11 +95,11 @@ what unlocks the rest.
    gate receipts and simulator traces, from a synthetic case. Possible with: a real fork
    from stage 3.
 5. Gate every plan before it runs. Runs today, published, fully evaluated: about 20 ms,
-   zero false blocks on 13,627 benign plans with zero abstains, zero attacks through the
-   typed gate on 990 adversarial plans, an LLM attacker at 0 of 12 preregistered then 0 of
-   48 and 0 of 48 (exact CI 0.00 to 0.074 per mode), and it beat a trained classifier and
-   two LLM gates in the same harness. Disclosed blind spot: 20.6% (n=34) for wording
-   outside its typed vocabulary.
+   zero false blocks on 13,627 benign plans (including a 990-plan surprise subset) with
+   zero abstains, zero attacks through the typed gate on the programmatic suites, an LLM
+   attacker at 0 of 12 preregistered then 0 of 48 and 0 of 48 (exact CI 0.00 to 0.074 per
+   mode), and it beat a trained classifier and two LLM gates in the same harness. Disclosed
+   blind spot: 20.6% (n=34) of adversarial plans reached a hazard outside the written ruleset.
 6. Run the experiment and write the verdict back onto the original claims. The verdict
    machinery runs on real data today: the durability check found all 84 points of the
    paper's own figure within the stated bound plus the comparability floor (maximum

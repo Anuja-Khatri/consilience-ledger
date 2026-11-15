@@ -7,9 +7,8 @@ Legend: [x] present / ready, [ ] missing or not yet ready.
 - [ ] **`corpus_in/` with paper PDFs** - empty (only `.gitkeep`). See OQ-1. Needed before Phase 2.
 - [ ] **API keys in environment** - not exported in the build session; available in
       `~/oii-sprint/.env` (ANTHROPIC + OPENAI + GEMINI). See OQ-2. Needed before Phase 2.
-- [x] **Handoff / context documents (III.1)** - all 9 present in BUILD_ROOT:
-      lock-candidate, learnings, 1-lila-operator-today, 2-consilience-offer-for-lila,
-      strategy, modules, project-log, lila-native-blueprint, lila-hiring-research.
+- [x] **Handoff / context documents (III.1)** - all 9 build-context documents present in
+      BUILD_ROOT (private strategy and planning notes; not part of this public release).
 - [ ] **Confirmation Phases 1+ may start** - NOT yet. Today is 2026-11-10; D17 sets Phase 1 to
       16 Dec 2026. Phase 0 (read-only) is explicitly allowed now and is what ran.
 

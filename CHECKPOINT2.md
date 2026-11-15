@@ -49,8 +49,8 @@ schemas, rules.lock, ledger, and verdicts and the test suite is green.
 - The LLM-judge baseline made 4 comparisons the veto blocks on 60 sampled pairs.
 - Fresh materials extraction-stability is 0.423 (n=52), reported as the materials number,
   distinct from the consciousness-domain 0.25.
-- Nothing claims or implies Lila uses, wants, or endorses this work. Dan Guevarra agreed
-  the need; he did not endorse. "Designed to," never "shown to," for anything not measured.
+- Nothing claims or implies Lila uses, wants, or endorses this work. "Designed to," never
+  "shown to," for anything not measured.
 
 ## 4. Status note
 Checkpoint 1 is resolved, so Stage 1 outputs are APPROVED, not provisional. Stage 3's loop
