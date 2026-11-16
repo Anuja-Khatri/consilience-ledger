@@ -47,8 +47,8 @@ def _as_floats(text: str) -> list[float]:
     out = []
     for m in re.findall(r"(?<![\d.])\d+\.\d+", text):
         out.append(float(m))
-    for m in re.findall(r"n=(\d+)", text):
-        out.append(float(m))
+    for m in re.findall(r"n=(\d{1,3}(?:,\d{3})+|\d+)", text):
+        out.append(float(m.replace(",", "")))  # "n=140,708" is one number, not 140
     for m in re.findall(r"(?<![\d.])(\d+)\s*mV", text):
         out.append(float(m))
     return out

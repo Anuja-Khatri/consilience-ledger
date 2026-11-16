@@ -11,6 +11,32 @@ This repository holds a working system that does the checking: it reads claims, 
 them exactly, refuses unfair comparisons with the reason named, finds the disagreements
 worth testing next, screens experiment plans for safety, and keeps receipts for all of it.
 
+## Where each result comes from
+
+Not every result described on this page is produced by code in this repository. Read
+the list below before relying on any of them.
+
+- **Produced by code in this repository, and rebuilt by `make reproduce`:** the round 1
+  ledger (34 approved claims, 561 refused pairs each with a recorded reason, 0 forks, the
+  ledger hash), the comparison rules and their lock, and the data schemas. The comparison
+  code is `labext/`. The plan screen in `safety_format/` and the synthetic loop example in
+  `loop/` are also code in this repository; the test suite exercises them.
+- **Produced by code in this repository that needs data which is never committed:** the
+  writeback verdicts against the authors' H-cell data and the durability self-consistency
+  check. The committed result files are the record; without the data, `make reproduce`
+  leaves them unchanged and says so.
+- **Produced by code in a separate repository that is not public:** the database round
+  (`rounds/round4-database/`), including the ingest of 140,708 claim records (n=140,708),
+  the compliance pass that flagged 5,131 rows of the 70,152-row test half for running past
+  their own recorded instrument limit by more than 0.5 V, and the 920 test-half rows with
+  overpotential at or below zero; the planted-disagreement test and the null calibration
+  (item 4 below); and the measured inter-lab spread (item 5 below, `rounds/round5-roundrobin/`).
+  This repository holds their result files, method notes, provenance hashes and
+  corrections, not the code that computed them, so they cannot be rerun from here.
+- **Produced by a different public repository:** the plan-gate figures in item 7 below
+  (about 20 ms, zero safe plans blocked, zero attack plans through) are measurements of
+  lab-gate (github.com/Anuja-Khatri/lab-gate), not of the plan screen in this repository.
+
 ## What it does, in use
 
 1. Every result becomes checkable. Each claim, from a paper, a database row or a run log,
@@ -26,16 +52,20 @@ worth testing next, screens experiment plans for safety, and keeps receipts for 
 4. The next experiment, found for you. Where results genuinely contradict, the system
    surfaces them, ranked: every real contradiction is an experiment worth running. Tested
    by planting disagreements: it found every one, and on clean data it invented none.
+   (That test was run with code in a separate, non-public repository; see above.)
 5. It knows noise from signal. It measured how far honest labs actually differ on the same
    material, and it flags a disagreement only beyond that measured spread. People chase
-   chemistry, not noise.
+   chemistry, not noise. (Measured with code in a separate, non-public repository.)
 6. It finds the bad rows in trusted data. Pointed at a public release of 140,708 claim
    records (n=140,708), it caught measurements exceeding their own recorded instrument
    limits and values that are physically impossible. Run at ingest, such records never
-   reach a model or a decision.
+   reach a model or a decision. (The ingest and the check ran in a separate, non-public
+   repository; this repository holds the result files in `rounds/round4-database/`.)
 7. It checks every plan before it runs. An experiment plan is screened against the lab's
    safety rules in about 20 ms, fast enough to sit inside an agent loop. Its record so
-   far: zero safe plans wrongly blocked, and zero attack plans through.
+   far: zero safe plans wrongly blocked, and zero attack plans through. (These are
+   lab-gate's measurements; this repository's own plan screen, `safety_format/`, returns
+   PASS or BLOCK and has no timing or attack-suite figures of its own.)
 8. Safety rules that enforce themselves. Each rule carries its source and a confidence
    grade and compiles straight into the machine checks the plan screen runs. Experts write
    a rule once; every plan obeys it.
@@ -81,8 +111,10 @@ To check it yourself:
     cd consilience-ledger && python3 -m venv .venv && .venv/bin/pip install -r requirements.txt
     make reproduce
 
-It rebuilds byte for byte and the tests pass, including two that openly skip because the data
-they need is deliberately never committed.
+It rebuilds the schemas, the rules lock and the round 1 ledger, fails loudly if any rebuilt
+file differs byte for byte from the committed one, and runs the tests, including two that
+openly skip because the data they need is deliberately never committed. It does not rerun
+the results listed above as coming from the non-public repository.
 
 A live, read-only browser over the round 1 ledger is served from this repository by GitHub
 Pages: https://anujakhatri.com/consilience-ledger/browser/

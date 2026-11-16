@@ -16,3 +16,16 @@ def test_linter_passes_registered_text():
 def test_linter_flags_unregistered_number():
     bad = lint_text("the agreement was 0.999 which is suspicious")
     assert 0.999 in bad
+
+
+def test_linter_reads_comma_grouped_sample_sizes_whole():
+    # "n=140,708" was read as n=140 (WP1); it is one number
+    assert lint_text("ingested 140,708 cards (n=140,708)") == []
+    assert 123456.0 in lint_text("a sample of n=123,456")
+
+
+def test_readme_numbers_are_all_registered():
+    import os
+    path = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "README.md")
+    with open(path, encoding="utf-8") as fh:
+        assert lint_text(fh.read()) == []

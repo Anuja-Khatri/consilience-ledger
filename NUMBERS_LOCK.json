@@ -288,6 +288,27 @@
       "n": null,
       "qualifier": "p90 above 130 mV in both floor measurements (MPS)",
       "source": "MPS survey (CaltechDATA hjfx4-a8r81, CC BY 4.0); r0 (unversioned)"
+    },
+    {
+      "id": "mps_cards_ingested",
+      "value": 140708,
+      "n": 140708,
+      "qualifier": "acidic-OER chronopotentiometry claim cards ingested from the MPS public release (CaltechDATA hjfx4-a8r81, CC BY 4.0)",
+      "source": "rounds/round4-database (compliance_rerun.json, NUMBERS_LOCK.json); computed by code in a separate, non-public repository"
+    },
+    {
+      "id": "mps_compliance_flagged",
+      "value": 5131,
+      "n": 70152,
+      "qualifier": "test-half rows whose RHE potential ran past their own recorded compliance limit by more than 0.5 V (test half only, n=70,152)",
+      "source": "rounds/round4-database (compliance_rerun.json, NUMBERS_LOCK.json); computed by code in a separate, non-public repository"
+    },
+    {
+      "id": "mps_nonphysical",
+      "value": 920,
+      "n": 70152,
+      "qualifier": "test-half rows with overpotential at or below zero (test half only, n=70,152)",
+      "source": "rounds/round4-database (compliance_rerun.json, NUMBERS_LOCK.json); computed by code in a separate, non-public repository"
     }
   ]
 }
