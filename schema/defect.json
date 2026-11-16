@@ -10,7 +10,8 @@
         "condition_mismatch",
         "condition_unstated",
         "axis_mismatch",
-        "quantity_refused"
+        "quantity_refused",
+        "no_hcell_data"
       ],
       "title": "DefectType",
       "type": "string"

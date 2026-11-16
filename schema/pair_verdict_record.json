@@ -1,0 +1,206 @@
+{
+  "$defs": {
+    "Defect": {
+      "additionalProperties": false,
+      "properties": {
+        "defect_type": {
+          "$ref": "#/$defs/DefectType"
+        },
+        "target": {
+          "title": "Target",
+          "type": "string"
+        }
+      },
+      "required": [
+        "defect_type",
+        "target"
+      ],
+      "title": "Defect",
+      "type": "object"
+    },
+    "DefectType": {
+      "enum": [
+        "type_mismatch",
+        "direction_mismatch",
+        "vocabulary_dependence",
+        "provenance_circularity",
+        "insufficient_coverage",
+        "condition_mismatch",
+        "condition_unstated",
+        "axis_mismatch",
+        "quantity_refused",
+        "no_hcell_data"
+      ],
+      "title": "DefectType",
+      "type": "string"
+    }
+  },
+  "additionalProperties": false,
+  "description": "A pair verdict from ``labext.judge.compare_pair`` (ledger/rejections.json, forks.json,\ncorroborations.json, correspondences.json).",
+  "properties": {
+    "axis": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Axis"
+    },
+    "canonical_unit": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Canonical Unit"
+    },
+    "ceiling": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Ceiling"
+    },
+    "claim_a_id": {
+      "title": "Claim A Id",
+      "type": "string"
+    },
+    "claim_a_sentence": {
+      "title": "Claim A Sentence",
+      "type": "string"
+    },
+    "claim_b_id": {
+      "title": "Claim B Id",
+      "type": "string"
+    },
+    "claim_b_sentence": {
+      "title": "Claim B Sentence",
+      "type": "string"
+    },
+    "code_version": {
+      "title": "Code Version",
+      "type": "string"
+    },
+    "content_hash": {
+      "title": "Content Hash",
+      "type": "string"
+    },
+    "defects": {
+      "items": {
+        "$ref": "#/$defs/Defect"
+      },
+      "title": "Defects",
+      "type": "array"
+    },
+    "equivocation": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Equivocation"
+    },
+    "floor_applied": {
+      "anyOf": [
+        {
+          "type": "number"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Floor Applied"
+    },
+    "kind": {
+      "enum": [
+        "rejection",
+        "fork",
+        "agreement",
+        "correspondence"
+      ],
+      "title": "Kind",
+      "type": "string"
+    },
+    "map_version": {
+      "title": "Map Version",
+      "type": "string"
+    },
+    "margin": {
+      "anyOf": [
+        {
+          "type": "number"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Margin"
+    },
+    "outcome": {
+      "enum": [
+        "not_comparable",
+        "axis_mismatch",
+        "fork",
+        "within_floor",
+        "structural"
+      ],
+      "title": "Outcome",
+      "type": "string"
+    },
+    "pair_id": {
+      "title": "Pair Id",
+      "type": "string"
+    },
+    "rules_version": {
+      "title": "Rules Version",
+      "type": "string"
+    },
+    "rung": {
+      "anyOf": [
+        {
+          "type": "integer"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Rung"
+    }
+  },
+  "required": [
+    "pair_id",
+    "claim_a_id",
+    "claim_b_id",
+    "claim_a_sentence",
+    "claim_b_sentence",
+    "axis",
+    "kind",
+    "outcome",
+    "defects",
+    "margin",
+    "floor_applied",
+    "canonical_unit",
+    "rules_version",
+    "map_version",
+    "code_version",
+    "content_hash"
+  ],
+  "title": "PairVerdictRecord",
+  "type": "object"
+}

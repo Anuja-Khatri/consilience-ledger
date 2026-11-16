@@ -40,7 +40,8 @@ def test_quantity_enum_validated():
 
 def test_json_schemas_exist_and_parse():
     for fname in ["claim_card_v2.json", "conditions.json", "quantity.json",
-                  "verdict_record.json", "defect.json", "comparability_rules.json"]:
+                  "verdict_record.json", "pair_verdict_record.json", "defect.json",
+                  "comparability_rules.json"]:
         path = os.path.join(_SCHEMA_DIR, fname)
         assert os.path.exists(path), f"missing {fname} (run python -m labext.gen_schemas)"
         with open(path) as fh:

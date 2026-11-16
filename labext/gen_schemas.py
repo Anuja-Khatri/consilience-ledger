@@ -13,6 +13,7 @@ from labext.schema import (
     Conditions,
     Quantity,
     VerdictRecord,
+    PairVerdictRecord,
     Defect,
     ComparabilityRules,
 )
@@ -26,6 +27,7 @@ _MODELS = {
     "conditions.json": Conditions,
     "quantity.json": Quantity,
     "verdict_record.json": VerdictRecord,
+    "pair_verdict_record.json": PairVerdictRecord,
     "defect.json": Defect,
     "comparability_rules.json": ComparabilityRules,
 }

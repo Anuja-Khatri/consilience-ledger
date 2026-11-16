@@ -1,23 +1,82 @@
 {
+  "$defs": {
+    "Defect": {
+      "additionalProperties": false,
+      "properties": {
+        "defect_type": {
+          "$ref": "#/$defs/DefectType"
+        },
+        "target": {
+          "title": "Target",
+          "type": "string"
+        }
+      },
+      "required": [
+        "defect_type",
+        "target"
+      ],
+      "title": "Defect",
+      "type": "object"
+    },
+    "DefectType": {
+      "enum": [
+        "type_mismatch",
+        "direction_mismatch",
+        "vocabulary_dependence",
+        "provenance_circularity",
+        "insufficient_coverage",
+        "condition_mismatch",
+        "condition_unstated",
+        "axis_mismatch",
+        "quantity_refused",
+        "no_hcell_data"
+      ],
+      "title": "DefectType",
+      "type": "string"
+    }
+  },
   "additionalProperties": false,
+  "description": "A claim-against-data verdict, exactly as ``labext.writeback`` writes it.\n\nUntil WP1 this model described a planned shape (``comparison``, ``computed_at``)\nthat writeback never wrote, so the committed ``ledger/verdicts.json`` did not\nvalidate against ``schema/verdict_record.json``. The schema now describes the\nrecords the code actually produces. There is no timestamp, by design (the\nrecord is deterministic).",
   "properties": {
     "claim_id": {
       "title": "Claim Id",
       "type": "string"
     },
-    "comparison": {
-      "additionalProperties": true,
-      "title": "Comparison",
-      "type": "object"
+    "claim_ir_correction": {
+      "anyOf": [
+        {
+          "type": "boolean"
+        },
+        {
+          "const": "unstated",
+          "type": "string"
+        }
+      ],
+      "title": "Claim Ir Correction"
     },
-    "computed_at": {
-      "title": "Computed At",
+    "claim_protocol_tier": {
+      "title": "Claim Protocol Tier",
       "type": "string"
+    },
+    "claim_subject": {
+      "title": "Claim Subject",
+      "type": "string"
+    },
+    "claim_value_V": {
+      "title": "Claim Value V",
+      "type": "number"
     },
     "data_source": {
       "additionalProperties": true,
       "title": "Data Source",
       "type": "object"
+    },
+    "defects": {
+      "items": {
+        "$ref": "#/$defs/Defect"
+      },
+      "title": "Defects",
+      "type": "array"
     },
     "floor_applied": {
       "title": "Floor Applied",
@@ -37,6 +96,42 @@
         }
       ],
       "title": "Margin"
+    },
+    "measured_best_V": {
+      "anyOf": [
+        {
+          "type": "number"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Measured Best V"
+    },
+    "measured_mean_V": {
+      "anyOf": [
+        {
+          "type": "number"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Measured Mean V"
+    },
+    "n_hcell_rows": {
+      "anyOf": [
+        {
+          "type": "integer"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "N Hcell Rows"
     },
     "outcome": {
       "enum": [
@@ -60,14 +155,17 @@
   "required": [
     "verdict_id",
     "claim_id",
+    "claim_subject",
+    "claim_value_V",
+    "claim_protocol_tier",
+    "claim_ir_correction",
     "data_source",
-    "comparison",
+    "defects",
     "outcome",
     "margin",
     "floor_applied",
     "rules_version",
-    "map_version",
-    "computed_at"
+    "map_version"
   ],
   "title": "VerdictRecord",
   "type": "object"

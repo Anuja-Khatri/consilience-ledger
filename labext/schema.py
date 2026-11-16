@@ -68,6 +68,7 @@ class DefectType(str, Enum):
     condition_unstated = "condition_unstated"
     axis_mismatch = "axis_mismatch"
     quantity_refused = "quantity_refused"  # value or unit refused before comparison (WP1)
+    no_hcell_data = "no_hcell_data"  # writeback: no H-cell measurement for this system
 
 
 # --------------------------------------------------------------------------- #
@@ -248,24 +249,67 @@ class ComparabilityRules(BaseModel):
 # --------------------------------------------------------------------------- #
 # Verdict record (IV.4)
 # --------------------------------------------------------------------------- #
+class Defect(BaseModel):
+    model_config = ConfigDict(extra="forbid")
+    defect_type: DefectType
+    target: str  # the condition field name, the rule id, or the axis pair
+
+
 class VerdictRecord(BaseModel):
+    """A claim-against-data verdict, exactly as ``labext.writeback`` writes it.
+
+    Until WP1 this model described a planned shape (``comparison``, ``computed_at``)
+    that writeback never wrote, so the committed ``ledger/verdicts.json`` did not
+    validate against ``schema/verdict_record.json``. The schema now describes the
+    records the code actually produces. There is no timestamp, by design (the
+    record is deterministic).
+    """
+
     model_config = ConfigDict(extra="forbid")
     verdict_id: str
     claim_id: str
-    data_source: dict  # {file, sha, row_refs}
-    comparison: dict
+    claim_subject: str
+    claim_value_V: float
+    claim_protocol_tier: str
+    claim_ir_correction: Union[bool, Literal["unstated"]]
+    data_source: dict  # H-cell file, its sha256, row refs, manuscript commit
+    defects: list[Defect]
     outcome: Literal["confirmed", "contradicted", "within_floor", "not_comparable"]
     margin: Optional[float]
     floor_applied: float
     rules_version: str
     map_version: str
-    computed_at: str
+    # present only when the claim was proven comparable and a margin was computed
+    measured_best_V: Optional[float] = None
+    measured_mean_V: Optional[float] = None
+    n_hcell_rows: Optional[int] = None
 
 
-class Defect(BaseModel):
+class PairVerdictRecord(BaseModel):
+    """A pair verdict from ``labext.judge.compare_pair`` (ledger/rejections.json, forks.json,
+    corroborations.json, correspondences.json)."""
+
     model_config = ConfigDict(extra="forbid")
-    defect_type: DefectType
-    target: str  # the condition field name, the rule id, or the axis pair
+    pair_id: str
+    claim_a_id: str
+    claim_b_id: str
+    claim_a_sentence: str
+    claim_b_sentence: str
+    axis: Optional[str]
+    kind: Literal["rejection", "fork", "agreement", "correspondence"]
+    outcome: Literal["not_comparable", "axis_mismatch", "fork", "within_floor", "structural"]
+    defects: list[Defect]
+    margin: Optional[float]
+    floor_applied: Optional[float]
+    canonical_unit: Optional[str]
+    rules_version: str
+    map_version: str
+    code_version: str
+    content_hash: str
+    # structural (mechanism) path only
+    rung: Optional[int] = None
+    ceiling: Optional[str] = None
+    equivocation: Optional[str] = None
 
 
 __all__ = [
@@ -290,6 +334,7 @@ __all__ = [
     "ComparabilityRule",
     "ComparabilityRules",
     "VerdictRecord",
+    "PairVerdictRecord",
     "Defect",
     "UNSTATED",
 ]
