@@ -20,6 +20,17 @@ data is never committed; it is loaded at runtime (CC-28, Anu ruling OQ-3).
 | vendor/labgate/sim_ext/oersim.py | lab-gate @ 3e0185a | sim_ext/oersim.py | ONE line changed: `from sim_ext.accounting` -> `from .accounting` (vendored package path). Runs the real OERSIM on the public `oer13_cps` dataset shipped in helao-async (MIT; High-Throughput-Experimentation; a combinatorial OER CP library over 13 base metals Ca/Ce/Co/Cu/Fe/La/Mg/Mn/Ni/Sb/Sn/Ta/Zn, no palladium; not Lila's data) with pyzstd + the pure-Python calc_eta fallback (no helao/numpy needed). |
 | vendor/labgate/sim_ext/accounting.py | lab-gate @ 3e0185a | sim_ext/accounting.py | unchanged |
 
+## Licence files for vendored code
+- `vendor/engine/LICENSE` is the full text of the Apache License, Version 2.0 (byte-identical
+  to the canonical text published at apache.org/licenses/LICENSE-2.0.txt, sha256 cfc7749b...),
+  added 2026-11-16 (WP1). The vendored engine code under `vendor/engine/` is Apache-2.0 and
+  the licence requires that a copy travel with it; before this the folder had none.
+- `vendor/engine/NOTICE` is a copy of the engine's own licence notice (`LICENSE` in
+  theconsilience-engine, unchanged since commit 8ce0c4f; copied from a checkout at 42f0b96).
+- The rest of this repository stays MIT (code) and CC BY 4.0 (data and reports); the Apache
+  terms apply to the files under `vendor/engine/` only.
+- `vendor/labgate/` is MIT, from the same author, and is covered by the repository `LICENSE`.
+
 Derived work in this repo (labext/, schema/, rules/, domainpack/, tests/) is
 original and licensed MIT (D2). The demo repos consilience-demo and miu-demo are
 Anu's own code with no LICENSE file; any port from them is authorized by spec III.3
