@@ -151,3 +151,47 @@ digits are not printed anywhere in this repo.
   checks passed. Found by the post-push fresh-clone verification. Writeback now skips without writing
   when the data is absent, mirroring the two tests that already skip for the same reason; verified
   byte-stable on a dataless fresh clone.
+
+## 2026-11-16: input hardening of the comparator and the reproduce path (WP1); no published result changed
+- What was wrong: the comparator and its unit layer accepted inputs they could misread. A NaN
+  value returned `within_floor` (NaN is never greater than the floor). Strings went through
+  pint's expression parser, so `"1 200"` read as 200, `"3,14"` as 314, `"1.2.3"` as 0.36,
+  `"(1,234)"` as +1234, `"5-10"` as -5, `"5M"` as 5 molar and `"5k"` as 5 Boltzmann constants;
+  `"inf"` and `"nan"` were accepted. An axis with no canonical unit, or an axis missing from the
+  axis table, was compared as raw numbers with units ignored (`"90 %"` against `0.9` gave a fork).
+  The unit alias table lower-cased before lookup, so `"m"` (metre) became mol/L and `"k"` became
+  kelvin.
+- Correction: each of these is now refused with a named reason (`non_finite`,
+  `space_separated_digits`, `ambiguous_separator`, `malformed_number`, `parenthesised_number`,
+  `ambiguous_scale_suffix`, `compound_quantity`, `no_canonical_unit`, `unknown_axis`,
+  `ambiguous_unit_case`). The judge records a refusal as outcome `not_comparable` with the new
+  defect type `quantity_refused`. Tests: `tests/test_input_hardening.py`.
+- Effect on published results: none. All 187 quantity and condition values in the committed
+  extraction files canonicalise to the same number as before. The round 1 ledger rebuilds byte
+  for byte: 34 claims, 0 forks, 561 vetoes, ledger.hash `a11ee946...` unchanged, rules.lock
+  `ba3db7c1...` unchanged, every committed record file unchanged. No round 1 pair reached the
+  numeric step, so no axis without a canonical unit was ever compared. The round 4 and round 5
+  results were computed by code in a separate repository and are not affected by this change.
+  `CODE_VERSION` was deliberately left at `lab-extension-0.1.0`, because bumping it would change
+  the content hash of all 561 published records although no output changed; whether to bump it
+  is left to the owner.
+- Reproduce path: `make reproduce` silently skipped the ledger rebuild, because the target
+  `ledger` shares its name with the `ledger/` directory and was not declared phony. Running the
+  rebuild directly then emptied the committed `ledger/verdicts.json`. Both are fixed: every target
+  is phony, the ledger build leaves an existing `verdicts.json` alone, and a new
+  `check-unchanged` step makes `make reproduce` fail with a message if any rebuilt file differs
+  from the committed one. The Makefile also named the wrong environment variable
+  (`LILA_OER_DATA`; the code reads `LILA_OER_DATA_DIR`).
+- Schema: `schema/verdict_record.json` described a record shape that writeback never wrote, so the
+  nine committed writeback verdicts did not validate against it. The schema now describes the
+  records the code writes; the committed records are unchanged. Pair verdicts gained their own
+  schema, `schema/pair_verdict_record.json`. A test validates every committed record file.
+  Still open: the nine writeback verdicts carry `rules_version: comparability-v0` while the rules
+  file is `comparability-v0.1`; writeback writes that string as a constant. The v0.1 bump changed
+  documentation only, so the verdicts' substance is the same, but the label is stale.
+- Front page: the README now says which results come from code in this repository and which from
+  code in a separate, non-public repository (the 140,708-record ingest, the 5,131 and 920
+  test-half counts, the planted-disagreement test, the null calibration, the inter-lab spread),
+  and that the plan-gate figures are lab-gate's. No number or qualifier changed.
+- The one failing test (`test_no_em_dash.py`, three em dashes in FOR_AUTONOMOUS_LABS.md line 39)
+  is fixed by punctuation only.
