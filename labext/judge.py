@@ -16,6 +16,7 @@ Every record carries a SHA-256 ``content_hash`` (vendored determinism hasher), p
 from __future__ import annotations
 
 import functools
+import math
 import os
 
 import yaml
@@ -23,7 +24,7 @@ import yaml
 from labext import CODE_VERSION
 from labext.comparability import default_rules, evaluate_comparability
 from labext.schema import ClaimCard, QUANTITY_KINDS, ClaimKind
-from labext.units import UnitError
+from labext.units import UnitError, as_quantity
 from vendor.engine.judge.hash.determinism_check import compute_verdict_hash
 from vendor.engine.judge.matching.vf2_typed import (
     conditions_compatible,
@@ -31,7 +32,6 @@ from vendor.engine.judge.matching.vf2_typed import (
 )
 from vendor.engine.judge.equivocation.lexical_ablation import equivocation_test
 from vendor.engine.judge.grading.four_rung_ladder import assign_rung
-from vendor.labgate.units import _as_quantity
 
 _AXES_PATH = os.path.join(
     os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
@@ -60,17 +60,26 @@ def _axis_meta(axis_id: str) -> dict:
 
 
 def _convert(value: float, unit: str, target_unit: str) -> float:
-    """Convert value[unit] to target_unit via pint, fail-closed."""
+    """Convert value[unit] to target_unit via pint, fail-closed (non-finite refused)."""
+    q = as_quantity({"value": value, "unit": unit})  # raises UnitError with a named reason
     try:
-        return float(_as_quantity({"value": value, "unit": unit}).to(target_unit).magnitude)
+        out = float(q.to(target_unit).magnitude)
     except Exception as exc:
-        raise UnitError(f"cannot convert {value} {unit} to {target_unit}: {exc}") from None
+        raise UnitError(f"cannot_convert: {value} {unit} to {target_unit}: {exc}") from None
+    if not math.isfinite(out):
+        raise UnitError(f"non_finite: {value} {unit} converts to {out}")
+    return out
 
 
 def _canon(q, target_unit):
-    """Return (value, uncertainty) for a Quantity in target_unit (or raw if None)."""
+    """Return (value, uncertainty) for a Quantity in target_unit, fail-closed.
+
+    An axis with no canonical unit is refused: comparing raw numbers would ignore
+    units ("90 %" against "0.9" would be a fork of 89.1).
+    """
     if target_unit is None:
-        return float(q.value), float(q.uncertainty or 0.0)
+        raise UnitError("no_canonical_unit: this axis has no single convertible unit, "
+                        "so its values cannot be compared numerically")
     val = _convert(q.value, q.unit, target_unit)
     unc = _convert(q.uncertainty, q.unit, target_unit) if q.uncertainty is not None else 0.0
     return val, unc
@@ -176,12 +185,13 @@ def compare_pair(card_a: ClaimCard, card_b: ClaimCard, rules=None, overpotential
     if axis_floor is None and card_a.axis == "overpotential_at_current_density":
         axis_floor = overpotential_floor_v
     try:
+        if not meta:
+            raise UnitError(f"unknown_axis: {card_a.axis!r} is not in the axis table")
         a_val, a_unc = _canon(card_a.quantity, target_unit)
         b_val, b_unc = _canon(card_b.quantity, target_unit)
     except UnitError as exc:
         base.update(kind="rejection", outcome="not_comparable",
-                    defects=[{"defect_type": "condition_mismatch",
-                              "target": f"unparseable_quantity: {exc}"}])
+                    defects=[{"defect_type": "quantity_refused", "target": str(exc)}])
         return _finalise(base)
 
     margin = abs(a_val - b_val)

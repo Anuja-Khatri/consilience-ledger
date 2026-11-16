@@ -67,6 +67,7 @@ class DefectType(str, Enum):
     condition_mismatch = "condition_mismatch"
     condition_unstated = "condition_unstated"
     axis_mismatch = "axis_mismatch"
+    quantity_refused = "quantity_refused"  # value or unit refused before comparison (WP1)
 
 
 # --------------------------------------------------------------------------- #

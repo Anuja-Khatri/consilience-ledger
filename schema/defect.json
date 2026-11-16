@@ -9,7 +9,8 @@
         "insufficient_coverage",
         "condition_mismatch",
         "condition_unstated",
-        "axis_mismatch"
+        "axis_mismatch",
+        "quantity_refused"
       ],
       "title": "DefectType",
       "type": "string"
