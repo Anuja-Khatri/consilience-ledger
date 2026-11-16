@@ -1,6 +1,9 @@
 PY=.venv/bin/python
 
-.PHONY: setup test schemas lock reproduce
+# Every target is phony. "ledger" in particular shares its name with the ledger/
+# directory: without this line make printed "'ledger' is up to date" and silently
+# skipped the ledger rebuild inside `make reproduce`.
+.PHONY: setup test schemas lock ledger verdicts reproduce check-unchanged
 
 setup:
 	python3 -m venv .venv
@@ -18,12 +21,19 @@ lock:
 ledger:
 	$(PY) -m labext.ledger
 
-# Writeback needs Lila's data at runtime (env LILA_OER_DATA or the upstream checkout);
-# it is never committed (CC-28). Without the data it writes empty verdicts and continues.
+# Writeback needs Lila's data at runtime (env LILA_OER_DATA_DIR or the upstream checkout);
+# it is never committed (CC-28). Without the data it says so and leaves the committed
+# verdicts unchanged (the ledger rebuild no longer empties them either).
 verdicts:
 	$(PY) -m labext.writeback
 
-# Regenerate the deterministic artifacts and verify the suite. The ledger hash must
-# stay byte-identical from the approved cards + rules.lock + code version (spec IV.5).
-reproduce: schemas lock ledger verdicts test
-	@echo "reproduce OK: schemas + rules.lock + ledger + verdicts regenerated, tests green"
+# Fail loudly if regeneration changed any committed artifact.
+check-unchanged:
+	@git diff --exit-code --stat -- ledger reports schema rules/rules.lock \
+	  || { echo "reproduce FAILED: regenerated artifacts differ from the committed ones (diff above)"; exit 1; }
+
+# Regenerate the deterministic artifacts, verify they are byte-identical to the committed
+# ones, and run the suite. The ledger hash must stay byte-identical from the approved
+# cards + rules.lock + code version (spec IV.5).
+reproduce: schemas lock ledger verdicts check-unchanged test
+	@echo "reproduce OK: schemas + rules.lock + ledger rebuilt byte-identical, verdicts checked, tests green"

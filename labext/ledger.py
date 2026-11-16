@@ -61,8 +61,13 @@ def build_ledger(cards: list[ClaimCard], rules=None, ledger_dir=_LEDGER, reports
         "corroborations.json": sorted(corroborations, key=lambda r: r["pair_id"]),
         "correspondences.json": sorted(correspondences, key=lambda r: r["pair_id"]),
         "rejections.json": sorted(rejections, key=lambda r: r["pair_id"]),
-        "verdicts.json": [],  # filled in Phase 5
     }
+    # verdicts.json is owned by writeback (Phase 5), which needs runtime data that is
+    # never committed (CC-28). Rebuilding the ledger must not empty the committed file:
+    # create it empty only when it does not exist yet.
+    verdicts_path = os.path.join(ledger_dir, "verdicts.json")
+    if not os.path.exists(verdicts_path):
+        out["verdicts.json"] = []
     for fname, data in out.items():
         with open(os.path.join(ledger_dir, fname), "w") as fh:
             json.dump(data, fh, indent=2, sort_keys=True)
